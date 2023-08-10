@@ -1,14 +1,15 @@
 import {
-  BiDownload,
+  BiLogoLinkedin,
   BiLogoGithub,
   BiLogoGmail,
-  BiLogoLinkedin,
+  BiDownload,
 } from "react-icons/bi";
 import {
   MdLocationOn,
   MdOutlineDarkMode,
   MdOutlineLightMode,
 } from "react-icons/md";
+import Footer from "../../shared/components/Footer/Footer";
 
 const Hero = () => {
   return (
@@ -138,6 +139,7 @@ export default function FrontPage() {
           <About />
         </div>
       </div>
+      <Footer />
     </section>
   );
 }
