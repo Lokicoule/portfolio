@@ -1,8 +1,11 @@
+import PageTitle from "../../shared/components/PageTitle/PageTitle";
+
 const Contact = () => {
   return (
-    <div>
+    <>
+      <PageTitle title="Contact" />
       <h1>Contact</h1>
-    </div>
+    </>
   );
 };
 

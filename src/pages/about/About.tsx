@@ -1,6 +1,9 @@
+import PageTitle from "../../shared/components/PageTitle/PageTitle";
+
 const About = () => {
   return (
-    <div>
+    <>
+      <PageTitle title="About" />
       <h1>About</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
@@ -8,7 +11,7 @@ const About = () => {
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
       </p>
-    </div>
+    </>
   );
 };
 

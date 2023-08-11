@@ -1,8 +1,11 @@
+import PageTitle from "../../shared/components/PageTitle/PageTitle";
+
 const Resume = () => {
   return (
-    <div>
+    <>
+      <PageTitle title="Resume" />
       <h1>Resume</h1>
-    </div>
+    </>
   );
 };
 
