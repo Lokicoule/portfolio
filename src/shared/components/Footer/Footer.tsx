@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="overflow-hidden rounded-b-2xl">
+    <footer>
       <p className="text-center py-6 text-gray-lite  dark:text-gray-200">
         © 2023 All Rights Reserved by{" "}
         <a
