@@ -7,8 +7,8 @@ import {
   FaDownload,
 } from "react-icons/fa";
 import img from "/avatar.jpg";
-import HeroSocialLinks from "../SocialLinks/SocialLinks";
-import HeroContactInfo from "../ContactInfo/ContactInfo";
+import HeroSocialLinks from "../social-links/SocialLinks";
+import HeroContactInfo from "../contact-info/ContactInfo";
 
 const Hero = () => {
   const socialLinks = [

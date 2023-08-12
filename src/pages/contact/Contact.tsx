@@ -1,4 +1,4 @@
-import PageTitle from "../../shared/components/PageTitle/PageTitle";
+import PageTitle from "../../shared/components/page-title/PageTitle";
 
 const Contact = () => {
   return (

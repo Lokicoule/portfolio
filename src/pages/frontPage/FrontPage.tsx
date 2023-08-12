@@ -9,7 +9,7 @@ import {
   MdOutlineDarkMode,
   MdOutlineLightMode,
 } from "react-icons/md";
-import Footer from "../../shared/components/Footer/Footer";
+import Footer from "../../shared/components/footer/Footer";
 
 const Hero = () => {
   return (
