@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import Hero from "../Hero/Hero";
 import Footer from "../Footer/Footer";
+import Hero from "../Hero";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (

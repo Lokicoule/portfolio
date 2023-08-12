@@ -7,15 +7,21 @@ import {
   FaDownload,
 } from "react-icons/fa";
 import img from "/avatar.jpg";
+import HeroSocialLinks from "./HeroSocialLinks";
+import HeroContactInfo from "./HeroContactInfo";
 
 const Hero = () => {
   const socialLinks = [
     {
       href: "https://www.linkedin.com/",
       icon: <FaLinkedinIn />,
-      color: "#0072b1",
+      iconClass: "text-[#0072b1]",
     },
-    { href: "https://www.github.com/", icon: <FaGithub />, color: "#0072b1" },
+    {
+      href: "https://www.github.com/",
+      icon: <FaGithub />,
+      iconClass: "text-[#0072b1]",
+    },
   ];
 
   const contactInfo = [
@@ -58,57 +64,13 @@ const Hero = () => {
           Software Engineer
         </h3>
 
-        <div className="flex justify-center space-x-3">
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="social-btn text-[#0072b1]">{link.icon}</span>
-            </a>
-          ))}
-        </div>
-
-        <div className="p-7 rounded-2xl mt-7 bg-[#F3F6F6] dark:bg-[#1D1D1D]">
-          {contactInfo.map((info, index) => (
-            <div
-              key={index}
-              className={`flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5 ${
-                index === contactInfo.length - 1 ? "" : "mb-2.5"
-              }`}
-            >
-              <span
-                className={`flex-shrink-0 social-btn bg-white dark:bg-black ${info.iconClass} shadow-md`}
-              >
-                {info.icon}
-              </span>
-              <div className="text-left ml-2.5">
-                <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
-                  {info.label}
-                </p>
-                {info.href ? (
-                  <p className="dark:text-white break-all">
-                    <a
-                      className="hover:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 hover:inline-block hover:text-transparent hover:bg-clip-text"
-                      href={info.href}
-                    >
-                      {info.value}
-                    </a>
-                  </p>
-                ) : (
-                  <p className="dark:text-white break-all">{info.value}</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+        <HeroSocialLinks socialLinks={socialLinks} />
+        <HeroContactInfo contactInfo={contactInfo} />
 
         <a
           href={"#"}
           download
-          className="inline-flex items-center mx-auto sky-to-blue-grad duration-200 transition ease-linear px-8 py-3 text-lg text-white rounded-[35px] mt-6 hover:opacity-90"
+          className="inline-flex items-center mx-auto sky-to-blue-grad duration-200 transition ease-linear px-8 py-3 text-lg text-white rounded-[35px] mt-6 hover:brightness-125"
         >
           <FaDownload className="mr-2" />
           Download CV
