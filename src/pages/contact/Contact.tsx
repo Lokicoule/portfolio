@@ -4,7 +4,9 @@ const Contact = () => {
   return (
     <>
       <PageTitle title="Contact" />
-      <h1>Contact</h1>
+      <section>
+        <h1>Contact</h1>
+      </section>
     </>
   );
 };

@@ -4,7 +4,9 @@ const Resume = () => {
   return (
     <>
       <PageTitle title="Resume" />
-      <h1>Resume</h1>
+      <section>
+        <h1>Resume</h1>
+      </section>
     </>
   );
 };
