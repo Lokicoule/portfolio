@@ -11,9 +11,9 @@ interface Props {
   contactInfo: ContactInfo[];
 }
 
-const HeroContactInfo: React.FC<Props> = ({ contactInfo }) => {
+const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
   return (
-    <div className="p-7 rounded-2xl mt-7 bg-[#F3F6F6] dark:bg-[#1D1D1D]">
+    <>
       {contactInfo.map((info, index) => (
         <div
           key={index}
@@ -45,8 +45,8 @@ const HeroContactInfo: React.FC<Props> = ({ contactInfo }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
-export default HeroContactInfo;
+export default ContactInfo;
