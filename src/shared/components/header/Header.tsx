@@ -1,3 +1,5 @@
+import ThemeMode from "../theme-mode/ThemeMode";
+
 const Header = () => {
   return (
     <div className="container w-full bg-[#F3F6F6] dark:bg-black lg:bg-transparent lg:dark:bg-transparent flex justify-between py-5  lg:px-0 lg:pt-[50px]">
@@ -7,6 +9,9 @@ const Header = () => {
             Lokicoule
           </h1>
         </a>
+        <div className="flex items-center">
+          <ThemeMode />
+        </div>
       </div>
     </div>
   );

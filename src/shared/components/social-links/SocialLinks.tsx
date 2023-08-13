@@ -18,7 +18,7 @@ const SocialLinks: React.FC<Props> = ({ socialLinks }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={`social-btn ${link.iconClass}`}>{link.icon}</span>
+          <span className={`btn-social ${link.iconClass}`}>{link.icon}</span>
         </a>
       ))}
     </>
