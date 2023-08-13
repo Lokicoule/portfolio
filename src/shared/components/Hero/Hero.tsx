@@ -74,7 +74,7 @@ const Hero = () => {
         <a
           href={"#"}
           download
-          className="inline-flex items-center mx-auto sky-to-blue-grad duration-200 transition ease-linear px-8 py-3 text-lg text-white rounded-[35px] mt-6 hover:brightness-125"
+          className="inline-flex items-center mx-auto sky-to-blue-bg duration-200 transition ease-linear px-8 py-3 text-lg text-white rounded-[35px] mt-6 hover:brightness-125"
         >
           <FaDownload className="mr-2" />
           Download CV
