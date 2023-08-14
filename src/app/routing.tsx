@@ -3,16 +3,17 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/Resume";
-import Layout from "../shared/components/layout/Layout";
+import GridLayout from "../shared/components/layout/GridLayout";
+import FlexLayout from "../shared/components/layout/FlexLayout";
 import { RouteConfig } from "../shared/routing/routingService";
 
 const routes: RouteConfig[] = [
   {
     path: "/",
     element: (
-      <Layout>
+      <GridLayout>
         <Outlet />
-      </Layout>
+      </GridLayout>
     ),
     children: [
       {
@@ -27,11 +28,15 @@ const routes: RouteConfig[] = [
         path: "/resume",
         element: <Resume />,
       },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <FlexLayout>
+        <NotFound />
+      </FlexLayout>
+    ),
   },
 ];
 
