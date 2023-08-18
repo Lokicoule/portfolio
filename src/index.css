@@ -3,25 +3,49 @@
 @tailwind utilities;
 
 @layer components {
+  .page-title::after {
+    @apply absolute transform -translate-y-1/2 bg-gradient-to-r from-sky-400 to-blue-500 h-0.5 rounded-md content-[""] md:w-48 top-1/2 left-60;
+  }
+  .page-title {
+    @apply text-5xl font-bold inline-block relative dark:text-white;
+  }
+
   .btn-social {
-    @apply w-10 h-10 rounded-lg hover:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 flex justify-center items-center hover:text-white transition-colors duration-300  ease-in-out bg-[#F3F6F6] dark:bg-[#212425];
+    @apply w-10 h-10 rounded-lg flex justify-center items-center transition-colors duration-300 ease-in-out bg-[#F3F6F6] dark:bg-[#212425];
   }
+  .btn-social:hover {
+    @apply bg-gradient-to-b from-sky-400 to-blue-500 hover:text-white;
+  }
+
   .bg-sky-to-blue {
-    @apply bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500;
+    @apply bg-gradient-to-b from-sky-400 to-blue-500;
   }
+
   .bg-sky-to-indigo {
-    @apply bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900;
+    @apply bg-gradient-to-b from-sky-400 to-indigo-900;
   }
+
   .bg-blue-to-indigo {
-    @apply bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-400 to-indigo-900;
+    @apply bg-gradient-to-b from-blue-400 to-indigo-900;
   }
+
   .bg-sky-to-grey {
-    @apply bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-sky-800 to-gray-950;
+    @apply bg-gradient-to-b from-sky-800 to-gray-950;
   }
+
   .link-menu {
-    @apply w-full h-20 rounded-[10px] text-gray-600  cursor-pointer bg-[#F3F6F6]  font-medium mx-2.5 dark:text-[#A6A6A6] justify-center flex flex-col items-center transition-all duration-300 ease-in-out dark:hover:text-white dark:bg-[#212425] hover:text-white hover:bg-sky-to-blue;
+    @apply w-full h-20 rounded-[10px] text-gray-600 cursor-pointer font-medium mx-2.5 dark:text-[#A6A6A6] justify-center flex flex-col items-center transition-all duration-300 ease-in-out bg-[#F3F6F6] dark:bg-[#212425];
   }
+
+  .link-menu:hover {
+    @apply text-white bg-gradient-to-b from-sky-400 to-blue-500;
+  }
+
   .mobile-link-menu {
-    @apply rounded-md mb-1 cursor-pointer font-medium mx-2.5 flex text-sm py-4 px-2 md:px-4 xl:px-5 items-center transition-all duration-300 ease-in-out dark:hover:text-gray-800 dark:bg-[#212425] hover:text-gray-800 hover:bg-sky-300 dark:text-[#A6A6A6] text-gray-100;
+    @apply rounded-md mb-1 cursor-pointer font-medium mx-2.5 flex text-sm py-4 px-2 md:px-4 xl:px-5 items-center transition-all duration-300 ease-in-out dark:text-[#A6A6A6] text-gray-100;
+  }
+
+  .mobile-link-menu:hover {
+    @apply text-gray-800 bg-sky-300 dark:bg-[#212425] hover:text-gray-800;
   }
 }
