@@ -8,8 +8,8 @@ const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="bg-sky-to-grey md:pb-16 w-full min-h-screen antialiased">
       <Header />
-      <main className="container grid grid-cols-12 md:gap-10  justify-between lg:mt-[220px] ">
-        <div className="col-span-12 lg:col-span-4 hidden lg:block h-screen sticky top-44">
+      <main className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px] ">
+        <div className="col-span-12 lg:col-span-4 lg:h-screen lg:sticky top-44 hidden lg:block">
           <Hero />
         </div>
         <div className="col-span-12 lg:col-span-8  ">
