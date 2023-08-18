@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import { HelmetProvider } from "react-helmet-async";
 import { routingService } from "../shared/composition";
 import routes from "./routing";

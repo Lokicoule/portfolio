@@ -1,4 +1,15 @@
+import { notificationsService } from "../../shared/composition";
+
 const ContactForm = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    notificationsService.showSuccess(
+      "Votre message a bien été envoyé.",
+      "contact-form-success"
+    );
+  };
+
   return (
     <div className="mx-4 md:mx-[60px] p-4 md:p-16 dark:border-[#212425] dark:border-2 bg-blue-50 rounded-xl dark:bg-[#111111] mb-[30px] md:mb-[60px]">
       <h3 className="text-4xl leading-tight bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 inline-block text-transparent bg-clip-text">
@@ -11,7 +22,7 @@ const ContactForm = () => {
         </span>
       </h3>
 
-      <form id="contact-form" onSubmit={(d) => console.log(d)}>
+      <form id="contact-form" onSubmit={handleSubmit}>
         <div className="relative z-0 w-full mt-[40px] mb-8 group">
           <input
             type="text"
@@ -62,7 +73,7 @@ const ContactForm = () => {
           </label>
         </div>
 
-        <div className="transition-all duration-300  ease-in-out inline-block hover:bg-gradient-to-r from-[#FA5252] to-[#DD2476] rounded-lg  mt-3">
+        <div className="transition-all duration-300  ease-in-out inline-block hover:bg-gradient-to-r from-sky-400 to-blue-600 rounded-lg  mt-3">
           <input
             type="submit"
             className=" transition ease-in duration-200 font-semibold cursor-pointer border-color-910   hover:border-transparent px-6  py-2 rounded-lg border-[2px]  hover:text-white   dark:text-white "
