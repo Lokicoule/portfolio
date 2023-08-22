@@ -1,19 +1,19 @@
 import { toast, ToastContainer } from "react-toastify";
 
 export class NotificationService {
-  showSuccess(message: string, id?: string) {
+  public showSuccess(message: string, id?: string) {
     toast.success(message, {
       toastId: id ? id : "success-toast",
     });
   }
 
-  showError(message: string, id?: string) {
+  public showError(message: string, id?: string) {
     toast.error(message, {
       toastId: id ? id : "error-toast",
     });
   }
 
-  showInfo(message: string, id?: string) {
+  public showInfo(message: string, id?: string) {
     toast.info(message, {
       toastId: id ? id : "info-toast",
     });
