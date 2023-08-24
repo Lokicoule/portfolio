@@ -5,30 +5,38 @@ import { NotificationService } from "../../shared/notifications/notificationsSer
 import { ContactFormProps } from "./domainObjects/ContactForm";
 
 export class ContactController {
+  private _isLoading = false;
+
   constructor(
     private notifications: NotificationService,
     private mailingService: MailingService,
     private loggingService: LoggingService
   ) {}
 
-  public submitContactForm(data: ContactFormProps) {
+  public async submitContactForm(data: ContactFormProps): Promise<void> {
+    if (this._isLoading) {
+      return;
+    }
+
     const notification = Notification.createInfo("Sending message...");
 
     this.notifications.showToast(notification);
-
-    this.mailingService.sendEmail(
-      data,
-      () => {
-        this.notifications.updateToast(
-          notification.withMessageAndType("Message sent!", "success")
-        );
-      },
-      (error: Error) => {
-        this.loggingService.logError(error);
-        this.notifications.updateToast(
-          notification.withMessageAndType("Message failed to send!", "error")
-        );
-      }
-    );
+    this._isLoading = true;
+    try {
+      await this.mailingService.sendEmail(data);
+      console.log("data", data);
+      this.notifications.updateToast(
+        notification.withMessageAndType("Message sent!", "success")
+      );
+    } catch (error) {
+      console.error("error", error);
+      this.loggingService.logError(error as Error);
+      this.notifications.updateToast(
+        notification.withMessageAndType("Message failed to send!", "error")
+      );
+      throw error;
+    } finally {
+      this._isLoading = false;
+    }
   }
 }
