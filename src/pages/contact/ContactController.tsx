@@ -22,14 +22,13 @@ export class ContactController {
 
     this.notifications.showToast(notification);
     this._isLoading = true;
+
     try {
       await this.mailingService.sendEmail(data);
-      console.log("data", data);
       this.notifications.updateToast(
         notification.withMessageAndType("Message sent!", "success")
       );
     } catch (error) {
-      console.error("error", error);
       this.loggingService.logError(error as Error);
       this.notifications.updateToast(
         notification.withMessageAndType("Message failed to send!", "error")
