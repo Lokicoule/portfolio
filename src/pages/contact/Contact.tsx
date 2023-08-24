@@ -1,12 +1,12 @@
 import PageTitle from "../../shared/components/page-title/PageTitle";
-import ContactFormView from "./components/ContactFormView";
-import { NotificationService } from "../../shared/notifications/notificationsService";
 import { contactController } from "../../shared/composition";
+import { NotificationService } from "../../shared/notifications/notificationsService";
+import ContactFormView from "./components/ContactFormView";
 import { ContactFormProps } from "./domainObjects/ContactForm";
 
 const Contact = () => {
-  const handleSubmit = (contactFormData: ContactFormProps) => {
-    contactController.submitContactForm(contactFormData);
+  const handleSubmit = (data: ContactFormProps) => {
+    contactController.submitContactForm(data);
   };
 
   return (

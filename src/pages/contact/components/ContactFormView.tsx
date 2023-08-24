@@ -1,90 +1,99 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ContactFormProps } from "../domainObjects/ContactForm";
 
-const ContactFormView: React.FC<{
-  onSubmit: (props: ContactFormProps) => void;
-}> = ({ onSubmit }) => {
-  const [formState, setFormState] = useState<ContactFormProps>({
-    email: "",
+export interface ContactFormElements extends HTMLFormControlsCollection {
+  name: HTMLInputElement;
+  email: HTMLInputElement;
+  message: HTMLTextAreaElement;
+}
+
+interface ContactFormElement extends HTMLFormElement {
+  readonly elements: ContactFormElements;
+}
+
+interface ContactFormViewProps {
+  onSubmit: (data: ContactFormProps) => void;
+}
+
+const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
+  const [formData, setFormData] = useState<ContactFormProps>({
     name: "",
+    email: "",
     message: "",
-    title: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function onFormStateChanged(newState: string, field: string) {
-    setFormState({
-      ...formState,
-      [field]: newState,
-    });
-  }
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    onSubmit(formState);
-  }
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event: React.FormEvent<ContactFormElement>) => {
+    event.preventDefault();
+
+    onSubmit(formData);
+
+    setIsSubmitted(true);
+  };
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit}>
-      <div className="relative z-0 w-full mt-[40px] mb-8 group">
+    <form onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+          Name
+        </label>
         <input
           type="text"
+          id="name"
           name="name"
-          className="block autofill:bg-transparent py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-[#333333] dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#FF6464] peer"
-          placeholder=" "
+          value={formData.name}
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
-          onChange={(e) => onFormStateChanged(e.target.value, "name")}
         />
-        <label
-          htmlFor="name"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FF6464] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
-        >
-          Nom *
-        </label>
       </div>
-
-      <div className="relative z-0 w-full mb-8 group">
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+          Email
+        </label>
         <input
           type="email"
-          name="user_email"
-          className="block autofill:text-red-900 needed py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-[#333333] dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#5185D4] peer"
-          placeholder=" "
-          id="user_email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
-          onChange={(e) => onFormStateChanged(e.target.value, "email")}
         />
-        <label
-          htmlFor="user_email"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#5185D4] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
-        >
-          Email *
-        </label>
       </div>
-
-      <div className="relative z-0 w-full mb-8 group">
-        <input
-          type="text"
-          name="message"
-          className="block autofill:bg-yellow-200 py-2.5 px-0 w-full text-sm text-gray-lite bg-transparent border-0 border-b-[2px] border-[#B5B5B5] appearance-none dark:text-white dark:border-[#333333] dark:focus:border-[#FF6464] focus:outline-none focus:ring-0 focus:border-[#CA56F2] peer"
-          placeholder=" "
+      <div className="mb-4">
+        <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+          Message
+        </label>
+        <textarea
           id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
-          onChange={(e) => onFormStateChanged(e.target.value, "message")}
         />
-        <label
-          htmlFor="message"
-          className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-color-910 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#CA56F2] peer-focus:dark:text-[#FF6464] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
-        >
-          Message *
-        </label>
       </div>
-
-      <div className="transition-all duration-300  ease-in-out inline-block hover:bg-gradient-to-r from-sky-400 to-blue-600 rounded-lg  mt-3">
-        <input
+      {!isSubmitted && (
+        <button
           type="submit"
-          className=" transition ease-in duration-200 font-semibold cursor-pointer border-color-910   hover:border-transparent px-6  py-2 rounded-lg border-[2px]  hover:text-white   dark:text-white "
-          value="Submit"
-        />
-      </div>
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Send
+        </button>
+      )}
+      {isSubmitted && <p className="text-green-500 font-bold">Message sent!</p>}
     </form>
   );
 };

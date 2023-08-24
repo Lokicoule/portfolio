@@ -1,21 +1,21 @@
 import { toast, ToastContainer } from "react-toastify";
+import { Notification } from "./Notification";
+
+//TODO
+// Test when toast is killed what happens when we try to update it
 
 export class NotificationService {
-  public showSuccess(message: string, id?: string) {
-    toast.success(message, {
-      toastId: id ? id : "success-toast",
+  public showToast(notification: Notification) {
+    toast(notification.getMessage(), {
+      toastId: notification.getId().getValue(),
+      type: notification.getType(),
     });
   }
 
-  public showError(message: string, id?: string) {
-    toast.error(message, {
-      toastId: id ? id : "error-toast",
-    });
-  }
-
-  public showInfo(message: string, id?: string) {
-    toast.info(message, {
-      toastId: id ? id : "info-toast",
+  public updateToast(notification: Notification) {
+    toast.update(notification.getId().getValue(), {
+      render: notification.getMessage(),
+      type: notification.getType(),
     });
   }
 
@@ -23,7 +23,7 @@ export class NotificationService {
     return (
       <>
         <ToastContainer
-          position="bottom-right"
+          position="top-right"
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
