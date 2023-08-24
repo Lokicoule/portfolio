@@ -24,16 +24,19 @@ export class ContactController {
     this.isPending = true;
 
     try {
-      await this.mailingService.sendEmail(data);
-      this.notifications.updateToast(
-        notification.withMessageAndType("Message sent!", "success")
+      await this.mailingService.sendEmail(
+        data,
+        () =>
+          this.notifications.updateToast(
+            notification.withMessageAndType("Message sent!", "success")
+          ),
+        (error: Error) => {
+          this.loggingService.logError(error);
+          this.notifications.updateToast(
+            notification.withMessageAndType("Message failed to send!", "error")
+          );
+        }
       );
-    } catch (error) {
-      this.loggingService.logError(error as Error);
-      this.notifications.updateToast(
-        notification.withMessageAndType("Message failed to send!", "error")
-      );
-      throw error;
     } finally {
       this.isPending = false;
     }

@@ -2,7 +2,11 @@ import { send } from "@emailjs/browser";
 import { ContactFormProps } from "../../pages/contact/domainObjects/ContactForm";
 
 export class MailingService {
-  public async sendEmail(contactForm: ContactFormProps): Promise<void> {
+  public async sendEmail(
+    contactForm: ContactFormProps,
+    onSuccess: () => void,
+    onFailure: (error: Error) => void
+  ): Promise<void> {
     const emailParams = {
       to_name: "Loïk",
       from_email: contactForm.email,
@@ -15,6 +19,12 @@ export class MailingService {
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       emailParams,
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    );
+    )
+      .then(() => {
+        onSuccess();
+      })
+      .catch((error) => {
+        onFailure(error);
+      });
   }
 }
