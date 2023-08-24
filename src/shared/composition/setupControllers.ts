@@ -1,4 +1,5 @@
 import { ContactController } from "../../pages/contact/ContactController";
+import { ThemeController } from "../components/theme/ThemeController";
 import {
   loggingService,
   mailingService,
@@ -10,5 +11,6 @@ const contactController = new ContactController(
   mailingService,
   loggingService
 );
+const themeController = new ThemeController();
 
-export { contactController };
+export { contactController, themeController };

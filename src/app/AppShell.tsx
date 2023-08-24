@@ -1,18 +1,16 @@
 import "react-toastify/dist/ReactToastify.css";
 
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "../shared/components/theme/Theme";
-import { routingService } from "../shared/composition";
+import { routingService, themeController } from "../shared/composition";
 import routes from "./routing";
-import { ThemeContainer } from "../shared/components/theme/ThemeContainer";
 
 const AppShell = () => {
+  const ThemeProvider = themeController.createProvider();
+
   return (
-    <ThemeProvider>
-      <ThemeContainer>
-        <HelmetProvider>{routingService.createRoutes(routes)}</HelmetProvider>
-      </ThemeContainer>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>{routingService.createRoutes(routes)}</ThemeProvider>
+    </HelmetProvider>
   );
 };
 

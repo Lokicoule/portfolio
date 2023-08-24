@@ -1,11 +1,12 @@
 import { FiMoon, FiSun } from "react-icons/fi";
-import { useTheme } from "./Theme";
+import { themeController } from "../../composition";
 
 const ThemeMode = () => {
-  const { themeMode, setThemeMode } = useTheme();
+  const useTheme = themeController.useTheme();
+  const { themeMode, toggleThemeMode } = useTheme();
 
   const handleToggleTheme = () => {
-    setThemeMode(themeMode === "light" ? "dark" : "light");
+    toggleThemeMode();
   };
 
   return (
