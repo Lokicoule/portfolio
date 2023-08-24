@@ -1,5 +1,5 @@
 import MobileMenu from "../menu/MobileMenu";
-import ThemeMode from "../theme-mode/ThemeMode";
+import ThemeMode from "../theme/ThemeMode";
 
 const Header = () => {
   return (
