@@ -34,9 +34,7 @@ export class ThemeController {
 
       return (
         <this.ThemeContext.Provider value={value}>
-          <div className={value.themeMode === "light" ? "" : "dark"}>
-            {children}
-          </div>
+          {children}
         </this.ThemeContext.Provider>
       );
     };
