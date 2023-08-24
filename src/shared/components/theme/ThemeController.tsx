@@ -20,7 +20,7 @@ export class ThemeController {
     });
   }
 
-  createProvider(): React.FC<React.PropsWithChildren> {
+  public createProvider(): React.FC<React.PropsWithChildren> {
     const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
       const [themeMode, setThemeMode] = useState<ThemeMode>(this.themeMode);
 
@@ -44,7 +44,7 @@ export class ThemeController {
     return ThemeProvider;
   }
 
-  useTheme() {
+  public getThemeHook() {
     const useTheme = () => {
       const { themeMode, setThemeMode } = useContext(this.ThemeContext);
 
