@@ -5,7 +5,7 @@ import { NotificationService } from "../../shared/notifications/notificationsSer
 import { ContactFormProps } from "./domainObjects/ContactForm";
 
 export class ContactController {
-  private _isLoading = false;
+  private isPending = false;
 
   constructor(
     private notifications: NotificationService,
@@ -14,14 +14,14 @@ export class ContactController {
   ) {}
 
   public async submitContactForm(data: ContactFormProps): Promise<void> {
-    if (this._isLoading) {
+    if (this.isPending) {
       return;
     }
 
     const notification = Notification.createInfo("Sending message...");
 
     this.notifications.showToast(notification);
-    this._isLoading = true;
+    this.isPending = true;
 
     try {
       await this.mailingService.sendEmail(data);
@@ -35,7 +35,7 @@ export class ContactController {
       );
       throw error;
     } finally {
-      this._isLoading = false;
+      this.isPending = false;
     }
   }
 }
