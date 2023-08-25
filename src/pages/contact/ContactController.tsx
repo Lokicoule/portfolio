@@ -1,6 +1,6 @@
 import { LoggingService } from "../../shared/logging/loggingService";
 import { MailingService } from "../../shared/mailing/mailingService";
-import { Notification } from "../../shared/notifications/Notification";
+import { Notification } from "../../shared/notifications/domainObjects/Notification";
 import { NotificationService } from "../../shared/notifications/notificationsService";
 import { ContactFormProps } from "./domainObjects/ContactForm";
 

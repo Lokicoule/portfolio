@@ -1,5 +1,5 @@
 import { toast, ToastContainer } from "react-toastify";
-import { Notification } from "./Notification";
+import { Notification } from "./domainObjects/Notification";
 
 export class NotificationService {
   public showToast(notification: Notification) {
