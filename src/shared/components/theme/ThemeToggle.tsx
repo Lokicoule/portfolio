@@ -1,7 +1,7 @@
 import { FiMoon, FiSun } from "react-icons/fi";
 import { themeController } from "../../composition";
 
-const ThemeMode = () => {
+const ThemeToggle = () => {
   const useTheme = themeController.getThemeHook();
   const { themeMode, toggleThemeMode } = useTheme();
 
@@ -23,4 +23,4 @@ const ThemeMode = () => {
   );
 };
 
-export default ThemeMode;
+export default ThemeToggle;

@@ -1,5 +1,5 @@
 import MobileMenu from "../menu/MobileMenu";
-import ThemeMode from "../theme/ThemeMode";
+import ThemeToggle from "../theme/ThemeToggle";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
           </h1>
         </a>
         <div className="flex items-center">
-          <ThemeMode />
+          <ThemeToggle />
           <MobileMenu />
         </div>
       </div>
