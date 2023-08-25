@@ -1,9 +1,6 @@
 import { toast, ToastContainer } from "react-toastify";
 import { Notification } from "./Notification";
 
-//TODO
-// Test when toast is killed what happens when we try to update it
-
 export class NotificationService {
   public showToast(notification: Notification) {
     toast(notification.getMessage(), {
