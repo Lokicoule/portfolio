@@ -3,17 +3,29 @@ import { contactController } from "../../shared/composition";
 import { NotificationService } from "../../shared/notifications/notificationsService";
 import ContactFormView from "./components/ContactFormView";
 import { ContactFormProps } from "./domainObjects/ContactForm";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const handleSubmit = async (data: ContactFormProps) => {
     await contactController.submitContactForm(data);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.75 } },
+  };
+
   return (
     <>
       <PageTitle title="Contact" />
       {NotificationService.makeNotifiable(
-        <div className="pt-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          className="pt-12"
+        >
           <h2 className="page-title mt-12  lg:mt-0 mb-12 md:mb-[30px]">
             Contact
           </h2>
@@ -29,7 +41,7 @@ const Contact = () => {
             </h3>
             <ContactFormView onSubmit={handleSubmit} />
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
