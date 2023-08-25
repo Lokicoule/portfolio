@@ -1,4 +1,4 @@
-import PageLayout from "../../shared/components/layout/PageLayout";
+import PageLayout from "../../shared/components/layouts/PageLayout";
 
 const Resume = () => {
   return <PageLayout title="Resume"></PageLayout>;

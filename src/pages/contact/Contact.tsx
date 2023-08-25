@@ -1,4 +1,4 @@
-import PageLayout from "../../shared/components/layout/PageLayout";
+import PageLayout from "../../shared/components/layouts/PageLayout";
 import { contactController } from "../../shared/composition";
 import { NotificationService } from "../../shared/notifications/notificationsService";
 import ContactFormView from "./components/ContactFormView";

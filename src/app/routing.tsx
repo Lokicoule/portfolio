@@ -3,8 +3,8 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/Resume";
-import GridLayout from "../shared/components/layout/GridLayout";
-import FlexLayout from "../shared/components/layout/FlexLayout";
+import GridLayout from "../shared/components/layouts/GridLayout";
+import FlexLayout from "../shared/components/layouts/FlexLayout";
 import { RouteConfig } from "../shared/routing/routingService";
 
 const routes: RouteConfig[] = [
