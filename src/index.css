@@ -4,7 +4,7 @@
 
 @layer components {
   .page-title::after {
-    @apply absolute transform -translate-y-1/2 bg-gradient-to-r from-sky-400 to-blue-500 h-0.5 rounded-md content-[""] md:w-48 top-1/2 left-60;
+    @apply absolute transform -translate-y-1/2 bg-gradient-to-r from-sky-400 to-blue-500 h-0.5 rounded-md content-[""] md:w-48 top-1/2 left-[110%];
   }
   .page-title {
     @apply text-5xl font-bold inline-block relative dark:text-white;
