@@ -19,6 +19,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, title }) => {
         exit="hidden"
         className="pt-12"
       >
+        <h2 className="page-title mt-12  lg:mt-0 mb-12 md:mb-[30px]">
+          {title}
+        </h2>
         {children}
       </motion.div>
     </>

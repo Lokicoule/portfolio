@@ -1,14 +1,7 @@
-import PageTitle from "../../shared/components/page-title/PageTitle";
+import PageLayout from "../../shared/components/layout/PageLayout";
 
 const Resume = () => {
-  return (
-    <>
-      <PageTitle title="Resume" />
-      <section>
-        <h1>Resume</h1>
-      </section>
-    </>
-  );
+  return <PageLayout title="Resume"></PageLayout>;
 };
 
 export default Resume;
