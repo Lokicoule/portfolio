@@ -12,18 +12,17 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, title }) => {
   return (
     <>
       <PageTitle title={title} />
-      <motion.div
+      <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         exit="hidden"
-        className="pt-12"
       >
-        <h2 className="page-title mt-12  lg:mt-0 mb-12 md:mb-[30px]">
+        <h2 className="pt-12 px-2 sm:px-5 md:px-10 lg:px-14 page-title mt-12 lg:mt-0 mb-12 md:mb-[30px]">
           {title}
         </h2>
         {children}
-      </motion.div>
+      </motion.section>
     </>
   );
 };

@@ -1,0 +1,77 @@
+import { ExperienceProps } from "../../pages/resume/domainObjects/Experience";
+
+export const experienceData: ExperienceProps[] = [
+  {
+    id: "1",
+    company: "Atos",
+    client: "Ministère de l'écologie, du développement durable et de l'énergie",
+    name: "Système d'information de la gestion des déchets",
+    duration: "2014 - 2015",
+    place: "Aix-en-Provence / Marseille",
+    roleAndResponsibilities: "Développeur",
+    technologiesUsed: {
+      languages: ["Java", "SQL", "Javascript", "HTML", "CSS"],
+      frameworks: ["Spring", "Hibernate"],
+      libraries: ["JQuery", "Bootstrap"],
+      tools: ["Jenkins", "Maven", "Git", "Jira", "Docker", "SonarQube"],
+    },
+    achievementsAndContributions: [
+      "Développement de nouvelles fonctionnalités",
+      "Correction de bugs",
+    ],
+    challengesAndSolutions: [
+      "Mise en place d'un environnement de développement",
+      "Mise en place d'un environnement de test",
+      "Mise en place d'un environnement de recette",
+      "Mise en place d'un environnement de production",
+      "Mise en place d'un environnement de pré-production",
+    ],
+    collaborationAndTeamwork: ["Travail en équipe", "Travail en mode Kanban"],
+    impactAndLessonsLearned: [
+      "Amélioration de la qualité du code",
+      "Amélioration de la qualité des tests",
+      "Amélioration de la qualité des livrables",
+      "Amélioration de la qualité des documents",
+      "Amélioration de la qualité des processus",
+      "Amélioration de la qualité des procédures",
+      "Amélioration de la qualité des outils",
+      "Amélioration de la qualité des environnements",
+      "Amélioration de la qualité des données",
+      "Amélioration de la qualité des performances",
+      "Amélioration de la qualité de la sécurité",
+      "Amélioration de la qualité de l'accessibilité",
+    ],
+  },
+  {
+    id: "2",
+    company: "Atos",
+    client: "Ministère de l'écologie, du développement durable et de l'énergie",
+    name: "TIPI / Bison Futé",
+    duration: "2013 - 2014",
+    place: "Bordeaux Pessac",
+    roleAndResponsibilities: "Développeur",
+    technologiesUsed: {
+      languages: ["Java", "SQL", "Javascript", "HTML", "CSS"],
+      frameworks: ["Spring", "Hibernate"],
+      libraries: ["JQuery", "Bootstrap"],
+      tools: ["Jenkins", "Maven", "Git", "Jira", "Docker", "SonarQube"],
+    },
+    achievementsAndContributions: [
+      "Développement de nouvelles fonctionnalités",
+      "Correction de bugs",
+      "Rédaction de tests unitaires",
+      "Rédaction de tests d'intégration",
+    ],
+    challengesAndSolutions: [
+      "Mise en place d'un environnement de développement",
+      "Mise en place d'un environnement de test",
+    ],
+    collaborationAndTeamwork: ["Travail en équipe", "Travail en mode Agile"],
+    impactAndLessonsLearned: [
+      "Amélioration de la qualité du code",
+      "Amélioration de la qualité des tests",
+      "Amélioration de la qualité des livrables",
+      "Amélioration de la qualité des documents",
+    ],
+  },
+];

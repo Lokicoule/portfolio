@@ -50,10 +50,8 @@ const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="lg:rounded-2xl bg-white dark:bg-[#111111]"
             >
-              <section className="pb-12 px-2 sm:px-5 md:px-10 lg:px-14 ">
-                {children}
-                <Footer />
-              </section>
+              {children}
+              <Footer />
             </motion.div>
           </AnimatePresence>
         </div>
