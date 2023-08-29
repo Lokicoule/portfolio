@@ -1,12 +1,15 @@
 interface Stack {
-  languages: string[];
-  frameworks: string[];
-  libraries: string[];
-  tools: string[];
+  languages?: string[];
+  frameworks?: string[];
+  libraries?: string[];
+  tools?: string[];
+  architectures?: string[];
+  databases?: string[];
 }
 
 export interface ExperienceProps {
   id: string;
+  description: string;
   name: string;
   company: string;
   client: string;

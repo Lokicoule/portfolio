@@ -8,9 +8,15 @@ type ModalProps = {
   children: (props: { onClose: () => void }) => React.ReactNode;
 };
 
+type ModalChildrenComponent = React.FC<
+  PropsWithChildren<{
+    className?: string;
+  }>
+>;
+
 type ModalComponent = React.FC<ModalProps> & {
-  Title: React.FC<PropsWithChildren>;
-  Content: React.FC<PropsWithChildren>;
+  Title: ModalChildrenComponent;
+  Content: ModalChildrenComponent;
 };
 
 const Modal: ModalComponent = ({ triggerButton, children }) => {
@@ -58,16 +64,12 @@ const Modal: ModalComponent = ({ triggerButton, children }) => {
   );
 };
 
-const Title: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <div className=" sticky top-0 py-1  bg-white dark:bg-[#323232]">
-      {children}
-    </div>
-  );
+const Title: ModalChildrenComponent = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
 };
 
-const Content: React.FC<PropsWithChildren> = ({ children }) => {
-  return <div className="p-4 md:p-8">{children}</div>;
+const Content: ModalChildrenComponent = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
 };
 
 Modal.Title = Title;

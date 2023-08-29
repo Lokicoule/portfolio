@@ -1,9 +1,24 @@
+import { Disclosure } from "@headlessui/react";
 import { FaEye } from "react-icons/fa";
-import { FiCode, FiExternalLink, FiFilePlus, FiUser } from "react-icons/fi";
+import {
+  FiAlertCircle,
+  FiAward,
+  FiBriefcase,
+  FiChevronUp,
+  FiClock,
+  FiExternalLink,
+  FiFilePlus,
+  FiMapPin,
+  FiThumbsUp,
+  FiUser,
+  FiUsers,
+} from "react-icons/fi";
+import { GoStack } from "react-icons/go";
 import { MdOutlineSchool } from "react-icons/md";
 import Modal from "../../../shared/components/modal/Modal";
 import { themeController } from "../../../shared/composition";
 import { Experience } from "../domainObjects/Experience";
+import { FiCode, FiServer, FiPackage, FiTool, FiLayout } from "react-icons/fi";
 
 type ExperienceSectionProps = {
   items: Experience[];
@@ -27,46 +42,51 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
         <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
           {singleData.attributes.name} Project
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 my-6">
-          <div className="space-y-2 ">
-            <div className="space-y-2 flex flex-wrap">
-              <p className="dark:text-white flex items-center text-[15px] sm:text-lg">
-                <FiFilePlus className="sm:text-lg hidden sm:block mr-2 md:text-xl" />
-                Project :&nbsp;
-                <span className="font-medium ">
-                  {singleData?.attributes.name}
-                </span>
-              </p>
-            </div>
+        <div className="flex flex-col flex-wrap lg:flex-row my-6">
+          <div className="details-left space-y-2 lg:mr-6">
             <p className="dark:text-white flex items-center text-[15px] sm:text-lg">
-              <FiCode className="text-lg mr-2 hidden sm:block " />
-              Languages :&nbsp;
+              <FiFilePlus className="sm:text-lg hidden sm:block mr-2 md:text-xl" />
+              Project :&nbsp;
               <span className="font-medium ">
-                {singleData?.attributes.technologiesUsed.languages.join(", ")}
+                {singleData.attributes.description}
               </span>
             </p>
           </div>
 
-          <div className="space-y-2">
+          <div className="details-right space-y-2">
             <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
               <FiUser className="text-lg mr-2 hidden sm:block" />
               Client :&nbsp;
               <span className="font-medium ">
-                {singleData?.attributes.client}
+                {singleData.attributes.client}
               </span>
             </p>
-
-            <p className="dark:text-white flex items-center text-[15px] sm:text-lg">
-              <FiExternalLink className="text-lg mr-2 hidden sm:block" />
-              Preview :&nbsp;
-              <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
-                <a
-                  href={singleData.attributes?.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {singleData.attributes?.linkText}
-                </a>
+            <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+              <FiClock className="text-lg mr-2 hidden sm:block" />
+              Duration :&nbsp;
+              <span className="font-medium ">
+                {singleData.attributes.duration}
+              </span>
+            </p>
+            <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+              <FiMapPin className="text-lg mr-2 hidden sm:block" />
+              Place :&nbsp;
+              <span className="font-medium ">
+                {singleData.attributes.place}
+              </span>
+            </p>
+            <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+              <FiBriefcase className="text-lg mr-2 hidden sm:block" />
+              Company :&nbsp;
+              <span className="font-medium ">
+                {singleData.attributes.company}
+              </span>
+            </p>
+            <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+              <FiBriefcase className="text-lg mr-2 hidden sm:block" />
+              Role and Responsibilities :&nbsp;
+              <span className="font-medium ">
+                {singleData.attributes.roleAndResponsibilities}
               </span>
             </p>
           </div>
@@ -74,14 +94,159 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
       </Modal.Title>
 
       <Modal.Content>
+        <Disclosure as="div" className="mt-2" defaultOpen>
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                <div className="flex items-center">
+                  <GoStack className="text-lg mr-2 inline-block" />
+                  Stack
+                </div>
+                <FiChevronUp
+                  className={`${
+                    open ? "rotate-180 transform" : ""
+                  } h-5 w-5 text-blue-500`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="text-gray-500">
+                <div className="flex flex-col flex-wrap lg:flex-row my-6">
+                  <ul className="list-none list-inside space-y-2 lg:mr-6">
+                    {singleData.attributes.technologiesUsed.languages && (
+                      <li>
+                        <span>
+                          <FiCode className="inline-block mr-2" />
+                          Languages:&nbsp;
+                        </span>
+                        <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                          {singleData.attributes.technologiesUsed?.languages.map(
+                            (item, i) => (
+                              <span key={i} className="tag">
+                                {item}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </li>
+                    )}
+                    {singleData.attributes.technologiesUsed.frameworks && (
+                      <li>
+                        <span>
+                          <FiLayout className="inline-block mr-2" />
+                          Frameworks:&nbsp;
+                        </span>
+                        <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                          {singleData.attributes.technologiesUsed?.frameworks.map(
+                            (item, i) => (
+                              <span key={i} className="tag">
+                                {item}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </li>
+                    )}
+                    {singleData.attributes.technologiesUsed.libraries && (
+                      <li>
+                        <span>
+                          <FiPackage className="inline-block mr-2" />
+                          Libraries:&nbsp;
+                        </span>
+                        <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                          {singleData.attributes.technologiesUsed?.libraries.map(
+                            (item, i) => (
+                              <span key={i} className="tag">
+                                {item}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </li>
+                    )}
+                    {singleData.attributes.technologiesUsed.tools && (
+                      <li>
+                        <span>
+                          <FiTool className="inline-block mr-2" />
+                          Tools:&nbsp;
+                        </span>
+                        <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                          {singleData.attributes.technologiesUsed?.tools.map(
+                            (item, i) => (
+                              <span key={i} className="tag">
+                                {item}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </li>
+                    )}
+                    {singleData.attributes.technologiesUsed.architectures && (
+                      <li>
+                        <span>
+                          <FiServer className="inline-block mr-2" />
+                          Architectures:&nbsp;
+                        </span>
+                        <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                          {singleData.attributes.technologiesUsed?.architectures.map(
+                            (item, i) => (
+                              <span key={i} className="tag">
+                                {item}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </Disclosure.Panel>
+            </>
+          )}
+        </Disclosure>
+
         <p className="dark:text-white text-2line font-normal text-[15px] sm:text-sm">
-          {Array.from(Array(100).keys()).map((item, i) => (
-            <span key={i}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Quisquam, voluptatum.
+          <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+            <FiAward className="text-lg mr-2 hidden sm:block" />
+            Achievements and Contributions :&nbsp;
+            <span className="font-medium ">
+              {singleData.attributes.achievementsAndContributions.join(", ")}
             </span>
-          ))}
+          </p>
+          <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+            <FiAlertCircle className="text-lg mr-2 hidden sm:block" />
+            Challenges and Solutions :&nbsp;
+            <span className="font-medium ">
+              {singleData.attributes.challengesAndSolutions.join(", ")}
+            </span>
+          </p>
+          <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+            <FiUsers className="text-lg mr-2 hidden sm:block" />
+            Collaboration and Teamwork :&nbsp;
+            <span className="font-medium ">
+              {singleData.attributes.collaborationAndTeamwork.join(", ")}
+            </span>
+          </p>
+          <p className="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
+            <FiThumbsUp className="text-lg mr-2 hidden sm:block" />
+            Impact and Lessons Learned :&nbsp;
+            <span className="font-medium ">
+              {singleData.attributes.impactAndLessonsLearned.join(", ")}
+            </span>
+          </p>
+          {singleData.attributes.link && (
+            <p className="dark:text-white flex items-center text-[15px] sm:text-lg">
+              <FiExternalLink className="text-lg mr-2 hidden sm:block" />
+              Preview :&nbsp;
+              <span className="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060] ">
+                <a
+                  href={singleData.attributes.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {singleData.attributes.linkText}
+                </a>
+              </span>
+            </p>
+          )}
         </p>
       </Modal.Content>
     </>

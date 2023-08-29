@@ -5,7 +5,8 @@ export const experienceData: ExperienceProps[] = [
     id: "1",
     company: "Atos",
     client: "Ministère de l'écologie, du développement durable et de l'énergie",
-    name: "Système d'information de la gestion des déchets",
+    name: "Gistrid",
+    description: "Système d'information de la gestion des déchets",
     duration: "2014 - 2015",
     place: "Aix-en-Provence / Marseille",
     roleAndResponsibilities: "Développeur",
@@ -14,6 +15,7 @@ export const experienceData: ExperienceProps[] = [
       frameworks: ["Spring", "Hibernate"],
       libraries: ["JQuery", "Bootstrap"],
       tools: ["Jenkins", "Maven", "Git", "Jira", "Docker", "SonarQube"],
+      architectures: ["SOA"],
     },
     achievementsAndContributions: [
       "Développement de nouvelles fonctionnalités",
@@ -47,6 +49,7 @@ export const experienceData: ExperienceProps[] = [
     company: "Atos",
     client: "Ministère de l'écologie, du développement durable et de l'énergie",
     name: "TIPI / Bison Futé",
+    description: "Système d'information de la gestion routière",
     duration: "2013 - 2014",
     place: "Bordeaux Pessac",
     roleAndResponsibilities: "Développeur",
@@ -55,6 +58,7 @@ export const experienceData: ExperienceProps[] = [
       frameworks: ["Spring", "Hibernate"],
       libraries: ["JQuery", "Bootstrap"],
       tools: ["Jenkins", "Maven", "Git", "Jira", "Docker", "SonarQube"],
+      architectures: ["Microservices"],
     },
     achievementsAndContributions: [
       "Développement de nouvelles fonctionnalités",
