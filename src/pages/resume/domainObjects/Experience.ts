@@ -7,12 +7,18 @@ interface Stack {
   databases?: string[];
 }
 
+interface Client {
+  abbreviation: string;
+  name: string;
+}
+
 export interface ExperienceProps {
   id: string;
-  description: string;
   name: string;
+  tag: string;
+  description: string;
   company: string;
-  client: string;
+  client: Client;
   duration: string;
   place: string;
   roleAndResponsibilities: string;

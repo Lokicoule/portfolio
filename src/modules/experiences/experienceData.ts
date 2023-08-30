@@ -4,8 +4,12 @@ export const experienceData: ExperienceProps[] = [
   {
     id: "1",
     company: "Atos",
-    client: "Ministère de l'écologie, du développement durable et de l'énergie",
+    client: {
+      abbreviation: "CETE",
+      name: "Centre d'Etudes Techniques de l'Equipement",
+    },
     name: "Gistrid",
+    tag: "Gestion des déchets",
     description: "Système d'information de la gestion des déchets",
     duration: "2014 - 2015",
     place: "Aix-en-Provence / Marseille",
@@ -47,9 +51,15 @@ export const experienceData: ExperienceProps[] = [
   {
     id: "2",
     company: "Atos",
-    client: "Ministère de l'écologie, du développement durable et de l'énergie",
+    tag: "Système d'information de la gestion routière",
+    client: {
+      abbreviation: "DIR",
+      name: "Direction Interdépartementale des Routes",
+    },
     name: "TIPI / Bison Futé",
-    description: "Système d'information de la gestion routière",
+    description:
+      "Aggrégation des données de trafic routier en temps réel et prévisionnel.\n" +
+      "Diffusion des données de trafic routier en temps réel et prévisionnel.\n",
     duration: "2013 - 2014",
     place: "Bordeaux Pessac",
     roleAndResponsibilities: "Développeur",

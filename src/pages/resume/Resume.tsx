@@ -2,7 +2,7 @@ import PageLayout from "../../shared/components/layouts/PageLayout";
 import Line from "../../shared/components/line/Line";
 import { experienceRepository } from "../../shared/composition/setupRepositories";
 import EducationSection from "./components/Education";
-import ExperienceSection from "./components/ExperienceSection";
+import ExperienceSection from "./components/experience/ExperienceSection";
 
 const educationArray = [
   {

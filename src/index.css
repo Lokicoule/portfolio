@@ -56,4 +56,12 @@
   .mobile-link-menu:hover {
     @apply text-gray-800 bg-sky-300 dark:bg-[#212425] hover:text-gray-800;
   }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-text {
+    @apply group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto;
+  }
 }
