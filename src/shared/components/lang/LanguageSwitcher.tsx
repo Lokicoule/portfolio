@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { translatingService } from "../../composition";
-import { RiEnglishInput } from "react-icons/ri";
 
 const LanguageSwitcher = () => {
   const navigate = useNavigate();

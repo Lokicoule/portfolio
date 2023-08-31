@@ -46,17 +46,21 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
   const location = useLocation();
 
+  const langPrefix = location.pathname.split("/")[1];
+  const langPath =
+    langPrefix === "en" || langPrefix === "fr" ? `/${langPrefix}` : "";
+
   return (
     <>
       {MENU_ITEMS.map((item) => (
         <Link
           key={item.id}
           className={`${
-            location.pathname === item.routePath
+            location.pathname === `${langPath}${item.routePath}`
               ? activeClassName
               : defaultClassName
           } `}
-          to={item.routePath}
+          to={`${langPath}${item.routePath}`}
           onClick={onClick}
         >
           <span className={iconClassName}>{item.icon}</span>
