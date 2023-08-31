@@ -34,9 +34,9 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           title={translatingService.translate("description")}
           defaultOpen
         >
-          <p className="dark:text-white text-sm">
+          <span className="dark:text-white text-sm">
             {experience.attributes.description}
-          </p>
+          </span>
         </CollapsibleSection>
 
         <CollapsibleSection

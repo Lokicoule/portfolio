@@ -38,10 +38,12 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
             {item.attributes.duration}
           </span>
           <h3 className="text-xl dark:text-white">{item.attributes.name}</h3>
-          <p className="dark:text-[#b7b7b7] ">{item.attributes.client.name}</p>
+          <span className="dark:text-[#b7b7b7] ">
+            {item.attributes.client.name}
+          </span>
 
           <div className=" flex justify-between items-center">
-            <p className="dark:text-[#b7b7b7]">{item.attributes.place}</p>
+            <span className="dark:text-[#b7b7b7]">{item.attributes.place}</span>
             <ExperienceModal experience={item} />
           </div>
         </div>

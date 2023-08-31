@@ -62,12 +62,18 @@ const Modal: ModalComponent = ({ triggerButton, children }) => {
 };
 
 const Title: ModalChildrenComponent = ({ children, className }) => {
-  return <Dialog.Title className={className}>{children}</Dialog.Title>;
+  return (
+    <Dialog.Title as="div" className={className}>
+      {children}
+    </Dialog.Title>
+  );
 };
 
 const Content: ModalChildrenComponent = ({ children, className }) => {
   return (
-    <Dialog.Description className={className}>{children}</Dialog.Description>
+    <Dialog.Description as="div" className={className}>
+      {children}
+    </Dialog.Description>
   );
 };
 
