@@ -8,7 +8,7 @@ interface Stack {
 }
 
 interface Client {
-  abbreviation: string;
+  abbreviation?: string;
   name: string;
 }
 

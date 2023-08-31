@@ -16,8 +16,8 @@ const colors: string[] = [
 ];
 
 const ExperienceSection: ExperienceComponent = ({ items }) => {
-  const useTheme = themeController.getThemeHook();
-  const { themeMode } = useTheme();
+  const useTheme = themeController.getModeHook();
+  const { mode } = useTheme();
 
   return (
     <div>
@@ -31,20 +31,14 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
         <div
           key={item.attributes.id}
           className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2 transition-all duration-300 ease-in-out ${
-            themeMode === "dark" ? "transparent" : `${colors[idx]}`
+            mode === "dark" ? "transparent" : `${colors[idx]}`
           }`}
         >
           <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
             {item.attributes.duration}
           </span>
-          <h3 className="text-xl dark:text-white">
-            {item.attributes.name}&nbsp;
-            {item?.attributes.client && (
-              <span className="dark:text-[#b7b7b7] text-sm font-normal">
-                at {item.attributes.company}
-              </span>
-            )}
-          </h3>
+          <h3 className="text-xl dark:text-white">{item.attributes.name}</h3>
+          <p className="dark:text-[#b7b7b7] ">{item.attributes.client.name}</p>
 
           <div className=" flex justify-between items-center">
             <p className="dark:text-[#b7b7b7]">{item.attributes.place}</p>

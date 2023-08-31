@@ -8,8 +8,8 @@ type LineProps = {
 };
 
 const Line: React.FC<LineProps> = ({ name, value, color }) => {
-  const useTheme = themeController.getThemeHook();
-  const { themeMode } = useTheme();
+  const useTheme = themeController.getModeHook();
+  const { mode } = useTheme();
 
   return (
     <div className=" mb-7">
@@ -26,7 +26,7 @@ const Line: React.FC<LineProps> = ({ name, value, color }) => {
         percent={value}
         strokeWidth={1}
         trailWidth={1}
-        trailColor={`${themeMode === "dark" ? "#1C1C1C" : "#FFF"}`}
+        trailColor={`${mode === "dark" ? "#1C1C1C" : "#FFF"}`}
         strokeColor={color}
       />
     </div>

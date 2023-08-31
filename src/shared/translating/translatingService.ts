@@ -12,7 +12,7 @@ export class TranslatingService {
       i18next.changeLanguage(language);
   }
 
-  public getLanguage(): string {
+  public get language(): string {
     return i18next.language;
   }
 

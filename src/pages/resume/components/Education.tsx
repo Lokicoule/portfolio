@@ -23,8 +23,8 @@ const colors: string[] = [
 ];
 
 const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
-  const useTheme = themeController.getThemeHook();
-  const { themeMode } = useTheme();
+  const useTheme = themeController.getModeHook();
+  const { mode } = useTheme();
 
   return (
     <div>
@@ -38,7 +38,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
         <div
           key={item.id}
           className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2 transition-all duration-300 ease-in-out ${
-            themeMode === "dark" ? "transparent" : `${colors[idx]}`
+            mode === "dark" ? "transparent" : `${colors[idx]}`
           }`}
         >
           <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">

@@ -4,6 +4,7 @@ import {
   loggingService,
   mailingService,
   notificationsService,
+  translatingService,
 } from "./setupServices";
 
 const contactController = new ContactController(
@@ -11,6 +12,6 @@ const contactController = new ContactController(
   mailingService,
   loggingService
 );
-const themeController = new ThemeController();
+const themeController = new ThemeController(translatingService);
 
 export { contactController, themeController };

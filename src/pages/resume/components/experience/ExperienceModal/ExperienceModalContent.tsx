@@ -14,6 +14,8 @@ import { GoStack } from "react-icons/go";
 import CollapsibleSection from "../../../../../shared/components/collapsible-section/CollapsibleSection";
 import { Experience } from "../../../domainObjects/Experience";
 import Modal from "../../../../../shared/components/modal/Modal";
+import { SiMaterialdesignicons } from "react-icons/si";
+import { translatingService } from "../../../../../shared/composition";
 
 type ExperienceModalContentProps = {
   experience: Experience;
@@ -26,10 +28,10 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
 }) => {
   return (
     <Modal.Content>
-      <div className="my-6">
+      <div className="my-6 whitespace-pre-wrap">
         <CollapsibleSection
           icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
-          title="Description"
+          title={translatingService.translate("description")}
           defaultOpen
         >
           <p className="dark:text-white text-sm">
@@ -39,7 +41,8 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
 
         <CollapsibleSection
           icon={<GoStack className="text-lg mr-2 inline-block" />}
-          title="Stack"
+          title={translatingService.translate("technologiesUsed")}
+          defaultOpen
         >
           <div className="flex flex-col flex-wrap lg:flex-row">
             <ul className="list-none list-inside space-y-2 lg:mr-6">
@@ -94,6 +97,23 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
                   </div>
                 </li>
               )}
+              {experience.attributes.technologiesUsed.databases && (
+                <li>
+                  <span>
+                    <FiServer className="inline-block mr-2" />
+                    Databases:&nbsp;
+                  </span>
+                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                    {experience.attributes.technologiesUsed.databases.map(
+                      (item, i) => (
+                        <span key={i} className="tag">
+                          {item}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </li>
+              )}
               {experience.attributes.technologiesUsed.tools && (
                 <li>
                   <span>
@@ -114,7 +134,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
               {experience.attributes.technologiesUsed.architectures && (
                 <li>
                   <span>
-                    <FiServer className="inline-block mr-2" />
+                    <SiMaterialdesignicons className="inline-block mr-2" />
                     Architectures:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
@@ -132,98 +152,83 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection
-          icon={<FiAward className="text-lg mr-2 inline-block" />}
-          title="Achievements and Contributions"
-        >
-          <div className="flex flex-col flex-wrap lg:flex-row">
-            <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.attributes.achievementsAndContributions.length >
-                0 && (
-                <li>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.achievementsAndContributions.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-        </CollapsibleSection>
+        {experience.attributes.achievementsAndContributions.length > 0 && (
+          <CollapsibleSection
+            icon={<FiAward className="text-lg mr-2 inline-block" />}
+            title={translatingService.translate("achievementsAndContributions")}
+            defaultOpen
+          >
+            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                {experience.attributes.achievementsAndContributions.map(
+                  (item, i) => (
+                    <li key={i} className="font-medium text-sm">
+                      {item}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </CollapsibleSection>
+        )}
 
-        <CollapsibleSection
-          icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
-          title="Challenges and Solutions"
-        >
-          <div className="flex flex-col flex-wrap lg:flex-row">
-            <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.attributes.challengesAndSolutions.length > 0 && (
-                <li>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.challengesAndSolutions.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-        </CollapsibleSection>
+        {experience.attributes.challengesAndSolutions.length > 0 && (
+          <CollapsibleSection
+            icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
+            title={translatingService.translate("challengesAndSolutions")}
+            defaultOpen
+          >
+            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                {experience.attributes.challengesAndSolutions.map((item, i) => (
+                  <li key={i} className="font-medium text-sm">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CollapsibleSection>
+        )}
 
-        <CollapsibleSection
-          icon={<FiUsers className="text-lg mr-2 inline-block" />}
-          title="Collaboration and Teamwork"
-        >
-          <div className="flex flex-col flex-wrap lg:flex-row">
-            <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.attributes.collaborationAndTeamwork.length > 0 && (
-                <li>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.collaborationAndTeamwork.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-        </CollapsibleSection>
+        {experience.attributes.collaborationAndTeamwork.length > 0 && (
+          <CollapsibleSection
+            icon={<FiUsers className="text-lg mr-2 inline-block" />}
+            title={translatingService.translate("collaborationAndTeamwork")}
+            defaultOpen
+          >
+            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                {experience.attributes.collaborationAndTeamwork.map(
+                  (item, i) => (
+                    <li key={i} className="font-medium text-sm">
+                      {item}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </CollapsibleSection>
+        )}
 
-        <CollapsibleSection
-          icon={<FiThumbsUp className="text-lg mr-2 inline-block" />}
-          title="Impact and Lessons Learned"
-        >
-          <div className="flex flex-col flex-wrap lg:flex-row">
-            <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.attributes.impactAndLessonsLearned.length > 0 && (
-                <li>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.impactAndLessonsLearned.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
-        </CollapsibleSection>
+        {experience.attributes.impactAndLessonsLearned.length > 0 && (
+          <CollapsibleSection
+            icon={<FiThumbsUp className="text-lg mr-2 inline-block" />}
+            title={translatingService.translate("impactAndLessonsLearned")}
+            defaultOpen
+          >
+            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                {experience.attributes.impactAndLessonsLearned.map(
+                  (item, i) => (
+                    <li key={i} className="font-medium text-sm">
+                      {item}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </CollapsibleSection>
+        )}
       </div>
     </Modal.Content>
   );

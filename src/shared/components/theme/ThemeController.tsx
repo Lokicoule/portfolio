@@ -1,34 +1,49 @@
 import React, { createContext, useContext, useState } from "react";
+import { TranslatingService } from "../../translating/translatingService";
 
-type ThemeMode = "light" | "dark";
+export type Mode = "light" | "dark";
+export type Lang = "en" | "fr";
 
 interface ThemeContextType {
-  themeMode: ThemeMode;
-  setThemeMode: (mode: ThemeMode) => void;
+  mode: Mode;
+  lang: Lang;
+  setMode: (mode: Mode) => void;
+  setLang: (lang: Lang) => void;
 }
 
 export class ThemeController {
-  private themeMode: ThemeMode = "light";
+  private mode: Mode = "light";
+  private lang: Lang = "en";
   private ThemeContext: React.Context<ThemeContextType>;
 
-  constructor() {
+  constructor(translatingService: TranslatingService) {
     this.ThemeContext = createContext<ThemeContextType>({
-      themeMode: this.themeMode,
-      setThemeMode: (mode: ThemeMode) => {
-        this.themeMode = mode;
+      mode: this.mode,
+      lang: translatingService.language as Lang,
+      setMode: (mode: Mode) => {
+        this.mode = mode;
+      },
+      setLang: (lang: Lang) => {
+        this.lang = lang;
       },
     });
   }
 
   public createProvider(): React.FC<React.PropsWithChildren> {
     const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-      const [themeMode, setThemeMode] = useState<ThemeMode>(this.themeMode);
+      const [mode, setMode] = useState<Mode>(this.mode);
+      const [lang, setLang] = useState<Lang>(this.lang);
 
       const value: ThemeContextType = {
-        themeMode,
-        setThemeMode: (mode: ThemeMode) => {
-          this.themeMode = mode;
-          setThemeMode(mode);
+        mode,
+        lang,
+        setMode: (mode: Mode) => {
+          this.mode = mode;
+          setMode(mode);
+        },
+        setLang: (lang: Lang) => {
+          this.lang = lang;
+          setLang(lang);
         },
       };
 
@@ -42,18 +57,31 @@ export class ThemeController {
     return ThemeProvider;
   }
 
-  public getThemeHook() {
+  public getModeHook() {
     const useTheme = () => {
-      const { themeMode, setThemeMode } = useContext(this.ThemeContext);
+      const { mode, setMode } = useContext(this.ThemeContext);
 
       const toggleThemeMode = () => {
-        const mode = themeMode === "light" ? "dark" : "light";
-        setThemeMode(mode);
+        setMode(mode === "light" ? "dark" : "light");
       };
 
-      return { themeMode, setThemeMode, toggleThemeMode };
+      return { mode, setMode, toggleThemeMode };
     };
 
     return useTheme;
+  }
+
+  public getLangHook() {
+    const useLang = () => {
+      const { lang, setLang } = useContext(this.ThemeContext);
+
+      const toggleLang = () => {
+        setLang(lang === "en" ? "fr" : "en");
+      };
+
+      return { lang, setLang, toggleLang };
+    };
+
+    return useLang;
   }
 }

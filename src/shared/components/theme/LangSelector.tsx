@@ -1,16 +1,22 @@
-import { useNavigate } from "react-router-dom";
-import { translatingService } from "../../composition";
+import { useNavigate, useLocation } from "react-router-dom";
+import { themeController, translatingService } from "../../composition";
+import { Lang } from "./ThemeController";
 
-const LanguageSwitcher = () => {
+const LangSelector = () => {
+  const useLang = themeController.getLangHook();
+  const { setLang } = useLang();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLanguageChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const language = event.target.value;
+    const newPath = location.pathname.replace(/\/(en|fr)\//, `/${language}/`);
 
     translatingService.setLanguage(language);
-    navigate(`/${language}/resume`, { replace: true });
+    setLang(language as Lang);
+    navigate(newPath, { replace: true });
   };
 
   return (
@@ -26,4 +32,4 @@ const LanguageSwitcher = () => {
   );
 };
 
-export default LanguageSwitcher;
+export default LangSelector;

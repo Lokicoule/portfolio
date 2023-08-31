@@ -29,7 +29,7 @@ const CollapsibleSection: React.FC<ICollapsibleSectionProps> = ({
               } h-5 w-5 text-blue-500`}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="text-gray-500 px-4 py-2">
+          <Disclosure.Panel as="div" className="text-gray-500 px-4 py-2">
             {children}
           </Disclosure.Panel>
         </>

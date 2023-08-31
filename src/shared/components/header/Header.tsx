@@ -1,6 +1,6 @@
-import LanguageSwitcher from "../lang/LanguageSwitcher";
+import LangSelector from "../theme/LangSelector";
 import MobileMenu from "../menu/MobileMenu";
-import ThemeToggle from "../theme/ThemeToggle";
+import ModeSelector from "../theme/ModeSelector";
 
 const Header = () => {
   return (
@@ -12,8 +12,8 @@ const Header = () => {
           </h1>
         </a>
         <div className="flex items-center">
-          <ThemeToggle />
-          <LanguageSwitcher />
+          <ModeSelector />
+          <LangSelector />
           <MobileMenu />
         </div>
       </div>

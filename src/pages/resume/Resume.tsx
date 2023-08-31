@@ -1,8 +1,11 @@
+import { useEffect, useState } from "react";
 import PageLayout from "../../shared/components/layouts/PageLayout";
 import Line from "../../shared/components/line/Line";
+import { themeController, translatingService } from "../../shared/composition";
 import { experienceRepository } from "../../shared/composition/setupRepositories";
 import EducationSection from "./components/Education";
 import ExperienceSection from "./components/experience/ExperienceSection";
+import { Experience } from "./domainObjects/Experience";
 
 const educationArray = [
   {
@@ -51,11 +54,14 @@ const lineArray = [
 ];
 
 const Resume = () => {
+  const useLang = themeController.getLangHook();
+  const { lang } = useLang();
+
   return (
     <PageLayout title="Resume">
       <div className="px-2 sm:px-5 md:px-10 lg:px-14 px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6">
-          <ExperienceSection items={experienceRepository.findAll()} />
+          <ExperienceSection items={experienceRepository.findAll(lang)} />
           <EducationSection items={educationArray} />
         </div>
       </div>

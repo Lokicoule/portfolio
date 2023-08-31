@@ -51,7 +51,7 @@ const Modal: ModalComponent = ({ triggerButton, children }) => {
                   onClick={handleClose}
                   className="text-4xl cursor-pointer absolute -top-12 md:-right-10 md:-top-6 z-50 text-white transition transform hover:rotate-45 duration-300 ease-in-out"
                 />
-                <Dialog.Panel>{children}</Dialog.Panel>
+                <Dialog.Panel as="div">{children}</Dialog.Panel>
               </div>
             </div>
           </div>
