@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import {
-  experienceRepository,
-  themeController,
-} from "../../shared/composition";
+import { experienceRepository } from "../../shared/composition";
 import ResumeView from "./components/ResumeView";
 import { ResumeViewModel } from "./domainObjects/ResumeViewModel";
 import { ResumePresenter } from "./ResumePresenter";
+import { useTheme } from "../../shared/components/theme/ThemeProvider";
 
 type ResumeContainerProps = {
   presenter: ResumePresenter;
@@ -13,8 +11,7 @@ type ResumeContainerProps = {
 type ResumeContainerComponent = React.FC<ResumeContainerProps>;
 
 const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
-  const useLang = themeController.getLangHook();
-  const { lang } = useLang();
+  const { lang } = useTheme();
 
   const [resume, setResume] = useState<ResumeViewModel>(
     new ResumeViewModel({

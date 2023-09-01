@@ -1,4 +1,5 @@
-import LangSelector from "../theme/LangSelector";
+import { langController } from "../../composition";
+import Lang from "../lang/Lang";
 import MobileMenu from "../menu/MobileMenu";
 import ModeSelector from "../theme/ModeSelector";
 
@@ -13,7 +14,7 @@ const Header = () => {
         </a>
         <div className="flex items-center">
           <ModeSelector />
-          <LangSelector />
+          <Lang controller={langController} />
           <MobileMenu />
         </div>
       </div>

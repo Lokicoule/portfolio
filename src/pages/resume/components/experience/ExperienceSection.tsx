@@ -1,7 +1,7 @@
 import { MdOutlineSchool } from "react-icons/md";
-import { themeController } from "../../../../shared/composition";
 import { Experience } from "../../domainObjects/Experience";
 import ExperienceModal from "./ExperienceModal/ExperienceModal";
+import { useTheme } from "../../../../shared/components/theme/ThemeProvider";
 
 type ExperienceSectionProps = {
   items: Experience[];
@@ -16,7 +16,6 @@ const colors: string[] = [
 ];
 
 const ExperienceSection: ExperienceComponent = ({ items }) => {
-  const useTheme = themeController.getModeHook();
   const { mode } = useTheme();
 
   return (

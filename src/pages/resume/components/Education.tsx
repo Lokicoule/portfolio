@@ -1,6 +1,6 @@
 import { FaEye } from "react-icons/fa";
 import { MdOutlineBusinessCenter } from "react-icons/md";
-import { themeController } from "../../../shared/composition";
+import { useTheme } from "../../../shared/components/theme/ThemeProvider";
 
 export type EducationItem = {
   id: string;
@@ -23,7 +23,6 @@ const colors: string[] = [
 ];
 
 const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
-  const useTheme = themeController.getModeHook();
   const { mode } = useTheme();
 
   return (

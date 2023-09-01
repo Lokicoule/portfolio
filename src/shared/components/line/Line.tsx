@@ -1,5 +1,5 @@
 import { Line as RCLine } from "rc-progress";
-import { themeController } from "../../composition";
+import { useTheme } from "../theme/ThemeProvider";
 
 type LineProps = {
   name: string;
@@ -8,7 +8,6 @@ type LineProps = {
 };
 
 const Line: React.FC<LineProps> = ({ name, value, color }) => {
-  const useTheme = themeController.getModeHook();
   const { mode } = useTheme();
 
   return (

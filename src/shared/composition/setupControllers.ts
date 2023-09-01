@@ -1,10 +1,10 @@
 import { ContactController } from "../../pages/contact/ContactController";
-import { ThemeController } from "../components/theme/ThemeController";
+import { LangController } from "../components/lang/LangController";
+
 import {
   loggingService,
   mailingService,
   notificationsService,
-  translatingService,
 } from "./setupServices";
 
 const contactController = new ContactController(
@@ -12,6 +12,7 @@ const contactController = new ContactController(
   mailingService,
   loggingService
 );
-const themeController = new ThemeController(translatingService);
 
-export { contactController, themeController };
+const langController = new LangController();
+
+export { contactController, langController };
