@@ -1,7 +1,7 @@
-import { langController } from "../../composition";
+import { langController, modeController } from "../../composition";
 import Lang from "../lang/Lang";
 import MobileMenu from "../menu/MobileMenu";
-import ModeSelector from "../theme/ModeSelector";
+import ModeSelector from "../mode/Mode";
 
 const Header = () => {
   return (
@@ -13,7 +13,7 @@ const Header = () => {
           </h1>
         </a>
         <div className="flex items-center">
-          <ModeSelector />
+          <ModeSelector controller={modeController} />
           <Lang controller={langController} />
           <MobileMenu />
         </div>

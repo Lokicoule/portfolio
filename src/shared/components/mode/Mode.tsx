@@ -1,12 +1,17 @@
 import { FiMoon, FiSun } from "react-icons/fi";
-import { useTheme } from "./ThemeProvider";
+import { useTheme } from "../theme/ThemeProvider";
+import { ModeController } from "./ModeController";
 
-const ModeSelector = () => {
-  const { mode, toggleThemeMode } = useTheme();
+type ModeProps = {
+  controller: ModeController;
+};
 
-  const handleToggleTheme = () => {
-    toggleThemeMode();
-  };
+type ModeComponent = React.FC<ModeProps>;
+
+const Mode: ModeComponent = ({ controller }) => {
+  const useModeController = controller.createHook();
+  const { handleToggleTheme } = useModeController();
+  const { mode } = useTheme();
 
   return (
     <button
@@ -22,4 +27,4 @@ const ModeSelector = () => {
   );
 };
 
-export default ModeSelector;
+export default Mode;
