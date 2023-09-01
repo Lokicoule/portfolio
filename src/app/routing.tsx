@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import GridLayout from "../shared/components/layouts/GridLayout";
 import FlexLayout from "../shared/components/layouts/FlexLayout";
+
 import { RouteConfig } from "../shared/routing/routingService";
+import { resumePresenter } from "../shared/composition";
 
 import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../pages/notFound/NotFound";
-import Resume from "../pages/resume/Resume";
+import Resume from "../pages/resume/ResumeContainer";
 
 const routes: RouteConfig[] = [
   {
@@ -27,7 +29,7 @@ const routes: RouteConfig[] = [
       },
       {
         path: "resume",
-        element: <Resume />,
+        element: <Resume presenter={resumePresenter} />,
       },
     ],
   },
@@ -49,7 +51,7 @@ const routes: RouteConfig[] = [
       },
       {
         path: "resume",
-        element: <Resume />,
+        element: <Resume presenter={resumePresenter} />,
       },
     ],
   },
