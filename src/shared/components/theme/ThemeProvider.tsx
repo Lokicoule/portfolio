@@ -17,7 +17,7 @@ export const ThemeContext = createContext<ThemeContextType>({
   setLang: () => {},
 });
 
-const useTheme = () => {
+export const useTheme = () => {
   const { mode, setMode, lang, setLang } = useContext(ThemeContext);
 
   const toggleThemeMode = () => {
@@ -48,4 +48,3 @@ const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
 };
 
 export default ThemeProvider;
-export { useTheme };
