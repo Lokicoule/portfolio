@@ -2,8 +2,11 @@ import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
 import { experienceData as experienceDataEn } from "./datas/experienceData.en";
 import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
+import { educationData as educationDataEn } from "./datas/educationData.en";
+import { educationData as educationDataFr } from "./datas/educationData.fr";
 import { Experience } from "./domainObjects/Experience";
 import { ResumeViewModel } from "./ResumeViewModel";
+import { Education } from "./domainObjects/Education";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
   constructor(cache: GlobalCache) {
@@ -18,21 +21,16 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
 
   protected rebuildViewModel(lang: string) {
     const data = lang === "fr" ? experienceDataFr : experienceDataEn;
+    const dataEducation = lang === "fr" ? educationDataFr : educationDataEn;
 
     const experiences = data.map((experience) => new Experience(experience));
+    const educations = dataEducation.map(
+      (education) => new Education(education)
+    );
 
     this.vm = new ResumeViewModel({
       experiences,
-      educationItems: [
-        {
-          id: 1,
-          title: "Master of Science in Computer Science",
-          date: "2015-01-01",
-          level: "University of California, Berkeley",
-          bg: "#F6E5F5",
-          link: "https://www.berkeley.edu/",
-        },
-      ],
+      educations,
       lineItems: [
         {
           id: "1",

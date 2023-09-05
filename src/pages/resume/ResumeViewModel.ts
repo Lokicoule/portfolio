@@ -1,15 +1,9 @@
+import { Education } from "./domainObjects/Education";
 import { Experience } from "./domainObjects/Experience";
 
 export interface ResumeViewModelProps {
   experiences: Experience[];
-  educationItems: {
-    id: number;
-    date: string;
-    title: string;
-    level?: string;
-    link: string;
-    bg: string;
-  }[];
+  educations: Education[];
   lineItems: {
     id: string;
     color: string;
@@ -25,8 +19,8 @@ export class ResumeViewModel {
     return this.props.experiences;
   }
 
-  public get educationItems() {
-    return this.props.educationItems;
+  public get educations() {
+    return this.props.educations;
   }
 
   public get lineItems() {

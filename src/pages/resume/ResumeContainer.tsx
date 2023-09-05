@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ResumePresenter } from "./ResumePresenter";
-import ResumeView from "./components/ResumeView";
+import ResumeView from "./ResumeView";
 import { ResumeViewModel } from "./ResumeViewModel";
 
 type ResumeContainerProps = {
@@ -12,16 +12,10 @@ const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
   const [viewModel, setViewModel] = useState<ResumeViewModel | undefined>();
 
   useEffect(() => {
-    presenter.load((vm) => {
-      console.log("loaded resume presenter");
-      console.log(vm);
-      setViewModel(vm);
-    });
+    presenter.load((vm) => setViewModel(vm));
 
-    /* return () => {
-      console.log("unloaded resume presenter");
-      presenter.unload();
-    }; */
+    // in that case the subscription is lost
+    //return () => presenter.unload();
   }, [presenter]);
 
   if (!viewModel) {
@@ -31,7 +25,7 @@ const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
   return (
     <ResumeView
       experiences={viewModel.experiences}
-      educationItems={viewModel.educationItems}
+      educations={viewModel.educations}
       lineItems={viewModel.lineItems}
     />
   );
