@@ -13,7 +13,9 @@ export class TranslatingService {
   }
 
   public get language(): string {
-    return i18next.language;
+    if (i18next.language === "fr" || i18next.language === "en")
+      return i18next.language;
+    return "en";
   }
 
   public init(): void {
