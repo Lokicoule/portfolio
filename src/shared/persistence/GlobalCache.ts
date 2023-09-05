@@ -1,53 +1,14 @@
 export type Language = "en" | "fr";
 
-export interface ResumeState {
-  experiences: {
-    id: string;
-    date: string;
-    title: string;
-    company: string;
-    description: string;
-    link: string;
-    linkText: string;
-    technologiesUsed: {
-      languages?: string[];
-      frameworks?: string[];
-      libraries?: string[];
-      tools?: string[];
-      architectures?: string[];
-      databases?: string[];
-    };
-    achievementsAndContributions: string[];
-    challengesAndSolutions: string[];
-    collaborationAndTeamwork: string[];
-    impactAndLessonsLearned: string[];
-  }[];
-  educationItems: {
-    id: string;
-    date: string;
-    title: string;
-    level?: string;
-    link: string;
-    bg: string;
-  }[];
-  lineItems: {
-    id: string;
-    color: string;
-    name: string;
-    number: number;
-  }[];
-}
-
 type GlobalState = {
   lang: Language;
-  resume: ResumeState;
 };
 
 type State = GlobalState[keyof GlobalState];
 
 type Callback = (data: State) => void;
 
-type KeyInCache = "lang" | "resume";
+type KeyInCache = "lang";
 
 export class GlobalCache {
   private subscribers: Map<KeyInCache, Map<string, Callback>>;
@@ -114,5 +75,14 @@ export class GlobalCache {
     for (const [, subscriberCallback] of subscribersForKey) {
       subscriberCallback(newState);
     }
+  }
+
+  unsubscribe(key: KeyInCache, subscriberName: string) {
+    const subscribersForKey = this.subscribers.get(key);
+    if (!subscribersForKey) {
+      return;
+    }
+
+    subscribersForKey.delete(subscriberName);
   }
 }

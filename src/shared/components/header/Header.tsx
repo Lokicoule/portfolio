@@ -1,5 +1,9 @@
-import { langController, modeController } from "../../composition";
-import Lang from "../lang/Lang";
+import {
+  langController,
+  langPresenter,
+  modeController,
+} from "../../composition";
+import { Lang } from "../lang";
 import MobileMenu from "../menu/MobileMenu";
 import ModeSelector from "../mode/Mode";
 
@@ -14,7 +18,7 @@ const Header = () => {
         </a>
         <div className="flex items-center">
           <ModeSelector controller={modeController} />
-          <Lang controller={langController} />
+          <Lang controller={langController} presenter={langPresenter} />
           <MobileMenu />
         </div>
       </div>
