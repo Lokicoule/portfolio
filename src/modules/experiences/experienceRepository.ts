@@ -1,6 +1,6 @@
-import { Experience } from "../../pages/resume/domainObjects/Experience";
+/* import { Experience } from "../../pages/resume/domainObjects/Experience";
 import { experienceData as experienceDataEn } from "./experienceData.en";
-import { experienceData as experienceDataFr } from "./experienceData.fr";
+import { experienceData as experienceDataFr } from "../../pages/resume/datas/experienceData.fr";
 
 export class ExperienceRepository {
   private lang: string = "";
@@ -33,3 +33,4 @@ export class ExperienceRepository {
     return experiences;
   }
 }
+ */

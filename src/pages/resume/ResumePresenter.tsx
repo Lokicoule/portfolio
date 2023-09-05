@@ -1,86 +1,69 @@
-import { ExperienceRepository } from "../../modules/experiences/experienceRepository";
-import { ResumeViewModel } from "./domainObjects/ResumeViewModel";
+import { GlobalCache } from "../../shared/persistence/GlobalCache";
+import { experienceData as experienceDataEn } from "./datas/experienceData.en";
+import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
+import { Experience } from "./domainObjects/Experience";
+import { ResumeViewModel } from "./ResumeViewModel";
 
 export class ResumePresenter {
-  private lang: string;
-  private experienceRepository: ExperienceRepository;
-  private cachedResume: ResumeViewModel | undefined;
+  private vm?: ResumeViewModel;
+  private cb: (vm?: ResumeViewModel) => void;
 
-  constructor(lang: string, experienceRepository: ExperienceRepository) {
-    this.lang = lang;
-    this.experienceRepository = experienceRepository;
-    this.cachedResume = undefined;
+  constructor(private readonly cache: GlobalCache) {
+    this.vm = undefined;
+    this.cb = () => {};
+    this.setupSubscriptions();
   }
 
-  public getViewModel(): ResumeViewModel {
-    if (this.cachedResume) {
-      return this.cachedResume;
-    }
-
-    const experiences = this.experienceRepository.findAll(this.lang);
-
-    const educationItems = [
-      {
-        id: 1,
-        date: "2023 - Present",
-        title: "The Software Essentialist",
-        bg: "#FFF4F4",
-        link: "https://www.essentialist.dev/",
-      },
-      {
-        id: 2,
-        date: "2012 - 2017",
-        title: "Expert en informatique et systèmes d’information",
-        level: "RNCP4510, Niveau 7",
-        link: "https://www.francecompetences.fr/recherche/rncp/4510/",
-        bg: "#FFF1FB",
-      },
-    ];
-
-    const lineItems = [
-      {
-        id: "01",
-        color: "#FF6464",
-        name: "Web Design",
-        number: 80,
-      },
-      {
-        id: "02",
-        color: "#9272D4",
-        name: "Mobile App ",
-        number: 95,
-      },
-      {
-        id: "03",
-        color: "#5185D4",
-        name: "Illustrator",
-        number: 65,
-      },
-      {
-        id: "03",
-        color: "#CA56F2",
-        name: "Photoshop",
-        number: 75,
-      },
-    ];
-
-    const resume = new ResumeViewModel({
-      experiences,
-      educationItems,
-      lineItems,
+  private setupSubscriptions() {
+    this.cache.subscribe("lang", ResumePresenter.name, (lang: string) => {
+      console.log("lang changed,", lang);
+      this.rebuildViewModel(lang);
     });
 
-    this.cachedResume = resume;
-
-    return resume;
+    console.log("subscriptions setup for resume presenter", this.cache);
   }
 
-  public rebuildViewModel(
-    lang: string,
-    experienceRepository: ExperienceRepository
-  ): void {
-    this.lang = lang;
-    this.experienceRepository = experienceRepository;
-    this.cachedResume = undefined;
+  private rebuildViewModel(lang: string) {
+    const data = lang === "fr" ? experienceDataFr : experienceDataEn;
+
+    const experiences = data.map((experience) => new Experience(experience));
+
+    this.vm = new ResumeViewModel({
+      experiences,
+      educationItems: [
+        {
+          id: 1,
+          title: "Master of Science in Computer Science",
+          date: "2015-01-01",
+          level: "University of California, Berkeley",
+          bg: "#F6E5F5",
+          link: "https://www.berkeley.edu/",
+        },
+      ],
+      lineItems: [
+        {
+          id: "1",
+          name: "Languages",
+          color: "#F95054",
+          number: 100,
+        },
+      ],
+    });
+
+    console.log("rebuilded resume view model");
+
+    this.cb(this.vm);
+  }
+
+  public load(cb: (vm?: ResumeViewModel) => void): void {
+    console.log("loading resume presenter");
+    console.log(this.vm);
+    this.rebuildViewModel(this.cache.get("lang"));
+    cb(this.vm);
+    this.cb = cb;
+  }
+
+  public unload(): void {
+    this.cache.unsubscribe("lang", ResumePresenter.name);
   }
 }

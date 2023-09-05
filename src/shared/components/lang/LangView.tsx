@@ -17,16 +17,9 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
   const [viewModel, setViewModel] = useState<LangViewModel | undefined>();
 
   useEffect(() => {
-    presenter.load((vm) => {
-      console.log("loaded lang presenter");
-      console.log(vm);
-      setViewModel(vm);
-    });
+    presenter.load((vm) => setViewModel(vm));
 
-    return () => {
-      console.log("unloaded lang presenter");
-      presenter.unload();
-    };
+    //return () => presenter.unload();
   }, [presenter]);
 
   if (!viewModel) {
@@ -38,7 +31,7 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
       <select
         className="bg-transparent text-white ml-2"
         onChange={handleLanguageChange}
-        defaultValue={viewModel?.lang}
+        value={viewModel.lang}
       >
         <option value="en">English</option>
         <option value="fr">Français</option>

@@ -1,6 +1,6 @@
 import PageLayout from "../../../shared/components/layouts/PageLayout";
 import Line from "../../../shared/components/line/Line";
-import { ResumeViewModelProps } from "../domainObjects/ResumeViewModel";
+import { ResumeViewModelProps } from "../ResumeViewModel";
 import ExperienceSection from "./experience/ExperienceSection";
 
 type ResumeViewComponent = React.FC<ResumeViewModelProps>;

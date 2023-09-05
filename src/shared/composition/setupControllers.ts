@@ -1,6 +1,7 @@
 import { ContactController } from "../../pages/contact/ContactController";
 import { LangController } from "../components/lang/LangController";
 import { ModeController } from "../components/mode/ModeController";
+import { cache } from "./setupCaches";
 
 import {
   loggingService,
@@ -14,7 +15,7 @@ const contactController = new ContactController(
   loggingService
 );
 
-const langController = new LangController();
+const langController = new LangController(cache, notificationsService);
 const modeController = new ModeController();
 
 export { contactController, langController, modeController };

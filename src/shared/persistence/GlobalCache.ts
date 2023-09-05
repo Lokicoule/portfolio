@@ -15,45 +15,31 @@ export class GlobalCache {
   private data: Record<KeyInCache, GlobalState[KeyInCache]>;
 
   constructor(lang: Language) {
-    this.subscribers = new Map<KeyInCache, Map<string, Callback>>();
+    this.subscribers = new Map();
+
     this.data = {
       lang,
-      resume: {
-        experiences: [
-          {
-            id: "",
-            date: "",
-            title: "",
-            company: "",
-            description: "",
-            link: "",
-            linkText: "",
-            technologiesUsed: {},
-            achievementsAndContributions: [],
-            challengesAndSolutions: [],
-            collaborationAndTeamwork: [],
-            impactAndLessonsLearned: [],
-          },
-        ],
-        educationItems: [],
-        lineItems: [],
-      },
     } as Record<KeyInCache, GlobalState[KeyInCache]>;
   }
 
   subscribe(key: KeyInCache, subscriberName: string, cb: Callback) {
-    let subscribersForKey = this.subscribers.get(key);
-    if (!subscribersForKey) {
-      subscribersForKey = new Map<string, Callback>();
-      this.subscribers.set(key, subscribersForKey);
+    let keySubscribers = this.subscribers.get(key);
+
+    if (!keySubscribers) {
+      keySubscribers = new Map();
     }
 
-    const alreadySubscribed = subscribersForKey.get(subscriberName);
-    if (alreadySubscribed) {
+    if (keySubscribers.has(subscriberName)) {
       console.log(`${subscriberName} already subscribed to ${key}, skipping.`);
     }
 
-    subscribersForKey.set(subscriberName, cb);
+    keySubscribers.set(subscriberName, cb);
+    this.subscribers.set(key, keySubscribers);
+    console.log(
+      `Subscribing ${subscriberName} to ${key}`,
+      keySubscribers,
+      this.subscribers
+    );
   }
 
   get(key: KeyInCache) {
@@ -66,23 +52,25 @@ export class GlobalCache {
   }
 
   notify(key: KeyInCache) {
+    console.log(`Notifying subscribers of ${key}`);
     const newState = this.get(key);
-    const subscribersForKey = this.subscribers.get(key);
-    if (!subscribersForKey) {
+
+    const keySubscribers = this.subscribers.get(key);
+    console.log(`Subscribers of ${key}`, keySubscribers);
+    if (!keySubscribers) {
       return;
     }
 
-    for (const [, subscriberCallback] of subscribersForKey) {
-      subscriberCallback(newState);
-    }
+    keySubscribers.forEach((cb) => {
+      cb(newState);
+    });
   }
 
   unsubscribe(key: KeyInCache, subscriberName: string) {
-    const subscribersForKey = this.subscribers.get(key);
-    if (!subscribersForKey) {
-      return;
-    }
+    const keySubscribers = this.subscribers.get(key);
 
-    subscribersForKey.delete(subscriberName);
+    if (keySubscribers) {
+      keySubscribers.delete(subscriberName);
+    }
   }
 }

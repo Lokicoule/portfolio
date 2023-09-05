@@ -1,4 +1,4 @@
-import { ExperienceProps } from "../../pages/resume/domainObjects/Experience";
+import { ExperienceProps } from "../domainObjects/Experience";
 
 export const experienceData: ExperienceProps[] = [
   {

@@ -1,10 +1,8 @@
-import { experienceRepository } from "./setupRepositories";
 import { ResumePresenter } from "../../pages/resume/ResumePresenter";
-import { translatingService } from ".";
+import { LangPresenter } from "../components/lang/LangPresenter";
+import { cache } from "./setupCaches";
 
-const resumePresenter = new ResumePresenter(
-  translatingService.language,
-  experienceRepository
-);
+const resumePresenter = new ResumePresenter(cache);
+const langPresenter = new LangPresenter(cache);
 
-export { resumePresenter };
+export { resumePresenter, langPresenter };

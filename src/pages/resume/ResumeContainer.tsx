@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { experienceRepository } from "../../shared/composition";
-import ResumeView from "./components/ResumeView";
-import { ResumeViewModel } from "./domainObjects/ResumeViewModel";
 import { ResumePresenter } from "./ResumePresenter";
-import { useTheme } from "../../shared/components/theme/ThemeProvider";
+import ResumeView from "./components/ResumeView";
+import { ResumeViewModel } from "./ResumeViewModel";
 
 type ResumeContainerProps = {
   presenter: ResumePresenter;
@@ -11,32 +9,30 @@ type ResumeContainerProps = {
 type ResumeContainerComponent = React.FC<ResumeContainerProps>;
 
 const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
-  const { lang } = useTheme();
-
-  const [resume, setResume] = useState<ResumeViewModel>(
-    new ResumeViewModel({
-      experiences: [],
-      educationItems: [],
-      lineItems: [],
-    })
-  );
+  const [viewModel, setViewModel] = useState<ResumeViewModel | undefined>();
 
   useEffect(() => {
-    presenter.rebuildViewModel(lang, experienceRepository);
+    presenter.load((vm) => {
+      console.log("loaded resume presenter");
+      console.log(vm);
+      setViewModel(vm);
+    });
 
-    const fetchResumeProps = () => {
-      const resume = presenter.getViewModel();
-      setResume(resume);
-    };
+    /* return () => {
+      console.log("unloaded resume presenter");
+      presenter.unload();
+    }; */
+  }, [presenter]);
 
-    fetchResumeProps();
-  }, [lang]);
+  if (!viewModel) {
+    return null;
+  }
 
   return (
     <ResumeView
-      experiences={resume.experiences}
-      educationItems={resume.educationItems}
-      lineItems={resume.lineItems}
+      experiences={viewModel.experiences}
+      educationItems={viewModel.educationItems}
+      lineItems={viewModel.lineItems}
     />
   );
 };
