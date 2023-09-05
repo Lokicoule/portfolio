@@ -1,29 +1,22 @@
-import { GlobalCache } from "../../shared/persistence/GlobalCache";
+import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
+import { Presenter } from "../../sharedKernel/presentation/Presenter";
 import { experienceData as experienceDataEn } from "./datas/experienceData.en";
 import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
 import { Experience } from "./domainObjects/Experience";
 import { ResumeViewModel } from "./ResumeViewModel";
 
-export class ResumePresenter {
-  private vm?: ResumeViewModel;
-  private cb: (vm?: ResumeViewModel) => void;
-
-  constructor(private readonly cache: GlobalCache) {
-    this.vm = undefined;
-    this.cb = () => {};
-    this.setupSubscriptions();
+export class ResumePresenter extends Presenter<ResumeViewModel> {
+  constructor(cache: GlobalCache) {
+    super(cache);
   }
 
-  private setupSubscriptions() {
+  protected setupSubscriptions() {
     this.cache.subscribe("lang", ResumePresenter.name, (lang: string) => {
-      console.log("lang changed,", lang);
       this.rebuildViewModel(lang);
     });
-
-    console.log("subscriptions setup for resume presenter", this.cache);
   }
 
-  private rebuildViewModel(lang: string) {
+  protected rebuildViewModel(lang: string) {
     const data = lang === "fr" ? experienceDataFr : experienceDataEn;
 
     const experiences = data.map((experience) => new Experience(experience));
@@ -50,20 +43,18 @@ export class ResumePresenter {
       ],
     });
 
-    console.log("rebuilded resume view model");
-
     this.cb(this.vm);
   }
 
   public load(cb: (vm?: ResumeViewModel) => void): void {
-    console.log("loading resume presenter");
-    console.log(this.vm);
     this.rebuildViewModel(this.cache.get("lang"));
-    cb(this.vm);
-    this.cb = cb;
+
+    super.load(cb);
   }
 
   public unload(): void {
     this.cache.unsubscribe("lang", ResumePresenter.name);
+
+    super.unload();
   }
 }

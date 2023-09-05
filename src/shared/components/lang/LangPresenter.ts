@@ -1,23 +1,19 @@
-import { GlobalCache } from "../../persistence/GlobalCache";
+import { Presenter } from "../../../sharedKernel/presentation/Presenter";
+import { GlobalCache } from "../../../sharedKernel/persistence/GlobalCache";
 import { LangViewModel } from "./LangViewModel";
 
-export class LangPresenter {
-  private vm?: LangViewModel;
-  private cb: (vm?: LangViewModel) => void = () => {};
-
-  constructor(private readonly cache: GlobalCache) {
-    this.setupSubscriptions();
+export class LangPresenter extends Presenter<LangViewModel> {
+  constructor(cache: GlobalCache) {
+    super(cache);
   }
 
-  private setupSubscriptions() {
+  protected setupSubscriptions() {
     this.cache.subscribe("lang", LangPresenter.name, (lang: string) =>
       this.rebuildViewModel(lang)
     );
-
-    console.log("LangPresenter subscribed to lang", this.cache);
   }
 
-  private rebuildViewModel(lang: string) {
+  protected rebuildViewModel(lang: string) {
     this.vm = new LangViewModel({
       lang,
     });
@@ -27,11 +23,12 @@ export class LangPresenter {
 
   public load(cb: (vm?: LangViewModel) => void): void {
     this.rebuildViewModel(this.cache.get("lang"));
-    cb(this.vm);
-    this.cb = cb;
+    super.load(cb);
   }
 
   public unload(): void {
     this.cache.unsubscribe("lang", LangPresenter.name);
+
+    super.unload();
   }
 }

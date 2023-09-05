@@ -1,7 +1,10 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { translatingService } from "../../composition";
 import { Lang, useTheme } from "../theme/ThemeProvider";
-import { GlobalCache, Language } from "../../persistence/GlobalCache";
+import {
+  GlobalCache,
+  Language,
+} from "../../../sharedKernel/persistence/GlobalCache";
 import { NotificationService } from "../../notifications/notificationsService";
 import { Notification } from "../../notifications/domainObjects/Notification";
 

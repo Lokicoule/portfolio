@@ -6,15 +6,15 @@ type GlobalState = {
 
 type State = GlobalState[keyof GlobalState];
 
-type Callback = (data: State) => void;
+export type Callback = (data: State) => void;
 
-type KeyInCache = "lang";
+export type KeyInCache = "lang";
 
 export class GlobalCache {
   private subscribers: Map<KeyInCache, Map<string, Callback>>;
   private data: Record<KeyInCache, GlobalState[KeyInCache]>;
 
-  constructor(lang: Language) {
+  public constructor(lang: Language) {
     this.subscribers = new Map();
 
     this.data = {
@@ -22,7 +22,7 @@ export class GlobalCache {
     } as Record<KeyInCache, GlobalState[KeyInCache]>;
   }
 
-  subscribe(key: KeyInCache, subscriberName: string, cb: Callback) {
+  public subscribe(key: KeyInCache, subscriberName: string, cb: Callback) {
     let keySubscribers = this.subscribers.get(key);
 
     if (!keySubscribers) {
@@ -35,28 +35,21 @@ export class GlobalCache {
 
     keySubscribers.set(subscriberName, cb);
     this.subscribers.set(key, keySubscribers);
-    console.log(
-      `Subscribing ${subscriberName} to ${key}`,
-      keySubscribers,
-      this.subscribers
-    );
   }
 
-  get(key: KeyInCache) {
+  public get(key: KeyInCache) {
     return this.data[key];
   }
 
-  set(key: KeyInCache, data: GlobalState[KeyInCache]) {
+  public set(key: KeyInCache, data: GlobalState[KeyInCache]) {
     this.data[key] = data;
     this.notify(key);
   }
 
-  notify(key: KeyInCache) {
-    console.log(`Notifying subscribers of ${key}`);
+  public notify(key: KeyInCache) {
     const newState = this.get(key);
 
     const keySubscribers = this.subscribers.get(key);
-    console.log(`Subscribers of ${key}`, keySubscribers);
     if (!keySubscribers) {
       return;
     }
@@ -66,7 +59,7 @@ export class GlobalCache {
     });
   }
 
-  unsubscribe(key: KeyInCache, subscriberName: string) {
+  public unsubscribe(key: KeyInCache, subscriberName: string) {
     const keySubscribers = this.subscribers.get(key);
 
     if (keySubscribers) {
