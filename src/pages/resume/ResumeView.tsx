@@ -1,15 +1,15 @@
 import PageLayout from "../../shared/components/layouts/PageLayout";
-import Line from "../../shared/components/line/Line";
 import { ResumeViewModelProps } from "./ResumeViewModel";
 import EducationSection from "./components/education/EducationSection";
 import ExperienceSection from "./components/experience/ExperienceSection";
+import SkillSection from "./components/skill/SkillSection";
 
 type ResumeViewComponent = React.FC<ResumeViewModelProps>;
 
 const ResumeView: ResumeViewComponent = ({
   experiences,
   educations,
-  lineItems,
+  skills,
 }) => {
   return (
     <PageLayout title="Resume">
@@ -23,17 +23,7 @@ const ResumeView: ResumeViewComponent = ({
       <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-[#F3F6F6]">
         <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
           <div className="col-span-1">
-            <h4 className="text-3xl dark:text-white font-medium mb-6">
-              Working Skills
-            </h4>
-            {lineItems.map((item, i) => (
-              <Line
-                color={item.color}
-                name={item.name}
-                value={item.number}
-                key={i}
-              />
-            ))}
+            <SkillSection items={skills} />
           </div>
 
           <div className="col-span-1">

@@ -26,7 +26,7 @@ const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
     <ResumeView
       experiences={viewModel.experiences}
       educations={viewModel.educations}
-      lineItems={viewModel.lineItems}
+      skills={viewModel.skills}
     />
   );
 };

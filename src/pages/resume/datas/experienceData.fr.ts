@@ -1,8 +1,8 @@
-import { ExperienceProps } from "../domainObjects/Experience";
+import { ExperienceProps } from "../ResumeViewModel";
 
 export const experienceData: ExperienceProps[] = [
   {
-    id: "1",
+    id: "experience-1",
     company: "Atos",
     client: {
       abbreviation: "MTES",
@@ -61,7 +61,7 @@ export const experienceData: ExperienceProps[] = [
     ],
   },
   {
-    id: "2",
+    id: "experience-2",
     company: "Atos",
     tag: "Gestion par internet du suivi des transferts internationaux de déchets",
     client: {
@@ -112,7 +112,7 @@ export const experienceData: ExperienceProps[] = [
     ],
   },
   {
-    id: "3",
+    id: "experience-3",
     company: "Atos",
     tag: "Gestion par internet du suivi des transferts internationaux de déchets",
     client: {

@@ -11,14 +11,14 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import CollapsibleSection from "../../../../../shared/components/collapsible-section/CollapsibleSection";
-import { Experience } from "../../../domainObjects/Experience";
-import Modal from "../../../../../shared/components/modal/Modal";
 import { SiMaterialdesignicons } from "react-icons/si";
+import CollapsibleSection from "../../../../../shared/components/collapsible-section/CollapsibleSection";
+import Modal from "../../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../../shared/composition";
+import { ExperienceProps } from "../../../ResumeViewModel";
 
 type ExperienceModalContentProps = {
-  experience: Experience;
+  experience: ExperienceProps;
 };
 
 type ExperienceModalContentComponent = React.FC<ExperienceModalContentProps>;
@@ -35,7 +35,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           defaultOpen
         >
           <span className="dark:text-white text-sm">
-            {experience.attributes.description}
+            {experience.description}
           </span>
         </CollapsibleSection>
 
@@ -46,99 +46,89 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
         >
           <div className="flex flex-col flex-wrap lg:flex-row">
             <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.attributes.technologiesUsed.languages && (
+              {experience.technologiesUsed.languages && (
                 <li>
                   <span>
                     <FiCode className="inline-block mr-2" />
                     Languages:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.languages.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {experience.technologiesUsed.languages.map((item, i) => (
+                      <span key={i} className="tag">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </li>
               )}
-              {experience.attributes.technologiesUsed.frameworks && (
+              {experience.technologiesUsed.frameworks && (
                 <li>
                   <span>
                     <FiLayout className="inline-block mr-2" />
                     Frameworks:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.frameworks.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {experience.technologiesUsed.frameworks.map((item, i) => (
+                      <span key={i} className="tag">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </li>
               )}
-              {experience.attributes.technologiesUsed.libraries && (
+              {experience.technologiesUsed.libraries && (
                 <li>
                   <span>
                     <FiPackage className="inline-block mr-2" />
                     Libraries:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.libraries.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {experience.technologiesUsed.libraries.map((item, i) => (
+                      <span key={i} className="tag">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </li>
               )}
-              {experience.attributes.technologiesUsed.databases && (
+              {experience.technologiesUsed.databases && (
                 <li>
                   <span>
                     <FiServer className="inline-block mr-2" />
                     Databases:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.databases.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {experience.technologiesUsed.databases.map((item, i) => (
+                      <span key={i} className="tag">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </li>
               )}
-              {experience.attributes.technologiesUsed.tools && (
+              {experience.technologiesUsed.tools && (
                 <li>
                   <span>
                     <FiTool className="inline-block mr-2" />
                     Tools:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.tools.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
+                    {experience.technologiesUsed.tools.map((item, i) => (
+                      <span key={i} className="tag">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </li>
               )}
-              {experience.attributes.technologiesUsed.architectures && (
+              {experience.technologiesUsed.architectures && (
                 <li>
                   <span>
                     <SiMaterialdesignicons className="inline-block mr-2" />
                     Architectures:&nbsp;
                   </span>
                   <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.attributes.technologiesUsed.architectures.map(
+                    {experience.technologiesUsed.architectures.map(
                       (item, i) => (
                         <span key={i} className="tag">
                           {item}
@@ -152,7 +142,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           </div>
         </CollapsibleSection>
 
-        {experience.attributes.achievementsAndContributions.length > 0 && (
+        {experience.achievementsAndContributions.length > 0 && (
           <CollapsibleSection
             icon={<FiAward className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("achievementsAndContributions")}
@@ -160,27 +150,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           >
             <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
               <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.attributes.achievementsAndContributions.map(
-                  (item, i) => (
-                    <li key={i} className="font-medium text-sm">
-                      {item}
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-          </CollapsibleSection>
-        )}
-
-        {experience.attributes.challengesAndSolutions.length > 0 && (
-          <CollapsibleSection
-            icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("challengesAndSolutions")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.attributes.challengesAndSolutions.map((item, i) => (
+                {experience.achievementsAndContributions.map((item, i) => (
                   <li key={i} className="font-medium text-sm">
                     {item}
                   </li>
@@ -190,7 +160,25 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           </CollapsibleSection>
         )}
 
-        {experience.attributes.collaborationAndTeamwork.length > 0 && (
+        {experience.challengesAndSolutions.length > 0 && (
+          <CollapsibleSection
+            icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
+            title={translatingService.translate("challengesAndSolutions")}
+            defaultOpen
+          >
+            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                {experience.challengesAndSolutions.map((item, i) => (
+                  <li key={i} className="font-medium text-sm">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CollapsibleSection>
+        )}
+
+        {experience.collaborationAndTeamwork.length > 0 && (
           <CollapsibleSection
             icon={<FiUsers className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("collaborationAndTeamwork")}
@@ -198,19 +186,17 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           >
             <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
               <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.attributes.collaborationAndTeamwork.map(
-                  (item, i) => (
-                    <li key={i} className="font-medium text-sm">
-                      {item}
-                    </li>
-                  )
-                )}
+                {experience.collaborationAndTeamwork.map((item, i) => (
+                  <li key={i} className="font-medium text-sm">
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </CollapsibleSection>
         )}
 
-        {experience.attributes.impactAndLessonsLearned.length > 0 && (
+        {experience.impactAndLessonsLearned.length > 0 && (
           <CollapsibleSection
             icon={<FiThumbsUp className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("impactAndLessonsLearned")}
@@ -218,13 +204,11 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           >
             <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
               <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.attributes.impactAndLessonsLearned.map(
-                  (item, i) => (
-                    <li key={i} className="font-medium text-sm">
-                      {item}
-                    </li>
-                  )
-                )}
+                {experience.impactAndLessonsLearned.map((item, i) => (
+                  <li key={i} className="font-medium text-sm">
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </CollapsibleSection>

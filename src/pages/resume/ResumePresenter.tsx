@@ -1,12 +1,12 @@
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
-import { experienceData as experienceDataEn } from "./datas/experienceData.en";
-import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
+import { ResumeViewModel } from "./ResumeViewModel";
 import { educationData as educationDataEn } from "./datas/educationData.en";
 import { educationData as educationDataFr } from "./datas/educationData.fr";
-import { Experience } from "./domainObjects/Experience";
-import { ResumeViewModel } from "./ResumeViewModel";
-import { Education } from "./domainObjects/Education";
+import { experienceData as experienceDataEn } from "./datas/experienceData.en";
+import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
+import { skillData as skillDataEn } from "./datas/skillData.en";
+import { skillData as skillDataFr } from "./datas/skillData.fr";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
   constructor(cache: GlobalCache) {
@@ -20,25 +20,14 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
   }
 
   protected rebuildViewModel(lang: string) {
-    const data = lang === "fr" ? experienceDataFr : experienceDataEn;
-    const dataEducation = lang === "fr" ? educationDataFr : educationDataEn;
-
-    const experiences = data.map((experience) => new Experience(experience));
-    const educations = dataEducation.map(
-      (education) => new Education(education)
-    );
+    const experiences = lang === "fr" ? experienceDataFr : experienceDataEn;
+    const educations = lang === "fr" ? educationDataFr : educationDataEn;
+    const skills = lang === "fr" ? skillDataFr : skillDataEn;
 
     this.vm = new ResumeViewModel({
       experiences,
       educations,
-      lineItems: [
-        {
-          id: "1",
-          name: "Languages",
-          color: "#F95054",
-          number: 100,
-        },
-      ],
+      skills,
     });
 
     this.cb(this.vm);
