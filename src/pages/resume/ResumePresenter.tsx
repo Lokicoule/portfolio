@@ -7,6 +7,8 @@ import { experienceData as experienceDataEn } from "./datas/experienceData.en";
 import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
 import { skillData as skillDataEn } from "./datas/skillData.en";
 import { skillData as skillDataFr } from "./datas/skillData.fr";
+import { knowledgeData as knowledgeDataEn } from "./datas/knowledgeData.en";
+import { knowledgeData as knowledgeDataFr } from "./datas/knowledgeData.fr";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
   constructor(cache: GlobalCache) {
@@ -23,11 +25,13 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
     const experiences = lang === "fr" ? experienceDataFr : experienceDataEn;
     const educations = lang === "fr" ? educationDataFr : educationDataEn;
     const skills = lang === "fr" ? skillDataFr : skillDataEn;
+    const knowledges = lang === "fr" ? knowledgeDataFr : knowledgeDataEn;
 
     this.vm = new ResumeViewModel({
       experiences,
       educations,
       skills,
+      knowledges,
     });
 
     this.cb(this.vm);

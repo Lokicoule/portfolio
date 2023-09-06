@@ -27,6 +27,7 @@ const ResumeContainer: ResumeContainerComponent = ({ presenter }) => {
       experiences={viewModel.experiences}
       educations={viewModel.educations}
       skills={viewModel.skills}
+      knowledges={viewModel.knowledges}
     />
   );
 };

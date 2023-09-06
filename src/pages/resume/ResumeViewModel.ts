@@ -45,10 +45,17 @@ export type SkillProps = {
   value: number;
 };
 
+export type KnowledgeProps = {
+  id: string;
+  name: string;
+  abbreviation?: string;
+};
+
 export interface ResumeViewModelProps {
   experiences: ExperienceProps[];
   educations: EducationProps[];
   skills: SkillProps[];
+  knowledges: KnowledgeProps[];
 }
 
 export class ResumeViewModel {
@@ -64,6 +71,10 @@ export class ResumeViewModel {
 
   public get skills() {
     return this.props.skills;
+  }
+
+  public get knowledges() {
+    return this.props.knowledges;
   }
 
   public get attributes() {

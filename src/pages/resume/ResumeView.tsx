@@ -2,6 +2,7 @@ import PageLayout from "../../shared/components/layouts/PageLayout";
 import { ResumeViewModelProps } from "./ResumeViewModel";
 import EducationSection from "./components/education/EducationSection";
 import ExperienceSection from "./components/experience/ExperienceSection";
+import KnowledgeSection from "./components/knowledge/KnowledgeSection";
 import SkillSection from "./components/skill/SkillSection";
 
 type ResumeViewComponent = React.FC<ResumeViewModelProps>;
@@ -10,6 +11,7 @@ const ResumeView: ResumeViewComponent = ({
   experiences,
   educations,
   skills,
+  knowledges,
 }) => {
   return (
     <PageLayout title="Resume">
@@ -27,19 +29,7 @@ const ResumeView: ResumeViewComponent = ({
           </div>
 
           <div className="col-span-1">
-            <h4 className="text-3xl dark:text-white font-medium mb-8">
-              Knowledges
-            </h4>
-
-            <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-              <button className="resume-btn">Digital Design</button>
-              <button className="resume-btn">Marketing</button>
-              <button className="resume-btn">Social Media</button>
-              <button className="resume-btn">Print</button>
-              <button className="resume-btn">Time Management</button>
-              <button className="resume-btn">Flexibility</button>
-              <button className="resume-btn">Print</button>
-            </div>
+            <KnowledgeSection items={knowledges} />
           </div>
         </div>
       </div>
