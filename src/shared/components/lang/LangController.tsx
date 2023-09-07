@@ -1,12 +1,11 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { translatingService } from "../../composition";
-import { Lang, useTheme } from "../theme/ThemeProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   GlobalCache,
   Language,
 } from "../../../sharedKernel/persistence/GlobalCache";
-import { NotificationService } from "../../notifications/notificationsService";
+import { translatingService } from "../../composition";
 import { Notification } from "../../notifications/domainObjects/Notification";
+import { NotificationService } from "../../notifications/notificationsService";
 
 // lang from key in cache
 export class LangController {
@@ -20,7 +19,6 @@ export class LangController {
     const notificationService = this.notificationService;
 
     function useLangController() {
-      const { setLang } = useTheme();
       const navigate = useNavigate();
       const location = useLocation();
 
@@ -35,17 +33,14 @@ export class LangController {
           );
 
           translatingService.setLanguage(language);
-          setLang(language as Lang);
-          navigate(newPath, { replace: true });
-
           cache.set("lang", language as Language);
+
+          navigate(newPath, { replace: true });
         } else {
           notificationService.showToast(
             Notification.createError(`Language ${language} not supported!`)
           );
         }
-
-        console.log(cache);
       };
 
       return { handleLanguageChange };
