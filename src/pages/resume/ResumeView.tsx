@@ -29,7 +29,7 @@ const ResumeView: ResumeViewComponent = ({
           </div>
 
           <div className="col-span-1">
-            <KnowledgeSection items={knowledges} />
+            <KnowledgeSection {...knowledges} />
           </div>
         </div>
       </div>

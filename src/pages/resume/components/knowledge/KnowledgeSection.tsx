@@ -1,27 +1,17 @@
-import Tooltip from "../../../../shared/components/tooltip/Tooltip";
 import { KnowledgeProps } from "../../ResumeViewModel";
+import StackSection from "../stack/StackSection";
 
-type KnowledgeSectionProps = {
-  items: KnowledgeProps[];
-};
+type KnowledgeSectionProps = KnowledgeProps;
 
 type KnowledgeSectionComponent = React.FC<KnowledgeSectionProps>;
 
-const KnowledgeSection: KnowledgeSectionComponent = ({ items }) => {
+const KnowledgeSection: KnowledgeSectionComponent = (props) => {
   return (
     <div>
       <h4 className="text-3xl dark:text-white font-medium mb-8">Knowledges</h4>
 
       <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-        {items.map((item) =>
-          item.abbreviation ? (
-            <Tooltip key={item.id} text={item.name} className="resume-btn">
-              <span>{item.abbreviation}</span>
-            </Tooltip>
-          ) : (
-            <span className="resume-btn">{item.name}</span>
-          )
-        )}
+        <StackSection stack={props} />
       </div>
     </div>
   );

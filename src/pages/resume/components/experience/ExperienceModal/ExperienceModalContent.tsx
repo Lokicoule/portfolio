@@ -2,20 +2,15 @@ import {
   FiAlertCircle,
   FiAward,
   FiBriefcase,
-  FiCode,
-  FiLayout,
-  FiPackage,
-  FiServer,
   FiThumbsUp,
-  FiTool,
   FiUsers,
 } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import { SiMaterialdesignicons } from "react-icons/si";
 import CollapsibleSection from "../../../../../shared/components/collapsible-section/CollapsibleSection";
 import Modal from "../../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
+import StackSection from "../../stack/StackSection";
 
 type ExperienceModalContentProps = {
   experience: ExperienceProps;
@@ -44,102 +39,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           title={translatingService.translate("technologiesUsed")}
           defaultOpen
         >
-          <div className="flex flex-col flex-wrap lg:flex-row">
-            <ul className="list-none list-inside space-y-2 lg:mr-6">
-              {experience.technologiesUsed.languages && (
-                <li>
-                  <span>
-                    <FiCode className="inline-block mr-2" />
-                    Languages:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.languages.map((item, i) => (
-                      <span key={i} className="tag">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              )}
-              {experience.technologiesUsed.frameworks && (
-                <li>
-                  <span>
-                    <FiLayout className="inline-block mr-2" />
-                    Frameworks:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.frameworks.map((item, i) => (
-                      <span key={i} className="tag">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              )}
-              {experience.technologiesUsed.libraries && (
-                <li>
-                  <span>
-                    <FiPackage className="inline-block mr-2" />
-                    Libraries:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.libraries.map((item, i) => (
-                      <span key={i} className="tag">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              )}
-              {experience.technologiesUsed.databases && (
-                <li>
-                  <span>
-                    <FiServer className="inline-block mr-2" />
-                    Databases:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.databases.map((item, i) => (
-                      <span key={i} className="tag">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              )}
-              {experience.technologiesUsed.tools && (
-                <li>
-                  <span>
-                    <FiTool className="inline-block mr-2" />
-                    Tools:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.tools.map((item, i) => (
-                      <span key={i} className="tag">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              )}
-              {experience.technologiesUsed.architectures && (
-                <li>
-                  <span>
-                    <SiMaterialdesignicons className="inline-block mr-2" />
-                    Architectures:&nbsp;
-                  </span>
-                  <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-                    {experience.technologiesUsed.architectures.map(
-                      (item, i) => (
-                        <span key={i} className="tag">
-                          {item}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
+          <StackSection stack={experience.technologiesUsed} />
         </CollapsibleSection>
 
         {experience.achievementsAndContributions.length > 0 && (

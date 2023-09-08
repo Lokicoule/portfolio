@@ -1,4 +1,4 @@
-interface Stack {
+export interface StackProps {
   languages?: string[];
   frameworks?: string[];
   libraries?: string[];
@@ -7,7 +7,7 @@ interface Stack {
   databases?: string[];
 }
 
-interface Client {
+interface ClientProps {
   abbreviation?: string;
   name: string;
 }
@@ -18,11 +18,11 @@ export interface ExperienceProps {
   tag: string;
   description: string;
   company: string;
-  client: Client;
+  client: ClientProps;
   duration: string;
   place: string;
   roleAndResponsibilities: string;
-  technologiesUsed: Stack;
+  technologiesUsed: StackProps;
   achievementsAndContributions: string[];
   challengesAndSolutions: string[];
   collaborationAndTeamwork: string[];
@@ -45,17 +45,13 @@ export type SkillProps = {
   value: number;
 };
 
-export type KnowledgeProps = {
-  id: string;
-  name: string;
-  abbreviation?: string;
-};
+export type KnowledgeProps = StackProps;
 
 export interface ResumeViewModelProps {
   experiences: ExperienceProps[];
   educations: EducationProps[];
   skills: SkillProps[];
-  knowledges: KnowledgeProps[];
+  knowledges: KnowledgeProps;
 }
 
 export class ResumeViewModel {
