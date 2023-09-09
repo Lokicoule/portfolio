@@ -1,25 +1,36 @@
 import { FiCode, FiLayout, FiPackage, FiServer, FiTool } from "react-icons/fi";
 import { SiMaterialdesignicons } from "react-icons/si";
-import { StackProps } from "../../ResumeViewModel";
 
-type StackSectionProps = {
-  stack: StackProps;
-};
+export interface StackProps {
+  languages?: string[];
+  frameworks?: string[];
+  libraries?: string[];
+  tools?: string[];
+  architectures?: string[];
+  databases?: string[];
+}
 
-type StackSectionComponent = React.FC<StackSectionProps>;
+type StackComponent = React.FC<StackProps>;
 
-const StackSection: StackSectionComponent = ({ stack }) => {
+const Stack: StackComponent = ({
+  languages,
+  frameworks,
+  libraries,
+  tools,
+  architectures,
+  databases,
+}) => {
   return (
     <div className="flex flex-col flex-wrap lg:flex-row">
       <ul className="list-none list-inside space-y-2 lg:mr-6">
-        {stack.languages && (
+        {languages && (
           <li>
             <span>
               <FiCode className="inline-block mr-2" />
               Languages:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.languages.map((item, i) => (
+              {languages.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -27,14 +38,14 @@ const StackSection: StackSectionComponent = ({ stack }) => {
             </div>
           </li>
         )}
-        {stack.frameworks && (
+        {frameworks && (
           <li>
             <span>
               <FiLayout className="inline-block mr-2" />
               Frameworks:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.frameworks.map((item, i) => (
+              {frameworks.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -42,14 +53,14 @@ const StackSection: StackSectionComponent = ({ stack }) => {
             </div>
           </li>
         )}
-        {stack.libraries && (
+        {libraries && (
           <li>
             <span>
               <FiPackage className="inline-block mr-2" />
               Libraries:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.libraries.map((item, i) => (
+              {libraries.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -57,14 +68,14 @@ const StackSection: StackSectionComponent = ({ stack }) => {
             </div>
           </li>
         )}
-        {stack.databases && (
+        {databases && (
           <li>
             <span>
               <FiServer className="inline-block mr-2" />
               Databases:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.databases.map((item, i) => (
+              {databases.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -72,14 +83,14 @@ const StackSection: StackSectionComponent = ({ stack }) => {
             </div>
           </li>
         )}
-        {stack.tools && (
+        {tools && (
           <li>
             <span>
               <FiTool className="inline-block mr-2" />
               Tools:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.tools.map((item, i) => (
+              {tools.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -87,14 +98,14 @@ const StackSection: StackSectionComponent = ({ stack }) => {
             </div>
           </li>
         )}
-        {stack.architectures && (
+        {architectures && (
           <li>
             <span>
               <SiMaterialdesignicons className="inline-block mr-2" />
               Architectures:&nbsp;
             </span>
             <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {stack.architectures.map((item, i) => (
+              {architectures.map((item, i) => (
                 <span key={i} className="tag">
                   {item}
                 </span>
@@ -107,4 +118,4 @@ const StackSection: StackSectionComponent = ({ stack }) => {
   );
 };
 
-export default StackSection;
+export default Stack;

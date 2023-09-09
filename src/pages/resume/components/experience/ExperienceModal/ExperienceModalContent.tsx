@@ -10,7 +10,7 @@ import CollapsibleSection from "../../../../../shared/components/collapsible-sec
 import Modal from "../../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
-import StackSection from "../../stack/StackSection";
+import Stack from "../../../../../shared/components/stack/Stack";
 
 type ExperienceModalContentProps = {
   experience: ExperienceProps;
@@ -39,7 +39,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           title={translatingService.translate("technologiesUsed")}
           defaultOpen
         >
-          <StackSection stack={experience.technologiesUsed} />
+          <Stack {...experience.technologiesUsed} />
         </CollapsibleSection>
 
         {experience.achievementsAndContributions.length > 0 && (

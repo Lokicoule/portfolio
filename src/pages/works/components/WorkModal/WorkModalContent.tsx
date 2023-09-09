@@ -3,7 +3,7 @@ import { GoStack } from "react-icons/go";
 import CollapsibleSection from "../../../../shared/components/collapsible-section/CollapsibleSection";
 import Modal from "../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../shared/composition";
-import StackSection from "../../../resume/components/stack/StackSection";
+import Stack from "../../../../shared/components/stack/Stack";
 import { WorkProps } from "../../WorksViewModel";
 
 type WorkModalContentProps = {
@@ -29,7 +29,7 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
           title={translatingService.translate("technologiesUsed")}
           defaultOpen
         >
-          <StackSection stack={work.technologiesUsed} />
+          <Stack {...work.technologiesUsed} />
         </CollapsibleSection>
 
         {work.challengesAndSolutions.length > 0 && (

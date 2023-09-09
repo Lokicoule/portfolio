@@ -1,5 +1,5 @@
 import { KnowledgeProps } from "../../ResumeViewModel";
-import StackSection from "../stack/StackSection";
+import Stack from "../../../../shared/components/stack/Stack";
 
 type KnowledgeSectionProps = KnowledgeProps;
 
@@ -11,7 +11,7 @@ const KnowledgeSection: KnowledgeSectionComponent = (props) => {
       <h4 className="text-3xl dark:text-white font-medium mb-8">Knowledges</h4>
 
       <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-        <StackSection stack={props} />
+        <Stack {...props} />
       </div>
     </div>
   );

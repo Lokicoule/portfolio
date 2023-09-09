@@ -1,11 +1,4 @@
-export interface StackProps {
-  languages?: string[];
-  frameworks?: string[];
-  libraries?: string[];
-  tools?: string[];
-  architectures?: string[];
-  databases?: string[];
-}
+import { StackProps } from "../../shared/components/stack/Stack";
 
 type LinkProps = {
   npm?: string;
