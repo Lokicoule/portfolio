@@ -8,10 +8,7 @@ export abstract class Presenter<T> {
   constructor(cache: GlobalCache) {
     this.cache = cache;
     this.cb = () => {};
-    this.setupSubscriptions();
   }
-
-  protected abstract setupSubscriptions(): void;
 
   protected abstract rebuildViewModel(...args: unknown[]): void;
 

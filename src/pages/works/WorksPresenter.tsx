@@ -1,18 +1,26 @@
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
+import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
 import { WorksViewModel } from "./WorksViewModel";
 import { workData as workDataEn } from "./datas/workData.en";
 import { workData as workDataFr } from "./datas/workData.fr";
 
 export class WorksPresenter extends Presenter<WorksViewModel> {
+  private subscriptionManager: SubscriptionManager;
+
   constructor(cache: GlobalCache) {
     super(cache);
+    this.subscriptionManager = new SubscriptionManager(
+      cache,
+      "lang",
+      WorksPresenter.name,
+      (lang) => this.handleLangChange(lang)
+    );
   }
 
-  protected setupSubscriptions() {
-    this.cache.subscribe("lang", WorksPresenter.name, (lang: string) => {
-      this.rebuildViewModel(lang);
-    });
+  private handleLangChange(lang: string) {
+    this.rebuildViewModel(lang);
+    this.cb(this.vm);
   }
 
   protected rebuildViewModel(lang: string) {
@@ -21,18 +29,16 @@ export class WorksPresenter extends Presenter<WorksViewModel> {
     this.vm = new WorksViewModel({
       works,
     });
-
-    this.cb(this.vm);
   }
 
   public load(cb: (vm?: WorksViewModel) => void): void {
-    this.rebuildViewModel(this.cache.get("lang"));
+    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
 
     super.load(cb);
   }
 
   public unload(): void {
-    this.cache.unsubscribe("lang", WorksPresenter.name);
+    this.subscriptionManager.unsubscribe();
 
     super.unload();
   }

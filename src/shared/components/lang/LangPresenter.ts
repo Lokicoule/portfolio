@@ -1,33 +1,40 @@
 import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { GlobalCache } from "../../../sharedKernel/persistence/GlobalCache";
 import { LangViewModel } from "./LangViewModel";
+import { SubscriptionManager } from "../../../sharedKernel/presentation/SubscriptionManager";
 
 export class LangPresenter extends Presenter<LangViewModel> {
+  private subscriptionManager: SubscriptionManager;
+
   constructor(cache: GlobalCache) {
     super(cache);
+    this.subscriptionManager = new SubscriptionManager(
+      cache,
+      "lang",
+      LangPresenter.name,
+      (lang) => this.handleLangChange(lang)
+    );
   }
 
-  protected setupSubscriptions() {
-    this.cache.subscribe("lang", LangPresenter.name, (lang: string) =>
-      this.rebuildViewModel(lang)
-    );
+  private handleLangChange(lang: string) {
+    this.rebuildViewModel(lang);
+    this.cb(this.vm);
   }
 
   protected rebuildViewModel(lang: string) {
     this.vm = new LangViewModel({
       lang,
     });
-
-    this.cb(this.vm);
   }
 
   public load(cb: (vm?: LangViewModel) => void): void {
-    this.rebuildViewModel(this.cache.get("lang"));
+    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
+
     super.load(cb);
   }
 
   public unload(): void {
-    this.cache.unsubscribe("lang", LangPresenter.name);
+    this.subscriptionManager.unsubscribe();
 
     super.unload();
   }

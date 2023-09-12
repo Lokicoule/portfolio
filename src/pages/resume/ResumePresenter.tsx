@@ -9,16 +9,24 @@ import { skillData as skillDataEn } from "./datas/skillData.en";
 import { skillData as skillDataFr } from "./datas/skillData.fr";
 import { knowledgeData as knowledgeDataEn } from "./datas/knowledgeData.en";
 import { knowledgeData as knowledgeDataFr } from "./datas/knowledgeData.fr";
+import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
+  private subscriptionManager: SubscriptionManager;
+
   constructor(cache: GlobalCache) {
     super(cache);
+    this.subscriptionManager = new SubscriptionManager(
+      cache,
+      "lang",
+      ResumePresenter.name,
+      (lang) => this.handleLangChange(lang)
+    );
   }
 
-  protected setupSubscriptions() {
-    this.cache.subscribe("lang", ResumePresenter.name, (lang: string) => {
-      this.rebuildViewModel(lang);
-    });
+  private handleLangChange(lang: string) {
+    this.rebuildViewModel(lang);
+    this.cb(this.vm);
   }
 
   protected rebuildViewModel(lang: string) {
@@ -33,18 +41,16 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
       skills,
       knowledges,
     });
-
-    this.cb(this.vm);
   }
 
   public load(cb: (vm?: ResumeViewModel) => void): void {
-    this.rebuildViewModel(this.cache.get("lang"));
+    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
 
     super.load(cb);
   }
 
   public unload(): void {
-    this.cache.unsubscribe("lang", ResumePresenter.name);
+    this.subscriptionManager.unsubscribe();
 
     super.unload();
   }
