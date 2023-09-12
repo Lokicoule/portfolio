@@ -1,6 +1,49 @@
 import { ExperienceProps } from "../ResumeViewModel";
 
+// Add freelance experience
 export const experienceData: ExperienceProps[] = [
+  {
+    id: "experience-0",
+    company: "Freelance",
+    name: "Développeur logiciel",
+    tag: "Développement d'applications web",
+    description:
+      "Développement d'applications web pour des clients privés et publics.",
+    duration: "2020 - Présent",
+    place: "Remote",
+    roleAndResponsibilities: "Développeur fullstack",
+    technologiesUsed: {
+      languages: ["Typescript"],
+      frameworks: ["React", "Next.js", "Node.js", "NestJS"],
+      tools: ["Git", "Docker", "SonarQube"],
+      databases: ["MongoDB", "PostgreSQL"],
+      architectures: ["Microservices", "Micro-frontend", "MVC", "MVVM"],
+    },
+    achievementsAndContributions: [
+      "Développement de nouvelles fonctionnalités",
+      "Correction de bugs",
+      "Rédaction de tests unitaires",
+      "Rédaction de tests d'intégration",
+      "Rédaction de documents de conception",
+      "Rédaction de documents de spécification",
+    ],
+    challengesAndSolutions: [
+      "Défi : Développer une application web de gestion de projet pour un client privé.\nSolution : J'ai utilisé la méthodologie Agile pour développer une application web de gestion de projet personnalisée, répondant aux besoins spécifiques du client.",
+      "Défi : Développer une application web de gestion de projet pour un client public.\nSolution : J'ai utilisé la méthodologie Agile pour développer une application web de gestion de projet personnalisée, répondant aux besoins spécifiques du client.",
+    ],
+    collaborationAndTeamwork: [
+      "J'ai travaillé en étroite collaboration avec les clients pour comprendre leurs besoins et développer des fonctionnalités qui répondent à ces besoins.",
+      "J'ai collaboré étroitement avec les autres membres de l'équipe de développement, partageant des connaissances et des idées pour résoudre efficacement les défis techniques.",
+      "J'ai contribué à un environnement de travail positif en encourageant la communication ouverte et le partage d'idées entre les membres de l'équipe.",
+    ],
+    impactAndLessonsLearned: [
+      "J'ai acquis une expérience précieuse en travaillant avec des clients privés et publics, ce qui m'a permis de mieux comprendre leurs besoins et de développer des solutions adaptées.",
+      "J'ai appris à gérer efficacement les projets de développement de logiciels, en utilisant la méthodologie Agile pour développer des applications web personnalisées.",
+    ],
+    client: {
+      name: "",
+    },
+  },
   {
     id: "experience-1",
     company: "Atos",

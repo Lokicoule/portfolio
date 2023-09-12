@@ -13,7 +13,7 @@ const WorksView: WorksViewComponent = ({ works }) => {
         {works.map((item) => (
           <div
             key={item.id}
-            className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg rounded-lg transition-all duration-300 ease-in-out border-[1px] border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-transparent dark:hover:bg-[#1D1D1D]`}
+            className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg rounded-lg transition-all duration-300 ease-in-out border-[1px] border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-transparent dark:hover:bg-[#121e26]`}
           >
             <div className="mb-2 flex items-center space-x-2">
               <GoRepo className="text-xl text-gray-500 dark:text-gray-400" />
