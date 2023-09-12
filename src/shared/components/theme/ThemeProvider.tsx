@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export type Mode = "light" | "dark";
 
@@ -25,10 +31,15 @@ export const useTheme = () => {
 const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<Mode>("light");
 
-  const value: ThemeContextType = {
-    mode,
-    setMode,
-  };
+  const value = useMemo(() => ({ mode, setMode }), [mode, setMode]);
+
+  useLayoutEffect(() => {
+    if (mode === "dark") {
+      document.body.classList.add("dark");
+    } else if (mode === "light") {
+      document.body.classList.remove("dark");
+    }
+  }, [mode]);
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

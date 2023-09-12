@@ -66,7 +66,7 @@
   }
 
   .mobile-link-menu:hover {
-    @apply text-gray-800 bg-sky-300 dark:bg-[#212425] hover:text-gray-800;
+    @apply text-gray-800 bg-sky-300 dark:bg-[#212425] text-gray-800;
   }
   .tooltip {
     position: relative;

@@ -2,10 +2,10 @@ import { Dialog } from "@headlessui/react";
 import { PropsWithChildren, cloneElement, useState } from "react";
 import { BsXCircle } from "react-icons/bs";
 
-type ModalProps = {
+type ModalProps = PropsWithChildren<{
   triggerButton: React.ReactElement;
-  children: React.ReactNode;
-};
+  className?: string;
+}>;
 
 type ModalChildrenComponent = React.FC<
   PropsWithChildren<{
@@ -18,7 +18,7 @@ type ModalComponent = React.FC<ModalProps> & {
   Content: ModalChildrenComponent;
 };
 
-const Modal: ModalComponent = ({ triggerButton, children }) => {
+const Modal: ModalComponent = ({ triggerButton, children, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
@@ -45,13 +45,17 @@ const Modal: ModalComponent = ({ triggerButton, children }) => {
         >
           <div className="flex items-center justify-center min-h-screen">
             <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-            <div className="relative bg-white dark:bg-[#323232] rounded-xl shadow-lg p-4 md:p-8 w-full md:w-10/12 lg:w-[850px] z-50">
+            <div
+              className={`bg-white dark:bg-[#05151e] shadow-gray-800 relative rounded-xl shadow-lg p-4 md:p-8 w-full md:w-10/12 lg:w-[850px] z-50`}
+            >
               <div className="overflow-y-scroll max-h-[80vh] no-scrollbar">
                 <BsXCircle
                   onClick={handleClose}
                   className="text-4xl cursor-pointer absolute -top-12 md:-right-10 md:-top-6 z-50 text-white transition transform hover:rotate-45 duration-300 ease-in-out"
                 />
-                <Dialog.Panel as="div">{children}</Dialog.Panel>
+                <Dialog.Panel className={className} as="div">
+                  {children}
+                </Dialog.Panel>
               </div>
             </div>
           </div>
