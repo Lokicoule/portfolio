@@ -13,13 +13,13 @@ const WorksView: WorksViewComponent = ({ works }) => {
         {works.map((item) => (
           <div
             key={item.id}
-            className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg rounded-lg transition-all duration-300 ease-in-out border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-500 hover:shadow-lg dark:hover:shadow-lg`}
+            className={`py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg rounded-lg transition-all duration-300 ease-in-out border-[1px] border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-transparent dark:hover:bg-[#1D1D1D]`}
           >
             <div className="mb-2 flex items-center space-x-2">
               <GoRepo className="text-xl text-gray-500 dark:text-gray-400" />
               <WorkModal
                 triggerButton={
-                  <button className="text-xl font-bold text-blue-500 hover:text-red-500 dark:text-gray-400">
+                  <button className="text-xl font-bold text-blue-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-blue-500">
                     {item.name}
                   </button>
                 }
