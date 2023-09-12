@@ -1,11 +1,11 @@
-interface SocialLink {
+export interface SocialLinkProps {
   href: string;
   icon: JSX.Element;
   iconClass: string;
 }
 
 interface Props {
-  socialLinks: SocialLink[];
+  socialLinks: SocialLinkProps[];
 }
 
 const SocialLinks: React.FC<Props> = ({ socialLinks }) => {

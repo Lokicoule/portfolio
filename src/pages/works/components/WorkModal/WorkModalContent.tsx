@@ -17,6 +17,14 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
     <Modal.Content>
       <div className="my-6 whitespace-pre-wrap">
         <CollapsibleSection
+          icon={<GoStack className="text-lg mr-2 inline-block" />}
+          title={translatingService.translate("technologiesUsed")}
+          defaultOpen
+        >
+          <Stack {...work.technologiesUsed} />
+        </CollapsibleSection>
+
+        <CollapsibleSection
           icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
           title={translatingService.translate("description")}
           defaultOpen
@@ -25,11 +33,24 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
         </CollapsibleSection>
 
         <CollapsibleSection
-          icon={<GoStack className="text-lg mr-2 inline-block" />}
-          title={translatingService.translate("technologiesUsed")}
+          icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
+          title="Key Features"
           defaultOpen
         >
-          <Stack {...work.technologiesUsed} />
+          <ul className="dark:text-white text-sm">
+            {work.keyFeatures?.map((item, i) => (
+              <li key={i} className="font-medium text-sm mb-2">
+                <span className="text-gray-400">{item.key}</span>
+                <ul className="list-disc list-inside">
+                  {item.features.map((feature, i) => (
+                    <li key={i} className="font-medium text-sm">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
         </CollapsibleSection>
 
         {work.challengesAndSolutions.length > 0 && (

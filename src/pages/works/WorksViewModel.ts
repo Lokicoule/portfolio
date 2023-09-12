@@ -1,8 +1,10 @@
+import { SocialLinkProps } from "../../shared/components/social-links/SocialLinks";
 import { StackProps } from "../../shared/components/stack/Stack";
 
-type LinkProps = {
-  npm?: string;
-  github?: string;
+type KeyFeaturesProps = {
+  id: string;
+  key: string;
+  features: string[];
 };
 
 export interface WorkProps {
@@ -10,9 +12,11 @@ export interface WorkProps {
   name: string;
   tag: string;
   description: string;
+  logo?: JSX.Element;
   technologiesUsed: StackProps;
   challengesAndSolutions: string[];
-  link: LinkProps;
+  keyFeatures?: KeyFeaturesProps[];
+  socialLinks: SocialLinkProps[];
 }
 
 export interface WorksViewModelProps {
