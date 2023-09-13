@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Navigation from "../navigation/Navigation";
+import { navigationPresenter } from "../../composition";
 
 const MobileMenu: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -35,6 +36,7 @@ const MobileMenu: React.FC = () => {
           }`}
         >
           <Navigation
+            presenter={navigationPresenter}
             defaultClassName="mobile-link-menu text-black dark:text-white"
             activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
             iconClassName="text-xl mr-2"

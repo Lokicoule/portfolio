@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "../navigation/Navigation";
+import { navigationPresenter } from "../../composition";
 
 const DesktopMenu = () => {
   const [menuOpen] = useState(false);
@@ -15,6 +16,7 @@ const DesktopMenu = () => {
           }`}
         >
           <Navigation
+            presenter={navigationPresenter}
             defaultClassName="link-menu"
             activeClassName="link-menu lg:text-white lg:bg-sky-to-blue dark:text-white"
             iconClassName="text-xl mb-1"

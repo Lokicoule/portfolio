@@ -1,19 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
+import { NavigationItemProps } from "./NavigationViewModel";
 
 type NavItemProps = {
-  item: {
-    id: number;
-    name: string;
-    routePath: string;
-    icon: JSX.Element;
-  };
+  item: NavigationItemProps;
   defaultClassName: string;
   activeClassName: string;
   iconClassName?: string;
   onClick?: () => void;
 };
 
-const NavItem: React.FC<NavItemProps> = ({
+type NavigationItemComponent = React.FC<NavItemProps>;
+
+const NavigationItem: NavigationItemComponent = ({
   item,
   defaultClassName,
   activeClassName,
@@ -45,4 +43,4 @@ const NavItem: React.FC<NavItemProps> = ({
   );
 };
 
-export default NavItem;
+export default NavigationItem;
