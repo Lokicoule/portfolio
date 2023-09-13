@@ -15,9 +15,9 @@ import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/ResumeContainer";
 import Works from "../pages/works/WorksContainer";
 
-const pageRoutes = [
+const pageRoutes = (root: string) => [
   {
-    path: "about",
+    path: root,
     element: <About />,
   },
   {
@@ -42,7 +42,7 @@ const routes: RouteConfig[] = [
         <Outlet />
       </GridLayout>
     ),
-    children: pageRoutes,
+    children: pageRoutes("/fr"),
   },
   {
     path: "/en",
@@ -51,7 +51,7 @@ const routes: RouteConfig[] = [
         <Outlet />
       </GridLayout>
     ),
-    children: pageRoutes,
+    children: pageRoutes("/en"),
   },
   {
     path: "/",
