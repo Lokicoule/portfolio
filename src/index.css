@@ -58,7 +58,7 @@
   }
 
   .link-menu:hover {
-    @apply text-white bg-gradient-to-b from-sky-400 to-blue-500;
+    @apply text-white bg-gradient-to-b from-sky-400 to-blue-500 brightness-125;
   }
 
   .mobile-link-menu {

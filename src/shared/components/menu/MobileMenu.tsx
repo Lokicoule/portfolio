@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import Navigation from "./Navigation";
+import Navigation from "../navigation/Navigation";
 
 const MobileMenu: React.FC = () => {
   const [open, setOpen] = useState(false);
