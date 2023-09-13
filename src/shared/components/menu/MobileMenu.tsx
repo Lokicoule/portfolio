@@ -13,7 +13,6 @@ const MobileMenu: React.FC = () => {
     <>
       {!open ? (
         <button
-          id="menu-button"
           className="lg:opacity-0 lg:invisible visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-white dark:text-white text-3xl ml-3 p-3"
           onClick={toggleMenu}
         >
@@ -21,7 +20,6 @@ const MobileMenu: React.FC = () => {
         </button>
       ) : (
         <button
-          id="menu-button"
           className="lg:opacity-0 cursor-pointer lg:invisible visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center items-center text-white text-3xl ml-3 p-3"
           onClick={toggleMenu}
         >
@@ -37,7 +35,7 @@ const MobileMenu: React.FC = () => {
           }`}
         >
           <Navigation
-            defaultClassName="mobile-link-menu"
+            defaultClassName="mobile-link-menu text-black dark:text-white"
             activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
             iconClassName="text-xl mr-2"
             onClick={toggleMenu}
