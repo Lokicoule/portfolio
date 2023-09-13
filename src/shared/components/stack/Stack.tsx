@@ -8,6 +8,9 @@ export interface StackProps {
   tools?: string[];
   architectures?: string[];
   databases?: string[];
+  tag?: {
+    className: string;
+  };
 }
 
 type StackComponent = React.FC<StackProps>;
@@ -19,99 +22,61 @@ const Stack: StackComponent = ({
   tools,
   architectures,
   databases,
+  tag,
 }) => {
+  const stackItems = [
+    {
+      title: "Languages",
+      icon: <FiCode className="inline-block mr-2" />,
+      items: languages,
+    },
+    {
+      title: "Frameworks",
+      icon: <FiLayout className="inline-block mr-2" />,
+      items: frameworks,
+    },
+    {
+      title: "Libraries",
+      icon: <FiPackage className="inline-block mr-2" />,
+      items: libraries,
+    },
+    {
+      title: "Databases",
+      icon: <FiServer className="inline-block mr-2" />,
+      items: databases,
+    },
+    {
+      title: "Tools",
+      icon: <FiTool className="inline-block mr-2" />,
+      items: tools,
+    },
+    {
+      title: "Architectures",
+      icon: <SiMaterialdesignicons className="inline-block mr-2" />,
+      items: architectures,
+    },
+  ];
+
   return (
     <div className="flex flex-col flex-wrap lg:flex-row">
       <ul className="list-none list-inside space-y-2 lg:mr-6">
-        {languages && (
-          <li>
-            <span>
-              <FiCode className="inline-block mr-2" />
-              Languages:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {languages.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
+        {stackItems.map(
+          (stackItem) =>
+            stackItem.items && (
+              <li key={stackItem.title}>
+                <span className="dark:text-white">
+                  {stackItem.icon}
+                  {stackItem.title}:&nbsp;
                 </span>
-              ))}
-            </div>
-          </li>
-        )}
-        {frameworks && (
-          <li>
-            <span>
-              <FiLayout className="inline-block mr-2" />
-              Frameworks:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {frameworks.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </li>
-        )}
-        {libraries && (
-          <li>
-            <span>
-              <FiPackage className="inline-block mr-2" />
-              Libraries:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {libraries.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </li>
-        )}
-        {databases && (
-          <li>
-            <span>
-              <FiServer className="inline-block mr-2" />
-              Databases:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {databases.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </li>
-        )}
-        {tools && (
-          <li>
-            <span>
-              <FiTool className="inline-block mr-2" />
-              Tools:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {tools.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </li>
-        )}
-        {architectures && (
-          <li>
-            <span>
-              <SiMaterialdesignicons className="inline-block mr-2" />
-              Architectures:&nbsp;
-            </span>
-            <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
-              {architectures.map((item, i) => (
-                <span key={i} className="tag">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </li>
+                <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                  {stackItem.items.map((item, i) => (
+                    <span key={i} className={tag?.className || "tag"}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </li>
+            )
         )}
       </ul>
     </div>

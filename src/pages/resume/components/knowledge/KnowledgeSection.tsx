@@ -11,7 +11,12 @@ const KnowledgeSection: KnowledgeSectionComponent = (props) => {
       <h4 className="text-3xl dark:text-white font-medium mb-8">Knowledges</h4>
 
       <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-        <Stack {...props} />
+        <Stack
+          {...props}
+          tag={{
+            className: "tag bg-white dark:bg-[#05151e] dark:text-white",
+          }}
+        />
       </div>
     </div>
   );

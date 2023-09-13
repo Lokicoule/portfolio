@@ -23,7 +23,7 @@
   }
 
   .tag {
-    @apply bg-gray-300 cursor-default px-5 py-2 rounded-lg dark:bg-[#1C1C1C] dark:text-[#A6A6A6];
+    @apply bg-[#F3F6F6] dark:bg-[#121e26] cursor-default px-5 py-2 rounded-lg dark:text-[#A6A6A6];
   }
 
   .page-title {
