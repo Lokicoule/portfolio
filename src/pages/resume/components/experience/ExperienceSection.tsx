@@ -33,15 +33,20 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
             mode === "dark" ? "transparent" : `${colors[idx]}`
           }`}
         >
-          <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
-            {item.duration}
-          </span>
-          <h3 className="text-xl dark:text-white">{item.name}</h3>
-          <span className="dark:text-[#b7b7b7] ">{item.client.name}</span>
-
-          <div className=" flex justify-between items-center">
+          <div className="flex flex-col space-y-2">
+            <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
+              {item.duration}
+            </span>
+            <ExperienceModal
+              triggerButton={
+                <button className="text-xl font-bold text-blue-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-blue-500 text-left">
+                  {item.name}
+                </button>
+              }
+              experience={item}
+            />
+            <span className="dark:text-[#b7b7b7] mt-2">{item.client.name}</span>
             <span className="dark:text-[#b7b7b7]">{item.place}</span>
-            <ExperienceModal experience={item} />
           </div>
         </div>
       ))}
