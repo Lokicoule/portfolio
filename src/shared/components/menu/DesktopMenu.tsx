@@ -16,7 +16,7 @@ const DesktopMenu = () => {
         >
           <Navigation
             defaultClassName="link-menu"
-            activeClassName="link-menu lg:text-white lg:bg-sky-to-blue"
+            activeClassName="link-menu lg:text-white lg:bg-sky-to-blue dark:text-white hover:brightness-125"
             iconClassName="text-xl mb-1"
           />
         </ul>
