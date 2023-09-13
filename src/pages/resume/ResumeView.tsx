@@ -22,7 +22,7 @@ const ResumeView: ResumeViewComponent = ({
         </div>
       </div>
 
-      <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-[#F3F6F6]">
+      <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-[#F3F6F6] dark:bg-[#121e26]">
         <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
           <div className="col-span-1">
             <SkillSection items={skills} />

@@ -46,7 +46,7 @@ const Modal: ModalComponent = ({ triggerButton, children, className }) => {
           <div className="flex items-center justify-center min-h-screen">
             <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
             <div
-              className={`bg-white dark:bg-[#05151e] shadow-gray-800 relative rounded-xl shadow-lg p-4 md:p-8 w-full md:w-10/12 lg:w-[850px] z-50`}
+              className={`bg-white dark:bg-[#05151e] shadow-gray-900 relative rounded-xl shadow-lg p-4 md:p-8 w-full md:w-10/12 lg:w-[850px] z-50`}
             >
               <div className="overflow-y-scroll max-h-[80vh] no-scrollbar">
                 <BsXCircle
