@@ -15,7 +15,7 @@ const ExperienceModal: ExperienceModalComponent = ({
   triggerButton,
 }) => {
   return (
-    <Modal triggerButton={triggerButton}>
+    <Modal triggerButton={triggerButton} className="pr-4">
       <ExperienceModalTitle experience={experience} />
       <ExperienceModalContent experience={experience} />
     </Modal>
