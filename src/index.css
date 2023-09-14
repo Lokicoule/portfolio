@@ -11,7 +11,7 @@
   }
 
   .secondary {
-    @apply bg-[#F3F6F6];
+    @apply bg-[#FAFAFA];
   }
 
   .secondary:dark {
@@ -23,7 +23,7 @@
   }
 
   .tag {
-    @apply bg-[#F3F6F6] dark:bg-[#121e26] cursor-default px-5 py-2 rounded-lg dark:text-[#A6A6A6];
+    @apply bg-[#FAFAFA] dark:bg-[#121e26] cursor-default px-5 py-2 rounded-lg dark:text-[#A6A6A6];
   }
 
   .page-title {
@@ -31,7 +31,7 @@
   }
 
   .btn-social {
-    @apply w-10 h-10 rounded-lg flex justify-center items-center transition-colors duration-300 ease-in-out bg-[#F3F6F6] dark:bg-[#212425];
+    @apply w-10 h-10 rounded-lg flex justify-center items-center transition-colors duration-300 ease-in-out bg-[#FAFAFA] dark:bg-[#212425];
   }
   .btn-social:hover {
     @apply bg-gradient-to-b from-sky-400 to-blue-500 hover:text-white;
@@ -58,7 +58,7 @@
   }
 
   .link-menu {
-    @apply w-full h-20 rounded-[10px] text-gray-600 cursor-pointer font-medium mx-2.5 dark:text-[#A6A6A6] justify-center flex flex-col items-center transition-all duration-300 ease-in-out bg-[#F3F6F6] dark:bg-[#121e26];
+    @apply w-full h-20 rounded-[10px] text-gray-600 cursor-pointer font-medium mx-2.5 dark:text-[#A6A6A6] justify-center flex flex-col items-center transition-all duration-300 ease-in-out bg-[#FAFAFA] dark:bg-[#121e26];
   }
 
   .link-menu:hover {
