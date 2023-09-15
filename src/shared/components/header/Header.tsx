@@ -13,8 +13,8 @@ const Header = () => {
       <div className="w-full flex justify-between px-4">
         <div className="flex-grow" />
         <div className="flex items-center">
-          <ModeSelector controller={modeController} />
           <Lang controller={langController} presenter={langPresenter} />
+          <ModeSelector controller={modeController} />
           <MobileMenu />
         </div>
       </div>
