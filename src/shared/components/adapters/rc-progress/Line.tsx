@@ -1,5 +1,5 @@
 import { Line as RCLine } from "rc-progress";
-import { useTheme } from "../theme/ThemeProvider";
+import { useTheme } from "../../theme/ThemeProvider";
 
 type LineProps = {
   name: string;

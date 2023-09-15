@@ -1,4 +1,4 @@
-import Line from "../../../../shared/components/line/Line";
+import Line from "../../../../shared/components/adapters/rc-progress/Line";
 import { SkillProps } from "../../ResumeViewModel";
 
 type SkillSectionProps = {
