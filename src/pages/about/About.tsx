@@ -77,20 +77,12 @@ const About = () => {
               className="bg-white dark:bg-[#05151e] rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA]"
             >
               <div className="flex items-center mb-5">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                  style={{ background: `${service.bg}` }}
-                >
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{ background: `${service.color}` }}
-                  >
-                    <span className="text-white text-2xl">{service.icon}</span>
-                  </div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className="text-4xl text-[#F95054]">{service.icon}</div>
+                  <h4 className="text-3xl dark:text-white font-medium">
+                    {service.title}
+                  </h4>
                 </div>
-                <h4 className="text-xl font-medium dark:text-white">
-                  {service.title}
-                </h4>
               </div>
               <p className="text-gray-500 dark:text-gray-400">{service.des}</p>
             </div>
