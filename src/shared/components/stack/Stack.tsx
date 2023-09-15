@@ -58,19 +58,24 @@ const Stack: StackComponent = ({
   ];
 
   return (
-    <div className="flex flex-col flex-wrap lg:flex-row">
-      <ul className="list-none list-inside space-y-2 lg:mr-6">
+    <div className="flex flex-col lg:flex-row">
+      <ul className="list-none space-y-2 lg:mr-6">
         {stackItems.map(
           (stackItem) =>
             stackItem.items && (
-              <li key={stackItem.title}>
-                <span className="dark:text-white">
+              <li key={stackItem.title} className="flex items-center">
+                <span className="dark:text-white flex items-center">
                   {stackItem.icon}
-                  {stackItem.title}:&nbsp;
+                  <span className="ml-2 font-medium">{stackItem.title}:</span>
                 </span>
-                <div className="flex gap-y-2.5 gap-x-2.5 flex-wrap">
+                <div className="flex flex-wrap ml-2">
                   {stackItem.items.map((item, i) => (
-                    <span key={i} className={tag?.className || "tag"}>
+                    <span
+                      key={i}
+                      className={`${
+                        tag?.className || "tag"
+                      } px-2 py-1 rounded-full text-sm font-medium mr-2`}
+                    >
                       {item}
                     </span>
                   ))}
