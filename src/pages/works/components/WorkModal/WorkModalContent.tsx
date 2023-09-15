@@ -1,6 +1,6 @@
 import { FiAlertCircle, FiBriefcase } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import CollapsibleSection from "../../../../shared/components/collapsible-section/CollapsibleSection";
+import Disclosure from "../../../../shared/components/adapters/Disclosure";
 import Modal from "../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../shared/composition";
 import Stack from "../../../../shared/components/stack/Stack";
@@ -16,23 +16,23 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
   return (
     <Modal.Content>
       <div className="my-6 whitespace-pre-wrap">
-        <CollapsibleSection
+        <Disclosure
           icon={<GoStack className="text-lg mr-2 inline-block" />}
           title={translatingService.translate("technologiesUsed")}
           defaultOpen
         >
           <Stack {...work.technologiesUsed} />
-        </CollapsibleSection>
+        </Disclosure>
 
-        <CollapsibleSection
+        <Disclosure
           icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
           title={translatingService.translate("description")}
           defaultOpen
         >
           <span className="dark:text-white text-sm">{work.description}</span>
-        </CollapsibleSection>
+        </Disclosure>
 
-        <CollapsibleSection
+        <Disclosure
           icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
           title="Key Features"
           defaultOpen
@@ -51,10 +51,10 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
               </li>
             ))}
           </ul>
-        </CollapsibleSection>
+        </Disclosure>
 
         {work.challengesAndSolutions.length > 0 && (
-          <CollapsibleSection
+          <Disclosure
             icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("challengesAndSolutions")}
             defaultOpen
@@ -68,7 +68,7 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
                 ))}
               </ul>
             </div>
-          </CollapsibleSection>
+          </Disclosure>
         )}
       </div>
     </Modal.Content>

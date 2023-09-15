@@ -6,7 +6,7 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import CollapsibleSection from "../../../../../shared/components/collapsible-section/CollapsibleSection";
+import Disclosure from "../../../../../shared/components/adapters/Disclosure";
 import Modal from "../../../../../shared/components/modal/Modal";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
@@ -24,7 +24,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
   return (
     <Modal.Content>
       <div className="my-6 whitespace-pre-wrap">
-        <CollapsibleSection
+        <Disclosure
           icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
           title={translatingService.translate("description")}
           defaultOpen
@@ -32,18 +32,18 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
           <span className="dark:text-white text-sm">
             {experience.description}
           </span>
-        </CollapsibleSection>
+        </Disclosure>
 
-        <CollapsibleSection
+        <Disclosure
           icon={<GoStack className="text-lg mr-2 inline-block" />}
           title={translatingService.translate("technologiesUsed")}
           defaultOpen
         >
           <Stack {...experience.technologiesUsed} />
-        </CollapsibleSection>
+        </Disclosure>
 
         {experience.achievementsAndContributions.length > 0 && (
-          <CollapsibleSection
+          <Disclosure
             icon={<FiAward className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("achievementsAndContributions")}
             defaultOpen
@@ -57,11 +57,11 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
                 ))}
               </ul>
             </div>
-          </CollapsibleSection>
+          </Disclosure>
         )}
 
         {experience.challengesAndSolutions.length > 0 && (
-          <CollapsibleSection
+          <Disclosure
             icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("challengesAndSolutions")}
             defaultOpen
@@ -75,11 +75,11 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
                 ))}
               </ul>
             </div>
-          </CollapsibleSection>
+          </Disclosure>
         )}
 
         {experience.collaborationAndTeamwork.length > 0 && (
-          <CollapsibleSection
+          <Disclosure
             icon={<FiUsers className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("collaborationAndTeamwork")}
             defaultOpen
@@ -93,11 +93,11 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
                 ))}
               </ul>
             </div>
-          </CollapsibleSection>
+          </Disclosure>
         )}
 
         {experience.impactAndLessonsLearned.length > 0 && (
-          <CollapsibleSection
+          <Disclosure
             icon={<FiThumbsUp className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("impactAndLessonsLearned")}
             defaultOpen
@@ -111,7 +111,7 @@ const ExperienceModalContent: ExperienceModalContentComponent = ({
                 ))}
               </ul>
             </div>
-          </CollapsibleSection>
+          </Disclosure>
         )}
       </div>
     </Modal.Content>
