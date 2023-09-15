@@ -7,9 +7,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="bg-sky-to-grey dark:bg-grey-to-sky md:pb-16 w-full min-h-screen antialiased">
+    <div className="bg-sky-to-grey dark:bg-grey-to-sky w-full min-h-screen antialiased">
       <Header />
-      <main className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[180px] ">
+      <main className="container grid grid-cols-12 md:gap-10 lg:mt-[180px] ">
         <div className="col-span-12 lg:col-span-4 lg:h-screen lg:sticky top-44 hidden lg:block">
           <AnimatePresence>
             <motion.div
