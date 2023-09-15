@@ -22,10 +22,7 @@ export class LangController {
       const navigate = useNavigate();
       const location = useLocation();
 
-      const handleLanguageChange = (
-        event: React.ChangeEvent<HTMLSelectElement>
-      ) => {
-        const language = event.target.value;
+      const handleLanguageChange = (language: string) => {
         if (language === "en" || language === "fr") {
           const newPath = location.pathname.replace(
             /\/(en|fr)\//,
