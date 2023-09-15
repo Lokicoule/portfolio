@@ -12,21 +12,13 @@ const MobileMenu: React.FC = () => {
 
   return (
     <>
-      {!open ? (
-        <button
-          className="lg:opacity-0 lg:invisible visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-white dark:text-white text-3xl ml-3 p-3"
-          onClick={toggleMenu}
-        >
-          <AiOutlineMenu />
-        </button>
-      ) : (
-        <button
-          className="lg:opacity-0 cursor-pointer lg:invisible visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center items-center text-white text-3xl ml-3 p-3"
-          onClick={toggleMenu}
-        >
-          <AiOutlineClose />
-        </button>
-      )}
+      <button
+        className="lg:opacity-0 lg:hidden visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-white dark:text-white text-3xl ml-3 p-3"
+        onClick={toggleMenu}
+      >
+        {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+      </button>
+
       <nav className={`${open ? "block lg:hidden" : "hidden"}`}>
         <ul
           className={`${

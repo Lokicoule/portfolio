@@ -9,18 +9,13 @@ import ModeSelector from "../mode/Mode";
 
 const Header = () => {
   return (
-    <header className="container w-full bg-transparent  flex justify-between py-5 lg:px-0 lg:pt-[50px]">
-      <div className="w-full flex justify-between px-4">
-        <a href="/">
-          <h1 className="text-2xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 inline-block text-transparent bg-clip-text font-bold hover:brightness-125 transition-all duration-300 ease-in-out">
-            Lokicoule
-          </h1>
-        </a>
-        <div className="flex items-center">
-          <ModeSelector controller={modeController} />
+    <header className="container w-full bg-transparent flex justify-end py-5 lg:px-0 lg:pt-[50px]">
+      <div className="flex items-center justify-end w-full">
+        <div className="space-x-5 flex items-center">
           <Lang controller={langController} presenter={langPresenter} />
-          <MobileMenu />
+          <ModeSelector controller={modeController} />
         </div>
+        <MobileMenu />
       </div>
     </header>
   );
