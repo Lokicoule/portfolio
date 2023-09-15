@@ -1,5 +1,5 @@
 import { FiFilePlus } from "react-icons/fi";
-import Modal from "../../../../shared/components/modal/Modal";
+import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
 import { WorkProps } from "../../WorksViewModel";
 import SocialLinks from "../../../../shared/components/social-links/SocialLinks";
 

@@ -1,4 +1,4 @@
-import Modal from "../../../../../shared/components/modal/Modal";
+import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
 import { ExperienceProps } from "../../../ResumeViewModel";
 import ExperienceModalContent from "./ExperienceModalContent";
 import ExperienceModalTitle from "./ExperienceModalTitle";

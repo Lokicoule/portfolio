@@ -1,7 +1,7 @@
 import { FiAlertCircle, FiBriefcase } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import Disclosure from "../../../../shared/components/adapters/Disclosure";
-import Modal from "../../../../shared/components/modal/Modal";
+import Disclosure from "../../../../shared/components/adapters/@headlessui/Disclosure";
+import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
 import { translatingService } from "../../../../shared/composition";
 import Stack from "../../../../shared/components/stack/Stack";
 import { WorkProps } from "../../WorksViewModel";

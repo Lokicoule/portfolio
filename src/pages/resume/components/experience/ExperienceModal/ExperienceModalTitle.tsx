@@ -5,7 +5,7 @@ import {
   FiMapPin,
   FiUser,
 } from "react-icons/fi";
-import Modal from "../../../../../shared/components/modal/Modal";
+import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
 import Tooltip from "../../../../../shared/components/tooltip/Tooltip";
 import { ExperienceProps } from "../../../ResumeViewModel";
 

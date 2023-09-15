@@ -1,4 +1,4 @@
-import Modal from "../../../../shared/components/modal/Modal";
+import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
 import { WorkProps } from "../../WorksViewModel";
 import WorkModalContent from "./WorkModalContent";
 import WorkModalTitle from "./WorkModalTitle";
