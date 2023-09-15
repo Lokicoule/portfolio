@@ -7,7 +7,7 @@ import { NavigationItemProps } from "../NavigationViewModel";
 export const navigationData: NavigationItemProps[] = [
   {
     id: "navigation-1",
-    name: "Accueil",
+    name: "À propos",
     routePath: "",
     icon: <HomeIcon />,
   },
