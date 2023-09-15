@@ -9,13 +9,14 @@ import ModeSelector from "../mode/Mode";
 
 const Header = () => {
   return (
-    <header className="container w-full bg-transparent flex justify-end py-5 lg:px-0 lg:pt-[50px]">
-      <div className="flex items-center justify-end w-full">
-        <div className="space-x-5 flex items-center">
-          <Lang controller={langController} presenter={langPresenter} />
+    <header className="container w-full bg-transparent  flex justify-between py-5 lg:px-0 lg:pt-[50px]">
+      <div className="w-full flex justify-between px-4">
+        <div className="flex-grow" />
+        <div className="flex items-center">
           <ModeSelector controller={modeController} />
+          <Lang controller={langController} presenter={langPresenter} />
+          <MobileMenu />
         </div>
-        <MobileMenu />
       </div>
     </header>
   );
