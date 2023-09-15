@@ -1,4 +1,3 @@
-import { FaEye } from "react-icons/fa";
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { EducationProps } from "../../ResumeViewModel";
 
@@ -20,23 +19,41 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
           key={item.id}
           className="bg-white dark:bg-[#05151e] rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6 "
         >
-          <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
-            {item.date}
-          </span>
-          <h3 className="text-xl dark:text-white">{item.title}</h3>
-          <div className=" flex justify-between items-center">
-            <p className="dark:text-[#b7b7b7]">{item.level}</p>
-            {item?.link && (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#F95054] p-3 rounded-lg text-lg lg:text-xs hover:text-white transition-all duration-300 ease-in-out"
-              >
-                <FaEye className="inline-block" />
-              </a>
-            )}
-          </div>
+          {item.link ? (
+            <a href={item.link} target="_blank" rel="noreferrer">
+              <div className="cursor-pointer text-gray-700 dark:text-[#b7b7b7] hover:text-[#b7b7b7] dark:hover:text-gray-600 transition duration-200 ease-in-out">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
+                    {item.date}
+                  </span>
+
+                  <span className="text-xl font-bold text-left ">
+                    {item.title}
+                  </span>
+
+                  <span className="dark:text-[#b7b7b7] text-gray-600 mt-2">
+                    {item.level}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ) : (
+            <div className="text-gray-700 dark:text-[#b7b7b7]">
+              <div className="flex flex-col space-y-2 ">
+                <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
+                  {item.date}
+                </span>
+
+                <span className="text-xl font-bold text-left ">
+                  {item.title}
+                </span>
+
+                <span className="dark:text-[#b7b7b7] text-gray-600 mt-2">
+                  {item.level}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       ))}
     </div>
