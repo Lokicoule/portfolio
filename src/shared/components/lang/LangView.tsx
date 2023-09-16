@@ -34,7 +34,7 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
         {({ open, close }) => (
           <>
             <Popover.Button
-              className={` text-white group bg-transparent rounded-md inline-flex items-center font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+              className={` text-white group bg-transparent rounded-md inline-flex items-center font-medium hover:text-opacity-100 focus:outline-none focus:ring-0`}
             >
               <span>{viewModel.lang === "fr" ? "FR" : "EN"}</span>
               <FiChevronUp

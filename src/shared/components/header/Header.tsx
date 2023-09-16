@@ -11,12 +11,16 @@ const Header = () => {
   return (
     <header className="container w-full bg-transparent  flex justify-between py-5 lg:px-0 lg:pt-[50px]">
       <div className="w-full flex justify-between px-4">
-        <div className="flex-grow" />
-        <div className="flex items-center space-x-5">
+        <div className="lg:flex-grow hidden lg:flex" />
+        <div className="lg:hidden flex items-center space-x-5 ">
+          <ModeSelector controller={modeController} />
+          <Lang controller={langController} presenter={langPresenter} />
+        </div>
+        <div className="lg:flex hidden items-center space-x-5 ">
           <Lang controller={langController} presenter={langPresenter} />
           <ModeSelector controller={modeController} />
-          <MobileMenu />
         </div>
+        <MobileMenu />
       </div>
     </header>
   );

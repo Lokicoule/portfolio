@@ -3,23 +3,14 @@ import { Fragment } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { navigationPresenter } from "../../composition";
 import Navigation from "../navigation/Navigation";
-import { motion } from "framer-motion";
 
 const MobileMenu: React.FC = () => {
   return (
     <Popover>
       {({ open }) => (
         <>
-          <Popover.Button className="lg:opacity-0 lg:hidden visible opacity-100  bg-sky-to-blue w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-white dark:text-white text-xl font-bold">
-            <motion.div
-              animate={{
-                rotate: open ? 90 : 0,
-                scale: open ? 1.2 : 1,
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              {open ? <AiOutlineClose /> : <AiOutlineMenu />}
-            </motion.div>
+          <Popover.Button className="lg:hidden w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-xl font-bold focus:outline-none focus:ring-0 bg-white bg-sky-to-blue transition-all duration-300 ease-in-out text-white hover:brightness-125">
+            {open ? <AiOutlineClose /> : <AiOutlineMenu />}
           </Popover.Button>
           <Transition
             as={Fragment}
@@ -34,7 +25,7 @@ const MobileMenu: React.FC = () => {
               static
               className={`${
                 open
-                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-white dark:bg-[#05151e]"
+                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-white dark:bg-[#030814]"
                   : "hidden"
               } lg:hidden`}
             >
