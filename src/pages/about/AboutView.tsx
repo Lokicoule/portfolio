@@ -10,6 +10,13 @@ type AboutViewProps = {
 
 type AboutViewComponent = React.FC<AboutViewProps>;
 
+const colors: string[] = [
+  "text-[#ffeebb]",
+  "text-[#a7ecee]",
+  "text-[#99dbf5]",
+  "text-[#9ac5f4]",
+];
+
 const AboutView: AboutViewComponent = ({ presenter }) => {
   const [viewModel, setViewModel] = useState<AboutViewModel | undefined>();
 
@@ -38,14 +45,16 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
           What I do!
         </h3>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2 ">
-          {viewModel.services.map((service) => (
+          {viewModel.services.map((service, index) => (
             <div
               key={service.id}
               className="bg-white dark:bg-[#05151e] rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA]"
             >
               <div className="flex items-center mb-5">
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="text-4xl text-[#F95054]">{service.icon}</div>
+                  <div className={`text-4xl ${colors[index % colors.length]}`}>
+                    {service.icon}
+                  </div>
                   <h4 className="text-3xl dark:text-white font-medium">
                     {service.title}
                   </h4>
