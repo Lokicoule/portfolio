@@ -12,7 +12,23 @@ export default {
         xl: "1280px",
       },
     },
-    extend: {},
+    fontFamily: {
+      primary: ["Roboto", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        primary: {
+          light: "#ffffff",
+          DEFAULT: "#ffffff",
+          dark: "#05151e",
+        },
+        secondary: {
+          light: "#fafafa",
+          DEFAULT: "#f2f2f2",
+          dark: "#121e26",
+        },
+      },
+    },
   },
   plugins: [],
 };

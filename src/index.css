@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
 body {
   background-image: linear-gradient(to top, #ffeebb, #a7ecee, #99dbf5, #9ac5f4);
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+@layer base {
+  html {
+    @apply font-primary;
+  }
 }
 
 @layer components {
