@@ -1,16 +1,32 @@
+import { useEffect, useState } from "react";
 import { GoRepo } from "react-icons/go";
 import PageLayout from "../../shared/components/layouts/PageLayout";
 import SocialLinks from "../../shared/components/social-links/SocialLinks";
-import { WorksViewModelProps } from "./WorksViewModel";
+import { WorksPresenter } from "./WorksPresenter";
+import { WorksViewModel } from "./WorksViewModel";
 import WorkModal from "./components/WorkModal/WorkModal";
 
-type WorksViewComponent = React.FC<WorksViewModelProps>;
+type WorksViewProps = {
+  presenter: WorksPresenter;
+};
 
-const WorksView: WorksViewComponent = ({ works }) => {
+type WorksViewComponent = React.FC<WorksViewProps>;
+
+const WorksView: WorksViewComponent = ({ presenter }) => {
+  const [viewModel, setViewModel] = useState<WorksViewModel | undefined>();
+
+  useEffect(() => {
+    presenter.load((vm) => setViewModel(vm));
+  }, [presenter]);
+
+  if (!viewModel) {
+    return null;
+  }
+
   return (
     <PageLayout title="Works">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-10 lg:px-14">
-        {works.map((item) => (
+        {viewModel.works.map((item) => (
           <div
             key={item.id}
             className="bg-white dark:bg-[#05151e] rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA]"

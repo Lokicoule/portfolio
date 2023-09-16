@@ -13,7 +13,7 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/ResumeView";
-import Works from "../pages/works/WorksContainer";
+import Works from "../pages/works/WorksView";
 
 const pageRoutes = (root: string) => [
   {
