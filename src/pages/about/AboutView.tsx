@@ -1,58 +1,25 @@
+import { useEffect, useState } from "react";
 import PageLayout from "../../shared/components/layouts/PageLayout";
-import { PiCodeLight } from "react-icons/pi";
+import { AboutPresenter } from "./AboutPresenter";
+import { AboutViewModel } from "./AboutViewModel";
 
-const services = [
-  {
-    id: "1",
-    icon: <PiCodeLight />,
-    title: "Ui/Ux Design",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#D566FF",
-    bg: "#FCF4FF",
-  },
-  {
-    id: "2",
-    icon: <PiCodeLight />,
-    title: "App Development",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#DDA10C",
-    bg: "#FEFAF0",
-  },
-  {
-    id: "3",
-    icon: <PiCodeLight />,
-    title: "Photography",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#8774FF",
-    bg: "#FCF4FF",
-  },
-  {
-    id: "4",
-    icon: <PiCodeLight />,
-    title: "Photography",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#FF6080",
-    bg: "#FFF4F4",
-  },
-  {
-    id: "5",
-    icon: <PiCodeLight />,
-    title: "Managment",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#FF75D8",
-    bg: "#FFF0F8",
-  },
-  {
-    id: "6",
-    icon: <PiCodeLight />,
-    title: "Web Development",
-    des: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat.",
-    color: "#269FFF",
-    bg: "#F3FAFF",
-  },
-];
+type AboutViewProps = {
+  presenter: AboutPresenter;
+};
 
-const About = () => {
+type AboutViewComponent = React.FC<AboutViewProps>;
+
+const AboutView: AboutViewComponent = ({ presenter }) => {
+  const [viewModel, setViewModel] = useState<AboutViewModel | undefined>();
+
+  useEffect(() => {
+    presenter.load((vm) => setViewModel(vm));
+  }, [presenter]);
+
+  if (!viewModel) {
+    return null;
+  }
+
   return (
     <PageLayout title="About">
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
@@ -71,7 +38,7 @@ const About = () => {
           What I do!
         </h3>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2 ">
-          {services.map((service) => (
+          {viewModel.services.map((service) => (
             <div
               key={service.id}
               className="bg-white dark:bg-[#05151e] rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA]"
@@ -84,7 +51,9 @@ const About = () => {
                   </h4>
                 </div>
               </div>
-              <p className="text-gray-500 dark:text-gray-400">{service.des}</p>
+              <p className="text-gray-500 dark:text-gray-400">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
@@ -93,4 +62,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutView;

@@ -4,12 +4,13 @@ import FlexLayout from "../shared/components/layouts/FlexLayout";
 
 import { RouteConfig } from "../shared/routing/routingService";
 import {
+  aboutPresenter,
   resumePresenter,
   translatingService,
   worksPresenter,
 } from "../shared/composition";
 
-import About from "../pages/about/About";
+import About from "../pages/about/AboutView";
 import Contact from "../pages/contact/Contact";
 import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/ResumeView";
@@ -18,7 +19,7 @@ import Works from "../pages/works/WorksView";
 const pageRoutes = (root: string) => [
   {
     path: root,
-    element: <About />,
+    element: <About presenter={aboutPresenter} />,
   },
   {
     path: "contact",
