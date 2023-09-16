@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PageLayout from "../../shared/components/layouts/PageLayout";
 import { AboutPresenter } from "./AboutPresenter";
 import { AboutViewModel } from "./AboutViewModel";
+import { translatingService } from "../../shared/composition";
 
 type AboutViewProps = {
   presenter: AboutPresenter;
@@ -23,14 +24,13 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
   return (
     <PageLayout title="About">
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
-        <p className="text-lg leading-8 mb-6 text-gray-500 dark:text-gray-400">
-          I am a software engineer with a strong interest in software
-          architecture and design. I am passionate about the Web and everything
-          related to it. I am also interested in the{" "}
-          <span className="font-semibold">Web 3.0</span> and the{" "}
-          <span className="font-semibold">decentralized web</span>. I am always
-          looking for new challenges and opportunities to learn new things.
-        </p>
+        <p
+          className="text-lg leading-8 mb-6 text-gray-500 dark:text-gray-400"
+          dangerouslySetInnerHTML={{
+            __html:
+              translatingService.translateAndSanitize("about.description"),
+          }}
+        />
       </div>
 
       <section className="pb-12 px-2 sm:px-5 md:px-10 lg:px-14 ">

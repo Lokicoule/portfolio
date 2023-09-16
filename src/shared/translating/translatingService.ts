@@ -1,10 +1,14 @@
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import DOMPurify from "dompurify";
 
 export class TranslatingService {
   public translate(key: string): string {
-    console.log(i18next.language);
     return i18next.t(key);
+  }
+
+  public translateAndSanitize(key: string): string {
+    return DOMPurify.sanitize(i18next.t(key));
   }
 
   public setLanguage(language: string): void {
@@ -43,6 +47,10 @@ export class TranslatingService {
             challengesAndSolutions: "Challenges and Solutions",
             collaborationAndTeamwork: "Collaboration and Teamwork",
             impactAndLessonsLearned: "Impact and Lessons Learned",
+            about: {
+              description:
+                "I am a software engineer with a strong interest in software architecture and design. I am passionate about the Web and everything related to it. I am also interested in the <span class='underline'>Web 3.0</span> and the <span class='underline'>decentralized web</span>. I am always looking for new challenges and opportunities to learn new things.",
+            },
           },
         },
         fr: {
@@ -62,6 +70,10 @@ export class TranslatingService {
             challengesAndSolutions: "Défis et Solutions",
             collaborationAndTeamwork: "Collaboration et Travail d'Équipe",
             impactAndLessonsLearned: "Impact et Leçons Apprises",
+            about: {
+              description:
+                "Je suis un ingénieur logiciel avec un vif intérêt pour l'architecture logicielle et la conception. Je suis passionné par le Web et tout ce qui s'y rapporte. Je m'intéresse également au <span class='underline'>Web 3.0</span> et au web décentralisé. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour apprendre de nouvelles choses.",
+            },
           },
         },
       },
