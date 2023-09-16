@@ -1,7 +1,7 @@
-import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { GlobalCache } from "../../../sharedKernel/persistence/GlobalCache";
-import { LangViewModel } from "./LangViewModel";
+import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../../sharedKernel/presentation/SubscriptionManager";
+import { LangViewModel } from "./LangViewModel";
 
 export class LangPresenter extends Presenter<LangViewModel> {
   private subscriptionManager: SubscriptionManager;
