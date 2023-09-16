@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: linear-gradient(to top, #ffeebb, #a7ecee, #99dbf5, #9ac5f4);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 @layer components {
   .primary {
     @apply bg-white;
@@ -55,6 +61,10 @@
 
   .bg-grey-to-sky {
     @apply bg-gradient-to-b from-gray-950 to-sky-800;
+  }
+
+  .bg-custom-gradient {
+    @apply bg-gradient-to-t from-[#FFEEBB] via-[#A7ECEE] via-[#99DBF5] to-[#9AC5F4];
   }
 
   .link-menu {
