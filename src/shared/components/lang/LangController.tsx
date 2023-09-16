@@ -38,7 +38,7 @@ export class LangController {
           navigate(newPath, { replace: true });
         } else {
           notificationService.showToast(
-            Notification.createError(`Language ${language} not supported!`)
+            Notification.createError(`Language ${language} is not supported!`)
           );
         }
       };
