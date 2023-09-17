@@ -1,18 +1,16 @@
-import { Outlet, Navigate } from "react-router-dom";
-import GridLayout from "../shared/components/layouts/GridLayout";
-import FlexLayout from "../shared/components/layouts/FlexLayout";
+import { Navigate, Outlet } from "react-router-dom";
+import Layout from "../shared/components/layouts/Layout";
 
-import { RouteConfig } from "../shared/routing/routingService";
 import {
   aboutPresenter,
   resumePresenter,
   translatingService,
   worksPresenter,
 } from "../shared/composition";
+import { RouteConfig } from "../shared/routing/routingService";
 
 import About from "../pages/about/AboutView";
 import Contact from "../pages/contact/Contact";
-import NotFound from "../pages/notFound/NotFound";
 import Resume from "../pages/resume/ResumeView";
 import Works from "../pages/works/WorksView";
 
@@ -39,32 +37,24 @@ const routes: RouteConfig[] = [
   {
     path: "/fr",
     element: (
-      <GridLayout>
+      <Layout>
         <Outlet />
-      </GridLayout>
+      </Layout>
     ),
     children: pageRoutes("/fr"),
   },
   {
     path: "/en",
     element: (
-      <GridLayout>
+      <Layout>
         <Outlet />
-      </GridLayout>
+      </Layout>
     ),
     children: pageRoutes("/en"),
   },
   {
-    path: "/",
-    element: <Navigate to={translatingService.language} />,
-  },
-  {
     path: "*",
-    element: (
-      <FlexLayout>
-        <NotFound />
-      </FlexLayout>
-    ),
+    element: <Navigate to={translatingService.language} />,
   },
 ];
 

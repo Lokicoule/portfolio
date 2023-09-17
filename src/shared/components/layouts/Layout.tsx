@@ -5,7 +5,7 @@ import Header from "../header/Header";
 import DesktopMenu from "../menu/DesktopMenu";
 import { AnimatePresence, motion } from "framer-motion";
 
-const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="dark:bg-gradient-to-t from-[#FCDAB7] via-[#1E5F74] via-[#133B5C] to-[#1D2D50] bg-no-repeat bg-fixed h-full">
       <Header />
@@ -60,4 +60,4 @@ const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default GridLayout;
+export default Layout;

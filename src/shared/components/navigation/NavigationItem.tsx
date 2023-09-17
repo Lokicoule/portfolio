@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { NavigationItemProps } from "./NavigationViewModel";
+import { translatingService } from "../../composition";
 
 type NavItemProps = {
   item: NavigationItemProps;
@@ -21,7 +22,9 @@ const NavigationItem: NavigationItemComponent = ({
   const location = useLocation();
   const langPrefix = location.pathname.split("/")[1];
   const langPath =
-    langPrefix === "en" || langPrefix === "fr" ? `/${langPrefix}` : "";
+    langPrefix === "en" || langPrefix === "fr"
+      ? `/${langPrefix}`
+      : translatingService.language;
 
   const currentPath = location.pathname.replace(/\/$/, "");
 
