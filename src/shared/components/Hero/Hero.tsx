@@ -10,47 +10,47 @@ import img from "/avatar.jpg";
 import HeroSocialLinks from "../social-links/SocialLinks";
 import HeroContactInfo from "../contact-info/ContactInfo";
 
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/",
+    icon: <FaLinkedinIn />,
+    iconClass: "text-[#0072b1]",
+  },
+  {
+    href: "https://www.github.com/",
+    icon: <FaGithub />,
+    iconClass: "text-[#0072b1]",
+  },
+];
+
+const contactInfo = [
+  {
+    label: "Email",
+    value: "loikfekkai@gmail.com",
+    color: "green-500",
+    icon: <FaEnvelopeOpenText />,
+    iconClass: "text-[#6AB5B9]",
+    href: "mailto:loikfekkai@gmail.com",
+  },
+  {
+    label: "Location",
+    value: "Mimizan, France",
+    color: "pink-500",
+    icon: <FaMapMarkerAlt />,
+    iconClass: "text-[#FD7590]",
+  },
+  {
+    label: "Birthday",
+    value: "Sept 17, 1992",
+    color: "blue-500",
+    icon: <FaCalendarAlt />,
+    iconClass: "text-[#C17CEB]",
+  },
+];
+
 const Hero = () => {
-  const socialLinks = [
-    {
-      href: "https://www.linkedin.com/",
-      icon: <FaLinkedinIn />,
-      iconClass: "text-[#0072b1]",
-    },
-    {
-      href: "https://www.github.com/",
-      icon: <FaGithub />,
-      iconClass: "text-[#0072b1]",
-    },
-  ];
-
-  const contactInfo = [
-    {
-      label: "Email",
-      value: "loikfekkai@gmail.com",
-      color: "green-500",
-      icon: <FaEnvelopeOpenText />,
-      iconClass: "text-[#6AB5B9]",
-      href: "mailto:loikfekkai@gmail.com",
-    },
-    {
-      label: "Location",
-      value: "Mimizan, France",
-      color: "pink-500",
-      icon: <FaMapMarkerAlt />,
-      iconClass: "text-[#FD7590]",
-    },
-    {
-      label: "Birthday",
-      value: "Sept 17, 1992",
-      color: "blue-500",
-      icon: <FaCalendarAlt />,
-      iconClass: "text-[#C17CEB]",
-    },
-  ];
-
   return (
-    <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-primary text-center dark:bg-primary-dark px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
+    <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-primary-light text-center dark:bg-primary-dark px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
       <img
         src={img}
         className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] hover:brightness-125 transition duration-200 ease-linear"
