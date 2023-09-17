@@ -21,7 +21,7 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
         <ExperienceModal
           key={item.id}
           triggerButton={
-            <div className="bg-primary-light dark:bg-primary-dark rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-gray-200 dark:border-gray-700 hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6">
+            <div className="bg-primary-light dark:bg-primary-dark rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6">
               <div className="cursor-pointer text-gray-700 dark:text-[#b7b7b7] hover:text-[#b7b7b7] dark:hover:text-gray-600 transition duration-200 ease-in-out">
                 <div className="flex flex-col space-y-2 ">
                   <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">

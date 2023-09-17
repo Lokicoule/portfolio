@@ -16,6 +16,13 @@ export default {
       primary: ["Roboto", "sans-serif"],
     },
     extend: {
+      borderColor: {
+        primary: {
+          light: "#e5e7eb",
+          DEFAULT: "#9ca3af",
+          dark: "#373f51",
+        },
+      },
       colors: {
         primary: {
           light: "#ffffff",
@@ -26,6 +33,13 @@ export default {
           light: "#fafafa",
           DEFAULT: "#f2f2f2",
           dark: "#121e26",
+        },
+      },
+      textColor: {
+        primary: {
+          light: "text-gray-200",
+          DEFAULT: "text-gray-400",
+          dark: "text-gray-700",
         },
       },
     },

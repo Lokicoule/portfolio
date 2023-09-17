@@ -48,7 +48,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
           {viewModel.services.map((service, index) => (
             <div
               key={service.id}
-              className="rounded-xl p-8 bg-primary-light dark:bg-primary-dark border-[1px] border-gray-200 dark:border-gray-700 hover:bg-secondary-light dark:hover:bg-secondary-dark dark:hover:shadow-xl transition duration-200 ease-in-out"
+              className="rounded-xl p-8 bg-primary-light dark:bg-primary-dark border-[1px] border-primary-light dark:border-primary-dark hover:bg-secondary-light dark:hover:bg-secondary-dark dark:hover:shadow-xl transition duration-200 ease-in-out"
             >
               <div className="flex items-center mb-5">
                 <div className="flex items-center space-x-2 mb-4">
