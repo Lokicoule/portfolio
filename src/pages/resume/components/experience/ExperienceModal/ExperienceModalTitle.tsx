@@ -9,11 +9,27 @@ import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
 import Tooltip from "../../../../../shared/components/tooltip/Tooltip";
 import { ExperienceProps } from "../../../ResumeViewModel";
 
+type DetailItemProps = {
+  icon: React.ReactNode;
+  label: string;
+  value: React.ReactNode;
+};
+
 type ExperienceModalTitleProps = {
   experience: ExperienceProps;
 };
 
+type DetailItemComponent = React.FC<DetailItemProps>;
+
 type ExperienceModalTitleComponent = React.FC<ExperienceModalTitleProps>;
+
+const DetailItem: DetailItemComponent = ({ icon, label, value }) => (
+  <span className="dark:text-white flex items-center mt-2 text-[15px] sm:text-lg">
+    <span className={`text-lg mr-2 block`}>{icon}</span>
+    {label} :&nbsp;
+    <span className="font-medium">{value}</span>
+  </span>
+);
 
 const ExperienceModalTitle: ExperienceModalTitleComponent = ({
   experience,
@@ -26,50 +42,49 @@ const ExperienceModalTitle: ExperienceModalTitleComponent = ({
 
       <div className="flex flex-row flex-wrap lg:flex-row my-6 flex-between">
         <div className="details-left space-y-2 lg:mr-6">
-          <span className="dark:text-white flex items-center mt-2  text-[15px] sm:text-lg">
-            <FiClock className="text-lg mr-2 hidden sm:block" />
-            Duration :&nbsp;
-            <span className="font-medium ">{experience.duration}</span>
-          </span>
-          <span className="dark:text-white flex items-center mt-2  text-[15px] sm:text-lg">
-            <FiBriefcase className="text-lg mr-2 hidden sm:block" />
-            Company :&nbsp;
-            <span className="font-medium ">{experience.company}</span>
-          </span>
-          <span className="dark:text-white flex items-center mt-2 text-[15px] sm:text-lg">
-            <FiMapPin className="text-lg mr-2 hidden sm:block" />
-            Place :&nbsp;
-            <span className="font-medium ">{experience.place}</span>
-          </span>
+          <DetailItem
+            icon={<FiClock />}
+            label="Duration"
+            value={experience.duration}
+          />
+          <DetailItem
+            icon={<FiBriefcase />}
+            label="Company"
+            value={experience.company}
+          />
+          <DetailItem
+            icon={<FiMapPin />}
+            label="Place"
+            value={experience.place}
+          />
         </div>
 
         <div className="details-right space-y-2">
-          <div className="dark:text-white flex items-center mt-2 text-[15px] sm:text-lg">
-            <FiUser className="text-lg mr-2 hidden sm:block" />
-            Client :&nbsp;
-            {experience.client.abbreviation ? (
-              <Tooltip text={experience.client.name}>
-                <span className="font-medium ">
-                  {experience.client.abbreviation}
-                </span>
-              </Tooltip>
-            ) : (
-              <span className="font-medium ">{experience.client.name}</span>
-            )}
-          </div>
-          <span className="dark:text-white flex items-center text-[15px] sm:text-lg">
-            <FiFilePlus className="sm:text-lg hidden sm:block mr-2 md:text-xl" />
-            Project :&nbsp;
-            <span className="font-medium ">{experience.tag}</span>
-          </span>
-
-          <span className="dark:text-white flex items-center mt-2  text-[15px] sm:text-lg">
-            <FiBriefcase className="text-lg mr-2 hidden sm:block" />
-            Role and Responsibilities :&nbsp;
-            <span className="font-medium ">
-              {experience.roleAndResponsibilities}
-            </span>
-          </span>
+          <DetailItem
+            icon={<FiUser />}
+            label="Client"
+            value={
+              experience.client.abbreviation ? (
+                <Tooltip text={experience.client.name}>
+                  <span className="font-medium">
+                    {experience.client.abbreviation}
+                  </span>
+                </Tooltip>
+              ) : (
+                <span className="font-medium">{experience.client.name}</span>
+              )
+            }
+          />
+          <DetailItem
+            icon={<FiFilePlus />}
+            label="Project"
+            value={experience.tag}
+          />
+          <DetailItem
+            icon={<FiBriefcase />}
+            label="Role and Responsibilities"
+            value={experience.roleAndResponsibilities}
+          />
         </div>
       </div>
     </Modal.Title>
