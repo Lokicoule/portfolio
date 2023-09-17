@@ -6,12 +6,12 @@ const DesktopMenu = () => {
   const [menuOpen] = useState(false);
 
   return (
-    <header className="lg:w-[526px] h-[144px] hidden lg:block  p-[30px] ml-auto mb-10  rounded-[16px] bg-white dark:bg-[#05151e]">
+    <header className="lg:w-[526px] h-[144px] hidden lg:block  p-[30px] ml-auto mb-10  rounded-[16px] bg-primary-light dark:bg-primary-dark">
       <nav className={`${menuOpen ? "block mx-auto" : "hidden lg:block"}`}>
         <ul
           className={`${
             menuOpen
-              ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-white dark:bg-[#121e26]"
+              ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-primary-light dark:bg-[#121e26]"
               : "flex "
           }`}
         >

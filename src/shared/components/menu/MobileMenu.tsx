@@ -9,7 +9,7 @@ const MobileMenu: React.FC = () => {
     <Popover>
       {({ open }) => (
         <>
-          <Popover.Button className="lg:hidden w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-xl font-bold focus-no-outline bg-white bg-sky-to-blue transition-all duration-300 ease-in-out text-white hover:brightness-125">
+          <Popover.Button className="lg:hidden w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-xl font-bold focus-no-outline bg-primary-light bg-sky-to-blue transition-all duration-300 ease-in-out text-white hover:brightness-125">
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
           </Popover.Button>
           <Transition
@@ -25,7 +25,7 @@ const MobileMenu: React.FC = () => {
               static
               className={`${
                 open
-                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-white dark:bg-[#030814]"
+                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-primary-light dark:bg-[#030814]"
                   : "hidden"
               } lg:hidden`}
             >

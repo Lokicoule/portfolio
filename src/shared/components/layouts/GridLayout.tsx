@@ -48,7 +48,7 @@ const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="lg:rounded-2xl bg-white dark:bg-[#05151e]"
+              className="lg:rounded-2xl bg-primary-light dark:bg-primary-dark"
             >
               {children}
               <Footer />

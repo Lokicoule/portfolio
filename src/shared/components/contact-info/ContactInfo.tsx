@@ -22,7 +22,7 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
           }`}
         >
           <span
-            className={`flex-shrink-0 btn-social bg-white dark:bg-black ${info.iconClass} shadow-md`}
+            className={`flex-shrink-0 btn-social bg-primary-light dark:bg-black ${info.iconClass} shadow-md`}
           >
             {info.icon}
           </span>

@@ -18,10 +18,10 @@ body {
 
 @layer components {
   .primary {
-    @apply bg-white;
+    @apply bg-primary-light;
   }
   .primary:dark {
-    @apply bg-[#05151e];
+    @apply bg-primary-dark;
   }
 
   .secondary {
@@ -33,7 +33,7 @@ body {
   }
 
   .resume-btn {
-    @apply bg-white cursor-default px-5 py-2 rounded-lg dark:bg-[#1C1C1C] dark:text-[#A6A6A6];
+    @apply bg-primary-light cursor-default px-5 py-2 rounded-lg dark:bg-[#1C1C1C] dark:text-[#A6A6A6];
   }
 
   .focus-no-outline {

@@ -56,7 +56,7 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
               >
                 <Popover.Panel className="absolute z-10 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0">
                   <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                    <div className="relative grid gap-6 px-5 py-6 bg-white dark:bg-[#05151e] backdrop-blur-sm">
+                    <div className="relative grid gap-6 px-5 py-6 bg-primary-light dark:bg-primary-dark backdrop-blur-sm">
                       {[
                         {
                           code: "en",
