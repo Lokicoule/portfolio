@@ -24,7 +24,7 @@ type DetailItemComponent = React.FC<DetailItemProps>;
 type ExperienceModalTitleComponent = React.FC<ExperienceModalTitleProps>;
 
 const DetailItem: DetailItemComponent = ({ icon, label, value }) => (
-  <span className="dark:text-white flex items-center mt-2 text-[15px] sm:text-lg">
+  <span className="dark:text-secondary-dark flex items-center mt-2 text-[15px] sm:text-lg">
     <span className={`text-lg mr-2 block`}>{icon}</span>
     {label} :&nbsp;
     <span className="font-medium">{value}</span>

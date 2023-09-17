@@ -32,7 +32,7 @@ const MobileMenu: React.FC = () => {
               <ul className="flex flex-col">
                 <Navigation
                   presenter={navigationPresenter}
-                  defaultClassName="mobile-link-menu text-black dark:text-white"
+                  defaultClassName="mobile-link-menu text-primary-light dark:text-primary-dark"
                   activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
                   iconClassName="text-xl mr-2"
                 />

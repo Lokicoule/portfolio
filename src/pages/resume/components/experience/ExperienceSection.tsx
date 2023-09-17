@@ -15,7 +15,9 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
         <div className="text-4xl text-[#F95054]">
           <MdOutlineSchool />
         </div>
-        <h4 className="text-3xl dark:text-white font-medium">Experience</h4>
+        <h4 className="text-3xl dark:text-primary-dark font-medium">
+          Experience
+        </h4>
       </div>
       {items.map((item) => (
         <ExperienceModal

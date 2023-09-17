@@ -26,20 +26,21 @@ export default {
       colors: {
         primary: {
           light: "#ffffff",
-          DEFAULT: "#E1D4BB",
           dark: "#05151e",
         },
         secondary: {
           light: "#fafafa",
-          DEFAULT: "#f2f2f2",
           dark: "#121e26",
         },
       },
       textColor: {
         primary: {
-          light: "text-gray-200",
-          DEFAULT: "text-gray-400",
-          dark: "text-gray-700",
+          light: "#000000",
+          dark: "#ffffff",
+        },
+        secondary: {
+          light: "#000033",
+          dark: "#fafafa",
         },
       },
     },
