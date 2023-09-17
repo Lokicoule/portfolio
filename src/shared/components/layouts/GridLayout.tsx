@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const GridLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="dark:bg-gradient-to-t from-[#FCDAB7] via-[#1E5F74] via-[#133B5C] to-[#1D2D50] bg-no-repeat bg-fixed">
+    <div className="dark:bg-gradient-to-t from-[#FCDAB7] via-[#1E5F74] via-[#133B5C] to-[#1D2D50] bg-no-repeat bg-fixed h-full">
       <Header />
       <main className="container grid grid-cols-12 md:gap-10 lg:mt-[180px] ">
         <div className="col-span-12 lg:col-span-4 lg:h-screen lg:sticky top-44 hidden lg:block">
