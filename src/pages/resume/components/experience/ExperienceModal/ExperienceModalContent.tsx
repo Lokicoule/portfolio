@@ -6,8 +6,10 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
-import Disclosure from "../../../../../shared/components/adapters/@headlessui/Disclosure";
-import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
+import {
+  Disclosure,
+  Modal,
+} from "../../../../../shared/components/adapters/@headlessui";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
 import Stack from "../../../../../shared/components/stack/Stack";
@@ -16,106 +18,80 @@ type ExperienceModalContentProps = {
   experience: ExperienceProps;
 };
 
-type ExperienceModalContentComponent = React.FC<ExperienceModalContentProps>;
+const DisclosureSection = ({
+  icon,
+  title,
+  content,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  content: React.ReactNode;
+}) => (
+  <Disclosure icon={icon} title={title} defaultOpen>
+    <div className="dark:text-white text-sm">{content}</div>
+  </Disclosure>
+);
 
-const ExperienceModalContent: ExperienceModalContentComponent = ({
+const ExperienceModalContent: React.FC<ExperienceModalContentProps> = ({
   experience,
-}) => {
-  return (
-    <Modal.Content>
-      <div className="my-6 whitespace-pre-wrap">
-        <Disclosure
-          icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
-          title={translatingService.translate("description")}
-          defaultOpen
-        >
-          <span className="dark:text-white text-sm">
-            {experience.description}
-          </span>
-        </Disclosure>
+}) => (
+  <Modal.Content>
+    <div className="my-6 whitespace-pre-wrap">
+      <DisclosureSection
+        icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
+        title={translatingService.translate("description")}
+        content={experience.description}
+      />
 
-        <Disclosure
-          icon={<GoStack className="text-lg mr-2 inline-block" />}
-          title={translatingService.translate("technologiesUsed")}
-          defaultOpen
-        >
-          <Stack {...experience.technologiesUsed} />
-        </Disclosure>
+      <DisclosureSection
+        icon={<GoStack className="text-lg mr-2 inline-block" />}
+        title={translatingService.translate("technologiesUsed")}
+        content={<Stack {...experience.technologiesUsed} />}
+      />
 
-        {experience.achievementsAndContributions.length > 0 && (
-          <Disclosure
-            icon={<FiAward className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("achievementsAndContributions")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.achievementsAndContributions.map((item, i) => (
-                  <li key={i} className="font-medium text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Disclosure>
-        )}
-
-        {experience.challengesAndSolutions.length > 0 && (
-          <Disclosure
-            icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("challengesAndSolutions")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.challengesAndSolutions.map((item, i) => (
-                  <li key={i} className="font-medium text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Disclosure>
-        )}
-
-        {experience.collaborationAndTeamwork.length > 0 && (
-          <Disclosure
-            icon={<FiUsers className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("collaborationAndTeamwork")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.collaborationAndTeamwork.map((item, i) => (
-                  <li key={i} className="font-medium text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Disclosure>
-        )}
-
-        {experience.impactAndLessonsLearned.length > 0 && (
-          <Disclosure
-            icon={<FiThumbsUp className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("impactAndLessonsLearned")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {experience.impactAndLessonsLearned.map((item, i) => (
-                  <li key={i} className="font-medium text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Disclosure>
-        )}
-      </div>
-    </Modal.Content>
-  );
-};
+      {[
+        {
+          items: experience.achievementsAndContributions,
+          title: translatingService.translate("achievementsAndContributions"),
+          icon: <FiAward className="text-lg mr-2 inline-block" />,
+        },
+        {
+          items: experience.challengesAndSolutions,
+          title: translatingService.translate("challengesAndSolutions"),
+          icon: <FiAlertCircle className="text-lg mr-2 inline-block" />,
+        },
+        {
+          items: experience.collaborationAndTeamwork,
+          title: translatingService.translate("collaborationAndTeamwork"),
+          icon: <FiUsers className="text-lg mr-2 inline-block" />,
+        },
+        {
+          items: experience.impactAndLessonsLearned,
+          title: translatingService.translate("impactAndLessonsLearned"),
+          icon: <FiThumbsUp className="text-lg mr-2 inline-block" />,
+        },
+      ].map((section, index) =>
+        section.items.length > 0 ? (
+          <DisclosureSection
+            key={index}
+            icon={section.icon}
+            title={section.title}
+            content={
+              <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
+                <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                  {section.items.map((item, i) => (
+                    <li key={i} className="font-medium text-sm">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            }
+          />
+        ) : null
+      )}
+    </div>
+  </Modal.Content>
+);
 
 export default ExperienceModalContent;
