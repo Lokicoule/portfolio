@@ -31,6 +31,10 @@ export default {
           light: "#fafafa",
           dark: "#121e26",
         },
+        tertiary: {
+          light: "#F4F4F4",
+          dark: "#02475E",
+        },
       },
       textColor: {
         primary: {
@@ -40,6 +44,10 @@ export default {
         secondary: {
           light: "#121e26",
           dark: "#FAF7F0",
+        },
+        tertiary: {
+          light: "#535962",
+          dark: "#F4F3F3",
         },
       },
     },

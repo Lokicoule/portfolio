@@ -1,5 +1,6 @@
 import { FiCode, FiLayout, FiPackage, FiServer, FiTool } from "react-icons/fi";
 import { SiMaterialdesignicons } from "react-icons/si";
+import { Tag } from "../tag/Tag";
 
 export interface StackProps {
   languages?: string[];
@@ -68,16 +69,9 @@ const Stack: StackComponent = ({
                   {stackItem.icon}
                   <span className="ml-2 font-medium">{stackItem.title}:</span>
                 </span>
-                <div className="flex flex-wrap ml-2">
+                <div className="flex flex-wrap space-x-2 ml-2">
                   {stackItem.items.map((item, i) => (
-                    <span
-                      key={i}
-                      className={`${
-                        tag?.className || "tag"
-                      } px-2 py-1 rounded-full text-sm font-medium mr-2`}
-                    >
-                      {item}
-                    </span>
+                    <Tag key={i} text={item} className={tag?.className} />
                   ))}
                 </div>
               </li>

@@ -17,6 +17,30 @@ body {
 }
 
 @layer components {
+  .bg-primary {
+    @apply bg-primary-light dark:bg-primary-dark;
+  }
+
+  .bg-secondary {
+    @apply bg-secondary-light dark:bg-secondary-dark;
+  }
+
+  .bg-tertiary {
+    @apply bg-tertiary-light dark:bg-tertiary-dark;
+  }
+
+  .text-primary {
+    @apply text-primary-light dark:text-primary-dark;
+  }
+
+  .text-secondary {
+    @apply text-secondary-light dark:text-secondary-dark;
+  }
+
+  .text-tertiary {
+    @apply text-tertiary-light dark:text-tertiary-dark;
+  }
+
   .focus-no-outline {
     @apply focus:outline-none focus:ring-0;
   }
