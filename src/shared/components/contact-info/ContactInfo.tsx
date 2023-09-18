@@ -1,15 +1,23 @@
+import TinyIcon from "../icons/TinyIcon";
+
 interface ContactInfo {
   label: string;
   value: string;
   color: string;
   icon: JSX.Element;
-  iconClass: string;
   href?: string;
 }
 
 interface Props {
   contactInfo: ContactInfo[];
 }
+
+const colors: string[] = [
+  "text-[#ffeebb]",
+  "text-[#a7ecee]",
+  "text-[#99dbf5]",
+  "text-[#9ac5f4]",
+];
 
 const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
   return (
@@ -21,11 +29,9 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
             index === contactInfo.length - 1 ? "" : "mb-2.5"
           }`}
         >
-          <span
-            className={`flex-shrink-0 btn-social bg-primary-light dark:bg-black ${info.iconClass} shadow-md`}
-          >
+          <TinyIcon className={colors[index % colors.length]}>
             {info.icon}
-          </span>
+          </TinyIcon>
           <div className="text-left ml-2.5">
             <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
               {info.label}

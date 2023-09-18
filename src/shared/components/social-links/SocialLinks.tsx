@@ -1,7 +1,8 @@
+import TinyIcon from "../icons/TinyIcon";
+
 export interface SocialLinkProps {
   href: string;
   icon: JSX.Element;
-  iconClass: string;
 }
 
 interface Props {
@@ -18,7 +19,7 @@ const SocialLinks: React.FC<Props> = ({ socialLinks }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={`btn-social ${link.iconClass}`}>{link.icon}</span>
+          <TinyIcon>{link.icon}</TinyIcon>
         </a>
       ))}
     </>

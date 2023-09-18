@@ -14,12 +14,10 @@ const socialLinks = [
   {
     href: "https://www.linkedin.com/",
     icon: <FaLinkedinIn />,
-    iconClass: "text-[#0072b1]",
   },
   {
     href: "https://www.github.com/",
     icon: <FaGithub />,
-    iconClass: "text-[#0072b1]",
   },
 ];
 
@@ -29,7 +27,6 @@ const contactInfo = [
     value: "loikfekkai@gmail.com",
     color: "green-500",
     icon: <FaEnvelopeOpenText />,
-    iconClass: "text-[#6AB5B9]",
     href: "mailto:loikfekkai@gmail.com",
   },
   {
@@ -37,14 +34,12 @@ const contactInfo = [
     value: "Mimizan, France",
     color: "pink-500",
     icon: <FaMapMarkerAlt />,
-    iconClass: "text-[#FD7590]",
   },
   {
     label: "Birthday",
     value: "Sept 17, 1992",
     color: "blue-500",
     icon: <FaCalendarAlt />,
-    iconClass: "text-[#C17CEB]",
   },
 ];
 
