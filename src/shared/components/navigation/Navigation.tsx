@@ -32,16 +32,18 @@ const Navigation: NavigationComponent = ({
 
   return (
     <>
-      {viewModel.items.map((item) => (
-        <NavigationItem
-          key={item.id}
-          item={item}
-          defaultClassName={defaultClassName}
-          activeClassName={activeClassName}
-          iconClassName={iconClassName}
-          onClick={onClick}
-        />
-      ))}
+      {viewModel.items.map((item) => {
+        return (
+          <NavigationItem
+            key={item.id}
+            item={item}
+            defaultClassName={defaultClassName}
+            activeClassName={activeClassName}
+            iconClassName={iconClassName}
+            onClick={onClick}
+          />
+        );
+      })}
     </>
   );
 };

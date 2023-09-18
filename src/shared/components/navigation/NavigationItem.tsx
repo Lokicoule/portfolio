@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { NavigationItemProps } from "./NavigationViewModel";
-import { translatingService } from "../../composition";
 
 type NavItemProps = {
   item: NavigationItemProps;
@@ -20,24 +19,16 @@ const NavigationItem: NavigationItemComponent = ({
   onClick,
 }) => {
   const location = useLocation();
-  const langPrefix = location.pathname.split("/")[1];
-  const langPath =
-    langPrefix === "en" || langPrefix === "fr"
-      ? `/${langPrefix}`
-      : translatingService.language;
-
   const currentPath = location.pathname.replace(/\/$/, "");
 
-  const isActive =
-    currentPath === `${langPath}${item.routePath}`
-      ? activeClassName
-      : defaultClassName;
+  const currentClassName =
+    currentPath === item.routePath ? activeClassName : defaultClassName;
 
   return (
     <Link
       key={item.id}
-      className={`${isActive} `}
-      to={`${langPath}${item.routePath}`}
+      className={currentClassName}
+      to={item.routePath}
       onClick={onClick}
     >
       <span className={iconClassName}>{item.icon}</span>
