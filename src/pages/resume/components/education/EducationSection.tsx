@@ -9,10 +9,10 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
   return (
     <div>
       <div className="flex items-center space-x-2 mb-4">
-        <div className="text-4xl text-[#F95054]">
+        <div className="text-4xl text-[#0072b1]">
           <MdOutlineBusinessCenter />
         </div>
-        <h4 className="text-3xl dark:text-white font-medium">Education</h4>
+        <h4 className="text-3xl text-secondary font-medium">Education</h4>
       </div>
       {items.map((item) => (
         <div

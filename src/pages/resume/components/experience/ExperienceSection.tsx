@@ -12,12 +12,10 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
   return (
     <div>
       <div className="flex items-center space-x-2 mb-4">
-        <div className="text-4xl text-[#F95054]">
+        <div className="text-4xl text-[#0072b1]">
           <MdOutlineSchool />
         </div>
-        <h4 className="text-3xl dark:text-primary-dark font-medium">
-          Experience
-        </h4>
+        <h4 className="text-3xl text-primary font-medium">Experience</h4>
       </div>
       {items.map((item) => (
         <ExperienceModal
