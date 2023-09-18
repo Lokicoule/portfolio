@@ -53,14 +53,6 @@ body {
     @apply bg-gradient-to-b from-sky-400 to-blue-500;
   }
 
-  .link-menu {
-    @apply w-full h-20 rounded-[10px] text-gray-600 cursor-pointer font-medium mx-2.5 dark:text-[#A6A6A6] justify-center flex flex-col items-center transition-all duration-300 ease-in-out bg-[#FAFAFA] dark:bg-[#121e26];
-  }
-
-  .link-menu:hover {
-    @apply text-white bg-gradient-to-b from-sky-400 to-blue-500 brightness-125;
-  }
-
   .mobile-link-menu {
     @apply rounded-md mb-1 cursor-pointer font-medium mx-2.5 flex text-sm py-4 px-2 md:px-4 xl:px-5 items-center transition-all duration-300 ease-in-out dark:text-[#A6A6A6] text-gray-100;
   }

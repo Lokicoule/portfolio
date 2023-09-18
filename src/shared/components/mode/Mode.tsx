@@ -15,7 +15,7 @@ const Mode: ModeComponent = ({ controller }) => {
 
   return (
     <button
-      className="w-10 h-10 rounded-full flex justify-center cursor-pointer items-center lg:text-black text-white text-xl font-bold lg:bg-white lg:hover:text-white hover:text-2xl hover:bg-sky-to-blue transition-all duration-300 ease-in-out"
+      className="w-10 h-10 rounded-full flex justify-center cursor-pointer items-center text-white text-xl font-bold lg:hover:text-white hover:text-2xl hover:bg-sky-to-blue transition-all duration-300 ease-in-out"
       onClick={handleToggleTheme}
     >
       {mode === "light" ? (
