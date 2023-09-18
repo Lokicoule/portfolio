@@ -32,7 +32,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, title }) => {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="lg:rounded-2xl bg-primary-light dark:bg-primary-dark"
+          className="lg:rounded-2xl bg-primary"
         >
           <Footer />
         </motion.div>

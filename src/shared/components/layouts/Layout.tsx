@@ -46,7 +46,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="lg:rounded-2xl bg-primary-light dark:bg-primary-dark"
+              className="lg:rounded-2xl bg-primary"
             >
               {children}
             </motion.div>

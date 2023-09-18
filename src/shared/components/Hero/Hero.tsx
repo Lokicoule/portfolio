@@ -44,7 +44,7 @@ const contactInfo = [
 
 const Hero = () => {
   return (
-    <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-primary-light text-center dark:bg-primary-dark px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
+    <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-primary text-center px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
       <img
         src={img}
         className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] hover:brightness-125 transition duration-200 ease-linear"

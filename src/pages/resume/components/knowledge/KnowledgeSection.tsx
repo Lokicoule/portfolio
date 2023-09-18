@@ -14,8 +14,7 @@ const KnowledgeSection: KnowledgeSectionComponent = (props) => {
         <Stack
           {...props}
           tag={{
-            className:
-              "tag bg-primary-light dark:bg-primary-dark dark:text-white",
+            className: "tag bg-primary dark:text-white",
           }}
         />
       </div>

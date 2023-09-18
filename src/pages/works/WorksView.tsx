@@ -29,7 +29,7 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
         {viewModel.works.map((item) => (
           <div
             key={item.id}
-            className="bg-primary-light dark:bg-primary-dark rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA]"
+            className="bg-primary rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA]"
           >
             <div className="mb-2 flex items-center space-x-2">
               <GoRepo className="text-xl text-gray-500 dark:text-gray-400" />

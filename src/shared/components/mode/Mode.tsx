@@ -15,13 +15,13 @@ const Mode: ModeComponent = ({ controller }) => {
 
   return (
     <button
-      className="w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center lg:text-black text-white text-xl font-bold lg:bg-primary-light hover:bg-sky-to-blue transition-all duration-300 ease-in-out lg:hover:text-white hover:text-gray-300"
+      className="w-10 h-10 rounded-full flex justify-center cursor-pointer items-center lg:text-black text-white text-xl font-bold lg:bg-white lg:hover:text-white hover:text-2xl hover:bg-sky-to-blue transition-all duration-300 ease-in-out"
       onClick={handleToggleTheme}
     >
       {mode === "light" ? (
-        <FiMoon className="text-2xl dark-mode-light dark:hidden" />
+        <FiMoon className=" dark:hidden" />
       ) : (
-        <FiSun className="text-2xl dark-mode-dark hidden  fill-jacarta-700  group-hover:fill-white group-focus:fill-white dark:block dark:fill-white " />
+        <FiSun className="hidden dark:block" />
       )}
     </button>
   );

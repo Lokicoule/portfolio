@@ -17,7 +17,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="rounded-xl p-8 bg-primary-light dark:bg-primary-dark dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6"
+          className="rounded-xl p-8 bg-primary dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6"
         >
           {item.link ? (
             <a href={item.link} target="_blank" rel="noreferrer">
