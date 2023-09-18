@@ -8,7 +8,7 @@ type KnowledgeSectionComponent = React.FC<KnowledgeSectionProps>;
 const KnowledgeSection: KnowledgeSectionComponent = (props) => {
   return (
     <div>
-      <h4 className="text-3xl dark:text-white font-medium mb-8">Knowledges</h4>
+      <h4 className="text-3xl text-primary font-medium mb-8">Knowledges</h4>
 
       <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
         <Stack

@@ -16,6 +16,9 @@ export default {
       primary: ["Roboto", "sans-serif"],
     },
     extend: {
+      borderWidth: {
+        1: "1px",
+      },
       borderColor: {
         primary: {
           light: "#e5e7eb",
@@ -32,7 +35,7 @@ export default {
           dark: "#121e26",
         },
         tertiary: {
-          light: "#BAD7DF",
+          light: "#E4F9FF",
           dark: "#02475E",
         },
       },

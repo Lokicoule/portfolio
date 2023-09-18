@@ -36,7 +36,7 @@ const ResumeView: ResumeViewComponent = ({ presenter }) => {
         </div>
       </div>
 
-      <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-[#FAFAFA] dark:bg-[#121e26]">
+      <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-secondary">
         <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
           <div className="col-span-1">
             <SkillSection items={viewModel.skills} />

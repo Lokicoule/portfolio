@@ -14,12 +14,10 @@ const socialLinks = [
   {
     href: "https://www.linkedin.com/",
     icon: <FaLinkedinIn />,
-    iconClassName: "text-[#0072b1] hover:text-white",
   },
   {
     href: "https://www.github.com/",
     icon: <FaGithub />,
-    iconClassName: "text-[#0072b1] hover:text-white",
   },
 ];
 
@@ -52,17 +50,17 @@ const Hero = () => {
         loading="lazy"
       />
       <div className="pt-[100px] pb-8">
-        <h1 className="mt-6 mb-1 text-5xl font-semibold text-primary-light dark:text-primary-dark">
+        <h1 className="mt-6 mb-1 text-5xl font-semibold text-primary">
           Loik Fekkai
         </h1>
-        <h3 className="mb-4 text-[#7B7B7B] inline-block dark:bg-secondary-dark px-5 py-1.5 rounded-lg dark:text-[#A6A6A6]">
+        <h3 className="rounded-lg mb-4 px-5 py-1.5 text-secondary bg-secondary inline-block">
           Software Engineer
         </h3>
 
         <div className="flex justify-center space-x-3">
           <HeroSocialLinks socialLinks={socialLinks} />
         </div>
-        <div className="p-7 rounded-2xl mt-7 bg-secondary-light dark:bg-secondary-dark">
+        <div className="p-7 rounded-2xl mt-7 bg-secondary">
           <HeroContactInfo contactInfo={contactInfo} />
         </div>
 

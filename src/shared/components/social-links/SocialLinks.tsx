@@ -12,7 +12,7 @@ interface Props {
 
 const SocialLinks: React.FC<Props> = ({ socialLinks }) => {
   return (
-    <>
+    <div className="flex flex-wrap items-center space-x-2">
       {socialLinks.map((link, index) => (
         <a
           key={index}
@@ -23,7 +23,7 @@ const SocialLinks: React.FC<Props> = ({ socialLinks }) => {
           <TinyIcon className={link.iconClassName}>{link.icon}</TinyIcon>
         </a>
       ))}
-    </>
+    </div>
   );
 };
 

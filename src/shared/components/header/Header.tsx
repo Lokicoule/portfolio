@@ -9,7 +9,7 @@ import ModeSelector from "../mode/Mode";
 
 const Header = () => {
   return (
-    <header className="container w-full bg-transparent  flex justify-between py-5 lg:px-0 lg:pt-[50px]">
+    <header className="container w-full bg-transparent flex justify-between py-5 lg:px-0 lg:pt-[50px]">
       <div className="w-full flex justify-between px-4">
         <div className="lg:flex-grow hidden lg:flex" />
         <div className="flex space-x-5 lg:flex-row flex-row-reverse space-x-reverse lg:space-x-5">

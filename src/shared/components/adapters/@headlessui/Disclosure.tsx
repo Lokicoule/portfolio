@@ -29,10 +29,7 @@ const Disclosure: React.FC<IDisclosureProps> = ({
               } h-5 w-5 text-blue-500`}
             />
           </HeadlessDisclosure.Button>
-          <HeadlessDisclosure.Panel
-            as="div"
-            className="text-gray-500 px-4 py-2"
-          >
+          <HeadlessDisclosure.Panel as="div" className="text-primary px-4 py-2">
             {children}
           </HeadlessDisclosure.Panel>
         </>

@@ -24,7 +24,7 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
       {contactInfo.map((info, index) => (
         <div
           key={index}
-          className={`flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5 ${
+          className={`flex border-b border-primary py-2.5 ${
             index === contactInfo.length - 1 ? "" : "mb-2.5"
           }`}
         >
@@ -32,11 +32,9 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
             {info.icon}
           </TinyIcon>
           <div className="text-left ml-2.5">
-            <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
-              {info.label}
-            </p>
+            <p className="text-xs text-secondary">{info.label}</p>
             {info.href ? (
-              <p className="dark:text-white break-all">
+              <p className="text-secondary break-all">
                 <a
                   className="hover:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 hover:inline-block hover:text-transparent hover:bg-clip-text"
                   href={info.href}
@@ -45,7 +43,7 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
                 </a>
               </p>
             ) : (
-              <p className="dark:text-white break-all">{info.value}</p>
+              <p className="text-secondary break-all">{info.value}</p>
             )}
           </div>
         </div>

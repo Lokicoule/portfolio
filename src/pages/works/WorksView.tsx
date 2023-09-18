@@ -29,7 +29,7 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
         {viewModel.works.map((item) => (
           <div
             key={item.id}
-            className="bg-primary rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA]"
+            className="rounded-xl p-8 bg-primary border-1 border-primary"
           >
             <div className="mb-2 flex items-center space-x-2">
               <GoRepo className="text-xl text-tertiary" />
@@ -47,9 +47,7 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
               {item.description.slice(0, 120)}...
             </p>
 
-            <div className="flex flex-wrap items-center space-x-2">
-              <SocialLinks socialLinks={item.socialLinks} />
-            </div>
+            <SocialLinks socialLinks={item.socialLinks} />
           </div>
         ))}
       </div>

@@ -12,9 +12,7 @@ const colors = ["#F6E5F5", "#FBF4F9", "#DAF1F9", "#A4D7E1"];
 const SkillSection: SkillSectionComponent = ({ items }) => {
   return (
     <div>
-      <h4 className="text-3xl dark:text-white font-medium mb-6">
-        Working Skills
-      </h4>
+      <h4 className="text-3xl text-primary font-medium mb-6">Working Skills</h4>
       {items.map((item, i) => (
         <Line
           color={colors[i % colors.length]}

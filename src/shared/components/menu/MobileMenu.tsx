@@ -25,14 +25,14 @@ const MobileMenu: React.FC = () => {
               static
               className={`${
                 open
-                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-primary-light dark:bg-[#030814]"
+                  ? "block rounded-b-[20px] shadow-md absolute left-0 top-20 z-50 w-full bg-primary"
                   : "hidden"
               } lg:hidden`}
             >
               <ul className="flex flex-col">
                 <Navigation
                   presenter={navigationPresenter}
-                  defaultClassName="mobile-link-menu text-primary-light dark:text-primary-dark"
+                  defaultClassName="mobile-link-menu text-primary"
                   activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
                   iconClassName="text-xl mr-2"
                   onClick={close}

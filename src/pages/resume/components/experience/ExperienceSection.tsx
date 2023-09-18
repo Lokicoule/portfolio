@@ -18,32 +18,26 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
         <h4 className="text-3xl text-primary font-medium">Experience</h4>
       </div>
       {items.map((item) => (
-        <ExperienceModal
+        <div
           key={item.id}
-          triggerButton={
-            <div className="bg-primary rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA] py-4 pl-5 pr-3 space-y-2 mb-6">
-              <div className="cursor-pointer text-gray-700 dark:text-[#b7b7b7] hover:text-[#b7b7b7] dark:hover:text-gray-600 transition duration-200 ease-in-out">
-                <div className="flex flex-col space-y-2 ">
-                  <span className="text-xs text-gray-800 dark:text-[#b7b7b7]">
-                    {item.duration}
-                  </span>
-
-                  <span className="text-xl font-bold text-left ">
+          className="rounded-xl p-8 py-4 pl-5 pr-3 space-y-2 mb-6 bg-primary border-1 border-primary"
+        >
+          <div className="flex flex-col space-y-2 ">
+            <span className="text-xs text-tertiary">{item.duration}</span>
+            <div className="flex items-center space-x-2">
+              <ExperienceModal
+                triggerButton={
+                  <button className="text-xl text-secondary font-bold gradient-underline-animation">
                     {item.name}
-                  </span>
-
-                  <span className="dark:text-[#b7b7b7] text-gray-600 mt-2">
-                    {item.client.name}
-                  </span>
-                  <span className="dark:text-[#b7b7b7] text-gray-600">
-                    {item.place}
-                  </span>
-                </div>
-              </div>
+                  </button>
+                }
+                experience={item}
+              />
             </div>
-          }
-          experience={item}
-        />
+            <span className="text-tertiary mt-2">{item.client.name}</span>
+            <span className="text-tertiary">{item.place}</span>
+          </div>
+        </div>
       ))}
     </div>
   );
