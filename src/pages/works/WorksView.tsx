@@ -32,10 +32,10 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
             className="bg-primary rounded-xl p-8  dark:hover:shadow-xl transition duration-200 ease-in-out dark:hover:bg-[#121e26] border-[1px] border-primary-light dark:border-primary-dark hover:bg-[#FAFAFA]"
           >
             <div className="mb-2 flex items-center space-x-2">
-              <GoRepo className="text-xl text-gray-500 dark:text-gray-400" />
+              <GoRepo className="text-xl text-tertiary" />
               <WorkModal
                 triggerButton={
-                  <button className="text-xl font-bold text-blue-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-blue-500">
+                  <button className="text-xl font-bold text-primary gradient-underline-animation">
                     {item.name}
                   </button>
                 }
@@ -43,7 +43,7 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
               />
             </div>
 
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-secondary">
               {item.description.slice(0, 120)}...
             </p>
 
