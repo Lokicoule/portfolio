@@ -13,10 +13,10 @@ const Line: React.FC<LineProps> = ({ name, value, color }) => {
   return (
     <div className=" mb-7">
       <div className="flex justify-between py-1">
-        <span className=" text-base  font-semibold dark:text-[#A6A6A6]">
+        <span className=" font-medium  font-semibold dark:text-[#A6A6A6]">
           {name}
         </span>
-        <span className=" text-base font-semibold pr-5 dark:text-[#A6A6A6]">
+        <span className=" font-medium font-semibold pr-5 dark:text-[#A6A6A6]">
           {value}%
         </span>
       </div>

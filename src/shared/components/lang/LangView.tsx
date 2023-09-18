@@ -33,10 +33,8 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
         <Popover className="relative">
           {({ open, close }) => (
             <>
-              <Popover.Button
-                className={` text-white group bg-transparent rounded-md inline-flex items-center font-medium hover:text-opacity-100 focus-no-outline uppercase`}
-              >
-                <span>{viewModel.lang}</span>
+              <Popover.Button className="text-white bg-transparent text-sm p-3 rounded-md inline-flex items-center focus-no-outline border-[1px] border-transparent hover:border-white hover:border-opacity-50 transition duration-200 ease-in-out hover:text-opacity-80 hover:shadow-xs">
+                <span className="uppercase">{viewModel.lang}</span>
                 <FiChevronUp
                   className={`
                 ${open ? "rotate-180 transform" : ""}
@@ -73,26 +71,11 @@ const LangView: LangViewComponent = ({ controller, presenter }) => {
                             handleLanguageChange(lang.code);
                             close();
                           }}
-                          className={`
-                        ${
-                          viewModel.lang === lang.code
-                            ? "bg-gradient-to-b from-sky-400 to-blue-500 "
-                            : ""
-                        }
-                        flex items-start p-3 -m-3 rounded-lg hover:bg-gradient-to-b from-sky-400 to-blue-500 hover:text-white hover:brightness-125 transition ease-in-out duration-150`}
+                          disabled={viewModel.lang === lang.code}
+                          className={`flex items-start p-3 -m-3 rounded-lg text-secondary hover:bg-tertiary hover:text-tertiary transition ease-in-out duration-150`}
                         >
-                          <div className="flex items-center justify-between w-full">
-                            <div className="flex items-center justify-between space-x-3 text-gray-900 dark:text-white">
-                              <div
-                                className={`font-medium  ${
-                                  viewModel.lang === lang.code
-                                    ? "text-white"
-                                    : ""
-                                }`}
-                              >
-                                {lang.name}
-                              </div>
-                            </div>
+                          <div className="inline-flex items-center justify-around w-full">
+                            <span>{lang.name}</span>
                           </div>
                         </button>
                       ))}
