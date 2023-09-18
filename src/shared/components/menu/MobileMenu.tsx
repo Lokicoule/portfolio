@@ -7,7 +7,7 @@ import Navigation from "../navigation/Navigation";
 const MobileMenu: React.FC = () => {
   return (
     <Popover>
-      {({ open }) => (
+      {({ open, close }) => (
         <>
           <Popover.Button className="lg:hidden w-[40px] h-[40px] rounded-full flex justify-center cursor-pointer items-center text-xl font-bold focus-no-outline bg-primary-light bg-sky-to-blue transition-all duration-300 ease-in-out text-white hover:brightness-125">
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -35,6 +35,7 @@ const MobileMenu: React.FC = () => {
                   defaultClassName="mobile-link-menu text-primary-light dark:text-primary-dark"
                   activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
                   iconClassName="text-xl mr-2"
+                  onClick={close}
                 />
               </ul>
             </Popover.Panel>
