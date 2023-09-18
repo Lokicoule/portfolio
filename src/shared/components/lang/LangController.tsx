@@ -23,12 +23,9 @@ export class LangController {
       const location = useLocation();
 
       const handleLanguageChange = (language: string) => {
-        console.log("handleLanguageChange", language);
-
         if (language === "en" || language === "fr") {
-          console.log("handleLanguageChange2", language);
           const newPath = location.pathname.replace(
-            /\/(en|fr)\//,
+            /\/(en|fr)(\/|$)/,
             `/${language}/`
           );
 
