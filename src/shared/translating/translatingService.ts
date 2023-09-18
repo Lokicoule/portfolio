@@ -49,7 +49,7 @@ export class TranslatingService {
             impactAndLessonsLearned: "Impact and Lessons Learned",
             about: {
               description:
-                "I am a software engineer with a strong interest in software architecture and design. I am passionate about the Web and everything related to it. I am also interested in the <span class='underline'>Web 3.0</span> and the <span class='underline'>decentralized web</span>. I am always looking for new challenges and opportunities to learn new things.",
+                "I am a software engineer with a strong interest in software architecture and design. I am passionate about the Web and everything related to it. I am also interested in the <span class='gradient-underline-animation'>Web 3.0</span> and the <span class='gradient-underline-animation'>decentralized web</span>. I am always looking for new challenges and opportunities to learn new things.",
             },
           },
         },
@@ -72,7 +72,7 @@ export class TranslatingService {
             impactAndLessonsLearned: "Impact et Leçons Apprises",
             about: {
               description:
-                "Je suis un ingénieur logiciel avec un vif intérêt pour l'architecture logicielle et la conception. Je suis passionné par le Web et tout ce qui s'y rapporte. Je m'intéresse également au <span class='underline'>Web 3.0</span> et au web décentralisé. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour apprendre de nouvelles choses.",
+                "Je suis un ingénieur logiciel avec un vif intérêt pour l'architecture logicielle et la conception. Je suis passionné par le Web et tout ce qui s'y rapporte. Je m'intéresse également au <span class='gradient-underline-animation'>Web 3.0</span> et au web décentralisé. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour apprendre de nouvelles choses.",
             },
           },
         },
