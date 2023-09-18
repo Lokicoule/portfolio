@@ -3,7 +3,6 @@ import TinyIcon from "../icons/TinyIcon";
 interface ContactInfo {
   label: string;
   value: string;
-  color: string;
   icon: JSX.Element;
   href?: string;
 }

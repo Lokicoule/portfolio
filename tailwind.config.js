@@ -19,7 +19,6 @@ export default {
       borderColor: {
         primary: {
           light: "#e5e7eb",
-          DEFAULT: "#9ca3af",
           dark: "#373f51",
         },
       },
@@ -39,8 +38,8 @@ export default {
           dark: "#ffffff",
         },
         secondary: {
-          light: "#000033",
-          dark: "#fafafa",
+          light: "#121e26",
+          dark: "#FAF7F0",
         },
       },
     },

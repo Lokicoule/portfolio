@@ -8,16 +8,18 @@ import {
 } from "react-icons/fa";
 import img from "/avatar.jpg";
 import HeroSocialLinks from "../social-links/SocialLinks";
-import HeroContactInfo from "../contact-info/ContactInfo";
+import HeroContactInfo from "./ContactInfo";
 
 const socialLinks = [
   {
     href: "https://www.linkedin.com/",
     icon: <FaLinkedinIn />,
+    iconClassName: "text-[#0072b1] hover:text-white",
   },
   {
     href: "https://www.github.com/",
     icon: <FaGithub />,
+    iconClassName: "text-[#0072b1] hover:text-white",
   },
 ];
 
@@ -25,20 +27,17 @@ const contactInfo = [
   {
     label: "Email",
     value: "loikfekkai@gmail.com",
-    color: "green-500",
     icon: <FaEnvelopeOpenText />,
     href: "mailto:loikfekkai@gmail.com",
   },
   {
     label: "Location",
-    value: "Mimizan, France",
-    color: "pink-500",
+    value: "Mimizan, France (40)",
     icon: <FaMapMarkerAlt />,
   },
   {
     label: "Birthday",
     value: "Sept 17, 1992",
-    color: "blue-500",
     icon: <FaCalendarAlt />,
   },
 ];
@@ -53,7 +52,7 @@ const Hero = () => {
         loading="lazy"
       />
       <div className="pt-[100px] pb-8">
-        <h1 className="mt-6 mb-1 text-5xl font-semibold dark:text-white">
+        <h1 className="mt-6 mb-1 text-5xl font-semibold text-primary-light dark:text-primary-dark">
           Loik Fekkai
         </h1>
         <h3 className="mb-4 text-[#7B7B7B] inline-block dark:bg-secondary-dark px-5 py-1.5 rounded-lg dark:text-[#A6A6A6]">
@@ -63,7 +62,7 @@ const Hero = () => {
         <div className="flex justify-center space-x-3">
           <HeroSocialLinks socialLinks={socialLinks} />
         </div>
-        <div className="p-7 rounded-2xl mt-7 bg-secondary dark:bg-secondary-dark">
+        <div className="p-7 rounded-2xl mt-7 bg-secondary-light dark:bg-secondary-dark">
           <HeroContactInfo contactInfo={contactInfo} />
         </div>
 
