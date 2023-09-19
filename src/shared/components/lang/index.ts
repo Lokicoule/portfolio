@@ -1,3 +1,3 @@
-import LangView from "./LangView";
+import LangContainer from "./LangContainer";
 
-export { LangView as Lang };
+export { LangContainer as LangSelector };
