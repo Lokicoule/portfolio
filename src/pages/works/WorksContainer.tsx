@@ -1,4 +1,5 @@
 import PageLayout from "../../shared/components/layouts/PageLayout";
+import { NotificationService } from "../../shared/notifications/notificationsService";
 import { WorksController } from "./WorksController";
 import { WorksPresenter } from "./WorksPresenter";
 import WorksView from "./WorksView";
@@ -20,7 +21,9 @@ const WorksContainer: WorksContainerComponent = ({ presenter, controller }) => {
 
   return (
     <PageLayout title="Works">
-      <WorksView presenter={presenter} onFilterChange={handleFilterClick} />
+      {NotificationService.makeNotifiable(
+        <WorksView presenter={presenter} onFilterChange={handleFilterClick} />
+      )}
     </PageLayout>
   );
 };

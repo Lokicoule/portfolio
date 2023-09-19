@@ -17,6 +17,6 @@ const contactController = new ContactController(
 
 const langController = new LangController(cache, notificationsService);
 
-const worksController = new WorksController(cache);
+const worksController = new WorksController(cache, notificationsService);
 
 export { contactController, langController, worksController };
