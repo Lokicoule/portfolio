@@ -44,7 +44,7 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
   }
 
   public load(cb: (vm?: ResumeViewModel) => void): void {
-    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
+    this.rebuildViewModel(this.subscriptionManager.getValue());
 
     super.load(cb);
   }

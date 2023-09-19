@@ -28,7 +28,7 @@ export class LangPresenter extends Presenter<LangViewModel> {
   }
 
   public load(cb: (vm?: LangViewModel) => void): void {
-    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
+    this.rebuildViewModel(this.subscriptionManager.getValue());
 
     super.load(cb);
   }

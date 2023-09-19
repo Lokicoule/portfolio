@@ -32,7 +32,7 @@ export class AboutPresenter extends Presenter<AboutViewModel> {
   }
 
   public load(cb: (vm?: AboutViewModel) => void): void {
-    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
+    this.rebuildViewModel(this.subscriptionManager.getValue());
 
     super.load(cb);
   }

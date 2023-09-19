@@ -5,6 +5,7 @@ import {
   aboutPresenter,
   resumePresenter,
   translatingService,
+  worksController,
   worksPresenter,
 } from "../shared/composition";
 import { RouteConfig } from "../shared/routing/routingService";
@@ -12,7 +13,7 @@ import { RouteConfig } from "../shared/routing/routingService";
 import About from "../pages/about/AboutView";
 import Contact from "../pages/contact/ContactContainer";
 import Resume from "../pages/resume/ResumeView";
-import Works from "../pages/works/WorksView";
+import Works from "../pages/works/WorksContainer";
 
 const pageRoutes = (root: string) => [
   {
@@ -29,7 +30,7 @@ const pageRoutes = (root: string) => [
   },
   {
     path: "works",
-    element: <Works presenter={worksPresenter} />,
+    element: <Works presenter={worksPresenter} controller={worksController} />,
   },
 ];
 

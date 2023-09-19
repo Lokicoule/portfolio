@@ -1,4 +1,5 @@
 import { ContactController } from "../../pages/contact/ContactController";
+import { WorksController } from "../../pages/works/WorksController";
 import { LangController } from "../components/lang/LangController";
 import { cache } from "./setupCaches";
 
@@ -16,4 +17,6 @@ const contactController = new ContactController(
 
 const langController = new LangController(cache, notificationsService);
 
-export { contactController, langController };
+const worksController = new WorksController(cache);
+
+export { contactController, langController, worksController };

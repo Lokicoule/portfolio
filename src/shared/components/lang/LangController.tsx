@@ -7,7 +7,6 @@ import { translatingService } from "../../composition";
 import { Notification } from "../../notifications/domainObjects/Notification";
 import { NotificationService } from "../../notifications/notificationsService";
 
-// lang from key in cache
 export class LangController {
   constructor(
     private readonly cache: GlobalCache,

@@ -1,24 +1,27 @@
 export type Language = "en" | "fr";
+export type WorkFilter = "all" | "backend" | "frontend" | "fullstack" | "other";
 
 type GlobalState = {
   lang: Language;
+  workFilter: WorkFilter;
 };
 
 type State = GlobalState[keyof GlobalState];
 
 export type Callback = (data: State) => void;
 
-export type KeyInCache = "lang";
+export type KeyInCache = "lang" | "workFilter";
 
 export class GlobalCache {
   private subscribers: Map<KeyInCache, Map<string, Callback>>;
   private data: Record<KeyInCache, GlobalState[KeyInCache]>;
 
-  public constructor(lang: Language) {
+  public constructor(lang: Language, workFilter: WorkFilter) {
     this.subscribers = new Map();
 
     this.data = {
       lang,
+      workFilter,
     } as Record<KeyInCache, GlobalState[KeyInCache]>;
   }
 

@@ -1,13 +1,6 @@
 import { SocialLinkProps } from "../../shared/components/social-links/SocialLinks";
 import { StackProps } from "../../shared/components/stack/Stack";
-
-type Category =
-  | "frontend"
-  | "backend"
-  | "fullstack"
-  | "mobile"
-  | "other"
-  | "all";
+import { WorkFilter } from "../../sharedKernel/persistence/GlobalCache";
 
 type KeyFeaturesProps = {
   id: string;
@@ -18,7 +11,7 @@ type KeyFeaturesProps = {
 export interface WorkProps {
   id: string;
   name: string;
-  category: Category;
+  category: WorkFilter;
   tag: string;
   description: string;
   logo?: JSX.Element;
@@ -30,17 +23,23 @@ export interface WorkProps {
 
 export interface WorksViewModelProps {
   works: WorkProps[];
+  filter?: string;
 }
 
 export class WorksViewModel {
   constructor(private readonly props: WorksViewModelProps) {}
 
   public get works() {
-    return this.props.works;
+    return this.props.filter === "all"
+      ? this.props.works
+      : this.props.works.filter((work) => work.category === this.props.filter);
   }
 
-  public filter: (category: Category) => WorkProps[] = (category) => {
-    if (category === "all") return this.props.works;
-    return this.props.works.filter((work) => work.category === category);
-  };
+  public get filter() {
+    return this.props.filter;
+  }
+
+  public get attributes() {
+    return this.props;
+  }
 }

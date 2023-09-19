@@ -31,7 +31,7 @@ export class NavigationPresenter extends Presenter<NavigationViewModel> {
   }
 
   public load(cb: (vm?: NavigationViewModel) => void): void {
-    this.rebuildViewModel(this.subscriptionManager.getInitialValue());
+    this.rebuildViewModel(this.subscriptionManager.getValue());
 
     super.load(cb);
   }

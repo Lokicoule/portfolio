@@ -4,6 +4,6 @@ import {
   Language,
 } from "../../sharedKernel/persistence/GlobalCache";
 
-const cache = new GlobalCache(translatingService.language as Language);
+const cache = new GlobalCache(translatingService.language as Language, "all");
 
 export { cache };

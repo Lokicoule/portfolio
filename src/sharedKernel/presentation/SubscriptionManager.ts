@@ -23,7 +23,7 @@ export class SubscriptionManager {
     this.cache.subscribe(this.key, this.subscriberName, this.callback);
   }
 
-  public getInitialValue() {
+  public getValue() {
     return this.cache.get(this.key);
   }
 

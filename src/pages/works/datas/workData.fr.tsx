@@ -9,12 +9,10 @@ export const workData: WorkProps[] = [
     socialLinks: [
       {
         icon: <FaNpm />,
-        iconClassName: "text-[#0072b1]",
         href: "https://www.npmjs.com/package/@nestjs-cognito/auth",
       },
       {
         icon: <FaGithub />,
-        iconClassName: "text-[#0072b1]",
         href: "https://www.github.com/lokicoule/nestjs-cognito",
       },
     ],
@@ -73,7 +71,6 @@ export const workData: WorkProps[] = [
     socialLinks: [
       {
         icon: <FaGithub />,
-        iconClassName: "text-[#0072b1]",
         href: "https://www.github.com/lokicoule/commitizard",
       },
     ],
