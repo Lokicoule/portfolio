@@ -42,6 +42,10 @@ body {
     @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white p-1;
   }
 
+  .gradient-underline-fixed {
+    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_6px];
+  }
+
   .gradient-underline-animation-secondary {
     @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_0%] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white p-1;
   }
@@ -56,6 +60,10 @@ body {
 
   .text-tertiary {
     @apply text-tertiary-light dark:text-tertiary-dark;
+  }
+
+  .text-gradient {
+    @apply bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-500 inline-block text-transparent bg-clip-text;
   }
 
   .focus-no-outline {
