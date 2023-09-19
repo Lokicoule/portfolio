@@ -14,10 +14,12 @@ const socialLinks = [
   {
     href: "https://www.linkedin.com/",
     icon: <FaLinkedinIn />,
+    iconClassName: "text-[#0072b1] bg-secondary",
   },
   {
     href: "https://www.github.com/",
     icon: <FaGithub />,
+    iconClassName: "text-[#0072b1] bg-secondary",
   },
 ];
 
