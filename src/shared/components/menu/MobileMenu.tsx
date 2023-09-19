@@ -5,6 +5,9 @@ import { navigationPresenter } from "../../composition";
 import Navigation from "../navigation/Navigation";
 
 const MobileMenu: React.FC = () => {
+  const defaultClassName =
+    "rounded-md mb-1 cursor-pointer mx-2.5 flex text-sm py-4 px-2 md:px-4 xl:px-5 items-center text-tertiary font-medium transition-all duration-300 ease-in-out bg-secondary hover:bg-tertiary";
+
   return (
     <Popover>
       {({ open, close }) => (
@@ -32,8 +35,8 @@ const MobileMenu: React.FC = () => {
               <ul className="flex flex-col">
                 <Navigation
                   presenter={navigationPresenter}
-                  defaultClassName="mobile-link-menu text-primary"
-                  activeClassName="mobile-link-menu text-white linked bg-sky-to-blue"
+                  defaultClassName={defaultClassName}
+                  activeClassName={`${defaultClassName} text-white bg-gradient-to-r from-sky-400 to-blue-500`}
                   iconClassName="text-xl mr-2"
                   onClick={close}
                 />

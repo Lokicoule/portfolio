@@ -65,12 +65,4 @@ body {
   .bg-sky-to-blue {
     @apply bg-gradient-to-b from-sky-400 to-blue-500;
   }
-
-  .mobile-link-menu {
-    @apply rounded-md mb-1 cursor-pointer font-medium mx-2.5 flex text-sm py-4 px-2 md:px-4 xl:px-5 items-center transition-all duration-300 ease-in-out dark:text-[#A6A6A6] text-gray-100;
-  }
-
-  .mobile-link-menu:hover {
-    @apply text-gray-800 bg-sky-300 dark:bg-[#212425] text-gray-800;
-  }
 }
