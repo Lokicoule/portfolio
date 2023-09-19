@@ -1,22 +1,15 @@
 import { FiMoon, FiSun } from "react-icons/fi";
-import { useTheme } from "../theme/ThemeProvider";
-import { ModeController } from "./ModeController";
+import { useTheme } from "./ThemeProvider";
 
-type ModeProps = {
-  controller: ModeController;
-};
+type ThemeModeSwitcherComponent = React.FC;
 
-type ModeComponent = React.FC<ModeProps>;
-
-const Mode: ModeComponent = ({ controller }) => {
-  const useModeController = controller.createHook();
-  const { handleToggleTheme } = useModeController();
-  const { mode } = useTheme();
+const ThemeModeSwitcher: ThemeModeSwitcherComponent = () => {
+  const { mode, toggleThemeMode } = useTheme();
 
   return (
     <button
       className="w-10 h-10 rounded-full flex justify-center cursor-pointer items-center text-white text-xl font-bold lg:hover:text-white hover:text-2xl hover:bg-sky-to-blue transition-all duration-300 ease-in-out"
-      onClick={handleToggleTheme}
+      onClick={toggleThemeMode}
     >
       {mode === "light" ? (
         <FiMoon className=" dark:hidden" />
@@ -27,4 +20,4 @@ const Mode: ModeComponent = ({ controller }) => {
   );
 };
 
-export default Mode;
+export default ThemeModeSwitcher;

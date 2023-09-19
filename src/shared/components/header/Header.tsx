@@ -1,11 +1,7 @@
-import {
-  langController,
-  langPresenter,
-  modeController,
-} from "../../composition";
+import { langController, langPresenter } from "../../composition";
 import { Lang } from "../lang";
 import MobileMenu from "../menu/MobileMenu";
-import ModeSelector from "../mode/Mode";
+import ThemeModeSwitcher from "../theme/ThemeModeSwitcher";
 
 const Header = () => {
   return (
@@ -14,7 +10,7 @@ const Header = () => {
         <div className="lg:flex-grow hidden lg:flex" />
         <div className="flex space-x-5 lg:flex-row flex-row-reverse space-x-reverse lg:space-x-5">
           <Lang controller={langController} presenter={langPresenter} />
-          <ModeSelector controller={modeController} />
+          <ThemeModeSwitcher />
         </div>
         <MobileMenu />
       </div>
