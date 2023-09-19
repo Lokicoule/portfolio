@@ -50,8 +50,8 @@ const Hero = () => {
         loading="lazy"
       />
       <div className="pt-[100px] pb-8">
-        <h1 className="mt-6 mb-1 text-5xl font-semibold text-primary">
-          Loik Fekkai
+        <h1 className="mt-6 mb-1 text-5xl font-semibold text-primary font-primary">
+          LOIK FEKKAI
         </h1>
         <h3 className="rounded-lg mb-4 px-5 py-1.5 text-secondary bg-secondary inline-block">
           Software Engineer

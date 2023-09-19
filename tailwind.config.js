@@ -13,7 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      primary: ["Roboto", "sans-serif"],
+      primary: ["Allerta Stencil", "sans-serif"],
+      secondary: ["Inter", "sans-serif"],
     },
     extend: {
       borderWidth: {

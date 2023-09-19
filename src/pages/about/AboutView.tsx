@@ -11,10 +11,10 @@ type AboutViewProps = {
 type AboutViewComponent = React.FC<AboutViewProps>;
 
 const colors: string[] = [
-  "text-[#FCDAB7] dark:text-[#ffeebb]",
-  "text-[#1E5F74] dark:text-[#a7ecee]",
-  "text-[#133B5C] dark:text-[#99dbf5]",
-  "text-[#1D2D50] dark:text-[#9ac5f4]",
+  "text-[#FCDAB7] dark:text-[#ffeebb] font-extrabold",
+  "text-[#1E5F74] dark:text-[#a7ecee] font-extrabold",
+  "text-[#133B5C] dark:text-[#99dbf5] font-extrabold",
+  "text-[#1D2D50] dark:text-[#9ac5f4] font-extrabold",
 ];
 
 const AboutView: AboutViewComponent = ({ presenter }) => {
@@ -41,7 +41,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
       </div>
 
       <section className="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
-        <h3 className="text-[35px] text-secondary font-medium pb-5">
+        <h3 className="text-[35px] text-secondary font-medium pb-5 font-primary">
           What I do!
         </h3>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
