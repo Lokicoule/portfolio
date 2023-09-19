@@ -42,6 +42,10 @@ body {
     @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white p-1;
   }
 
+  .gradient-underline-animation-secondary {
+    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_0%] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white p-1;
+  }
+
   .text-primary {
     @apply text-primary-light dark:text-primary-dark;
   }

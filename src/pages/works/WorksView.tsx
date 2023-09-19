@@ -14,6 +14,7 @@ type WorksViewComponent = React.FC<WorksViewProps>;
 
 const WorksView: WorksViewComponent = ({ presenter }) => {
   const [viewModel, setViewModel] = useState<WorksViewModel | undefined>();
+  const [filter, setFilter] = useState<string>("all");
 
   useEffect(() => {
     presenter.load((vm) => setViewModel(vm));
@@ -23,10 +24,54 @@ const WorksView: WorksViewComponent = ({ presenter }) => {
     return null;
   }
 
+  const filterWorks = (filter: string) => {
+    if (filter === "all") {
+      return viewModel.works;
+    }
+
+    return viewModel.works.filter((work) => work.category === filter);
+  };
+
+  console.log(filter);
+
   return (
     <PageLayout title="Works">
+      <div className="container mx-auto px-4 md:px-10 lg:px-14">
+        <ul className="flex w-full justify-center flex-wrap font-medium pb-6 space-x-8">
+          <li
+            onClick={() => setFilter("all")}
+            className={`text-secondary cursor-pointer ${
+              filter === "all"
+                ? "gradient-underline-animation"
+                : "gradient-underline-animation-secondary"
+            }`}
+          >
+            All
+          </li>
+          <li
+            onClick={() => setFilter("backend")}
+            className={`text-secondary cursor-pointer ${
+              filter === "backend"
+                ? "gradient-underline-animation"
+                : "gradient-underline-animation-secondary"
+            }`}
+          >
+            Backend
+          </li>
+          <li
+            onClick={() => setFilter("frontend")}
+            className={`text-secondary cursor-pointer ${
+              filter === "frontend"
+                ? "gradient-underline-animation"
+                : "gradient-underline-animation-secondary"
+            }`}
+          >
+            Frontend
+          </li>
+        </ul>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-10 lg:px-14">
-        {viewModel.works.map((item) => (
+        {filterWorks(filter).map((item) => (
           <div
             key={item.id}
             className="rounded-xl p-8 bg-primary border-1 border-primary"
