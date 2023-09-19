@@ -4,7 +4,9 @@ import { NotificationService } from "../../shared/notifications/notificationsSer
 import ContactFormView from "./components/ContactFormView";
 import { ContactFormProps } from "./domainObjects/ContactForm";
 
-const Contact = () => {
+type ContactContainerComponent = React.FC;
+
+const ContactContainer: ContactContainerComponent = () => {
   const handleSubmit = async (data: ContactFormProps) => {
     await contactController.submitContactForm(data);
   };
@@ -29,4 +31,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactContainer;

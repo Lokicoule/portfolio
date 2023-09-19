@@ -10,7 +10,7 @@ import {
 import { RouteConfig } from "../shared/routing/routingService";
 
 import About from "../pages/about/AboutView";
-import Contact from "../pages/contact/Contact";
+import Contact from "../pages/contact/ContactContainer";
 import Resume from "../pages/resume/ResumeView";
 import Works from "../pages/works/WorksView";
 
