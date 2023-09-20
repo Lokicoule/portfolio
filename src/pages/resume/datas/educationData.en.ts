@@ -11,7 +11,7 @@ export const educationData: EducationProps[] = [
     id: "education-2",
     date: "2012 - 2017",
     title: "Expert in computer science and information systems",
-    level: "RNCP4510, Niveau 7",
+    level: "Master's Degree (RNCP4510, Level 7)",
     link: "https://www.francecompetences.fr/recherche/rncp/4510/",
   },
 ];
