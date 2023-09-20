@@ -1,4 +1,4 @@
-import Line from "../../../../shared/components/adapters/rc-progress/Line";
+import ProgressBar from "../../../../shared/components/progress-bar/ProgressBar";
 import { SkillProps } from "../../ResumeViewModel";
 
 type SkillSectionProps = {
@@ -7,19 +7,27 @@ type SkillSectionProps = {
 
 type SkillSectionComponent = React.FC<SkillSectionProps>;
 
-const colors = ["#F6E5F5", "#FBF4F9", "#DAF1F9", "#A4D7E1"];
+const SkillItem: React.FC<SkillProps> = ({ name, value, type }) => {
+  const bgColor =
+    type === "hard" ? "bg-tertiary" : "bg-[#DDE7F2] dark:bg-[#7393A7]";
+
+  return (
+    <div className="mb-4">
+      <div className="flex justify-between">
+        <h5 className="font-semibold text-primary">{name}</h5>
+        <span className="text-xs text-primary">{value}%</span>
+      </div>
+      <ProgressBar progress={value} bgColor={bgColor} />
+    </div>
+  );
+};
 
 const SkillSection: SkillSectionComponent = ({ items }) => {
   return (
     <div>
-      <h4 className="text-3xl text-primary font-medium mb-6">Working Skills</h4>
+      <h4 className="text-3xl text-primary font-medium mb-6">Skills</h4>
       {items.map((item, i) => (
-        <Line
-          color={colors[i % colors.length]}
-          name={item.name}
-          value={item.value}
-          key={item.id}
-        />
+        <SkillItem key={i} {...item} />
       ))}
     </div>
   );

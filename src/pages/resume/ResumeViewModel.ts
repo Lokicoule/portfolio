@@ -36,6 +36,7 @@ export type SkillProps = {
   id: string;
   name: string;
   value: number;
+  type: "soft" | "hard";
 };
 
 export type KnowledgeProps = StackProps;
