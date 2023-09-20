@@ -1,5 +1,6 @@
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { EducationProps } from "../../ResumeViewModel";
+import ConfirmModal from "../../../../shared/components/modals/ConfirmationModal";
 
 export type EducationSectionProps = {
   items: EducationProps[];
@@ -23,11 +24,16 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
             <span className="text-xs text-tertiary">{item.date}</span>
             <div className="flex items-center space-x-2">
               {item.link ? (
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  <span className="text-xl text-secondary font-bold gradient-underline-animation">
-                    {item.title}
-                  </span>
-                </a>
+                <ConfirmModal
+                  triggerButton={
+                    <span className="text-xl text-secondary font-bold gradient-underline-animation">
+                      {item.title}
+                    </span>
+                  }
+                  onConfirm={() => window.open(item.link, "_blank")}
+                  className="bg-primary text-primary w-full md:w-2/12 lg:w-[350px]"
+                  content="Are you sure you want to proceed ? You will be redirected to the website."
+                />
               ) : (
                 <span className="text-xl font-bold text-secondary">
                   {item.title}

@@ -12,9 +12,17 @@ type WorkModalComponent = React.FC<WorkModalProps>;
 
 const WorkModal: WorkModalComponent = ({ work, triggerButton }) => {
   return (
-    <Modal triggerButton={triggerButton} className="pr-4">
-      <WorkModalTitle work={work} />
-      <WorkModalContent work={work} />
+    <Modal
+      triggerButton={triggerButton}
+      className="w-full md:w-10/12 lg:w-[850px]"
+      panelClassName="pr-4"
+    >
+      {() => (
+        <>
+          <WorkModalTitle work={work} />
+          <WorkModalContent work={work} />
+        </>
+      )}
     </Modal>
   );
 };

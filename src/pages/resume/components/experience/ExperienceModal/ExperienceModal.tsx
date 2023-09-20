@@ -15,9 +15,17 @@ const ExperienceModal: ExperienceModalComponent = ({
   triggerButton,
 }) => {
   return (
-    <Modal triggerButton={triggerButton} className="pr-4">
-      <ExperienceModalTitle experience={experience} />
-      <ExperienceModalContent experience={experience} />
+    <Modal
+      triggerButton={triggerButton}
+      className="w-full md:w-10/12 lg:w-[850px]"
+      panelClassName="pr-4"
+    >
+      {() => (
+        <>
+          <ExperienceModalTitle experience={experience} />
+          <ExperienceModalContent experience={experience} />
+        </>
+      )}
     </Modal>
   );
 };
