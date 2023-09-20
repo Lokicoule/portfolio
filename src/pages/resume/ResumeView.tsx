@@ -43,7 +43,7 @@ const ResumeView: ResumeViewComponent = ({ presenter }) => {
           </div>
 
           <div className="col-span-1">
-            <KnowledgeSection {...viewModel.knowledges} />
+            <KnowledgeSection items={viewModel.knowledges} />
           </div>
         </div>
       </div>

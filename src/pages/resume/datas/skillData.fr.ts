@@ -21,26 +21,14 @@ export const skillData: SkillProps[] = [
   },
   {
     id: "skill-4",
-    name: "Vite/NextJS",
+    name: "NextJS",
     value: 80,
-    type: "hard",
-  },
-  {
-    id: "skill-6",
-    name: "Material-UI/Tailwind",
-    value: 70,
-    type: "hard",
-  },
-  {
-    id: "skill-7",
-    name: "SQL/NoSQL",
-    value: 75,
     type: "hard",
   },
   {
     id: "skill-8",
     name: "Clean Code",
-    value: 95,
+    value: 90,
     type: "soft",
   },
   {

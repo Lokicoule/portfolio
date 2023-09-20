@@ -39,13 +39,17 @@ export type SkillProps = {
   type: "soft" | "hard";
 };
 
-export type KnowledgeProps = StackProps;
+export type KnowledgeProps = {
+  id: string;
+  name: string;
+  type: "framework" | "library" | "database" | "tool" | "architecture";
+};
 
 export interface ResumeViewModelProps {
   experiences: ExperienceProps[];
   educations: EducationProps[];
   skills: SkillProps[];
-  knowledges: KnowledgeProps;
+  knowledges: KnowledgeProps[];
 }
 
 export class ResumeViewModel {

@@ -7,8 +7,7 @@ import { experienceData as experienceDataEn } from "./datas/experienceData.en";
 import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
 import { skillData as skillDataEn } from "./datas/skillData.en";
 import { skillData as skillDataFr } from "./datas/skillData.fr";
-import { knowledgeData as knowledgeDataEn } from "./datas/knowledgeData.en";
-import { knowledgeData as knowledgeDataFr } from "./datas/knowledgeData.fr";
+import { knowledgeData } from "./datas/knowledgeData";
 import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
@@ -33,7 +32,7 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
     const experiences = lang === "fr" ? experienceDataFr : experienceDataEn;
     const educations = lang === "fr" ? educationDataFr : educationDataEn;
     const skills = lang === "fr" ? skillDataFr : skillDataEn;
-    const knowledges = lang === "fr" ? knowledgeDataFr : knowledgeDataEn;
+    const knowledges = knowledgeData;
 
     this.vm = new ResumeViewModel({
       experiences,
