@@ -40,10 +40,13 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
           <ul className="dark:text-white text-sm">
             {work.keyFeatures?.map((item, i) => (
               <li key={i} className="font-medium text-sm mb-2">
-                <span className="text-gray-400">{item.key}</span>
+                <span>{item.key}</span>
                 <ul className="list-disc list-inside">
                   {item.features.map((feature, i) => (
-                    <li key={i} className="font-medium text-sm">
+                    <li
+                      key={i}
+                      className="font-medium text-sm text-gray-600 dark:text-gray-400"
+                    >
                       {feature}
                     </li>
                   ))}

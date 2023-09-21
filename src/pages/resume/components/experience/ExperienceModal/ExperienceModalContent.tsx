@@ -80,7 +80,10 @@ const ExperienceModalContent: React.FC<ExperienceModalContentProps> = ({
               <div className="lg:mr-6">
                 <ul className="flex flex-col gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
                   {section.items.map((item, i) => (
-                    <li key={i} className="font-medium text-sm">
+                    <li
+                      key={i}
+                      className="font-medium text-sm text-gray-600 dark:text-gray-400"
+                    >
                       {item}
                     </li>
                   ))}
