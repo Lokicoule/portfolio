@@ -1,5 +1,5 @@
 import { WorkProps } from "../WorksViewModel";
-import { FaGithub, FaNpm } from "react-icons/fa";
+import { FaGithub, FaNpm, FaLink } from "react-icons/fa";
 
 export const workData: WorkProps[] = [
   {
@@ -33,7 +33,6 @@ export const workData: WorkProps[] = [
         key: "Core Package (@nestjs-cognito/core):",
         features: [
           "Provides a NestJS-friendly interface for integrating Amazon Cognito into NestJS applications.",
-          "Simplifies API requests to Amazon Cognito and JWT token verification.",
           "Offers configuration options for identity provider and JWT verification.",
         ],
       },
@@ -43,15 +42,15 @@ export const workData: WorkProps[] = [
         features: [
           "Builds on top of the core package.",
           "Provides authentication and authorization decorators and guards for NestJS applications using AWS Cognito.",
-          "Offers decorators like @Authentication, @Authorization, and @CognitoUser for controlling access to routes and extracting user information.",
+          "Simplifies the implementation of authentication and authorization rules in Rest endpoints.",
         ],
       },
       {
         id: "key-features-3",
         key: "GraphQL Package (@nestjs-cognito/graphql):",
         features: [
+          "Builds on top of the auth package.",
           "Complements the authentication and authorization features for GraphQL-based NestJS applications.",
-          "Provides middleware, guards, and decorators for handling Cognito authentication and authorization in GraphQL resolvers.",
           "Simplifies the implementation of authentication and authorization rules in GraphQL endpoints.",
         ],
       },
@@ -59,8 +58,7 @@ export const workData: WorkProps[] = [
         id: "key-features-4",
         key: "Testing Package (@nestjs-cognito/testing):",
         features: [
-          "Facilitates end-to-end and integration testing of authentication and authorization code based on Amazon Cognito.",
-          "Includes a controller and service for obtaining access tokens using test user credentials.",
+          "Facilitates end-to-end and integration testing of authentication and authorization.",
         ],
       },
     ],
@@ -69,8 +67,13 @@ export const workData: WorkProps[] = [
   {
     id: "work-2",
     name: "Commitizard",
-    category: "frontend",
+    category: "tools",
     socialLinks: [
+      {
+        icon: <FaNpm />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.npmjs.com/package/commitizard",
+      },
       {
         icon: <FaGithub />,
         iconClassName: "text-[#0072b1] bg-secondary",
@@ -179,6 +182,85 @@ export const workData: WorkProps[] = [
         ],
       },
     ],
+    challengesAndSolutions: [],
+  },
+  {
+    id: "work-3",
+    name: "portfolio",
+    category: "frontend",
+    socialLinks: [
+      {
+        icon: <FaLink />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.lokicoule.dev",
+      },
+      {
+        icon: <FaGithub />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.github.com/lokicoule/portfolio",
+      },
+    ],
+    tag: "Personal Project",
+    description:
+      "This project aims to showcase my skills and experience as a software developer. It also serves as a sandbox for experimenting some architectural patterns with React. You should check it out if you are interested in seeing how I code.",
+    technologiesUsed: {
+      languages: ["Typescript"],
+      libraries: ["React", "TailwindCSS", "@headlessui"],
+      tools: ["Vite"],
+      architectures: ["MVVM"],
+    },
+    challengesAndSolutions: [],
+    keyFeatures: [
+      {
+        id: "key-features-1",
+        key: "Responsive Design:",
+        features: [
+          "The portfolio is responsive and can be viewed on different screen sizes.",
+        ],
+      },
+      {
+        id: "key-features-2",
+        key: "Dark Mode:",
+        features: ["The portfolio supports dark mode."],
+      },
+      {
+        id: "key-features-3",
+        key: "Internationalization:",
+        features: ["The portfolio supports internationalization."],
+      },
+      {
+        id: "key-features-4",
+        key: "Static Site Generation:",
+        features: ["The portfolio is statically generated using Vite."],
+      },
+    ],
+  },
+  {
+    id: "work-4",
+    name: "commandzen",
+    category: "tools",
+
+    socialLinks: [
+      {
+        icon: <FaNpm />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.npmjs.com/package/commandzen",
+      },
+      {
+        icon: <FaGithub />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.github.com/lokicoule/commandzen",
+      },
+    ],
+    tag: "Open Source Project",
+    description:
+      "This project aims to simplify the process of creating and managing Git aliases.",
+    technologiesUsed: {
+      languages: ["Typescript"],
+      frameworks: ["NodeJS"],
+      tools: ["GitHub Actions"],
+    },
+    keyFeatures: [],
     challengesAndSolutions: [],
   },
 ];

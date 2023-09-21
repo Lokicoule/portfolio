@@ -17,7 +17,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="rounded-xl p-8  py-4 pl-5 pr-3 space-y-2 mb-6 bg-primary transition duration-200 ease-in-out border-1 border-primary"
+          className="rounded-xl p-8 pl-5 pr-3 space-y-2 mb-6 bg-primary border-1 border-primary"
         >
           <div className="flex flex-col space-y-2 ">
             <span className="text-xs text-tertiary">{item.date}</span>

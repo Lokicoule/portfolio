@@ -23,13 +23,31 @@ type DetailItemComponent = React.FC<DetailItemProps>;
 
 type ExperienceModalTitleComponent = React.FC<ExperienceModalTitleProps>;
 
-const DetailItem: DetailItemComponent = ({ icon, label, value }) => (
-  <span className="text-secondary flex items-center mt-2 text-[15px] sm:text-lg">
-    <span className={`text-lg mr-2 block`}>{icon}</span>
-    {label} :&nbsp;
-    <span className="font-medium">{value}</span>
-  </span>
-);
+const DetailItem: DetailItemComponent = ({ icon, label, value }) =>
+  value ? (
+    <span className="text-secondary flex items-center mt-2 text-[15px] sm:text-lg">
+      <span className={`text-lg mr-2 block`}>{icon}</span>
+      {label} :&nbsp;
+      <span className="font-medium">{value}</span>
+    </span>
+  ) : null;
+
+const renderClientValue = (client: ExperienceProps["client"]) => {
+  if (!client) return null;
+
+  const clientName = client.name;
+  const clientAbbreviation = client.abbreviation;
+
+  if (clientAbbreviation) {
+    return (
+      <Tooltip text={clientName}>
+        <span className="font-medium">{clientAbbreviation}</span>
+      </Tooltip>
+    );
+  } else {
+    return <span className="font-medium">{clientName}</span>;
+  }
+};
 
 const ExperienceModalTitle: ExperienceModalTitleComponent = ({
   experience,
@@ -63,17 +81,7 @@ const ExperienceModalTitle: ExperienceModalTitleComponent = ({
           <DetailItem
             icon={<FiUser />}
             label="Client"
-            value={
-              experience.client.abbreviation ? (
-                <Tooltip text={experience.client.name}>
-                  <span className="font-medium">
-                    {experience.client.abbreviation}
-                  </span>
-                </Tooltip>
-              ) : (
-                <span className="font-medium">{experience.client.name}</span>
-              )
-            }
+            value={renderClientValue(experience?.client)}
           />
           <DetailItem
             icon={<FiFilePlus />}

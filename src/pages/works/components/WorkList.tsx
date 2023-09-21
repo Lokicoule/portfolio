@@ -1,8 +1,8 @@
 import React from "react";
 import { GoRepo } from "react-icons/go";
-import WorkModal from "./WorkModal/WorkModal";
 import SocialLinks from "../../../shared/components/social-links/SocialLinks";
 import { WorkProps } from "../WorksViewModel";
+import WorkModal from "./WorkModal/WorkModal";
 
 type WorkListProps = {
   works: WorkProps[];
@@ -22,7 +22,7 @@ const WorkList: WorkListComponent = ({ works }) => {
             <GoRepo className="text-xl text-tertiary" />
             <WorkModal
               triggerButton={
-                <button className="text-xl font-bold text-primary gradient-underline-animation">
+                <button className="text-xl font-bold text-primary gradient-underline-animation lowercase">
                   {item.name}
                 </button>
               }

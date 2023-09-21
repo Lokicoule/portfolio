@@ -71,8 +71,11 @@ export class TranslatingService {
             collaborationAndTeamwork: "Collaboration et Travail d'Équipe",
             impactAndLessonsLearned: "Impact et Leçons Apprises",
             about: {
-              description:
-                "Je suis un ingénieur logiciel avec un vif intérêt pour l'architecture logicielle et la conception. Je suis passionné par le Web et tout ce qui s'y rapporte. Je m'intéresse également au <span class='gradient-underline-animation'>Web 3.0</span> et au web décentralisé. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour apprendre de nouvelles choses.",
+              description: `
+              Salut à tous ! Je suis Loïk, un <span class="gradient-underline-fixed-xs">développeur fullstack</span> passionné par la technologie et l'environnement. Depuis le début de ma carrière, mon engagement pour la cause environnementale a guidé mes choix de projets, avec une expérience significative dans des projets axés sur la <span class="gradient-hightlight">dématérialisation</span>. Je suis également fasciné par la blockchain et les opportunités de liberté et de transparence qu'elle offre.
+              <br /><br />
+              C'est tout naturellement que je recherche une opportunité dans une entreprise partageant mes valeurs environnementales et de <span class="gradient-hightlight">décentralisation</span>, axée sur l'innovation et la collaboration.
+              `,
             },
           },
         },

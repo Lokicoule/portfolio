@@ -34,7 +34,9 @@ const ExperienceSection: ExperienceComponent = ({ items }) => {
                 experience={item}
               />
             </div>
-            <span className="text-tertiary mt-2">{item.client.name}</span>
+            {item.client ? (
+              <span className="text-tertiary mt-2">{item.client.name}</span>
+            ) : null}
             <span className="text-tertiary">{item.place}</span>
           </div>
         </div>

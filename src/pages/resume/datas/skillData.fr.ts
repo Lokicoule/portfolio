@@ -33,7 +33,7 @@ export const skillData: SkillProps[] = [
   },
   {
     id: "skill-9",
-    name: "Clean Architecture",
+    name: "Architecture Hexagonale",
     value: 80,
     type: "soft",
   },

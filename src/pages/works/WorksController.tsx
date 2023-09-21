@@ -6,6 +6,7 @@ enum WorkFilter {
   All = "all",
   Backend = "backend",
   Frontend = "frontend",
+  Tools = "tools",
 }
 
 export class WorksController {

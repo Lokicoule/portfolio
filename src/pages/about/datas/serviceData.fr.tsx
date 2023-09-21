@@ -14,21 +14,21 @@ export const serviceData: ServiceProps[] = [
     id: "service-2",
     title: "Open Source",
     description:
-      "Je crois fortement au logiciel open source et j'aime contribuer aux projets OSS.",
+      "J'aime contribuer à la communauté open source et partager mes connaissances avec les autres.",
     icon: <FaGithub />,
   },
   {
     id: "service-3",
     title: "Web Development",
     description:
-      "Je peux vous aider à construire votre prochain site web en utilisant des modèles architecturaux solides et des technologies modernes.",
+      "Je peux vous aider à construire votre prochain site web en combinant modèles architecturaux solides et technologies modernes.",
     icon: <PiCodeLight />,
   },
   {
     id: "service-4",
     title: "Blockchain Development",
     description:
-      "Je suis un passionné de blockchain et j'adore construire des applications décentralisées.",
+      "Plus qu'une technologie, la blockchain est une révolution. Je peux vous aider à construire votre prochain projet blockchain.",
     icon: <PiCodeLight />,
   },
 ];

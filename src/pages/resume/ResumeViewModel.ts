@@ -10,8 +10,8 @@ export interface ExperienceProps {
   name: string;
   tag: string;
   description: string;
-  company: string;
-  client: ClientProps;
+  company?: string;
+  client?: ClientProps;
   duration: string;
   place: string;
   roleAndResponsibilities: string;

@@ -44,6 +44,17 @@ const FilterWorksList: FilterWorksListComponent = ({
       >
         Frontend
       </li>
+      <li
+        data-filter="tools"
+        onClick={onFilterChange}
+        className={`text-secondary cursor-pointer ${
+          filter === "frontend"
+            ? "gradient-underline-animation"
+            : "gradient-underline-animation-secondary"
+        }`}
+      >
+        Tools
+      </li>
     </ul>
   );
 };
