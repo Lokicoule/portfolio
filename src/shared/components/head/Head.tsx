@@ -8,7 +8,7 @@ export type HeadProps = {
 const Head: React.FC<HeadProps> = ({ title, description }) => {
   return (
     <Helmet title={`${title} - Loik Fekkai | Fullstack Engineer Portfolio`}>
-      <link rel="canonical" href="https://loikfekkai.dev" />
+      <link rel="canonical" href="https://www.loikfekkai.dev" />
       <meta name="description" content={description} />
     </Helmet>
   );
