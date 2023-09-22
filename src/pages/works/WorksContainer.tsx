@@ -20,7 +20,11 @@ const WorksContainer: WorksContainerComponent = ({ presenter, controller }) => {
   };
 
   return (
-    <PageLayout title="Works" className="lg:rounded-2xl lg:bg-primary">
+    <PageLayout
+      title="Works"
+      description="Portfolio Loik Fekkai, a fullstack engineer based in Mimizan, France."
+      className="lg:rounded-2xl lg:bg-primary"
+    >
       {NotificationService.makeNotifiable(
         <WorksView presenter={presenter} onFilterChange={handleFilterClick} />
       )}

@@ -48,7 +48,8 @@ const Hero = () => {
       <img
         src={img}
         className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] hover:brightness-125 transition duration-200 ease-linear"
-        alt=""
+        alt="avatar"
+        title="avatar"
         loading="lazy"
       />
       <div className="pt-[100px] pb-8">
