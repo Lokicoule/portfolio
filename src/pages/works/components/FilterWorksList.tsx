@@ -48,7 +48,7 @@ const FilterWorksList: FilterWorksListComponent = ({
         data-filter="tools"
         onClick={onFilterChange}
         className={`text-secondary cursor-pointer ${
-          filter === "frontend"
+          filter === "tools"
             ? "gradient-underline-animation"
             : "gradient-underline-animation-secondary"
         }`}
