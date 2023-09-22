@@ -6,7 +6,7 @@ import DesktopMenu from "../menu/DesktopMenu";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="dark:bg-gradient-to-t from-[#FCDAB7] via-[#1E5F74] via-[#133B5C] to-[#1D2D50] bg-no-repeat bg-fixed h-full">
+    <div className="dark:bg-gradient-to-t from-[#FCDAB7] via-[#1E5F74] via-[#133B5C] to-[#1D2D50] bg-no-repeat bg-fixed h-full min-h-screen">
       <Header />
       <AnimatePresence mode="wait">
         <main className="container grid grid-cols-12 md:gap-10 lg:mt-[180px] ">

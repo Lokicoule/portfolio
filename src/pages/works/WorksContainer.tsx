@@ -20,7 +20,7 @@ const WorksContainer: WorksContainerComponent = ({ presenter, controller }) => {
   };
 
   return (
-    <PageLayout title="Works" className="lg:rounded-2xl bg-primary">
+    <PageLayout title="Works" className="lg:rounded-2xl lg:bg-primary">
       {NotificationService.makeNotifiable(
         <WorksView presenter={presenter} onFilterChange={handleFilterClick} />
       )}

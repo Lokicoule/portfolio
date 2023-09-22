@@ -37,7 +37,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         initial="hidden"
         animate="visible"
         exit="hidden"
-        className="lg:rounded-2xl bg-primary"
+        className="lg:rounded-2xl lg:bg-primary"
       >
         <Footer />
       </motion.div>
