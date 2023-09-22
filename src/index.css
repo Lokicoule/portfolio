@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +6,18 @@ body {
   background-image: linear-gradient(to top, #ffeebb, #a7ecee, #99dbf5, #9ac5f4);
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+@font-face {
+  font-family: "Allerta Stencil";
+  font-display: swap;
+  src: url("/fonts/allerta-stencil/AllertaStencil-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Regular.ttf");
 }
 
 @layer base {
