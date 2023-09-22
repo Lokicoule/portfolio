@@ -1,7 +1,8 @@
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import Layout from "../shared/components/layouts/Layout";
 
+import Loading from "../pages/loading/Loading";
 import {
   aboutPresenter,
   resumePresenter,
@@ -10,45 +11,28 @@ import {
   worksPresenter,
 } from "../shared/composition";
 import { RouteConfig } from "../shared/routing/routingService";
-import Loading from "../pages/loading/Loading";
 
-const About = lazy(() => import("../pages/about/AboutView"));
-const Contact = lazy(() => import("../pages/contact/ContactContainer"));
-const Resume = lazy(() => import("../pages/resume/ResumeView"));
-const Works = lazy(() => import("../pages/works/WorksContainer"));
+import About from "../pages/about";
+import Contact from "../pages/contact";
+import Resume from "../pages/resume";
+import Works from "../pages/works";
 
 const pageRoutes = (root: string) => [
   {
     path: root,
-    element: (
-      <Suspense fallback={<Loading />}>
-        <About presenter={aboutPresenter} />
-      </Suspense>
-    ),
+    element: <About presenter={aboutPresenter} />,
   },
   {
     path: "contact",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Contact />
-      </Suspense>
-    ),
+    element: <Contact />,
   },
   {
     path: "resume",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Resume presenter={resumePresenter} />
-      </Suspense>
-    ),
+    element: <Resume presenter={resumePresenter} />,
   },
   {
     path: "works",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Works presenter={worksPresenter} controller={worksController} />
-      </Suspense>
-    ),
+    element: <Works presenter={worksPresenter} controller={worksController} />,
   },
 ];
 
@@ -57,7 +41,9 @@ const routes: RouteConfig[] = [
     path: "/fr",
     element: (
       <Layout>
-        <Outlet />
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
       </Layout>
     ),
     children: pageRoutes("/fr"),
@@ -66,7 +52,9 @@ const routes: RouteConfig[] = [
     path: "/en",
     element: (
       <Layout>
-        <Outlet />
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
       </Layout>
     ),
     children: pageRoutes("/en"),
