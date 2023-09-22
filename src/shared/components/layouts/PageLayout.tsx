@@ -2,16 +2,22 @@ import { motion } from "framer-motion";
 import Footer from "../footer/Footer";
 import PageTitle, { PageTitleProps } from "../page-title/PageTitle";
 
-interface PageLayoutProps extends React.PropsWithChildren<PageTitleProps> {}
+interface PageLayoutProps extends React.PropsWithChildren<PageTitleProps> {
+  className?: string;
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.75 } },
 };
 
-const PageLayout: React.FC<PageLayoutProps> = ({ children, title }) => {
+const PageLayout: React.FC<PageLayoutProps> = ({
+  children,
+  title,
+  className,
+}) => {
   return (
-    <>
+    <div className={className}>
       <PageTitle title={title} />
       <motion.section
         variants={containerVariants}
@@ -35,7 +41,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, title }) => {
       >
         <Footer />
       </motion.div>
-    </>
+    </div>
   );
 };
 

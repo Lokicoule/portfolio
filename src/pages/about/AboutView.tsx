@@ -29,7 +29,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
   }
 
   return (
-    <PageLayout title="About">
+    <PageLayout title="About" className="lg:rounded-2xl bg-primary">
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
         <p
           className="text-lg leading-8 mb-6 text-tertiary"
