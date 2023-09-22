@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../footer/Footer";
 import PageTitle, { PageTitleProps } from "../page-title/PageTitle";
 
@@ -19,28 +19,47 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   return (
     <div className={className}>
       <PageTitle title={title} />
-      <motion.section
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-      >
-        <h2 className="text-5xl font-primary font-bold text-primary relative inline-block pt-12 px-2 sm:px-5 md:px-10 lg:px-14 mb-12 md:mb-[30px]">
-          {title}
-        </h2>
-        {children}
-      </motion.section>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key="content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.1 }}
+        >
+          <motion.section
+            variants={containerVariants}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h2 className="text-5xl font-primary font-bold text-primary relative inline-block pt-12 px-2 sm:px-5 md:px-10 lg:px-14 mb-12 md:mb-[30px]">
+              {title}
+            </h2>
+            <motion.div
+              variants={containerVariants}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              {children}
+            </motion.div>
+          </motion.section>
 
-      <motion.div
-        key="footer"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        className="lg:rounded-2xl lg:bg-primary"
-      >
-        <Footer />
-      </motion.div>
+          <motion.div
+            key="footer"
+            variants={containerVariants}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+          >
+            <Footer />
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

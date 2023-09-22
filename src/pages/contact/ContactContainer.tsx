@@ -15,7 +15,7 @@ const ContactContainer: ContactContainerComponent = () => {
     <PageLayout
       title="Contact"
       description="Contact Loik Fekkai, a fullstack engineer based in Mimizan, France."
-      className="lg:rounded-2xl lg:bg-primary h-full"
+      className="lg:rounded-2xl lg:bg-primary"
     >
       {NotificationService.makeNotifiable(
         <div className="mx-4 md:mx-[60px] p-4 md:p-16 border-1 border-primary bg-secondary rounded-xl bg-primary mb-[30px] md:mb-[60px]">

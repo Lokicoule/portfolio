@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer>
+    <footer className="lg:rounded-2xl lg:bg-primary">
       <p className="text-center py-6 text-secondary">
         © 2023 All Rights Reserved by{" "}
         <a

@@ -32,7 +32,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
     <PageLayout
       title="About"
       description="Loik Fekkai is a fullstack engineer based in Mimizan, France."
-      className="lg:rounded-2xl lg:bg-primary h-full"
+      className="lg:rounded-2xl lg:bg-primary"
     >
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
         <p
