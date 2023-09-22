@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet-async";
 
-export type PageTitleProps = {
+export type HeadProps = {
   title: string;
   description?: string;
 };
 
-const PageTitle: React.FC<PageTitleProps> = ({ title, description }) => {
+const Head: React.FC<HeadProps> = ({ title, description }) => {
   return (
     <Helmet title={`${title} - Loik Fekkai | Fullstack Engineer Portfolio`}>
       <link rel="canonical" href="https://loikfekkai.dev" />
@@ -14,4 +14,4 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, description }) => {
   );
 };
 
-export default PageTitle;
+export default Head;

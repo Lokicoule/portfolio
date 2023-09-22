@@ -1,8 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Footer from "../footer/Footer";
-import PageTitle, { PageTitleProps } from "../page-title/PageTitle";
+import Head, { HeadProps } from "../head/Head";
 
-interface PageLayoutProps extends React.PropsWithChildren<PageTitleProps> {
+interface PageLayoutProps extends React.PropsWithChildren<HeadProps> {
   className?: string;
 }
 
@@ -14,11 +14,12 @@ const containerVariants = {
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   title,
+  description,
   className,
 }) => {
   return (
     <div className={className}>
-      <PageTitle title={title} />
+      <Head title={title} description={description} />
       <AnimatePresence mode="wait">
         <motion.div
           key="content"
