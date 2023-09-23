@@ -140,6 +140,7 @@ export const workData: WorkProps[] = [
     tag: "Personal",
     description:
       "Ce projet est mon portfolio personnel. Il a été créé pour présenter mes compétences, mes projets et mes expériences professionnelles.\n" +
+      "Le choix de ne pas utiliser NextJS pour ce projet est volontaire. J'ai voulu éviter d'utiliser un framework opinionné pour me laisser plus de liberté dans la conception et l'architecture de mon portfolio.\n" +
       "Il m'a également servi de terrain d'expérimentation pour essayer une approche architecturale différente de celle que j'utilise habituellement.\n" +
       "Il m'a également permi d'expérimenter la mise en place de SEO pour une progressive web app (PWA).",
     technologiesUsed: {
