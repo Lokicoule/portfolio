@@ -59,7 +59,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
                   <div className={`text-4xl ${colors[index % colors.length]}`}>
                     {service.icon}
                   </div>
-                  <h4 className="text-3xl text-primary font-medium">
+                  <h4 className="text-3xl text-primary font-medium lg:break-all xl:break-normal">
                     {service.title}
                   </h4>
                 </div>

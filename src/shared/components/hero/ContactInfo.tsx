@@ -12,10 +12,10 @@ interface Props {
 }
 
 const colors: string[] = [
-  "text-[#ffeebb] bg-primary",
-  "text-[#a7ecee] bg-primary",
-  "text-[#99dbf5] bg-primary",
   "text-[#9ac5f4] bg-primary",
+  "text-[#99dbf5] bg-primary",
+  "text-[#a7ecee] bg-primary",
+  "text-[#ffeebb] bg-primary",
 ];
 
 const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
