@@ -1,4 +1,4 @@
-import TinyIcon from "../icons/TinyIcon";
+import IconWrapper from "../icons/IconWrapper";
 
 interface ContactInfo {
   label: string;
@@ -28,9 +28,9 @@ const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
             index === contactInfo.length - 1 ? "" : "mb-2.5"
           }`}
         >
-          <TinyIcon className={colors[index % colors.length]}>
+          <IconWrapper className={colors[index % colors.length]}>
             {info.icon}
-          </TinyIcon>
+          </IconWrapper>
           <div className="text-left ml-2.5">
             <p className="text-xs text-secondary">{info.label}</p>
             {info.href ? (

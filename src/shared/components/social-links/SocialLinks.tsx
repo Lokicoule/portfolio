@@ -1,4 +1,4 @@
-import TinyIcon from "../icons/TinyIcon";
+import IconWrapper from "../icons/IconWrapper";
 
 export interface SocialLinkProps {
   href: string;
@@ -20,7 +20,7 @@ const SocialLinks: React.FC<Props> = ({ socialLinks }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TinyIcon className={link.iconClassName}>{link.icon}</TinyIcon>
+          <IconWrapper className={link.iconClassName}>{link.icon}</IconWrapper>
         </a>
       ))}
     </div>
