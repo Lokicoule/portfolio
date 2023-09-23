@@ -78,7 +78,7 @@ const ExperienceModalContent: React.FC<ExperienceModalContentProps> = ({
             title={section.title}
             content={
               <div className="lg:mr-6">
-                <ul className="flex flex-col gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
+                <ul className="flex flex-col gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside md:space-y-3">
                   {section.items.map((item, i) => (
                     <li
                       key={i}
