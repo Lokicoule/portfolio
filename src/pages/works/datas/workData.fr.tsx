@@ -1,6 +1,7 @@
 import { WorkProps } from "../WorksViewModel";
 import { FaGithub, FaNpm, FaLink } from "react-icons/fa";
 
+// english to french
 export const workData: WorkProps[] = [
   {
     id: "work-1",
@@ -18,13 +19,14 @@ export const workData: WorkProps[] = [
         href: "https://www.github.com/lokicoule/nestjs-cognito",
       },
     ],
-    tag: "Open Source Project",
+    tag: "Open Source",
     description:
-      "This project aims to simplify the implementation of a secure and scalable authentication system in NestJS applications using Amazon Cognito, a managed authentication service from AWS.",
+      "Ce projet vise à simplifier la mise en œuvre d'un système d'authentification sécurisé et évolutif dans les applications NestJS en utilisant Amazon Cognito, un service d'authentification géré par AWS.\n" +
+      "L'idée m'est venue lors du développement d'une application NestJS pour un client. J'ai trouvé que l'intégration d'Amazon Cognito était fastidieuse et mal documentée. J'ai donc décidé de créer un outil pour faciliter cette tâche et le rendre plus accessible à la communauté NestJS.",
     technologiesUsed: {
       languages: ["Typescript"],
-      frameworks: ["NestJS"],
-      tools: ["GitHub Actions", "Lerna"],
+      frameworks: ["NestJS", "Apollo GraphQL"],
+      tools: ["GitHub Actions", "Lerna", "AWS Cognito"],
       architectures: ["Multi-Module"],
     },
     keyFeatures: [
@@ -32,33 +34,39 @@ export const workData: WorkProps[] = [
         id: "key-features-1",
         key: "Core Package (@nestjs-cognito/core):",
         features: [
-          "Provides a NestJS-friendly interface for integrating Amazon Cognito into NestJS applications.",
-          "Offers configuration options for identity provider and JWT verification.",
+          "Facilite l'intégration d'Amazon Cognito dans les applications NestJS.",
+          "Offre des options de configuration pour le fournisseur d'identité et la vérification JWT.",
         ],
       },
       {
         id: "key-features-2",
         key: "Authentication Package (@nestjs-cognito/auth):",
         features: [
-          "Builds on top of the core package.",
-          "Provides authentication and authorization decorators and guards for NestJS applications using AWS Cognito.",
-          "Simplifies the implementation of authentication and authorization rules in Rest endpoints.",
+          "Utilise le package core.",
+          "Ce package permet d'authentifier et d'autoriser les utilisateurs dans les applications NestJS en utilisant AWS Cognito comme fournisseur d'identité.",
         ],
       },
       {
         id: "key-features-3",
         key: "GraphQL Package (@nestjs-cognito/graphql):",
         features: [
-          "Builds on top of the auth package.",
-          "Complements the authentication and authorization features for GraphQL-based NestJS applications.",
-          "Simplifies the implementation of authentication and authorization rules in GraphQL endpoints.",
+          "Utilise le package auth.",
+          "Adapte les fonctionnalités d'authentification et d'autorisation aux applications NestJS basées sur GraphQL.",
         ],
       },
       {
         id: "key-features-4",
         key: "Testing Package (@nestjs-cognito/testing):",
         features: [
-          "Facilitates end-to-end and integration testing of authentication and authorization.",
+          "Facilite les tests d'intégrations et end-to-end des applications NestJS utilisant les packages core, auth et graphql.",
+        ],
+      },
+      {
+        id: "key-features-5",
+        key: "Couverture de test optimale",
+        features: [
+          "Les packages core, auth et graphql sont testés à hauteur de 95%.",
+          "La branch main est protégée par des tests unitaires, d'intégration et end-to-end.",
         ],
       },
     ],
@@ -80,109 +88,38 @@ export const workData: WorkProps[] = [
         href: "https://www.github.com/lokicoule/commitizard",
       },
     ],
-    tag: "Open Source Project",
+    tag: "Open Source",
     description:
-      "This project aims to simplify the process of writing commit messages using the Conventional Commits and Red-Green-Refactor conventions.",
+      "Ce projet vise à simplifier le processus d'écriture des messages de commit en utilisant les conventions dîtes conventionnelles ou red-green-refactor (TDD).\n" +
+      "L'idée m'est venue lors de l'application du TDD dans un projet. J'ai trouvé que le processus d'écriture des messages de commit était fastidieux et j'ai donc décidé de créer un outil pour faciliter cette tâche.",
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
       tools: ["GitHub Actions"],
-      architectures: ["Modular"],
     },
     keyFeatures: [
       {
         id: "key-features-1",
-        key: "Wizard-style Commit Message Generation:",
+        key: "Génération de messages de commit en mode assistant:",
         features: [
-          "Commitizard provides an interactive wizard for generating commit messages. This simplifies the process of creating meaningful and well-structured commit messages.",
+          "Prend en charge les stratégies de commit conventionnelles et red-green-refactor (TDD).",
+          "Entièrement configurable via .commitizard.json.",
+          "Gestion des git hooks.",
         ],
       },
       {
         id: "key-features-2",
-        key: "Support for Conventional and Red-Green-Refactor Commit Strategies:",
+        key: "Couverture de test maximale",
         features: [
-          "Commitizard supports two popular commit strategies: conventional commits and red-green-refactor commits. Users can choose the strategy that best fits their project's needs.",
-        ],
-      },
-      {
-        id: "key-features-3",
-        key: "Fully Configurable through .commitizard.json File:",
-        features: [
-          "The project's behavior can be customized through a configuration file named .commitizard.json. This allows teams to define commit types, scopes, and templates tailored to their project.",
-        ],
-      },
-      {
-        id: "key-features-4",
-        key: "Git Hook Management:",
-        features: [
-          "Commitizard provides tools for managing Git hooks, such as the prepare-commit-msg hook. This ensures that commit messages adhere to the defined commit strategy and template.",
-        ],
-      },
-      {
-        id: "key-features-5",
-        key: "Application Configuration Management:",
-        features: [
-          "Users can manage the application's configuration using CLI commands, making it easy to install, backup, restore, or delete configuration files as needed.",
-        ],
-      },
-      {
-        id: "key-features-6",
-        key: "Interactive Prompts for Commit Details:",
-        features: [
-          "When creating a commit, Commitizard prompts users for commit details such as type, scope, subject, body, and breaking changes. This ensures that commit messages are comprehensive and consistent.",
-        ],
-      },
-      {
-        id: "key-features-7",
-        key: "Emoji Support for Commit Message Types:",
-        features: [
-          "Commitizard allows users to use emojis as prefixes for commit message types, adding a visually appealing and informative element to commit messages.",
-        ],
-      },
-      {
-        id: "key-features-8",
-        key: "Global and Local Installation Options:",
-        features: [
-          "Users can install Commitizard either locally in their project or globally, depending on their preferences and workflow requirements.",
-        ],
-      },
-      {
-        id: "key-features-9",
-        key: "Git Alias Integration:",
-        features: [
-          "Commitizard can be integrated with Git aliases, making it easy to run the tool using Git commands from any Git directory.",
-        ],
-      },
-      {
-        id: "key-features-10",
-        key: "Documentation and Examples:",
-        features: [
-          "The project provides comprehensive documentation and examples to help users understand how to set up, configure, and use Commitizard effectively.",
-        ],
-      },
-      {
-        id: "key-features-11",
-        key: "Customization of Prompts:",
-        features: [
-          "Users can customize the prompts displayed by Commitizard to provide more descriptive or project-specific information for commit types and scopes.",
-        ],
-      },
-      {
-        id: "key-features-12",
-        key: "Custom Commit Message Templates for Red-Green-Refactor Strategy:",
-        features: [
-          "Commitizard allows users to define custom commit message templates for the red-green-refactor strategy, enabling them to tailor commit messages to their specific project needs.",
-        ],
-      },
-      {
-        id: "key-features-13",
-        key: "Bypassing Git Hooks with Environment Variable:",
-        features: [
-          "Users can control when Commitizard's Git hooks are executed by setting the COMMITIZARD_BYPASS environment variable, providing flexibility during development.",
+          "La couverture de code est de 100%.",
+          "La branch main est protégée par des tests unitaires, d'intégration et end-to-end.",
         ],
       },
     ],
-    challengesAndSolutions: [],
+    challengesAndSolutions: [
+      "Prise en charge des git hooks.",
+      "Contournement des git hooks en utilisant une variable d'environnement",
+    ],
   },
   {
     id: "work-3",
@@ -200,38 +137,39 @@ export const workData: WorkProps[] = [
         href: "https://www.github.com/lokicoule/portfolio",
       },
     ],
-    tag: "Personal Project",
+    tag: "Personal",
     description:
-      "This project aims to showcase my skills and experience as a software developer. It also serves as a sandbox for experimenting some architectural patterns with React. You should check it out if you are interested in seeing how I code.",
+      "Ce projet est mon portfolio personnel. Il a été créé pour présenter mes compétences, mes projets et mes expériences professionnelles.\n" +
+      "Il m'a également servi de terrain d'expérimentation pour essayer une approche architecturale différente de celle que j'utilise habituellement.\n" +
+      "Il m'a également permi d'expérimenter la mise en place de SEO pour une progressive web app (PWA).",
     technologiesUsed: {
       languages: ["Typescript"],
       libraries: ["React", "TailwindCSS", "@headlessui"],
       tools: ["Vite"],
       architectures: ["MVVM"],
     },
-    challengesAndSolutions: [],
     keyFeatures: [
       {
         id: "key-features-1",
         key: "Responsive Design:",
         features: [
-          "The portfolio is responsive and can be viewed on different screen sizes.",
+          "Le portfolio est conçu pour être responsive et s'adapter à tous les types d'appareils.",
         ],
       },
       {
         id: "key-features-2",
         key: "Dark Mode:",
-        features: ["The portfolio supports dark mode."],
+        features: ["Le portfolio supporte le mode sombre."],
       },
       {
         id: "key-features-3",
         key: "Internationalization:",
-        features: ["The portfolio supports internationalization."],
+        features: ["Le portfolio est disponible en français et en anglais."],
       },
       {
         id: "key-features-4",
-        key: "Static Site Generation:",
-        features: ["The portfolio is statically generated using Vite."],
+        key: "SEO:",
+        features: ["Le portfolio est optimisé pour les moteurs de recherche."],
       },
     ],
   },
@@ -239,7 +177,6 @@ export const workData: WorkProps[] = [
     id: "work-4",
     name: "commandzen",
     category: "tools",
-
     socialLinks: [
       {
         icon: <FaNpm />,
@@ -252,15 +189,143 @@ export const workData: WorkProps[] = [
         href: "https://www.github.com/lokicoule/commandzen",
       },
     ],
-    tag: "Open Source Project",
-    description:
-      "This project aims to simplify the process of creating and managing Git aliases.",
+    tag: "Open Source",
+    description: `Commandzen est une bibliothèque qui vise à simplifier la création d'applications d'interface en ligne de commande (CLI) en utilisant TypeScript et NodeJS.
+Lors du développement de Commitizard, j'ai préalablement utilisé la bibliothèque Commander mais la taille du bundle généré était trop importante pour mon cas d'utilisation. J'ai donc décidé de créer ma propre bibliothèque pour répondre à mes besoins.`,
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
       tools: ["GitHub Actions"],
     },
-    keyFeatures: [],
-    challengesAndSolutions: [],
+    keyFeatures: [
+      {
+        id: "key-features-1",
+        key: "API simple et intuitive pour la création d'applications CLI",
+        features: [
+          "Supporte les commandes, les sous-commandes et les options",
+          "Supporte les alias de commandes",
+          "Génération automatique de l'aide pour les commandes et sous-commandes",
+        ],
+      },
+      {
+        id: "key-features-2",
+        key: "Compatibilité avec les systèmes de modules JavaScript",
+        features: ["CommonJS", "ECMAScript Modules (ESM)"],
+      },
+      {
+        id: "key-features-4",
+        key: "Couverture de test maximale",
+        features: [
+          "La couverture de code est de 100%.",
+          "La branch main est protégée par des tests unitaires, d'intégration et end-to-end.",
+        ],
+      },
+    ],
+    challengesAndSolutions: [
+      "Gérer la compatibilité entre les systèmes de modules CommonJS et ECMAScript Modules (ESM).",
+    ],
+  },
+  {
+    id: "work-5",
+    name: "nestjs-graphql-boilerplate",
+    category: "backend",
+    socialLinks: [
+      {
+        icon: <FaGithub />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.github.com/lokicoule/nestjs-graphql-boilerplate",
+      },
+    ],
+    tag: "R&D",
+    description:
+      "Ce projet m'a servi de terrain d'expérimentation pour tester une approche d'architecture micro-service avec NestJS et GraphQL.\n" +
+      "Il m'a servi de base pour le développement d'une application client.",
+    technologiesUsed: {
+      languages: ["Typescript"],
+      frameworks: ["NestJS", "Apollo GraphQL"],
+      libraries: ["NestJS Cognito"],
+      architectures: ["Microservices", "Layered Architecture"],
+    },
+  },
+  {
+    id: "work-6",
+    name: "react-boilerplate",
+    category: "frontend",
+    socialLinks: [
+      {
+        icon: <FaGithub />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.github.com/lokicoule/react-boilerplate",
+      },
+    ],
+    tag: "R&D",
+    description:
+      "Ce projet m'a servi de terrain d'expérimentation, pour tester une approche d'architecture micro-frontend avec React.\n" +
+      "Il m'a permis d'appréhender les problématiques liées à la mise en place d'une architecture micro-frontend et de tester des solutions pour les résoudre.\n" +
+      "Finalement, j'ai fait le choix de ne pas utiliser cette approche et de me tourner vers une approche plus classique.",
+    technologiesUsed: {
+      languages: ["Typescript"],
+      libraries: [
+        "React",
+        "Material-UI",
+        "Zustand",
+        "React-Query",
+        "amazon-cognito-identity-js",
+        "react-hook-form",
+        "i18n",
+      ],
+      tools: ["Vite", "Turbo"],
+      architectures: ["micro-frontend", "modular"],
+    },
+    keyFeatures: [
+      {
+        id: "key-features-1",
+        key: "Responsive Design:",
+        features: [
+          "Le poc est conçu pour être responsive et s'adapter à tous les types d'appareils.",
+        ],
+      },
+      {
+        id: "key-features-2",
+        key: "Dark Mode:",
+        features: ["Le poc supporte le mode sombre."],
+      },
+      {
+        id: "key-features-3",
+        key: "Internationalization:",
+        features: ["Le poc est disponible en français et en anglais."],
+      },
+      {
+        id: "key-features-4",
+        key: "Authentification:",
+        features: ["Le poc supporte l'authentification via AWS Cognito."],
+      },
+    ],
+  },
+  {
+    id: "work-7",
+    name: "sort-viewer",
+    category: "frontend",
+    socialLinks: [
+      {
+        icon: <FaLink />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://lokicoule.github.io/Sort-Viewer/",
+      },
+      {
+        icon: <FaGithub />,
+        iconClassName: "text-[#0072b1] bg-secondary",
+        href: "https://www.github.com/lokicoule/Sort-Viewer",
+      },
+    ],
+    tag: "Learning",
+    description:
+      `Ce projet est une SPA qui permet de visualiser les algorithmes de tri en action.\n` +
+      "Ce projet m'a permis de mettre un premier pied dans le monde de la visualisation d'algorithmes et de découvrir les bases de React et de Redux.",
+    technologiesUsed: {
+      languages: ["Javascript"],
+      libraries: ["React", "Material-UI", "Redux", "Redux Toolkit"],
+      tools: ["Create React App"],
+    },
   },
 ];

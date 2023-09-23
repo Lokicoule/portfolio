@@ -32,31 +32,34 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
           <span className="dark:text-white text-sm">{work.description}</span>
         </Disclosure>
 
-        <Disclosure
-          icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
-          title="Key Features"
-          defaultOpen
-        >
-          <ul className="dark:text-white text-sm">
-            {work.keyFeatures?.map((item, i) => (
-              <li key={i} className="font-medium text-sm mb-2">
-                <span>{item.key}</span>
-                <ul className="list-disc list-inside">
-                  {item.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="font-medium text-sm text-gray-600 dark:text-gray-400"
-                    >
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </Disclosure>
+        {work.keyFeatures ? (
+          <Disclosure
+            icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
+            title="Key Features"
+            defaultOpen
+          >
+            <ul className="dark:text-white text-sm">
+              {work.keyFeatures?.map((item, i) => (
+                <li key={i} className="font-medium text-sm mb-2">
+                  <span>{item.key}</span>
+                  <ul className="list-disc list-inside">
+                    {item.features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="font-medium text-sm text-gray-600 dark:text-gray-400"
+                      >
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </Disclosure>
+        ) : null}
 
-        {work.challengesAndSolutions.length > 0 && (
+        {work.challengesAndSolutions &&
+        work.challengesAndSolutions.length > 0 ? (
           <Disclosure
             icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
             title={translatingService.translate("challengesAndSolutions")}
@@ -72,7 +75,7 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
               </ul>
             </div>
           </Disclosure>
-        )}
+        ) : null}
       </div>
     </Modal.Content>
   );

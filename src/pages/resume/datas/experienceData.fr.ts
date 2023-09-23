@@ -21,7 +21,7 @@ export const experienceData: ExperienceProps[] = [
     achievementsAndContributions: [
       "Auto-apprentissage intensif: J'ai consacré un temps considérable à l'auto-apprentissage de nouvelles technologies, de frameworks et de langages de programmation pertinents pour mon domaine",
       "Exploration des tendances actuelles: J'ai suivi de près les tendances et les évolutions du développement web, en me tenant au courant des dernières avancées technologiques",
-      "Développement de concepts: J'ai travaillé sur des concepts et des idées de projets personnels, même si je n'ai pas abouti à des réalisations finales",
+      "Développement de concepts: J'ai travaillé sur des concepts et des idées de projets personnels, même si je n'ai pas toujours abouti à des réalisations finales",
     ],
     challengesAndSolutions: [],
     collaborationAndTeamwork: [],

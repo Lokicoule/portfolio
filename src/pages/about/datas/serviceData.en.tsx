@@ -28,7 +28,7 @@ export const serviceData: ServiceProps[] = [
     id: "service-4",
     title: "Blockchain Development",
     description:
-      "I am a blockchain enthusiast and I love building decentralized applications.",
+      "I possess the skills and expertise to be good in the field of blockchain, confidently handling its complexities and driving innovation.",
     icon: <PiCodeLight />,
   },
 ];
