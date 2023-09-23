@@ -1,0 +1,62 @@
+{
+  "company": "Entreprise",
+  "client": "Client",
+  "name": "Nom",
+  "tag": "Tag",
+  "description": "Description",
+  "duration": "Durée",
+  "place": "Lieu",
+  "roleAndResponsibilities": "Rôle et Responsabilités",
+  "technologiesUsed": "Stack",
+  "achievementsAndContributions": "Réalisations et Contributions",
+  "challengesAndSolutions": "Défis et Solutions",
+  "collaborationAndTeamwork": "Collaboration et Travail d'Équipe",
+  "impactAndLessonsLearned": "Impact et Leçons Apprises",
+  "about": {
+    "title": "À propos",
+    "description": {
+      "meta": "Découvrez qui je suis, mon parcours et mes valeurs en tant qu'ingénieur logiciel fullstack.",
+      "content": "Salut ! Je suis Loïk, un <span class=\"gradient-underline-fixed-xs\">développeur fullstack</span> passionné par la technologie et l'environnement. Depuis le début de ma carrière, mon engagement pour la cause environnementale a guidé mes choix de projets, avec une expérience significative dans des projets axés sur la <span class=\"gradient-hightlight\">dématérialisation</span>. Je suis également fasciné par la blockchain et les opportunités de liberté et de transparence qu'elle offre.<br /><br />C'est tout naturellement que je recherche une opportunité dans une entreprise partageant mes valeurs environnementales et de <span class=\"gradient-hightlight\">décentralisation</span>, axée sur l'innovation et la collaboration."
+    },
+    "services": "Mes services !"
+  },
+  "resume": {
+    "title": "Mon CV",
+    "description": {
+      "meta": "Découvrez mon CV, mes expériences et mes compétences en tant qu'ingénieur logiciel fullstack."
+    },
+    "experience": {
+      "title": "Expérience"
+    },
+    "education": {
+      "title": "Formation"
+    },
+    "skill": {
+      "title": "Compétences"
+    },
+    "knowledge": {
+      "title": "Connaissances"
+    }
+  },
+  "works": {
+    "title": "Projets",
+    "description": {
+      "meta": "Découvrez mes projets, mes réalisations et mes contributions."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": {
+      "meta": "Contactez-moi pour toute question ou opportunité.",
+      "content": "Vous avez une question ou une opportunité ? N'hésitez pas à me contacter !"
+    },
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !"
+    }
+  }
+}

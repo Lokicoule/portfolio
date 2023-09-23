@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import Layout from "../shared/components/layouts/Layout";
-
 import Loading from "../pages/loading/Loading";
+import Layout from "../shared/components/layouts/Layout";
 import {
   aboutPresenter,
+  contactController,
   resumePresenter,
   translatingService,
   worksController,
@@ -24,7 +24,9 @@ const pageRoutes = (root: string) => [
   },
   {
     path: "contact",
-    element: <Contact />,
+    element: (
+      <Contact controller={contactController} service={translatingService} />
+    ),
   },
   {
     path: "resume",

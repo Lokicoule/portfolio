@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import PageLayout from "../../shared/components/layouts/PageLayout";
 import { AboutPresenter } from "./AboutPresenter";
 import { AboutViewModel } from "./AboutViewModel";
-import { translatingService } from "../../shared/composition";
 
 type AboutViewProps = {
   presenter: AboutPresenter;
@@ -30,23 +29,22 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
 
   return (
     <PageLayout
-      title="About"
-      description="Loik Fekkai is a fullstack engineer based in Mimizan, France."
+      title={presenter.translateAndSanitize("about.title")}
+      description={presenter.translateAndSanitize("about.description.meta")}
       className="lg:rounded-2xl lg:bg-primary"
     >
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
         <p
           className="text-lg leading-8 mb-6 text-tertiary"
           dangerouslySetInnerHTML={{
-            __html:
-              translatingService.translateAndSanitize("about.description"),
+            __html: presenter.translateAndSanitize("about.description.content"),
           }}
         />
       </div>
 
       <section className="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
         <h3 className="text-[35px] text-secondary font-medium pb-5 font-primary">
-          What I do!
+          {presenter.translateAndSanitize("about.services")}
         </h3>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
           {viewModel.services.map((service, index) => (

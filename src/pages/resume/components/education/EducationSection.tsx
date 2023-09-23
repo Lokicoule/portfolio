@@ -3,16 +3,20 @@ import { EducationProps } from "../../ResumeViewModel";
 
 export type EducationSectionProps = {
   items: EducationProps[];
+  title: string;
 };
 
-const EducationSection: React.FC<EducationSectionProps> = ({ items }) => {
+const EducationSection: React.FC<EducationSectionProps> = ({
+  items,
+  title,
+}) => {
   return (
     <div>
       <div className="flex items-center space-x-2 mb-4">
         <div className="text-4xl text-[#0072b1]">
           <MdOutlineBusinessCenter />
         </div>
-        <h4 className="text-3xl text-secondary font-medium">Education</h4>
+        <h4 className="text-3xl text-secondary font-medium">{title}</h4>
       </div>
       {items.map((item) => (
         <div

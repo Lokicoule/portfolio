@@ -18,9 +18,6 @@ const ResumeView: ResumeViewComponent = ({ presenter }) => {
 
   useEffect(() => {
     presenter.load((vm) => setViewModel(vm));
-
-    // in that case the subscription is lost
-    //return () => presenter.unload();
   }, [presenter]);
 
   if (!viewModel) {
@@ -29,25 +26,37 @@ const ResumeView: ResumeViewComponent = ({ presenter }) => {
 
   return (
     <PageLayout
-      title="Resume"
-      description="Resume Loik Fekkai, a fullstack engineer based in Mimizan, France."
+      title={presenter.translateAndSanitize("resume.title")}
+      description={presenter.translateAndSanitize("resume.description.meta")}
       className="lg:rounded-2xl lg:bg-primary"
     >
       <div className="px-2 sm:px-5 md:px-10 lg:px-14 px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6">
-          <ExperienceSection items={viewModel.experiences} />
-          <EducationSection items={viewModel.educations} />
+          <ExperienceSection
+            title={presenter.translateAndSanitize("resume.experience.title")}
+            items={viewModel.experiences}
+          />
+          <EducationSection
+            title={presenter.translateAndSanitize("resume.education.title")}
+            items={viewModel.educations}
+          />
         </div>
       </div>
 
       <div className="container py-12 px-2 sm:px-5 md:px-10 lg:px-14 bg-secondary">
         <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
           <div className="col-span-1">
-            <SkillSection items={viewModel.skills} />
+            <SkillSection
+              title={presenter.translateAndSanitize("resume.skill.title")}
+              items={viewModel.skills}
+            />
           </div>
 
           <div className="col-span-1">
-            <KnowledgeSection items={viewModel.knowledges} />
+            <KnowledgeSection
+              title={presenter.translateAndSanitize("resume.knowledge.title")}
+              items={viewModel.knowledges}
+            />
           </div>
         </div>
       </div>

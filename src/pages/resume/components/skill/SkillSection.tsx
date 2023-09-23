@@ -3,6 +3,7 @@ import { SkillProps } from "../../ResumeViewModel";
 
 type SkillSectionProps = {
   items: SkillProps[];
+  title: string;
 };
 
 type SkillSectionComponent = React.FC<SkillSectionProps>;
@@ -22,10 +23,10 @@ const SkillItem: React.FC<SkillProps> = ({ name, value, type }) => {
   );
 };
 
-const SkillSection: SkillSectionComponent = ({ items }) => {
+const SkillSection: SkillSectionComponent = ({ items, title }) => {
   return (
     <div>
-      <h4 className="text-3xl text-primary font-medium mb-6">Skills</h4>
+      <h4 className="text-3xl text-primary font-medium mb-6">{title}</h4>
       {items.map((item, i) => (
         <SkillItem key={i} {...item} />
       ))}

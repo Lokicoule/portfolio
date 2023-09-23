@@ -1,3 +1,4 @@
+import { TranslatingService } from "../../shared/translating/translatingService";
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
@@ -8,8 +9,9 @@ import { workData as workDataFr } from "./datas/workData.fr";
 export class WorksPresenter extends Presenter<WorksViewModel> {
   private langSubscriptionManager: SubscriptionManager;
   private filterSubscriptionManager: SubscriptionManager;
+  private translatingService: TranslatingService;
 
-  constructor(cache: GlobalCache) {
+  constructor(cache: GlobalCache, translatingService: TranslatingService) {
     super(cache);
     this.langSubscriptionManager = new SubscriptionManager(
       cache,
@@ -23,6 +25,7 @@ export class WorksPresenter extends Presenter<WorksViewModel> {
       WorksPresenter.name,
       (filter) => this.handleFilterChange(filter)
     );
+    this.translatingService = translatingService;
   }
 
   private handleLangChange(lang: string) {
@@ -59,5 +62,9 @@ export class WorksPresenter extends Presenter<WorksViewModel> {
     this.langSubscriptionManager.unsubscribe();
 
     super.unload();
+  }
+
+  public translateAndSanitize(key: string): string {
+    return this.translatingService.translateAndSanitize(key);
   }
 }

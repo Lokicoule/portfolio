@@ -21,8 +21,8 @@ const WorksContainer: WorksContainerComponent = ({ presenter, controller }) => {
 
   return (
     <PageLayout
-      title="Works"
-      description="Portfolio Loik Fekkai, a fullstack engineer based in Mimizan, France."
+      title={presenter.translateAndSanitize("works.title")}
+      description={presenter.translateAndSanitize("works.description.meta")}
       className="lg:rounded-2xl lg:bg-primary"
     >
       {NotificationService.makeNotifiable(

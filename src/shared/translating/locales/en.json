@@ -1,0 +1,62 @@
+{
+  "company": "Company",
+  "client": "Client",
+  "name": "Name",
+  "tag": "Tag",
+  "description": "Description",
+  "duration": "Duration",
+  "place": "Place",
+  "roleAndResponsibilities": "Role and Responsibilities",
+  "technologiesUsed": "Stack",
+  "achievementsAndContributions": "Achievements and Contributions",
+  "challengesAndSolutions": "Challenges and Solutions",
+  "collaborationAndTeamwork": "Collaboration and Teamwork",
+  "impactAndLessonsLearned": "Impact and Lessons Learned",
+  "about": {
+    "title": "About",
+    "description": {
+      "meta": "Discover my profile, my motivations and my values as a fullstack software engineer.",
+      "content": "I am Loïk, a <span class=\"gradient-underline-fixed-xs\">fullstack developer</span> passionate about technology and the environment. Since the beginning of my career, my commitment to the environmental cause has guided my project choices, with significant experience in projects focused on <span class=\"gradient-hightlight\">dematerialization</span>. I am also fascinated by blockchain and the opportunities for freedom and transparency it offers.<br /><br />It is only natural that I am looking for an opportunity in a company that shares my environmental and decentralization values, focused on innovation and collaboration."
+    },
+    "services": "What I do!"
+  },
+  "resume": {
+    "title": "Resume",
+    "description": {
+      "meta": "Discover my resume, my skills and my experiences as a fullstack software engineer."
+    },
+    "experience": {
+      "title": "Experiences"
+    },
+    "education": {
+      "title": "Education"
+    },
+    "skill": {
+      "title": "Skills"
+    },
+    "knowledge": {
+      "title": "Knowledges"
+    }
+  },
+  "works": {
+    "title": "Works",
+    "description": {
+      "meta": "Discover my works, my projects and my contributions as a fullstack software engineer."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": {
+      "content": "You have a question or an opportunity? Feel free to contact me!",
+      "meta": "Contact me for any questions or requests."
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully."
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { translatingService } from ".";
 import { AboutPresenter } from "../../pages/about/AboutPresenter";
 import { ResumePresenter } from "../../pages/resume/ResumePresenter";
 import { WorksPresenter } from "../../pages/works/WorksPresenter";
@@ -6,11 +7,11 @@ import { NavigationPresenter } from "../components/navigation/NavigationPresente
 
 import { cache } from "./setupCaches";
 
-const aboutPresenter = new AboutPresenter(cache);
+const aboutPresenter = new AboutPresenter(cache, translatingService);
 const langPresenter = new LangPresenter(cache);
 const navigationPresenter = new NavigationPresenter(cache);
-const resumePresenter = new ResumePresenter(cache);
-const worksPresenter = new WorksPresenter(cache);
+const resumePresenter = new ResumePresenter(cache, translatingService);
+const worksPresenter = new WorksPresenter(cache, translatingService);
 
 export {
   aboutPresenter,

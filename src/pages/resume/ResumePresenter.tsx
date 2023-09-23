@@ -1,19 +1,21 @@
+import { TranslatingService } from "../../shared/translating/translatingService";
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
+import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
 import { ResumeViewModel } from "./ResumeViewModel";
 import { educationData as educationDataEn } from "./datas/educationData.en";
 import { educationData as educationDataFr } from "./datas/educationData.fr";
 import { experienceData as experienceDataEn } from "./datas/experienceData.en";
 import { experienceData as experienceDataFr } from "./datas/experienceData.fr";
+import { knowledgeData } from "./datas/knowledgeData";
 import { skillData as skillDataEn } from "./datas/skillData.en";
 import { skillData as skillDataFr } from "./datas/skillData.fr";
-import { knowledgeData } from "./datas/knowledgeData";
-import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
 
 export class ResumePresenter extends Presenter<ResumeViewModel> {
   private subscriptionManager: SubscriptionManager;
+  private translatingService: TranslatingService;
 
-  constructor(cache: GlobalCache) {
+  constructor(cache: GlobalCache, translatingService: TranslatingService) {
     super(cache);
     this.subscriptionManager = new SubscriptionManager(
       cache,
@@ -21,6 +23,7 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
       ResumePresenter.name,
       (lang) => this.handleLangChange(lang)
     );
+    this.translatingService = translatingService;
   }
 
   private handleLangChange(lang: string) {
@@ -52,5 +55,9 @@ export class ResumePresenter extends Presenter<ResumeViewModel> {
     this.subscriptionManager.unsubscribe();
 
     super.unload();
+  }
+
+  public translateAndSanitize(key: string): string {
+    return this.translatingService.translateAndSanitize(key);
   }
 }

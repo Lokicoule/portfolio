@@ -1,3 +1,4 @@
+import { TranslatingService } from "../../shared/translating/translatingService";
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
@@ -7,8 +8,9 @@ import { serviceData as serviceDataFr } from "./datas/serviceData.fr";
 
 export class AboutPresenter extends Presenter<AboutViewModel> {
   private subscriptionManager: SubscriptionManager;
+  private translatingService: TranslatingService;
 
-  constructor(cache: GlobalCache) {
+  constructor(cache: GlobalCache, translatingService: TranslatingService) {
     super(cache);
     this.subscriptionManager = new SubscriptionManager(
       cache,
@@ -16,6 +18,7 @@ export class AboutPresenter extends Presenter<AboutViewModel> {
       AboutPresenter.name,
       (lang) => this.handleLangChange(lang)
     );
+    this.translatingService = translatingService;
   }
 
   private handleLangChange(lang: string) {
@@ -41,5 +44,9 @@ export class AboutPresenter extends Presenter<AboutViewModel> {
     this.subscriptionManager.unsubscribe();
 
     super.unload();
+  }
+
+  public translateAndSanitize(key: string): string {
+    return this.translatingService.translateAndSanitize(key);
   }
 }

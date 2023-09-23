@@ -4,6 +4,7 @@ import { ContactFormProps } from "../domainObjects/ContactForm";
 import TextInputField from "../../../shared/components/form/TextInputField";
 import TextAreaField from "../../../shared/components/form/TextAreaField";
 import { BsSendCheck } from "react-icons/bs";
+import { translatingService } from "../../../shared/composition";
 
 export interface ContactFormElements extends HTMLFormControlsCollection {
   name: HTMLInputElement;
@@ -47,7 +48,7 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextInputField
-        label="Name"
+        label={translatingService.translate("contact.form.name")}
         name="name"
         type="text"
         value={formData.name}
@@ -57,7 +58,7 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
         required
       />
       <TextInputField
-        label="Email"
+        label={translatingService.translate("contact.form.email")}
         name="email"
         type="email"
         value={formData.email}
@@ -65,7 +66,7 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
         required
       />
       <TextAreaField
-        label="Message"
+        label={translatingService.translate("contact.form.message")}
         name="message"
         value={formData.message}
         onChange={handleChange}
@@ -82,13 +83,15 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
             type="submit"
             disabled={isLoading || isSuccessful}
           >
-            {isLoading ? "Sending..." : "Send"}
+            {isLoading
+              ? translatingService.translate("contact.form.sending")
+              : translatingService.translate("contact.form.submit")}
           </button>
         </div>
       ) : (
         <span className="text-green-500 p-2 rounder-lg">
           <BsSendCheck className="inline-block mr-2 text-xl" />
-          Message sent successfully!
+          {translatingService.translate("contact.form.success")}
         </span>
       )}
     </form>
