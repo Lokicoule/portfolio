@@ -1,17 +1,23 @@
 import { send } from "@emailjs/browser";
-import { ContactFormProps } from "../../pages/contact/domainObjects/ContactForm";
+
+export type EmailProps = {
+  to_name?: string;
+  from_email: string;
+  from_name: string;
+  message: string;
+};
 
 export class MailingService {
   public async sendEmail(
-    contactForm: ContactFormProps,
+    emailProps: EmailProps,
     onSuccess: () => void,
     onFailure: (error: Error) => void
   ): Promise<void> {
     const emailParams = {
-      to_name: "Loïk",
-      from_email: contactForm.email,
-      from_name: contactForm.name,
-      message: contactForm.message,
+      to_name: emailProps.to_name,
+      from_email: emailProps.from_email,
+      from_name: emailProps.from_name,
+      message: emailProps.message,
     };
 
     await send(

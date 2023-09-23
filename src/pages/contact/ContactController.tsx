@@ -36,7 +36,7 @@ export class ContactController {
 
     try {
       await this.mailingService.sendEmail(
-        data,
+        contactFormOrError.toDTO(),
         () =>
           this.notifications.updateToast(
             notification.withMessageAndType("Message sent!", "success")

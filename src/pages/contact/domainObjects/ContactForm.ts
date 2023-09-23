@@ -1,3 +1,5 @@
+import { EmailProps } from "../../../shared/mailing/mailingService";
+
 export interface ContactFormProps {
   email: string;
   name: string;
@@ -27,10 +29,10 @@ export class ContactForm {
     return new ContactForm(props);
   }
 
-  public toDTO() {
+  public toDTO(): EmailProps {
     return {
-      email: this.props.email,
-      name: this.props.name,
+      from_email: this.props.email,
+      from_name: this.props.name,
       message: this.props.message,
     };
   }
