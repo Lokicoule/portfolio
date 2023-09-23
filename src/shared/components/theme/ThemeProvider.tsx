@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { localStorageService } from "../../composition";
 
 export type Mode = "light" | "dark";
 
@@ -23,13 +24,25 @@ export const useTheme = () => {
 
   const toggleThemeMode = () => {
     setMode(mode === "light" ? "dark" : "light");
+    localStorageService.setItem(
+      "themeMode",
+      mode === "light" ? "dark" : "light"
+    );
   };
 
   return { mode, setMode, toggleThemeMode };
 };
 
 const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [mode, setMode] = useState<Mode>("light");
+  const storedMode = localStorageService.getItem<Mode>("themeMode");
+
+  const initialMode =
+    storedMode ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  const [mode, setMode] = useState<Mode>(initialMode);
 
   const value = useMemo(() => ({ mode, setMode }), [mode, setMode]);
 
