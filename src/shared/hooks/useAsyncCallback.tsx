@@ -8,7 +8,7 @@ export type AsyncState = {
 
 export const useAsyncCallback = <TArgs extends unknown[], TReturn>(
   fn: (...args: TArgs) => Promise<TReturn>
-): [AsyncState, (...args: TArgs) => Promise<TReturn>] => {
+): [AsyncState, (...args: TArgs) => Promise<TReturn | undefined>] => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [error, setError] = useState<Error | undefined>(undefined);
@@ -21,7 +21,6 @@ export const useAsyncCallback = <TArgs extends unknown[], TReturn>(
       return result;
     } catch (error) {
       setError(error as Error);
-      throw error;
     } finally {
       setIsLoading(false);
     }

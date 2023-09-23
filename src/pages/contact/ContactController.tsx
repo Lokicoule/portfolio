@@ -2,7 +2,7 @@ import { LoggingService } from "../../shared/logging/loggingService";
 import { MailingService } from "../../shared/mailing/mailingService";
 import { Notification } from "../../shared/notifications/domainObjects/Notification";
 import { NotificationService } from "../../shared/notifications/notificationsService";
-import { ContactFormProps } from "./domainObjects/ContactForm";
+import { ContactForm, ContactFormProps } from "./domainObjects/ContactForm";
 
 export class ContactController {
   private isPending = false;
@@ -15,6 +15,17 @@ export class ContactController {
 
   public async submitContactForm(data: ContactFormProps): Promise<void> {
     if (this.isPending) {
+      return;
+    }
+
+    const contactFormOrError = ContactForm.create(data);
+
+    if (contactFormOrError instanceof Error) {
+      this.notifications.showToast(
+        Notification.createError(
+          `Contact error:\n${contactFormOrError.message}`
+        )
+      );
       return;
     }
 

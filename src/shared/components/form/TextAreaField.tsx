@@ -1,23 +1,15 @@
-import React from "react";
-
-interface TextAreaFieldProps {
+interface TextAreaFieldProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
-  name: string;
-  value: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  required?: boolean;
-  rows?: number;
-  maxLength?: number;
 }
 
 const TextAreaField: React.FC<TextAreaFieldProps> = ({
   label,
-  name,
-  value,
   onChange,
+  name,
   required = false,
-  rows = 3,
-  maxLength,
+  ...props
 }) => {
   return (
     <div className="relative z-0 w-full mb-10 group text-sm ">
@@ -25,10 +17,8 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
         name={name}
         className="block autofill:bg-transparent py-2.5 px-0 w-full text-secondary bg-transparent border-0 border-b-2 border-primary appearance-none focus:gradient-underline-fixed focus-no-outline peer"
         onChange={onChange}
-        value={value}
         required={required}
-        rows={rows}
-        maxLength={maxLength}
+        {...props}
       />
       <label
         htmlFor={name}

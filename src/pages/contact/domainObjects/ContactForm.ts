@@ -12,11 +12,17 @@ export class ContactForm {
   }
 
   public static create(props: ContactFormProps): ContactForm | Error {
-    if (!props.email.includes("@")) return new Error("Invalid email");
-    if (props.name.length < 1 || props.name.length > 20)
-      return new Error("Invalid name");
-    if (props.message.length < 10 || props.message.length > 5000)
-      return new Error("Invalid message");
+    if (
+      !props.email.match(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})$/)
+    ) {
+      return new Error("Email must be valid");
+    }
+    if (props.name.length < 2 || props.name.length > 50) {
+      return new Error("Name must be between 2 and 50 characters");
+    }
+    if (props.message.length < 10 || props.message.length > 500) {
+      return new Error("Message must be between 10 and 500 characters");
+    }
 
     return new ContactForm(props);
   }

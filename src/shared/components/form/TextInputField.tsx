@@ -1,31 +1,24 @@
-import React from "react";
-
-interface TextInputFieldProps {
+interface TextInputFieldProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  name: string;
-  value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  type?: React.HTMLInputTypeAttribute;
 }
 
 const TextInputField: React.FC<TextInputFieldProps> = ({
   label,
   name,
-  value,
   onChange,
-  type = "text",
   required = false,
+  ...props
 }) => {
   return (
     <div className="relative z-0 w-full mb-10 group">
       <input
-        type={type}
         name={name}
         className="block autofill:bg-transparent py-2.5 px-0 w-full text-secondary bg-transparent border-0 border-b-2 border-primary appearance-none focus:gradient-underline-fixed focus-no-outline peer"
         onChange={onChange}
-        value={value}
         required={required}
+        {...props}
       />
       <label
         htmlFor={name}
