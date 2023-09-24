@@ -10,7 +10,7 @@ const FilterWorksList: FilterWorksListComponent = ({
   filter,
 }) => {
   return (
-    <ul className="flex w-full justify-center flex-wrap font-medium pb-6 space-x-8 font-primary">
+    <ul className="flex w-full justify-center flex-nowrap font-medium pb-6 space-x-8 font-primary">
       <li
         data-filter="all"
         onClick={onFilterChange}
