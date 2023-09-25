@@ -250,61 +250,6 @@ Lors du développement de Commitizard, j'ai préalablement utilisé la biblioth�
   },
   {
     id: "work-6",
-    name: "react-boilerplate",
-    category: "frontend",
-    socialLinks: [
-      {
-        icon: <FaGithub />,
-        iconClassName: "text-[#0072b1] bg-secondary",
-        href: "https://www.github.com/lokicoule/react-boilerplate",
-      },
-    ],
-    tag: "R&D",
-    description:
-      "Ce projet m'a servi de terrain d'expérimentation, pour tester une approche d'architecture micro-frontend avec React.\n" +
-      "Il m'a permis d'appréhender les problématiques liées à la mise en place d'une architecture micro-frontend et de tester des solutions pour les résoudre.\n" +
-      "Finalement, j'ai fait le choix de ne pas utiliser cette approche et de me tourner vers une approche plus classique.",
-    technologiesUsed: {
-      languages: ["Typescript"],
-      libraries: [
-        "React",
-        "Material-UI",
-        "Zustand",
-        "React-Query",
-        "amazon-cognito-identity-js",
-        "react-hook-form",
-        "i18n",
-      ],
-      tools: ["Vite", "Turbo"],
-      architectures: ["micro-frontend", "modular"],
-    },
-    keyFeatures: [
-      {
-        id: "key-features-1",
-        key: "Responsive Design:",
-        features: [
-          "Le poc est conçu pour être responsive et s'adapter à tous les types d'appareils.",
-        ],
-      },
-      {
-        id: "key-features-2",
-        key: "Dark Mode:",
-        features: ["Le poc supporte le mode sombre."],
-      },
-      {
-        id: "key-features-3",
-        key: "Internationalization:",
-        features: ["Le poc est disponible en français et en anglais."],
-      },
-      {
-        id: "key-features-4",
-        key: "Authentification:",
-        features: ["Le poc supporte l'authentification via AWS Cognito."],
-      },
-    ],
-  },
-  {
-    id: "work-7",
     name: "sort-viewer",
     category: "frontend",
     socialLinks: [
