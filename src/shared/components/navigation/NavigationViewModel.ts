@@ -3,6 +3,7 @@ export interface NavigationItemProps {
   name: string;
   routePath: string;
   icon: JSX.Element;
+  default?: boolean;
 }
 
 export interface NavigationViewModelProps {

@@ -10,6 +10,7 @@ export const navigationData: NavigationItemProps[] = [
     name: "À propos",
     routePath: "/about",
     icon: <HomeIcon />,
+    default: true,
   },
   {
     id: "navigation-2",

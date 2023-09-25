@@ -22,7 +22,9 @@ const NavigationItem: NavigationItemComponent = ({
   const currentPath = location.pathname.replace(/\/$/, "");
 
   const currentClassName =
-    currentPath === item.routePath ? activeClassName : defaultClassName;
+    currentPath === item.routePath || (!currentPath && item.default)
+      ? activeClassName
+      : defaultClassName;
 
   return (
     <Link
