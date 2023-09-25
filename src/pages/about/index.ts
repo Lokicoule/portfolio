@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./AboutView"));
+const AboutView = lazy(() => import("./AboutView"));
+
+export default AboutView;

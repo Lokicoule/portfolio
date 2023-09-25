@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./ContactView"));
+const ContactView = lazy(() => import("./ContactView"));
+
+export default ContactView;

@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./WorksView"));
+const WorksView = lazy(() => import("./WorksView"));
+
+export default WorksView;

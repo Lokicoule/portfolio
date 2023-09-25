@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./ResumeView"));
+const ResumeView = lazy(() => import("./ResumeView"));
+
+export default ResumeView;

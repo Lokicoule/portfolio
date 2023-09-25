@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./NotFoundView"));
+const NotFound = lazy(() => import("./NotFoundView"));
+
+export default NotFound;
