@@ -56,6 +56,7 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
         min={2}
         max={50}
         required
+        autoComplete="name"
       />
       <TextInputField
         label={translatingService.translate("contact.form.email")}
@@ -64,6 +65,7 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
         value={formData.email}
         onChange={handleChange}
         required
+        autoComplete="email"
       />
       <TextAreaField
         label={translatingService.translate("contact.form.message")}
