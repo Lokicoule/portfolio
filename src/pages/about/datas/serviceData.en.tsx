@@ -5,9 +5,9 @@ import { ServiceProps } from "../AboutViewModel";
 export const serviceData: ServiceProps[] = [
   {
     id: "service-1",
-    title: "Software Development",
+    title: "Web Development",
     description:
-      "From idea to production, I can help you build your next product.",
+      "I can help you build your next website using strong architectural patterns and modern technologies.",
     icon: <PiCodeLight />,
   },
   {
@@ -19,9 +19,9 @@ export const serviceData: ServiceProps[] = [
   },
   {
     id: "service-3",
-    title: "Web Development",
+    title: "Software Development",
     description:
-      "I can help you build your next website using strong architectural patterns and modern technologies.",
+      "From idea to production, I can help you build your next product.",
     icon: <PiCodeLight />,
   },
   {

@@ -16,7 +16,7 @@ const FilterWorksList: FilterWorksListComponent = ({
         onClick={onFilterChange}
         className={`text-secondary cursor-pointer ${
           filter === "all"
-            ? "gradient-underline-animation"
+            ? "gradient-underline-animation p-1"
             : "gradient-underline-animation-secondary"
         }`}
       >
@@ -27,7 +27,7 @@ const FilterWorksList: FilterWorksListComponent = ({
         onClick={onFilterChange}
         className={`text-secondary cursor-pointer ${
           filter === "backend"
-            ? "gradient-underline-animation"
+            ? "gradient-underline-animation p-1"
             : "gradient-underline-animation-secondary"
         }`}
       >
@@ -38,7 +38,7 @@ const FilterWorksList: FilterWorksListComponent = ({
         onClick={onFilterChange}
         className={`text-secondary cursor-pointer ${
           filter === "frontend"
-            ? "gradient-underline-animation"
+            ? "gradient-underline-animation p-1"
             : "gradient-underline-animation-secondary"
         }`}
       >
@@ -49,7 +49,7 @@ const FilterWorksList: FilterWorksListComponent = ({
         onClick={onFilterChange}
         className={`text-secondary cursor-pointer ${
           filter === "tools"
-            ? "gradient-underline-animation"
+            ? "gradient-underline-animation p-1"
             : "gradient-underline-animation-secondary"
         }`}
       >

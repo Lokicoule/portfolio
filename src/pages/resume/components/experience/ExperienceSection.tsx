@@ -28,7 +28,7 @@ const ExperienceSection: ExperienceComponent = ({ items, title }) => {
             <div className="flex items-center space-x-2">
               <ExperienceModal
                 triggerButton={
-                  <button className="text-xl text-secondary font-bold gradient-underline-animation">
+                  <button className="text-xl text-secondary font-bold gradient-underline-animation p-1">
                     {item.name}
                   </button>
                 }

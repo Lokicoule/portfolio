@@ -48,7 +48,7 @@ body {
   }
 
   .gradient-underline-animation {
-    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white p-1;
+    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-no-repeat bg-bottom bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size] duration-300 ease-in-out hover:text-white;
   }
 
   .gradient-underline-fixed {

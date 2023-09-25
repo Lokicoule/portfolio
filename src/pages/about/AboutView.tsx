@@ -10,10 +10,10 @@ type AboutViewProps = {
 type AboutViewComponent = React.FC<AboutViewProps>;
 
 const colors: string[] = [
-  "text-[#FCDAB7] dark:text-[#ffeebb] font-extrabold",
-  "text-[#1E5F74] dark:text-[#a7ecee] font-extrabold",
-  "text-[#133B5C] dark:text-[#99dbf5] font-extrabold",
-  "text-[#1D2D50] dark:text-[#9ac5f4] font-extrabold",
+  "text-[#a7ecee] font-extrabold",
+  "text-[#9ac5f4] font-extrabold",
+  "text-[#99dbf5] font-extrabold",
+  "text-[#ffeebb] font-extrabold",
 ];
 
 const AboutView: AboutViewComponent = ({ presenter }) => {

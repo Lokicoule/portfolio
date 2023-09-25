@@ -22,7 +22,7 @@ const WorkList: WorkListComponent = ({ works }) => {
             <GoRepo className="text-xl text-tertiary" />
             <WorkModal
               triggerButton={
-                <button className="text-xl font-bold text-primary gradient-underline-animation lowercase">
+                <button className="text-xl font-bold text-primary gradient-underline-animation p-1 lowercase">
                   {item.name}
                 </button>
               }
