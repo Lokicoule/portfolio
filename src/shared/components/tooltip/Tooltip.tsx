@@ -26,19 +26,21 @@ const Tooltip: TooltipComponent = ({ children, text, ...rest }) => {
   };
 
   return (
-    <div
-      ref={ref}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...rest}
-    >
-      {children}
+    <>
+      <div
+        ref={ref}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...rest}
+      >
+        {children}
+      </div>
       {show && target && (
         <div className="absolute z-10 bg-gray-700 text-white text-xs rounded p-2 bg-opacity-90 shadow-md">
           {text}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

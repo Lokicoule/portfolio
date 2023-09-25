@@ -4,7 +4,6 @@ export const experienceData: ExperienceProps[] = [
   {
     id: "experience-1",
     name: "Freelance",
-
     tag: "Développement d'applications web",
     description:
       "Pendant cette période, j'ai pris une pause temporaire du travail formel pour me consacrer à l'amélioration de mes compétences et à la recherche en profondeur dans le domaine du développement d'applications web",
@@ -146,6 +145,9 @@ export const experienceData: ExperienceProps[] = [
     tag: "Transformation digitale de gestion de la maintenance",
     client: {
       name: "Dassault Falcon Service",
+    },
+    internship: {
+      duration: "Alternance 2015 - 2017",
     },
     name: "FalconTab",
     description: `Falcontab, développé par la branche de l'aviation civile de Dassault, s'engage à réduire la consommation de papier tout en contribuant à la réduction des déchets grâce à la dématérialisation.\n

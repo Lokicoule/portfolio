@@ -1,6 +1,6 @@
 import { MdOutlineSchool } from "react-icons/md";
 import { ExperienceProps } from "../../ResumeViewModel";
-import ExperienceModal from "./ExperienceModal/ExperienceModal";
+import ExperienceItem from "./ExperienceItem";
 
 type ExperienceSectionProps = {
   items: ExperienceProps[];
@@ -19,33 +19,7 @@ const ExperienceSection: ExperienceComponent = ({ items, title }) => {
         <h4 className="text-3xl text-primary font-medium">{title}</h4>
       </div>
       {items.map((item) => (
-        <div
-          key={item.id}
-          className="rounded-xl p-8 py-4 pl-5 pr-3 space-y-2 mb-6 bg-primary border-1 border-primary"
-        >
-          <div className="flex flex-col space-y-2 ">
-            <div className="flex justify-between">
-              <span className="text-xs text-tertiary">{item.duration}</span>
-              {item.company ? (
-                <span className="text-xs text-tertiary">@{item.company}</span>
-              ) : null}
-            </div>
-            <div className="flex items-center space-x-2">
-              <ExperienceModal
-                triggerButton={
-                  <button className="text-xl text-secondary font-bold gradient-underline-animation p-1">
-                    {item.name}
-                  </button>
-                }
-                experience={item}
-              />
-            </div>
-            {item.client ? (
-              <span className="text-tertiary mt-2">{item.client.name}</span>
-            ) : null}
-            <span className="text-tertiary">{item.place}</span>
-          </div>
-        </div>
+        <ExperienceItem key={item.id} item={item} />
       ))}
     </div>
   );

@@ -10,6 +10,9 @@ export interface ExperienceProps {
   name: string;
   tag: string;
   description: string;
+  internship?: {
+    duration: string;
+  };
   company?: string;
   client?: ClientProps;
   duration: string;
@@ -28,8 +31,13 @@ export type EducationProps = {
   id: string;
   date: string;
   title: string;
+  place?: string;
   level?: string;
   link?: string;
+  internship?: {
+    company: string;
+    duration: string;
+  };
 };
 
 export type SkillProps = {

@@ -9,7 +9,7 @@ export const educationData: EducationProps[] = [
   },
   {
     id: "education-1",
-    date: "2023",
+    date: "2023 - Présent",
     title: "ThreeJS Journey",
     link: "https://threejs-journey.com/",
   },
@@ -17,7 +17,12 @@ export const educationData: EducationProps[] = [
     id: "education-2",
     date: "2012 - 2017",
     title: "Expert en informatique et systèmes d’information",
-    level: "Bac +5",
+    level: "Bac +5, RNCP niveau 7",
+    place: "Supinfo, Marseille",
     link: "https://www.francecompetences.fr/recherche/rncp/4510/",
+    internship: {
+      company: "Atos",
+      duration: "Alternance 2015 - 2017",
+    },
   },
 ];
