@@ -1,9 +1,9 @@
-import { FiAlertCircle, FiBriefcase } from "react-icons/fi";
+import { FiBriefcase } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
 import Disclosure from "../../../../shared/components/adapters/@headlessui/Disclosure";
 import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
-import { translatingService } from "../../../../shared/composition";
 import Stack from "../../../../shared/components/stack/Stack";
+import { translatingService } from "../../../../shared/composition";
 import { WorkProps } from "../../WorksViewModel";
 
 type WorkModalContentProps = {
@@ -55,25 +55,6 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
                 </li>
               ))}
             </ul>
-          </Disclosure>
-        ) : null}
-
-        {work.challengesAndSolutions &&
-        work.challengesAndSolutions.length > 0 ? (
-          <Disclosure
-            icon={<FiAlertCircle className="text-lg mr-2 inline-block" />}
-            title={translatingService.translate("challengesAndSolutions")}
-            defaultOpen
-          >
-            <div className="flex flex-col flex-wrap lg:flex-row space-y-2 lg:mr-6">
-              <ul className="flex gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
-                {work.challengesAndSolutions.map((item, i) => (
-                  <li key={i} className="font-medium text-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </Disclosure>
         ) : null}
       </div>

@@ -1,7 +1,6 @@
 import { WorkProps } from "../WorksViewModel";
 import { FaGithub, FaNpm, FaLink } from "react-icons/fa";
 
-// english to french
 export const workData: WorkProps[] = [
   {
     id: "work-1",
@@ -70,7 +69,6 @@ export const workData: WorkProps[] = [
         ],
       },
     ],
-    challengesAndSolutions: [],
   },
   {
     id: "work-2",
@@ -116,10 +114,6 @@ export const workData: WorkProps[] = [
         ],
       },
     ],
-    challengesAndSolutions: [
-      "Prise en charge des git hooks.",
-      "Contournement des git hooks en utilisant une variable d'environnement",
-    ],
   },
   {
     id: "work-3",
@@ -139,15 +133,12 @@ export const workData: WorkProps[] = [
     ],
     tag: "Personal",
     description:
-      "Ce projet est mon portfolio personnel. Il a été créé pour présenter mes compétences, mes projets et mes expériences professionnelles.\n" +
-      "Le choix de ne pas utiliser NextJS pour ce projet est volontaire. J'ai voulu éviter d'utiliser un framework opinionné pour me laisser plus de liberté dans la conception et l'architecture de mon portfolio.\n" +
-      "Il m'a également servi de terrain d'expérimentation pour essayer une approche architecturale différente de celle que j'utilise habituellement.\n" +
-      "Il m'a également permi d'expérimenter la mise en place de SEO pour une progressive web app (PWA).",
+      "Ce portfolio a été créé dans le but de présenter mes compétences, projets et expériences professionnelles. J'ai délibérément choisi de ne pas utiliser NextJS afin de bénéficier d'une plus grande liberté de conception et d'architecture.",
     technologiesUsed: {
       languages: ["Typescript"],
       libraries: ["React", "TailwindCSS", "@headlessui"],
       tools: ["Vite"],
-      architectures: ["MVVM"],
+      architectures: ["MVVM", "PubSub"],
     },
     keyFeatures: [
       {
@@ -171,6 +162,13 @@ export const workData: WorkProps[] = [
         id: "key-features-4",
         key: "SEO:",
         features: ["Le portfolio est optimisé pour les moteurs de recherche."],
+      },
+      {
+        id: "key-features-5",
+        key: "State Global:",
+        features: [
+          "Le portfolio utilise un système de gestion d'état basé sur le pattern PubSub.",
+        ],
       },
     ],
   },
@@ -222,56 +220,5 @@ Lors du développement de Commitizard, j'ai préalablement utilisé la biblioth�
         ],
       },
     ],
-    challengesAndSolutions: [
-      "Gérer la compatibilité entre les systèmes de modules CommonJS et ECMAScript Modules (ESM).",
-    ],
-  },
-  {
-    id: "work-5",
-    name: "nestjs-graphql-boilerplate",
-    category: "backend",
-    socialLinks: [
-      {
-        icon: <FaGithub />,
-        iconClassName: "text-[#0072b1] bg-secondary",
-        href: "https://www.github.com/lokicoule/nestjs-graphql-boilerplate",
-      },
-    ],
-    tag: "R&D",
-    description:
-      "Ce projet m'a servi de terrain d'expérimentation pour tester une approche d'architecture micro-service avec NestJS et GraphQL.\n" +
-      "Il m'a servi de base pour le développement d'une application client.",
-    technologiesUsed: {
-      languages: ["Typescript"],
-      frameworks: ["NestJS", "Apollo GraphQL"],
-      libraries: ["NestJS Cognito"],
-      architectures: ["Microservices", "Layered Architecture"],
-    },
-  },
-  {
-    id: "work-6",
-    name: "sort-viewer",
-    category: "frontend",
-    socialLinks: [
-      {
-        icon: <FaLink />,
-        iconClassName: "text-[#0072b1] bg-secondary",
-        href: "https://lokicoule.github.io/Sort-Viewer/",
-      },
-      {
-        icon: <FaGithub />,
-        iconClassName: "text-[#0072b1] bg-secondary",
-        href: "https://www.github.com/lokicoule/Sort-Viewer",
-      },
-    ],
-    tag: "Learning",
-    description:
-      `Ce projet est une SPA qui permet de visualiser les algorithmes de tri en action.\n` +
-      "Ce projet m'a permis de mettre un premier pied dans le monde de la visualisation d'algorithmes et de découvrir les bases de React et de Redux.",
-    technologiesUsed: {
-      languages: ["Javascript"],
-      libraries: ["React", "Material-UI", "Redux", "Redux Toolkit"],
-      tools: ["Create React App"],
-    },
   },
 ];

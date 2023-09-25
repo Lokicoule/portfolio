@@ -62,7 +62,6 @@ export const workData: WorkProps[] = [
         ],
       },
     ],
-    challengesAndSolutions: [],
   },
   {
     id: "work-2",
@@ -182,7 +181,6 @@ export const workData: WorkProps[] = [
         ],
       },
     ],
-    challengesAndSolutions: [],
   },
   {
     id: "work-3",
@@ -209,7 +207,6 @@ export const workData: WorkProps[] = [
       tools: ["Vite"],
       architectures: ["MVVM"],
     },
-    challengesAndSolutions: [],
     keyFeatures: [
       {
         id: "key-features-1",
@@ -261,6 +258,5 @@ export const workData: WorkProps[] = [
       tools: ["GitHub Actions"],
     },
     keyFeatures: [],
-    challengesAndSolutions: [],
   },
 ];
