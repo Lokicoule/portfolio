@@ -24,7 +24,12 @@ const ExperienceSection: ExperienceComponent = ({ items, title }) => {
           className="rounded-xl p-8 py-4 pl-5 pr-3 space-y-2 mb-6 bg-primary border-1 border-primary"
         >
           <div className="flex flex-col space-y-2 ">
-            <span className="text-xs text-tertiary">{item.duration}</span>
+            <div className="flex justify-between">
+              <span className="text-xs text-tertiary">{item.duration}</span>
+              {item.company ? (
+                <span className="text-xs text-tertiary">@{item.company}</span>
+              ) : null}
+            </div>
             <div className="flex items-center space-x-2">
               <ExperienceModal
                 triggerButton={

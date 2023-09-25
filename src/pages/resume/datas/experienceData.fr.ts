@@ -153,7 +153,7 @@ Cette solution de gestion de la maintenance a été conçue spécifiquement pour
 En somme, Falcontab représente une minuscule avancée vers une maintenance aérienne plus efficiente et écoresponsable, tout en réduisant notre empreinte environnementale.`,
     duration: "2015 - 2017",
     place: "Aix-en-Provence, France (13)",
-    roleAndResponsibilities: "Développeur fullstack",
+    roleAndResponsibilities: "Développeur fullstack (alternance)",
     technologiesUsed: {
       languages: ["Java", "C#", "Typescript"],
       libraries: ["Aspose"],
