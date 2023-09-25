@@ -6,12 +6,6 @@
   "description": "Description",
   "duration": "Durée",
   "place": "Lieu",
-  "roleAndResponsibilities": "Rôle et Responsabilités",
-  "technologiesUsed": "Stack",
-  "achievementsAndContributions": "Réalisations et Contributions",
-  "challengesAndSolutions": "Défis et Solutions",
-  "collaborationAndTeamwork": "Collaboration et Travail d'Équipe",
-  "impactAndLessonsLearned": "Impact et Leçons Apprises",
   "about": {
     "title": "À propos",
     "description": {
@@ -26,7 +20,11 @@
       "meta": "Découvrez mon CV, mes expériences et mes compétences en tant qu'ingénieur logiciel fullstack."
     },
     "experience": {
-      "title": "Expérience"
+      "title": "Expérience",
+      "roleAndResponsibilities": "Rôle et Responsabilités",
+      "technologiesUsed": "Stack",
+      "keyAchievements": "Contributions Clés",
+      "personalExperience": "Expérience Personnelle"
     },
     "education": {
       "title": "Formation"

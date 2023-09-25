@@ -19,10 +19,8 @@ export interface ExperienceProps {
   place: string;
   roleAndResponsibilities: string;
   technologiesUsed: StackProps;
-  achievementsAndContributions: string[];
-  challengesAndSolutions: string[];
-  collaborationAndTeamwork: string[];
-  impactAndLessonsLearned: string[];
+  keyAchievements: string[];
+  personalExperience: string[];
   link?: string;
   linkText?: string;
 }

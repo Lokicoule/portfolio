@@ -1,18 +1,12 @@
-import {
-  FiAlertCircle,
-  FiAward,
-  FiBriefcase,
-  FiThumbsUp,
-  FiUsers,
-} from "react-icons/fi";
+import { FiAlertCircle, FiAward, FiBriefcase } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
 import {
   Disclosure,
   Modal,
 } from "../../../../../shared/components/adapters/@headlessui";
+import Stack from "../../../../../shared/components/stack/Stack";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
-import Stack from "../../../../../shared/components/stack/Stack";
 
 type ExperienceModalContentProps = {
   experience: ExperienceProps;
@@ -51,34 +45,28 @@ const ExperienceModalContent: React.FC<ExperienceModalContentProps> = ({
 
       {[
         {
-          items: experience.achievementsAndContributions,
-          title: translatingService.translate("achievementsAndContributions"),
+          items: experience.keyAchievements,
+          title: translatingService.translate(
+            "resume.experience.keyAchievements"
+          ),
           icon: <FiAward className="text-lg mr-2 inline-block" />,
         },
         {
-          items: experience.challengesAndSolutions,
-          title: translatingService.translate("challengesAndSolutions"),
+          items: experience.personalExperience,
+          title: translatingService.translate(
+            "resume.experience.personalExperience"
+          ),
           icon: <FiAlertCircle className="text-lg mr-2 inline-block" />,
         },
-        {
-          items: experience.collaborationAndTeamwork,
-          title: translatingService.translate("collaborationAndTeamwork"),
-          icon: <FiUsers className="text-lg mr-2 inline-block" />,
-        },
-        {
-          items: experience.impactAndLessonsLearned,
-          title: translatingService.translate("impactAndLessonsLearned"),
-          icon: <FiThumbsUp className="text-lg mr-2 inline-block" />,
-        },
       ].map((section, index) =>
-        section.items.length > 0 ? (
+        section.items && section.items.length > 0 ? (
           <DisclosureSection
             key={index}
             icon={section.icon}
             title={section.title}
             content={
               <div className="lg:mr-6">
-                <ul className="flex flex-col gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside md:space-y-3">
+                <ul className="flex flex-col gap-y-2.5 gap-x-2.5 flex-wrap list-disc list-inside">
                   {section.items.map((item, i) => (
                     <li
                       key={i}

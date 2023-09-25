@@ -6,12 +6,7 @@
   "description": "Description",
   "duration": "Duration",
   "place": "Place",
-  "roleAndResponsibilities": "Role and Responsibilities",
   "technologiesUsed": "Stack",
-  "achievementsAndContributions": "Achievements and Contributions",
-  "challengesAndSolutions": "Challenges and Solutions",
-  "collaborationAndTeamwork": "Collaboration and Teamwork",
-  "impactAndLessonsLearned": "Impact and Lessons Learned",
   "about": {
     "title": "About",
     "description": {
@@ -26,7 +21,10 @@
       "meta": "Discover my resume, my skills and my experiences as a fullstack software engineer."
     },
     "experience": {
-      "title": "Experiences"
+      "title": "Experiences",
+      "keyAchievements": "Key Achievements",
+      "personalExperience": "Personal Experience",
+      "roleAndResponsibilities": "Role and Responsibilities"
     },
     "education": {
       "title": "Education"
