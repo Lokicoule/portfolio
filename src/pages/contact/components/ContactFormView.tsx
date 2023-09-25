@@ -77,16 +77,18 @@ const ContactFormView: React.FC<ContactFormViewProps> = ({ onSubmit }) => {
       />
 
       {!isSuccessful ? (
-        <div className="inline-block rounded-lg mt-3 hover:bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300  ease-in-out">
-          <button
-            className="font-semibold border-primary hover:border-transparent px-6  py-2 rounded-lg border-[2px] text-primary hover:text-white transition ease-in duration-200 "
-            type="submit"
-            disabled={isLoading || isSuccessful}
-          >
-            {isLoading
-              ? translatingService.translate("contact.form.sending")
-              : translatingService.translate("contact.form.submit")}
-          </button>
+        <div className="flex items-center justify-end rounded-lg mt-3">
+          <div className="rounded-lg hover:bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-300  ease-in-out">
+            <button
+              className="font-semibold border-primary hover:border-transparent px-6  py-2 rounded-lg border-[2px] text-primary hover:text-white transition ease-in duration-200 "
+              type="submit"
+              disabled={isLoading || isSuccessful}
+            >
+              {isLoading
+                ? translatingService.translate("contact.form.sending")
+                : translatingService.translate("contact.form.submit")}
+            </button>
+          </div>
         </div>
       ) : (
         <span className="text-green-500 p-2 rounder-lg">
