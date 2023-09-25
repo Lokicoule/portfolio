@@ -5,8 +5,9 @@ import Layout from "../shared/components/layouts/Layout";
 import {
   aboutPresenter,
   contactController,
+  contactPresenter,
+  notFoundPresenter,
   resumePresenter,
-  translatingService,
   worksController,
   worksPresenter,
 } from "../shared/composition";
@@ -14,6 +15,7 @@ import { RouteConfig } from "../shared/routing/routingService";
 
 import About from "../pages/about";
 import Contact from "../pages/contact";
+import NotFound from "../pages/not-found";
 import Resume from "../pages/resume";
 import Works from "../pages/works";
 
@@ -23,9 +25,13 @@ const pageRoutes = (root: string) => [
     element: <About presenter={aboutPresenter} />,
   },
   {
+    path: "about",
+    element: <About presenter={aboutPresenter} />,
+  },
+  {
     path: "contact",
     element: (
-      <Contact controller={contactController} service={translatingService} />
+      <Contact presenter={contactPresenter} controller={contactController} />
     ),
   },
   {
@@ -36,11 +42,15 @@ const pageRoutes = (root: string) => [
     path: "works",
     element: <Works presenter={worksPresenter} controller={worksController} />,
   },
+  {
+    path: "not-found",
+    element: <NotFound presenter={notFoundPresenter} />,
+  },
 ];
 
 const routes: RouteConfig[] = [
   {
-    path: "/fr",
+    path: "/",
     element: (
       <Layout>
         <Suspense fallback={<Loading />}>
@@ -48,22 +58,11 @@ const routes: RouteConfig[] = [
         </Suspense>
       </Layout>
     ),
-    children: pageRoutes("/fr"),
-  },
-  {
-    path: "/en",
-    element: (
-      <Layout>
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-        </Suspense>
-      </Layout>
-    ),
-    children: pageRoutes("/en"),
+    children: pageRoutes("/"),
   },
   {
     path: "*",
-    element: <Navigate to={translatingService.language} />,
+    element: <Navigate to="/not-found" />,
   },
 ];
 

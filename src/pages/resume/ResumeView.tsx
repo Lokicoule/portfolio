@@ -27,7 +27,10 @@ const ResumeView: ResumeViewComponent = ({ presenter }) => {
   return (
     <PageLayout
       title={presenter.translateAndSanitize("resume.title")}
-      description={presenter.translateAndSanitize("resume.description.meta")}
+      head={{
+        title: presenter.translateAndSanitize("resume.title"),
+        description: presenter.translateAndSanitize("resume.description.meta"),
+      }}
       className="lg:rounded-2xl lg:bg-primary"
     >
       <div className="px-2 sm:px-5 md:px-10 lg:px-14 px-4 md:px-0">

@@ -58,5 +58,13 @@
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès !"
     }
+  },
+  "notFound": {
+    "title": "404 - Page non trouvée",
+    "description": {
+      "content": "La page que vous recherchez n'existe pas ou a été déplacée",
+      "meta": "La page que vous recherchez n'existe pas ou a été déplacée"
+    },
+    "goHome": "Retourner à l'accueil"
   }
 }

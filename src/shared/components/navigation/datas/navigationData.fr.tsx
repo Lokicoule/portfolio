@@ -8,25 +8,25 @@ export const navigationData: NavigationItemProps[] = [
   {
     id: "navigation-1",
     name: "À propos",
-    routePath: "/fr",
+    routePath: "/about",
     icon: <HomeIcon />,
   },
   {
     id: "navigation-2",
     name: "CV",
-    routePath: "/fr/resume",
+    routePath: "/resume",
     icon: <ResumeIcon />,
   },
   {
     id: "navigation-3",
     name: "Projets",
-    routePath: "/fr/works",
+    routePath: "/works",
     icon: <WorksIcon />,
   },
   {
     id: "navigation-4",
     name: "Contact",
-    routePath: "/fr/contact",
+    routePath: "/contact",
     icon: <ContactIcon />,
   },
 ];

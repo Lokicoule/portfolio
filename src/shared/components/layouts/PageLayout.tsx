@@ -2,8 +2,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Footer from "../footer/Footer";
 import Head, { HeadProps } from "../head/Head";
 
-interface PageLayoutProps extends React.PropsWithChildren<HeadProps> {
+interface PageLayoutProps extends React.PropsWithChildren {
   className?: string;
+  title?: string;
+  head?: HeadProps;
 }
 
 const containerVariants = {
@@ -14,12 +16,12 @@ const containerVariants = {
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   title,
-  description,
+  head,
   className,
 }) => {
   return (
     <div className={className}>
-      <Head title={title} description={description} />
+      {head ? <Head {...head} /> : null}
       <AnimatePresence mode="wait">
         <motion.div
           key="content"

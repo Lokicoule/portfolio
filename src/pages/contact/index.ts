@@ -1,3 +1,3 @@
 import { lazy } from "react";
 
-export default lazy(() => import("./ContactContainer"));
+export default lazy(() => import("./ContactView"));
