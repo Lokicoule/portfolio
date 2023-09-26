@@ -20,7 +20,11 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ item }) => {
       );
     }
 
-    return <span className="text-xs text-tertiary">{item.company}</span>;
+    if (item.company) {
+      return <span className="text-xs text-tertiary">@{item.company}</span>;
+    }
+
+    return null;
   };
 
   return (

@@ -6,7 +6,7 @@ export const experienceData: ExperienceProps[] = [
     name: "Freelance",
     tag: "Développement d'applications web",
     description:
-      "Pendant cette période, j'ai pris une pause temporaire dans mon travail formel pour me concentrer sur l'amélioration de mes compétences et la recherche approfondie dans le domaine du développement d'applications web. Bien que j'aie consacré la majeure partie de mon temps à cette démarche, il m'est arrivé de travailler ponctuellement sur des missions.",
+      "Pendant cette période, je me suis principalement concentré sur l'amélioration de mes compétences en développement web, ainsi que sur la découverte et la compréhension de la blockchain et de ses implications futures. En parallèle, j'ai participé occasionnellement à des missions.",
     duration: "2020 - Présent",
     place: "Remote",
     roleAndResponsibilities: "Développeur fullstack",
@@ -18,7 +18,7 @@ export const experienceData: ExperienceProps[] = [
       architectures: ["Microservices", "Micro-frontend", "MVC", "MVVM", "CQRS"],
     },
     keyAchievements: [
-      "Auto-apprentissage intensif de nouvelles technologies, frameworks et langages pertinents pour le développement web.",
+      "Auto-apprentissage de nouvelles technologies, frameworks et langages pertinents pour le développement web.",
       "Suivi attentif des tendances et évolutions du développement web pour rester à jour avec les dernières avancées technologiques.",
       "Travail sur des concepts et des projets personnels pour mettre en pratique les connaissances acquises, même si tous les projets n'ont pas abouti.",
     ],
@@ -32,12 +32,12 @@ export const experienceData: ExperienceProps[] = [
     company: "Atos",
     client: {
       abbreviation: "MTES",
-      name: "Ministère de la Transition Écologique et Solidaire (EIR)",
+      name: "Ministère de la Transition Écologique et Solidaire",
     },
     name: "TIPI / BisonFuté",
     tag: "Système d'information routier national",
     description:
-      "Dans le cadre d'une Tierce Maintenance Applicative (TMA), TIPI agrège en temps réel les données du réseau routier national pour les rendre accessibles aux utilisateurs via les applications grand public de Bison Futé.",
+      "Ingénieur logiciel pour le projet de Système d'Information Routier National (TIPI) avec une implication clé dans le cadre d'une Tierce Maintenance Applicative (TMA).\nTIPI agrège en temps réel les données du réseau routier national pour les rendre notamment accessibles aux utilisateurs via des applications grand public tel que Bison Futé.",
     duration: "2019 - 2020",
     place: "Pessac, France (33)",
     roleAndResponsibilities: "Ingénieur logiciel",
@@ -54,12 +54,13 @@ export const experienceData: ExperienceProps[] = [
         "Docker",
         "SonarQube",
         "Apache Karaf",
+        "RabbitMQ",
       ],
       databases: ["PostgreSQL"],
       architectures: ["Microservices", "MVC", "Architecture en couches"],
     },
     keyAchievements: [
-      "Développement de solutions pour améliorer la fonctionnalité du projet.",
+      "Développement de nouvelles fonctionnalités, correction de bugs, rédaction de tests unitaires et d'intégration.",
       "Mise à niveau du framework d'événements Tipi pour répondre aux normes ministérielles.",
       "Collaboration avec l'équipe pour des pratiques GIT efficaces.",
       "Augmentation de la couverture des tests unitaires pour une meilleure fiabilité.",
@@ -68,8 +69,8 @@ export const experienceData: ExperienceProps[] = [
     ],
     personalExperience: [
       "Adaptabilité dans un projet complexe avec de nombreuses années d'existence et applications associées.",
-      "Curiosité et investissement pour comprendre les besoins des utilisateurs malgré des exigences métier plutôt vagues.",
-      "Containerisation du service événementiel pour faciliter le déploiement et les tests en local.",
+      "Containerisation du service événementiel pour des déploiements et des tests en local plus rapides et plus simples.",
+      "Volonté de transition vers une stack technologique plus moderne.",
     ],
   },
   {
@@ -78,11 +79,12 @@ export const experienceData: ExperienceProps[] = [
     tag: "Gestion par internet du suivi des transferts internationaux de déchets",
     client: {
       abbreviation: "MTES",
-      name: "Ministère de la Transition Écologique et Solidaire (DOSO)",
+      name: "Ministère de la Transition Écologique et Solidaire",
     },
     name: "GISTRID",
     description:
-      "Dans le cadre d'une Tierce Maintenance Applicative (TMA), TIPI opère en temps réel l'agrégation des données du réseau routier national. L'objectif de cette opération est de mettre ces données à disposition des utilisateurs à travers les applications grand public de Bison Futé.",
+      "Responsable applicatif / Ingénieur logiciel pour le projet GISTRID, dans le cadre d'une Tierce Maintenance Applicative (TMA).\n" +
+      "\nGISTRID dématérialise les transferts de déchets grâce à une plateforme en ligne, simplifiant les demandes de transfert et assurant une gestion des déchets cohérente entre la France et ses pays transfrontaliers.",
     duration: "2017 - 2019",
     place: "Aix-en-Provence, France (13)",
     roleAndResponsibilities: "Responsable applicatif / Ingénieur logiciel",
@@ -94,15 +96,17 @@ export const experienceData: ExperienceProps[] = [
       architectures: ["Layered Architecture", "monolithique"],
     },
     keyAchievements: [
+      "Chiffrage, planification et attribution des fonctionnalités à développer.",
       "Développement de nouvelles fonctionnalités, correction de bugs, rédaction de tests unitaires et d'intégration.",
       "Migrations technologiques complexes, notamment de Struts 2.3 à Struts 2.5 et de Spring 3 à Spring 4, avec élaboration de plans de migration et tests approfondis.",
-      "Gestion d'équipe (2 à 3 personnes) en tant que responsable applicatif pour le projet GISTRID.",
+      "Gestion d'une équipe de 2 développeurs et d'un stagiaire.",
+      "Rédaction de la documentation technique.",
     ],
     personalExperience: [
-      "Réalisation que la gestion d'équipe n'était pas alignée avec mes aspirations professionnelles.",
-      "Développement d'une rigueur et d'une exigence envers moi-même.",
-      "Apprentissage de la gestion des migrations technique complexes.",
-      "Renforcement de mes capacités d'expertise dans la résolution de problèmes techniques.",
+      "Développement d'un fort sens de la rigueur et d'exigence.",
+      "Acquisition de compétences en gestion de migrations techniques.",
+      "Amélioration de mon expertise dans la résolution de problèmes techniques.",
+      "La gestion d'équipe ne correspond pas à mes aspirations professionnelles.",
     ],
   },
   {
@@ -146,7 +150,6 @@ export const experienceData: ExperienceProps[] = [
       "Intégration dans une équipe de 12 à 15 personnes.",
       "Apprentissage de Talend ESB et des défis de l'interopérabilité.",
       "Utilisation des designs patterns et de l'architecture logicielle.",
-      "Compréhension de l'importance de la maintenance aérienne écoresponsable.",
     ],
   },
 ];
