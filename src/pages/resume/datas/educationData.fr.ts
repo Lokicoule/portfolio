@@ -25,4 +25,10 @@ export const educationData: EducationProps[] = [
       duration: "Alternance 2015 - 2017",
     },
   },
+  {
+    id: "education-3",
+    date: "2010",
+    title: "Baccalauréat Scientifique",
+    place: "Centre National d'Enseignement à Distance (CNED)",
+  },
 ];

@@ -44,7 +44,8 @@ const EducationItem: React.FC<EducationItemProps> = ({ item }) => {
             </span>
           )}
         </div>
-        <span className="mt-2 text-tertiary">{item.level}</span>
+        <span className="mt-2 text-tertiary">{item.place}</span>
+        <span className="text-tertiary">{item.level}</span>
       </div>
     </div>
   );
