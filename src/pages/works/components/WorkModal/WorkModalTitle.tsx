@@ -2,6 +2,7 @@ import { FiFilePlus } from "react-icons/fi";
 import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
 import { WorkProps } from "../../WorksViewModel";
 import SocialLinks from "../../../../shared/components/social-links/SocialLinks";
+import { translatingService } from "../../../../shared/composition";
 
 type WorkModalTitleProps = {
   work: WorkProps;
@@ -20,7 +21,7 @@ const WorkModalTitle: WorkModalTitleComponent = ({ work }) => {
         <div className="space-y-2">
           <span className="dark:text-white flex items-center text-[15px] sm:text-lg">
             <FiFilePlus className="sm:text-lg hidden sm:block mr-2 md:text-xl" />
-            Project:&nbsp;
+            {translatingService.translate("project")} :&nbsp;
             <span className="font-medium">{work.tag}</span>
           </span>
         </div>

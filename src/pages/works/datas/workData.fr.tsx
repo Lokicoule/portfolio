@@ -57,7 +57,8 @@ export const workData: WorkProps[] = [
         id: "key-features-4",
         key: "Testing Package (@nestjs-cognito/testing):",
         features: [
-          "Facilite les tests d'intégrations et end-to-end des applications NestJS utilisant les packages core, auth et graphql.",
+          "Utilise le package core.",
+          "Facilite les tests d'intégrations et end-to-end des applications NestJS utilisant les packages auth et graphql.",
         ],
       },
       {
@@ -117,7 +118,7 @@ export const workData: WorkProps[] = [
   },
   {
     id: "work-3",
-    name: "portfolio",
+    name: "Portfolio",
     category: "frontend",
     socialLinks: [
       {
@@ -174,7 +175,7 @@ export const workData: WorkProps[] = [
   },
   {
     id: "work-4",
-    name: "commandzen",
+    name: "Commandzen",
     category: "tools",
     socialLinks: [
       {

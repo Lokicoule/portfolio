@@ -1,68 +1,75 @@
 {
-  "company": "Entreprise",
-  "client": "Client",
-  "name": "Nom",
-  "tag": "Tag",
-  "description": "Description",
-  "duration": "Durée",
-  "place": "Lieu",
   "about": {
-    "title": "À propos",
     "description": {
-      "meta": "Découvrez qui je suis, mon parcours et mes valeurs en tant qu'ingénieur logiciel fullstack.",
-      "content": "Salut ! Je suis Loïk, un  <span class='gradient-underline-animation'>développeur fullstack</span> passionné par la technologie et l'environnement. Depuis le début de ma carrière, mon engagement pour la cause environnementale a guidé mes choix de projets, avec une expérience significative dans des projets axés sur la dématérialisation. J'ai un attrait tout particulier pour la blockchain et les opportunités de liberté et de transparence qu'elle offre.<br /><br />C'est tout naturellement que je recherche une opportunité dans une entreprise axée sur l'<span class='gradient-underline-animation'>innovation</span> et la  <span class='gradient-underline-animation'>collaboration</span> et qui partage mes valeurs environnementales et mon intérêt pour la décentralisation."
+      "content": "Salut ! Je suis Loïk, un  <span class='gradient-underline-animation'>ingénieur logiciel fullstack</span> passionné par la technologie et l'environnement. Depuis le début de ma carrière, mon engagement pour la cause environnementale a guidé mes choix de projets, avec une expérience significative dans des projets axés sur la dématérialisation. J'ai un attrait tout particulier pour la blockchain et les opportunités de liberté et de transparence que celle-ci offre.<br /><br />C'est tout naturellement que je recherche une opportunité dans une entreprise axée sur l'<span class='gradient-underline-animation'>innovation</span> et la  <span class='gradient-underline-animation'>collaboration</span> et qui partage mes valeurs environnementales et mon intérêt pour la décentralisation.",
+      "meta": "Découvrez qui je suis, mon parcours et mes valeurs en tant qu'ingénieur logiciel fullstack."
     },
-    "services": "Mes services"
+    "services": "Mes services",
+    "title": "À propos"
   },
-  "resume": {
-    "title": "Mon CV",
-    "description": {
-      "meta": "Découvrez mon CV, mes expériences et mes compétences en tant qu'ingénieur logiciel fullstack."
-    },
-    "experience": {
-      "title": "Expérience",
-      "roleAndResponsibilities": "Rôle et Responsabilités",
-      "technologiesUsed": "Stack",
-      "keyAchievements": "Contributions Clés",
-      "personalExperience": "Expérience Personnelle"
-    },
-    "education": {
-      "title": "Formation"
-    },
-    "skill": {
-      "title": "Compétences"
-    },
-    "knowledge": {
-      "title": "Connaissances"
-    }
-  },
-  "works": {
-    "title": "Projets",
-    "description": {
-      "meta": "Découvrez mes projets, mes réalisations et mes contributions."
-    }
-  },
+  "client": "Client",
+  "company": "Entreprise",
   "contact": {
-    "title": "Contact",
     "description": {
-      "meta": "Toujours prêt à discuter conception et architecture logicielle, en particulier dans le domaine du Web 3.0",
-      "content": "Toujours prêt à discuter conception et architecture logicielle, en particulier dans le domaine du Web 3.0"
+      "content": "Toujours prêt à discuter conception et architecture logicielle, en particulier dans le domaine du Web 3.0",
+      "meta": "Toujours prêt à discuter conception et architecture logicielle, en particulier dans le domaine du Web 3.0"
     },
     "form": {
-      "name": "Nom",
       "email": "Email",
       "message": "Message",
-      "submit": "Envoyer",
+      "name": "Nom",
       "sending": "Envoi en cours...",
+      "submit": "Envoyer",
       "success": "Message envoyé avec succès !"
-    }
+    },
+    "title": "Contact"
   },
+  "description": "Description",
+  "duration": "Durée",
+  "hero": {
+    "downloadResume": "Télécharger mon CV",
+    "jobTitle": "Ingénieur Logiciel Fullstack"
+  },
+  "name": "Nom",
   "notFound": {
-    "title": "404 - Page non trouvée",
     "description": {
       "content": "La page que vous recherchez n'existe pas ou a été déplacée",
       "meta": "La page que vous recherchez n'existe pas ou a été déplacée"
     },
-    "goHome": "Retourner à l'accueil"
+    "goHome": "Retourner à l'accueil",
+    "title": "404 - Page non trouvée"
+  },
+  "place": "Lieu",
+  "project": "Projet",
+  "resume": {
+    "description": {
+      "meta": "Découvrez mon CV, mes expériences et mes compétences en tant qu'ingénieur logiciel fullstack."
+    },
+    "education": {
+      "title": "Formation"
+    },
+    "experience": {
+      "keyAchievements": "Contributions Clés",
+      "personalExperience": "Expérience Personnelle",
+      "roleAndResponsibilities": "Rôle et Responsabilités",
+      "title": "Expérience"
+    },
+    "knowledge": {
+      "title": "Connaissances"
+    },
+    "skill": {
+      "title": "Compétences"
+    },
+    "title": "Mon CV"
+  },
+  "roleAndResponsibilities": "Rôle et Responsabilités",
+  "tag": "Tag",
+  "technologiesUsed": "Stack",
+  "works": {
+    "description": {
+      "meta": "Découvrez mes projets, mes réalisations et mes contributions."
+    },
+    "title": "Projets",
+    "keyFeatures": "Fonctionnalités Clés"
   }
 }

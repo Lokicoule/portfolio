@@ -20,11 +20,12 @@ export const workData: WorkProps[] = [
     ],
     tag: "Open Source",
     description:
-      "This project aims to simplify the implementation of a secure and scalable authentication system in NestJS applications using Amazon Cognito, an AWS-managed authentication service.",
+      "This project aims to simplify the implementation of a secure and scalable authentication system in NestJS applications using Amazon Cognito, an authentication service managed by AWS.\n" +
+      "The idea came to me while developing a NestJS application for a client. I found that integrating Amazon Cognito was tedious and poorly documented. So I decided to create a tool to facilitate this task and make it more accessible to the NestJS community.",
     technologiesUsed: {
       languages: ["Typescript"],
-      frameworks: ["NestJS"],
-      tools: ["GitHub Actions", "Lerna"],
+      frameworks: ["NestJS", "Apollo GraphQL"],
+      tools: ["GitHub Actions", "Lerna", "AWS Cognito"],
       architectures: ["Multi-Module"],
     },
     keyFeatures: [
@@ -32,33 +33,40 @@ export const workData: WorkProps[] = [
         id: "key-features-1",
         key: "Core Package (@nestjs-cognito/core):",
         features: [
-          "Provides a NestJS-friendly interface for integrating Amazon Cognito into NestJS applications.",
-          "Offers configuration options for identity provider and JWT verification.",
+          "Facilitates the integration of Amazon Cognito into NestJS applications.",
+          "Offers configuration options for the identity provider and JWT verification.",
         ],
       },
       {
         id: "key-features-2",
         key: "Authentication Package (@nestjs-cognito/auth):",
         features: [
-          "Builds on top of the core package.",
-          "Provides authentication and authorization decorators and guards for NestJS applications using AWS Cognito.",
-          "Simplifies the implementation of authentication and authorization rules in Rest endpoints.",
+          "Uses the core package.",
+          "This package allows users to authenticate and authorize in NestJS applications using AWS Cognito as the identity provider.",
         ],
       },
       {
         id: "key-features-3",
         key: "GraphQL Package (@nestjs-cognito/graphql):",
         features: [
-          "Builds on top of the auth package.",
-          "Complements the authentication and authorization features for GraphQL-based NestJS applications.",
-          "Simplifies the implementation of authentication and authorization rules in GraphQL endpoints.",
+          "Uses the auth package.",
+          "Adapts authentication and authorization features to NestJS-based GraphQL applications.",
         ],
       },
       {
         id: "key-features-4",
         key: "Testing Package (@nestjs-cognito/testing):",
         features: [
-          "Facilitates end-to-end and integration testing of authentication and authorization.",
+          "Uses the core package.",
+          "Facilitates integration and end-to-end testing of NestJS applications using the auth and graphql packages.",
+        ],
+      },
+      {
+        id: "key-features-5",
+        key: "Optimal test coverage",
+        features: [
+          "The core, auth, and graphql packages are tested up to 95%.",
+          "The main branch is protected by unit, integration, and end-to-end tests.",
         ],
       },
     ],
@@ -81,110 +89,36 @@ export const workData: WorkProps[] = [
     ],
     tag: "Open Source",
     description:
-      "This project aims to simplify the process of writing commit messages using the Conventional Commits and Red-Green-Refactor conventions.",
+      "This project aims to simplify the commit message writing process using conventional or red-green-refactor (TDD) conventions.\n" +
+      "The idea came to me while applying TDD in a project. I found that the commit message writing process was tedious, so I decided to create a tool to facilitate this task.",
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
       tools: ["GitHub Actions"],
-      architectures: ["Modular"],
     },
     keyFeatures: [
       {
         id: "key-features-1",
-        key: "Wizard-style Commit Message Generation:",
+        key: "Commit message generation in assistant mode:",
         features: [
-          "Commitizard provides an interactive wizard for generating commit messages. This simplifies the process of creating meaningful and well-structured commit messages.",
+          "Supports conventional and red-green-refactor (TDD) commit strategies.",
+          "Fully configurable via .commitizard.json.",
+          "Git hooks management.",
         ],
       },
       {
         id: "key-features-2",
-        key: "Support for Conventional and Red-Green-Refactor Commit Strategies:",
+        key: "Maximum test coverage",
         features: [
-          "Commitizard supports two popular commit strategies: conventional commits and red-green-refactor commits. Users can choose the strategy that best fits their project's needs.",
-        ],
-      },
-      {
-        id: "key-features-3",
-        key: "Fully Configurable through .commitizard.json File:",
-        features: [
-          "The project's behavior can be customized through a configuration file named .commitizard.json. This allows teams to define commit types, scopes, and templates tailored to their project.",
-        ],
-      },
-      {
-        id: "key-features-4",
-        key: "Git Hook Management:",
-        features: [
-          "Commitizard provides tools for managing Git hooks, such as the prepare-commit-msg hook. This ensures that commit messages adhere to the defined commit strategy and template.",
-        ],
-      },
-      {
-        id: "key-features-5",
-        key: "Application Configuration Management:",
-        features: [
-          "Users can manage the application's configuration using CLI commands, making it easy to install, backup, restore, or delete configuration files as needed.",
-        ],
-      },
-      {
-        id: "key-features-6",
-        key: "Interactive Prompts for Commit Details:",
-        features: [
-          "When creating a commit, Commitizard prompts users for commit details such as type, scope, subject, body, and breaking changes. This ensures that commit messages are comprehensive and consistent.",
-        ],
-      },
-      {
-        id: "key-features-7",
-        key: "Emoji Support for Commit Message Types:",
-        features: [
-          "Commitizard allows users to use emojis as prefixes for commit message types, adding a visually appealing and informative element to commit messages.",
-        ],
-      },
-      {
-        id: "key-features-8",
-        key: "Global and Local Installation Options:",
-        features: [
-          "Users can install Commitizard either locally in their project or globally, depending on their preferences and workflow requirements.",
-        ],
-      },
-      {
-        id: "key-features-9",
-        key: "Git Alias Integration:",
-        features: [
-          "Commitizard can be integrated with Git aliases, making it easy to run the tool using Git commands from any Git directory.",
-        ],
-      },
-      {
-        id: "key-features-10",
-        key: "Documentation and Examples:",
-        features: [
-          "The project provides comprehensive documentation and examples to help users understand how to set up, configure, and use Commitizard effectively.",
-        ],
-      },
-      {
-        id: "key-features-11",
-        key: "Customization of Prompts:",
-        features: [
-          "Users can customize the prompts displayed by Commitizard to provide more descriptive or project-specific information for commit types and scopes.",
-        ],
-      },
-      {
-        id: "key-features-12",
-        key: "Custom Commit Message Templates for Red-Green-Refactor Strategy:",
-        features: [
-          "Commitizard allows users to define custom commit message templates for the red-green-refactor strategy, enabling them to tailor commit messages to their specific project needs.",
-        ],
-      },
-      {
-        id: "key-features-13",
-        key: "Bypassing Git Hooks with Environment Variable:",
-        features: [
-          "Users can control when Commitizard's Git hooks are executed by setting the COMMITIZARD_BYPASS environment variable, providing flexibility during development.",
+          "Code coverage is 100%.",
+          "The main branch is protected by unit, integration, and end-to-end tests.",
         ],
       },
     ],
   },
   {
     id: "work-3",
-    name: "portfolio",
+    name: "Portfolio",
     category: "frontend",
     socialLinks: [
       {
@@ -200,19 +134,19 @@ export const workData: WorkProps[] = [
     ],
     tag: "Personal",
     description:
-      "This project aims to showcase my skills and experience as a software developer. It also serves as a sandbox for experimenting some architectural patterns with React. You should check it out if you are interested in seeing how I code.",
+      "This portfolio was created to showcase my skills, projects, and professional experiences. I deliberately chose not to use NextJS to benefit from greater design and architecture freedom.",
     technologiesUsed: {
       languages: ["Typescript"],
       libraries: ["React", "TailwindCSS", "@headlessui"],
       tools: ["Vite"],
-      architectures: ["MVVM"],
+      architectures: ["MVVM", "PubSub"],
     },
     keyFeatures: [
       {
         id: "key-features-1",
         key: "Responsive Design:",
         features: [
-          "The portfolio is responsive and can be viewed on different screen sizes.",
+          "The portfolio is designed to be responsive and adapt to all types of devices.",
         ],
       },
       {
@@ -223,20 +157,26 @@ export const workData: WorkProps[] = [
       {
         id: "key-features-3",
         key: "Internationalization:",
-        features: ["The portfolio supports internationalization."],
+        features: ["The portfolio is available in French and English."],
       },
       {
         id: "key-features-4",
         key: "SEO:",
         features: ["The portfolio is optimized for search engines."],
       },
+      {
+        id: "key-features-5",
+        key: "Global State:",
+        features: [
+          "The portfolio uses a state management system based on the PubSub pattern.",
+        ],
+      },
     ],
   },
   {
     id: "work-4",
-    name: "commandzen",
+    name: "Commandzen",
     category: "tools",
-
     socialLinks: [
       {
         icon: <FaNpm />,
@@ -250,13 +190,36 @@ export const workData: WorkProps[] = [
       },
     ],
     tag: "Open Source",
-    description:
-      "This project aims to simplify the process of creating and managing Git aliases.",
+    description: `Commandzen is a library that aims to simplify the creation of command-line interface (CLI) applications using TypeScript and NodeJS.
+When developing Commitizard, I previously used the Commander library, but the size of the generated bundle was too large for my use case. So I decided to create my own library to meet my needs.`,
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
       tools: ["GitHub Actions"],
     },
-    keyFeatures: [],
+    keyFeatures: [
+      {
+        id: "key-features-1",
+        key: "Simple and intuitive API for creating CLI applications",
+        features: [
+          "Supports commands, subcommands, and options",
+          "Supports command aliases",
+          "Automatic generation of help for commands and subcommands",
+        ],
+      },
+      {
+        id: "key-features-2",
+        key: "Compatibility with JavaScript module systems",
+        features: ["CommonJS", "ECMAScript Modules (ESM)"],
+      },
+      {
+        id: "key-features-4",
+        key: "Maximum test coverage",
+        features: [
+          "Code coverage is 100%.",
+          "The main branch is protected by unit, integration, and end-to-end tests.",
+        ],
+      },
+    ],
   },
 ];

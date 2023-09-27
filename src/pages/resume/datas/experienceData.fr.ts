@@ -37,7 +37,7 @@ export const experienceData: ExperienceProps[] = [
     name: "TIPI / BisonFuté",
     tag: "Système d'information routier national",
     description:
-      "Ingénieur logiciel pour le projet de Système d'Information Routier National (TIPI) avec une implication clé dans le cadre d'une Tierce Maintenance Applicative (TMA).\nTIPI agrège en temps réel les données du réseau routier national pour les rendre notamment accessibles aux utilisateurs via des applications grand public tel que Bison Futé.",
+      "Ingénieur logiciel pour le projet de Système d'Information Routier National (TIPI), dans le cadre d'une Tierce Maintenance Applicative (TMA).\n\nTIPI agrège en temps réel les données du réseau routier national pour les rendre notamment accessibles aux utilisateurs via des applications grand public tel que Bison Futé.",
     duration: "2019 - 2020",
     place: "Pessac, France (33)",
     roleAndResponsibilities: "Ingénieur logiciel",
@@ -120,7 +120,8 @@ export const experienceData: ExperienceProps[] = [
       duration: "Alternance 2015 - 2017",
     },
     name: "FalconTab",
-    description: `Développement d'une solution de gestion de la maintenance pour les avions Falcon de Dassault Aviation (branche civile).\nObjectif : Réduire la consommation de papier, faciliter la gestion des tâches de maintenance et des documents techniques, et favoriser la transition vers le tout numérique.`,
+    description:
+      "Développeur fullstack en alternance pour le projet Falcontab dans le cadre d'un projet au forfait.\n\nFalcontab est une solution de dématérialisation de la gestion de la maintenance pour les avions Falcon de Dassault Aviation (branche civile). L'objectif était de réduire la consommation de papier, simplifier la gestion des tâches de maintenance et des documents techniques, tout en favorisant la transition vers le tout numérique.",
     duration: "2015 - 2017",
     place: "Aix-en-Provence, France (13)",
     roleAndResponsibilities: "Développeur fullstack (alternance)",

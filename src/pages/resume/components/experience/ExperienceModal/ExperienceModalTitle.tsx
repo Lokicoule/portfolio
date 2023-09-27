@@ -8,6 +8,7 @@ import {
 import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
 import Tooltip from "../../../../../shared/components/tooltip/Tooltip";
 import { ExperienceProps } from "../../../ResumeViewModel";
+import { translatingService } from "../../../../../shared/composition";
 
 type DetailItemProps = {
   icon: React.ReactNode;
@@ -58,39 +59,39 @@ const ExperienceModalTitle: ExperienceModalTitleComponent = ({
         {experience.name}
       </h2>
 
-      <div className="flex flex-row flex-wrap lg:flex-row my-6 flex-between">
-        <div className="details-left space-y-2 lg:mr-6">
+      <div className="flex flex-col flex-wrap lg:flex-row my-6 flex-between">
+        <div className="space-y-2 lg:mr-6">
           <DetailItem
             icon={<FiClock />}
-            label="Duration"
+            label={translatingService.translate("duration")}
             value={experience.duration}
           />
           <DetailItem
             icon={<FiBriefcase />}
-            label="Company"
+            label={translatingService.translate("company")}
             value={experience.company}
           />
           <DetailItem
             icon={<FiMapPin />}
-            label="Place"
+            label={translatingService.translate("place")}
             value={experience.place}
           />
         </div>
 
-        <div className="details-right space-y-2">
+        <div className="space-y-2">
           <DetailItem
             icon={<FiUser />}
-            label="Client"
+            label={translatingService.translate("client")}
             value={renderClientValue(experience?.client)}
           />
           <DetailItem
             icon={<FiFilePlus />}
-            label="Project"
+            label={translatingService.translate("project")}
             value={experience.tag}
           />
           <DetailItem
             icon={<FiBriefcase />}
-            label="Role and Responsibilities"
+            label={translatingService.translate("roleAndResponsibilities")}
             value={experience.roleAndResponsibilities}
           />
         </div>

@@ -1,14 +1,17 @@
+import { useEffect, useState } from "react";
 import {
   FaCalendarAlt,
+  FaDownload,
   FaEnvelopeOpenText,
   FaGithub,
   FaLinkedinIn,
   FaMapMarkerAlt,
-  FaDownload,
 } from "react-icons/fa";
-import img from "/avatar.jpg";
 import HeroSocialLinks from "../social-links/SocialLinks";
 import HeroContactInfo from "./ContactInfo";
+import { HeroPresenter } from "./HeroPresenter";
+import { HeroViewModel } from "./HeroViewModel";
+import img from "/avatar.jpg";
 
 const socialLinks = [
   {
@@ -42,7 +45,23 @@ const contactInfo = [
   },
 ];
 
-const Hero = () => {
+type HeroViewProps = {
+  presenter: HeroPresenter;
+};
+
+type HeroViewComponent = React.FC<HeroViewProps>;
+
+const HeroView: HeroViewComponent = ({ presenter }) => {
+  const [viewModel, setViewModel] = useState<HeroViewModel | undefined>();
+
+  useEffect(() => {
+    presenter.load((vm) => setViewModel(vm));
+  }, [presenter]);
+
+  if (!viewModel) {
+    return null;
+  }
+
   return (
     <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-primary text-center px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
       <img
@@ -57,7 +76,7 @@ const Hero = () => {
           Loik Fekkai
         </h1>
         <h3 className="rounded-lg mb-4 px-5 py-1.5 text-secondary bg-secondary inline-block capitalize">
-          Software Engineer
+          {presenter.translateAndSanitize("hero.jobTitle")}
         </h3>
 
         <div className="flex justify-center space-x-3">
@@ -73,11 +92,11 @@ const Hero = () => {
           className="inline-flex items-center mx-auto bg-sky-to-blue duration-200 transition ease-linear px-8 py-3 text-lg text-white rounded-[35px] mt-6 hover:brightness-125"
         >
           <FaDownload className="mr-2" />
-          Download CV
+          {presenter.translateAndSanitize("hero.downloadResume")}
         </a>
       </div>
     </div>
   );
 };
 
-export default Hero;
+export default HeroView;

@@ -6,6 +6,9 @@ import {
   aboutPresenter,
   contactController,
   contactPresenter,
+  heroPresenter,
+  langController,
+  langPresenter,
   notFoundPresenter,
   resumePresenter,
   worksController,
@@ -52,7 +55,12 @@ const routes: RouteConfig[] = [
   {
     path: "/",
     element: (
-      <Layout>
+      <Layout
+        lang={{ presenter: langPresenter, controller: langController }}
+        hero={{
+          presenter: heroPresenter,
+        }}
+      >
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>

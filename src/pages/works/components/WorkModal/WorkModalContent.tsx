@@ -35,7 +35,7 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
         {work.keyFeatures ? (
           <Disclosure
             icon={<FiBriefcase className="text-lg mr-2 inline-block" />}
-            title="Key Features"
+            title={translatingService.translate("works.keyFeatures")}
             defaultOpen
           >
             <ul className="dark:text-white text-sm">

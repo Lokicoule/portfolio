@@ -4,6 +4,7 @@ import { ContactPresenter } from "../../pages/contact/ContactPresenter";
 import { NotFoundPresenter } from "../../pages/not-found/NotFoundPresenter";
 import { ResumePresenter } from "../../pages/resume/ResumePresenter";
 import { WorksPresenter } from "../../pages/works/WorksPresenter";
+import { HeroPresenter } from "../components/hero/HeroPresenter";
 import { LangPresenter } from "../components/lang/LangPresenter";
 import { NavigationPresenter } from "../components/navigation/NavigationPresenter";
 
@@ -16,6 +17,7 @@ const resumePresenter = new ResumePresenter(cache, translatingService);
 const worksPresenter = new WorksPresenter(cache, translatingService);
 const contactPresenter = new ContactPresenter(cache, translatingService);
 const notFoundPresenter = new NotFoundPresenter(cache, translatingService);
+const heroPresenter = new HeroPresenter(cache, translatingService);
 
 export {
   aboutPresenter,
@@ -25,4 +27,5 @@ export {
   worksPresenter,
   contactPresenter,
   notFoundPresenter,
+  heroPresenter,
 };
