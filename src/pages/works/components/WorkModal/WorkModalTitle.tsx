@@ -13,7 +13,7 @@ type WorkModalTitleComponent = React.FC<WorkModalTitleProps>;
 const WorkModalTitle: WorkModalTitleComponent = ({ work }) => {
   return (
     <Modal.Title>
-      <h2 className="text-primary text-4xl text-center font-bold font-primary">
+      <h2 className="text-primary text-4xl text-center font-primary">
         {work.name}
       </h2>
 

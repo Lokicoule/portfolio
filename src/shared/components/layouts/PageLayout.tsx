@@ -37,7 +37,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-5xl font-primary font-bold text-primary relative inline-block pt-12 px-2 sm:px-5 md:px-10 lg:px-14 mb-12 md:mb-[30px]">
+            <h2 className="text-5xl font-primary text-primary relative inline-block pt-12 px-2 sm:px-5 md:px-10 lg:px-14 mb-12 md:mb-[30px]">
               {title}
             </h2>
             <motion.div

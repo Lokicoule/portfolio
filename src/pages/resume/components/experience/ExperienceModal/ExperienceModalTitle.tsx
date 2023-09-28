@@ -55,7 +55,7 @@ const ExperienceModalTitle: ExperienceModalTitleComponent = ({
 }) => {
   return (
     <Modal.Title>
-      <h2 className="text-primary text-4xl text-center font-bold font-primary">
+      <h2 className="text-primary text-4xl text-center font-primary">
         {experience.name}
       </h2>
 
