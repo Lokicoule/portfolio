@@ -19,13 +19,19 @@ export class TranslatingService {
   }
 
   public get language(): string {
+    const defaultLang = "en";
+
     if (i18next.language === "fr" || i18next.language === "en")
       return i18next.language;
-    return "en";
+
+    const fallback = i18next.languages[0].split("-")[0];
+    if (fallback === "fr" || fallback === "en") return fallback;
+
+    return defaultLang;
   }
 
-  public init(): void {
-    i18next.use(LanguageDetector).init({
+  public async init(): Promise<void> {
+    await i18next.use(LanguageDetector).init({
       fallbackLng: "en",
       interpolation: {
         escapeValue: false,
