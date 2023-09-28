@@ -17,7 +17,7 @@ const WorkModalTitle: WorkModalTitleComponent = ({ work }) => {
         {work.name}
       </h2>
 
-      <div className="flex flex-row flex-wrap lg:flex-row my-6 justify-between items-center">
+      <div className="flex flex-row flex-wrap lg:flex-row my-6 justify-between items-center flex-wrap">
         <div className="space-y-2">
           <span className="dark:text-white flex items-center text-[15px] sm:text-lg">
             <FiFilePlus className="sm:text-lg hidden sm:block mr-2 md:text-xl" />
