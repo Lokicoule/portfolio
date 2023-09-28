@@ -32,7 +32,7 @@ const MobileMenu: React.FC = () => {
                   : "hidden"
               } lg:hidden`}
             >
-              <ul className="flex flex-col">
+              <ul className="flex flex-col  mt-1">
                 <Navigation
                   presenter={navigationPresenter}
                   defaultClassName={defaultClassName}
