@@ -21,7 +21,7 @@ export const workData: WorkProps[] = [
     tag: "Open Source",
     description:
       "Ce projet vise à simplifier la mise en œuvre d'un système d'authentification sécurisé et évolutif dans les applications NestJS en utilisant Amazon Cognito, un service d'authentification géré par AWS.\n" +
-      "L'idée m'est venue lors du développement d'une application NestJS pour un client. J'ai trouvé que l'intégration d'Amazon Cognito était fastidieuse et mal documentée. J'ai donc décidé de créer un outil pour faciliter cette tâche et le rendre plus accessible à la communauté NestJS.",
+      "L'idée m'est venue lors du développement d'une application NestJS pour un client. J'ai trouvé que l'intégration d'Amazon Cognito était fastidieuse et mal documentée. J'ai donc créé un outil pour faciliter cette tâche et le rendre plus accessible à la communauté NestJS.",
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NestJS", "Apollo GraphQL"],
@@ -89,8 +89,8 @@ export const workData: WorkProps[] = [
     ],
     tag: "Open Source",
     description:
-      "Ce projet vise à simplifier le processus d'écriture des messages de commit en utilisant les conventions dîtes conventionnelles ou red-green-refactor (TDD).\n" +
-      "L'idée m'est venue lors de l'application du TDD dans un projet. J'ai trouvé que le processus d'écriture des messages de commit était fastidieux et j'ai donc décidé de créer un outil pour faciliter cette tâche.",
+      "Ce projet vise à simplifier le processus d'écriture des messages de commit en utilisant la forme conventionnelle ou red-green-refactor spécifique relative au TDD.\n" +
+      "L'idée m'est venue lors de l'application du TDD dans un projet. J'ai trouvé que le processus d'écriture des messages de commit était fastidieux et j'ai donc créé un outil pour faciliter cette tâche.",
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
@@ -191,7 +191,7 @@ export const workData: WorkProps[] = [
     ],
     tag: "Open Source",
     description: `Commandzen est une bibliothèque qui vise à simplifier la création d'applications d'interface en ligne de commande (CLI) en utilisant TypeScript et NodeJS.
-Lors du développement de Commitizard, j'ai préalablement utilisé la bibliothèque Commander mais la taille du bundle généré était trop importante pour mon cas d'utilisation. J'ai donc décidé de créer ma propre bibliothèque pour répondre à mes besoins.`,
+Lors du développement de Commitizard, j'ai préalablement utilisé la bibliothèque Commander mais la taille du bundle généré était trop importante pour mon cas d'usage. J'ai donc créé ma propre bibliothèque pour répondre à une problématique simple.`,
     technologiesUsed: {
       languages: ["Typescript"],
       frameworks: ["NodeJS"],
