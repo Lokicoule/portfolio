@@ -1,5 +1,7 @@
-import { Notification } from "../../shared/notifications/domainObjects/Notification";
-import { NotificationService } from "../../shared/notifications/notificationsService";
+import {
+  Notification,
+  NotificationService,
+} from "../../shared/services/notifications";
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 
 enum WorkFilter {

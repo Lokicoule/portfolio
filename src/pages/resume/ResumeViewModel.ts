@@ -1,4 +1,4 @@
-import { StackProps } from "../../shared/components/stack/Stack";
+import { StackProps } from "../../shared/components/elements/Stack";
 
 interface ClientProps {
   abbreviation?: string;

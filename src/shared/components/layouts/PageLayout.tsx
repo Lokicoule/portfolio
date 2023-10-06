@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Footer from "../footer/Footer";
-import Head, { HeadProps } from "../head/Head";
+import Footer from "./Footer";
+import Head, { HeadProps } from "../elements/Head";
 
 interface PageLayoutProps extends React.PropsWithChildren {
   className?: string;

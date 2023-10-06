@@ -1,7 +1,9 @@
-import { LoggingService } from "../../shared/logging/loggingService";
-import { MailingService } from "../../shared/mailing/mailingService";
-import { Notification } from "../../shared/notifications/domainObjects/Notification";
-import { NotificationService } from "../../shared/notifications/notificationsService";
+import { LoggingService } from "../../shared/services/logging/loggingService";
+import { MailingService } from "../../shared/services/mailing/mailingService";
+import {
+  Notification,
+  NotificationService,
+} from "../../shared/services/notifications";
 import { ContactForm, ContactFormProps } from "./domainObjects/ContactForm";
 
 export class ContactController {

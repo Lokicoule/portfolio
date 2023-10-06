@@ -1,4 +1,4 @@
-import ProgressBar from "../../../../shared/components/progress-bar/ProgressBar";
+import ProgressBar from "../../../../shared/components/elements/ProgressBar";
 import { SkillProps } from "../../ResumeViewModel";
 
 type SkillSectionProps = {

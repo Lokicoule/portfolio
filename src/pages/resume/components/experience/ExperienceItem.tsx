@@ -1,7 +1,7 @@
 import React from "react";
 import { ExperienceProps } from "../../ResumeViewModel";
 import ExperienceModal from "./ExperienceModal/ExperienceModal";
-import Tooltip from "../../../../shared/components/tooltip/Tooltip";
+import Tooltip from "../../../../shared/components/elements/Tooltip";
 
 type ExperienceItemProps = {
   item: ExperienceProps;

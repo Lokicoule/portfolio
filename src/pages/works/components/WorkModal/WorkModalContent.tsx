@@ -2,7 +2,7 @@ import { FiBriefcase } from "react-icons/fi";
 import { GoStack } from "react-icons/go";
 import Disclosure from "../../../../shared/components/adapters/@headlessui/Disclosure";
 import Modal from "../../../../shared/components/adapters/@headlessui/Modal";
-import Stack from "../../../../shared/components/stack/Stack";
+import Stack from "../../../../shared/components/elements/Stack";
 import { translatingService } from "../../../../shared/composition";
 import { WorkProps } from "../../WorksViewModel";
 

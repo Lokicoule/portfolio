@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAsyncCallback } from "../../../shared/components/hooks/useAsyncCallback";
+import { useAsyncCallback } from "../../../shared/hooks/useAsyncCallback";
 import { ContactFormProps } from "../domainObjects/ContactForm";
-import TextInputField from "../../../shared/components/form/TextInputField";
-import TextAreaField from "../../../shared/components/form/TextAreaField";
+import TextInputField from "../../../shared/components/elements/form/TextInputField";
+import TextAreaField from "../../../shared/components/elements/form/TextAreaField";
 import { BsSendCheck } from "react-icons/bs";
 import { translatingService } from "../../../shared/composition";
 

@@ -1,7 +1,8 @@
-import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { GlobalCache } from "../../../sharedKernel/persistence/GlobalCache";
-import { NavigationViewModel } from "./NavigationViewModel";
+import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../../sharedKernel/presentation/SubscriptionManager";
+
+import { NavigationViewModel } from "./NavigationViewModel";
 
 import { navigationData as navigationDataEn } from "./datas/navigationData.en";
 import { navigationData as navigationDataFr } from "./datas/navigationData.fr";

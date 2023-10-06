@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react";
-import Header from "../header/Header";
 import Hero from "../hero";
+import { HeroPresenter } from "../hero/HeroPresenter";
+import { LangController } from "../lang/LangController";
 import { LangPresenter } from "../lang/LangPresenter";
 import DesktopMenu from "../menu/DesktopMenu";
-import { LangController } from "../lang/LangController";
-import { HeroPresenter } from "../hero/HeroPresenter";
+import Header from "./Header";
 
 type LayoutProps = PropsWithChildren<{
   lang: {

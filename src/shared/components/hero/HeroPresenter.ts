@@ -1,7 +1,7 @@
 import { GlobalCache } from "../../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../../sharedKernel/presentation/SubscriptionManager";
-import { TranslatingService } from "../../translating/translatingService";
+import { TranslatingService } from "../../services/translating/translatingService";
 import { HeroViewModel } from "./HeroViewModel";
 import { contactInfoData as contactInfoDataEn } from "./datas/contactInfoData.en";
 import { contactInfoData as contactInfoDataFr } from "./datas/contactInfoData.fr";

@@ -4,7 +4,7 @@ import {
   Disclosure,
   Modal,
 } from "../../../../../shared/components/adapters/@headlessui";
-import Stack from "../../../../../shared/components/stack/Stack";
+import Stack from "../../../../../shared/components/elements/Stack";
 import { translatingService } from "../../../../../shared/composition";
 import { ExperienceProps } from "../../../ResumeViewModel";
 

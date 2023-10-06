@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import HeroSocialLinks from "../social-links/SocialLinks";
+import HeroSocialLinks from "../elements/SocialLinks";
 import HeroContactInfo from "./ContactInfo";
 import { HeroPresenter } from "./HeroPresenter";
 import { HeroViewModel } from "./HeroViewModel";

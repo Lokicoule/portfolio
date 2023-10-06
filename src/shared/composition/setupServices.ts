@@ -1,9 +1,9 @@
-import { LoggingService } from "../logging/loggingService";
-import { MailingService } from "../mailing/mailingService";
-import { NotificationService } from "../notifications/notificationsService";
-import { RoutingService } from "../routing/routingService";
-import { TranslatingService } from "../translating/translatingService";
-import { LocalStorageService } from "../storage/localStorageService";
+import { LoggingService } from "../services/logging/loggingService";
+import { MailingService } from "../services/mailing/mailingService";
+import { NotificationService } from "../services/notifications/notificationsService";
+import { RoutingService } from "../services/routing/routingService";
+import { TranslatingService } from "../services/translating/translatingService";
+import { LocalStorageService } from "../services/storage/localStorageService";
 
 const mailingService = new MailingService();
 const notificationsService = new NotificationService();

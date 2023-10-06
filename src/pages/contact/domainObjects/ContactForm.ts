@@ -1,4 +1,4 @@
-import { EmailProps } from "../../../shared/mailing/mailingService";
+import { EmailProps } from "../../../shared/services/mailing/mailingService";
 
 export interface ContactFormProps {
   email: string;

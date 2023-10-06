@@ -1,5 +1,4 @@
-import React from "react";
-import { NotificationService } from "../../notifications/notificationsService";
+import { NotificationService } from "../../services/notifications/notificationsService";
 import { LangController } from "./LangController";
 import { LangPresenter } from "./LangPresenter";
 import LangView from "./LangView";

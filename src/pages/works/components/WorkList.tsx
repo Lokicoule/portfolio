@@ -1,6 +1,6 @@
 import React from "react";
 import { GoRepo } from "react-icons/go";
-import SocialLinks from "../../../shared/components/social-links/SocialLinks";
+import SocialLinks from "../../../shared/components/elements/SocialLinks";
 import { WorkProps } from "../WorksViewModel";
 import WorkModal from "./WorkModal/WorkModal";
 

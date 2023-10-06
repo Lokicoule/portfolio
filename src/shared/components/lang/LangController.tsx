@@ -4,8 +4,8 @@ import {
   Language,
 } from "../../../sharedKernel/persistence/GlobalCache";
 import { translatingService } from "../../composition";
-import { Notification } from "../../notifications/domainObjects/Notification";
-import { NotificationService } from "../../notifications/notificationsService";
+import { Notification } from "../../services/notifications/domainObjects/Notification";
+import { NotificationService } from "../../services/notifications/notificationsService";
 
 export class LangController {
   constructor(

@@ -1,4 +1,4 @@
-import IconWrapper from "../icons/IconWrapper";
+import IconWrapper from "../elements/IconWrapper";
 import { HeroViewModelProps } from "./HeroViewModel";
 
 type ContactInfoProps = HeroViewModelProps;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PageLayout from "../../shared/components/layouts/PageLayout";
-import { NotificationService } from "../../shared/notifications/notificationsService";
+import { NotificationService } from "../../shared/services/notifications/notificationsService";
+
 import { ContactController } from "./ContactController";
 import { ContactPresenter } from "./ContactPresenter";
 import { ContactViewModel } from "./ContactViewModel";

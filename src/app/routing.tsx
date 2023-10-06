@@ -14,7 +14,7 @@ import {
   worksController,
   worksPresenter,
 } from "../shared/composition";
-import { RouteConfig } from "../shared/routing/routingService";
+import { RouteConfig } from "../shared/services/routing/routingService";
 
 import About from "../pages/about";
 import Contact from "../pages/contact";

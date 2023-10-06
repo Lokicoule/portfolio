@@ -1,6 +1,6 @@
 import { FiCode, FiLayout, FiPackage, FiServer, FiTool } from "react-icons/fi";
 import { SiMaterialdesignicons } from "react-icons/si";
-import { Tag } from "../tag/Tag";
+import { Tag } from "./Tag";
 
 export interface StackProps {
   languages?: string[];

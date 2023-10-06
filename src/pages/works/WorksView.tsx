@@ -5,7 +5,7 @@ import FilterWorksList from "./components/FilterWorksList";
 import WorkList from "./components/WorkList";
 import { WorksController } from "./WorksController";
 import PageLayout from "../../shared/components/layouts/PageLayout";
-import { NotificationService } from "../../shared/notifications/notificationsService";
+import { NotificationService } from "../../shared/services/notifications";
 
 type WorksViewProps = {
   presenter: WorksPresenter;

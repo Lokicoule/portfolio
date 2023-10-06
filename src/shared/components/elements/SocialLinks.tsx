@@ -1,4 +1,4 @@
-import IconWrapper from "../icons/IconWrapper";
+import IconWrapper from "./IconWrapper";
 
 export interface SocialLinkProps {
   href: string;

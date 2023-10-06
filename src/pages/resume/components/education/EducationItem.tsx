@@ -1,6 +1,6 @@
 import React from "react";
 import { EducationProps } from "../../ResumeViewModel";
-import Tooltip from "../../../../shared/components/tooltip/Tooltip";
+import Tooltip from "../../../../shared/components/elements/Tooltip";
 
 type EducationItemProps = {
   item: EducationProps;

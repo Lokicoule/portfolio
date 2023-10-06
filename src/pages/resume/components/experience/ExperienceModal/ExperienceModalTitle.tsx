@@ -6,7 +6,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 import Modal from "../../../../../shared/components/adapters/@headlessui/Modal";
-import Tooltip from "../../../../../shared/components/tooltip/Tooltip";
+import Tooltip from "../../../../../shared/components/elements/Tooltip";
 import { ExperienceProps } from "../../../ResumeViewModel";
 import { translatingService } from "../../../../../shared/composition";
 

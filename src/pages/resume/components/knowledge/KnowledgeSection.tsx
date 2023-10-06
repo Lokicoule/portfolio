@@ -1,4 +1,4 @@
-import { Tag } from "../../../../shared/components/tag/Tag";
+import { Tag } from "../../../../shared/components/elements/Tag";
 import { KnowledgeProps } from "../../ResumeViewModel";
 
 type KnowledgeSectionProps = {

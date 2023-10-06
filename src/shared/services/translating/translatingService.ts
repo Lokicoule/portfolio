@@ -1,6 +1,7 @@
 import i18next from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import DOMPurify from "dompurify";
+
 import fr from "./locales/fr.json";
 import en from "./locales/en.json";
 

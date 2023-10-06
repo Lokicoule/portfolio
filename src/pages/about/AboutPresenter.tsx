@@ -1,4 +1,4 @@
-import { TranslatingService } from "../../shared/translating/translatingService";
+import { TranslatingService } from "../../shared/services/translating/translatingService";
 import { GlobalCache } from "../../sharedKernel/persistence/GlobalCache";
 import { Presenter } from "../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../sharedKernel/presentation/SubscriptionManager";
