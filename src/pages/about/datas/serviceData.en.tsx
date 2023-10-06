@@ -1,34 +1,35 @@
-import { FaGithub } from "react-icons/fa";
-import { PiCodeLight } from "react-icons/pi";
+import { FaGithub, FaLaptopCode } from "react-icons/fa";
+import { MdOutlineWeb } from "react-icons/md";
+import { SiBlockchaindotcom } from "react-icons/si";
 import { ServiceProps } from "../AboutViewModel";
 
 export const serviceData: ServiceProps[] = [
   {
     id: "service-1",
-    title: "Web Development",
+    title: "Web",
     description:
-      "I can help you build your next website using strong architectural patterns and modern technologies.",
-    icon: <PiCodeLight />,
+      "I can help you develop your next website by combining solid architectural patterns and modern technologies.",
+    icon: <FaLaptopCode />,
   },
   {
     id: "service-2",
-    title: "Open Source",
+    title: "Open source",
     description:
-      "I am a strong believer in open source software and I love contributing to OSS projects.",
+      "I like to contribute to the open source community and share my knowledge with others.",
     icon: <FaGithub />,
   },
   {
     id: "service-3",
-    title: "Software Development",
+    title: "Software",
     description:
-      "From idea to production, I can help you build your next product.",
-    icon: <PiCodeLight />,
+      "From idea to production, I can help you design your next product.",
+    icon: <MdOutlineWeb />,
   },
   {
     id: "service-4",
-    title: "Blockchain Development",
+    title: "Blockchain",
     description:
-      "I possess the skills and expertise to be good in the field of blockchain, confidently handling its complexities and driving innovation.",
-    icon: <PiCodeLight />,
+      "More than a technology, blockchain is a revolution. I can participate in the development of your next blockchain project.",
+    icon: <SiBlockchaindotcom />,
   },
 ];
