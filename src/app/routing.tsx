@@ -18,7 +18,7 @@ import { RouteConfig } from "../shared/services/routing/routingService";
 
 import About from "../pages/about";
 import Contact from "../pages/contact";
-import NotFound from "../pages/not-found";
+import NotFound from "../pages/notFound";
 import Resume from "../pages/resume";
 import Works from "../pages/works";
 

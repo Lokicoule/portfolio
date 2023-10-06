@@ -1,7 +1,7 @@
 import { translatingService } from ".";
 import { AboutPresenter } from "../../pages/about/AboutPresenter";
 import { ContactPresenter } from "../../pages/contact/ContactPresenter";
-import { NotFoundPresenter } from "../../pages/not-found/NotFoundPresenter";
+import { NotFoundPresenter } from "../../pages/notFound/NotFoundPresenter";
 import { ResumePresenter } from "../../pages/resume/ResumePresenter";
 import { WorksPresenter } from "../../pages/works/WorksPresenter";
 import { HeroPresenter } from "../components/hero/HeroPresenter";
