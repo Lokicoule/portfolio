@@ -1,15 +1,8 @@
 import IconWrapper from "../icons/IconWrapper";
+import { HeroViewModelProps } from "./HeroViewModel";
 
-interface ContactInfo {
-  label: string;
-  value: string;
-  icon: JSX.Element;
-  href?: string;
-}
-
-interface Props {
-  contactInfo: ContactInfo[];
-}
+type ContactInfoProps = HeroViewModelProps;
+type ContactInfoComponent = React.FC<ContactInfoProps>;
 
 const colors: string[] = [
   "text-[#9ac5f4] bg-primary",
@@ -18,14 +11,14 @@ const colors: string[] = [
   "text-[#ffeebb] bg-primary",
 ];
 
-const ContactInfo: React.FC<Props> = ({ contactInfo }) => {
+const ContactInfo: ContactInfoComponent = ({ infos }) => {
   return (
     <>
-      {contactInfo.map((info, index) => (
+      {infos.map((info, index) => (
         <div
           key={index}
           className={`flex border-b border-primary py-2.5 ${
-            index === contactInfo.length - 1 ? "" : "mb-2.5"
+            index === infos.length - 1 ? "" : "mb-2.5"
           }`}
         >
           <IconWrapper className={colors[index % colors.length]}>

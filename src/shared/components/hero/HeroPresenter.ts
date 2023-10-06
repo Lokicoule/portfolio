@@ -3,7 +3,8 @@ import { Presenter } from "../../../sharedKernel/presentation/Presenter";
 import { SubscriptionManager } from "../../../sharedKernel/presentation/SubscriptionManager";
 import { TranslatingService } from "../../translating/translatingService";
 import { HeroViewModel } from "./HeroViewModel";
-
+import { contactInfoData as contactInfoDataEn } from "./datas/contactInfoData.en";
+import { contactInfoData as contactInfoDataFr } from "./datas/contactInfoData.fr";
 export class HeroPresenter extends Presenter<HeroViewModel> {
   private subscriptionManager: SubscriptionManager;
   private translatingService: TranslatingService;
@@ -26,7 +27,7 @@ export class HeroPresenter extends Presenter<HeroViewModel> {
 
   protected rebuildViewModel(lang: string) {
     this.vm = new HeroViewModel({
-      lang,
+      infos: lang === "fr" ? contactInfoDataFr : contactInfoDataEn,
     });
   }
 

@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  FaCalendarAlt,
-  FaDownload,
-  FaEnvelopeOpenText,
-  FaGithub,
-  FaLinkedinIn,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import HeroSocialLinks from "../social-links/SocialLinks";
 import HeroContactInfo from "./ContactInfo";
 import { HeroPresenter } from "./HeroPresenter";
@@ -23,25 +16,6 @@ const socialLinks = [
     href: "https://www.github.com/lokicoule/",
     icon: <FaGithub />,
     iconClassName: "text-[#0072b1] bg-secondary",
-  },
-];
-
-const contactInfo = [
-  {
-    label: "Email",
-    value: "loikfekkai@gmail.com",
-    icon: <FaEnvelopeOpenText />,
-    href: "mailto:loikfekkai@gmail.com",
-  },
-  {
-    label: "Location",
-    value: "Mimizan, France (40)",
-    icon: <FaMapMarkerAlt />,
-  },
-  {
-    label: "Birthday",
-    value: "Sept 17, 1992",
-    icon: <FaCalendarAlt />,
   },
 ];
 
@@ -83,7 +57,7 @@ const HeroView: HeroViewComponent = ({ presenter }) => {
           <HeroSocialLinks socialLinks={socialLinks} />
         </div>
         <div className="p-7 rounded-2xl mt-7 bg-secondary">
-          <HeroContactInfo contactInfo={contactInfo} />
+          <HeroContactInfo infos={viewModel.infos} />
         </div>
 
         <a
