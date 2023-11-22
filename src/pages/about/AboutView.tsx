@@ -38,7 +38,7 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
     >
       <div className="container mx-auto px-4 md:px-10 lg:px-14">
         <p
-          className="text-lg leading-8 mb-6 text-tertiary"
+          className="text-lg leading-8 mb-6 text-tertiary text-justify"
           dangerouslySetInnerHTML={{
             __html: presenter.translateAndSanitize("about.description.content"),
           }}
@@ -65,7 +65,9 @@ const AboutView: AboutViewComponent = ({ presenter }) => {
                   </h4>
                 </div>
               </div>
-              <p className="text-secondary">{service.description}</p>
+              <p className="text-secondary text-justify">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>

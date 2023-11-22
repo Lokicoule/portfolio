@@ -70,7 +70,7 @@ const ExperienceModalContent: React.FC<ExperienceModalContentProps> = ({
                   {section.items.map((item, i) => (
                     <li
                       key={i}
-                      className="font-medium text-sm text-gray-600 dark:text-gray-400"
+                      className="font-medium text-sm text-gray-600 dark:text-gray-400 text-justify"
                     >
                       {item}
                     </li>

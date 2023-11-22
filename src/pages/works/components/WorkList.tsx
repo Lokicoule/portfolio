@@ -30,7 +30,9 @@ const WorkList: WorkListComponent = ({ works }) => {
             />
           </div>
 
-          <p className="text-secondary">{item.description.slice(0, 120)}...</p>
+          <p className="text-secondary text-justify">
+            {item.description.slice(0, 120)}...
+          </p>
 
           <div className="mt-4">
             <SocialLinks socialLinks={item.socialLinks} />

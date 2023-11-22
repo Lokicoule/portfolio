@@ -29,7 +29,9 @@ const WorkModalContent: WorkModalContentComponent = ({ work }) => {
           title={translatingService.translate("description")}
           defaultOpen
         >
-          <span className="dark:text-white text-sm">{work.description}</span>
+          <span className="dark:text-white text-sm text-justify">
+            {work.description}
+          </span>
         </Disclosure>
 
         {work.keyFeatures ? (
