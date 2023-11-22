@@ -1,4 +1,4 @@
-import { MdOutlineBusinessCenter } from "react-icons/md";
+import { MdOutlineSchool } from "react-icons/md";
 import { EducationProps } from "../../ResumeViewModel";
 import EducationItem from "./EducationItem";
 
@@ -15,7 +15,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
     <div>
       <div className="flex items-center space-x-2 mb-4">
         <div className="text-4xl text-[#0072b1]">
-          <MdOutlineBusinessCenter />
+          <MdOutlineSchool />
         </div>
         <h4 className="text-3xl text-secondary font-medium">{title}</h4>
       </div>
